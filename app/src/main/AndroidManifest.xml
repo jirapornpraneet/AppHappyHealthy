@@ -19,7 +19,10 @@
         <activity android:name=".Food" />
         <activity android:name=".Exercise" />
         <activity android:name=".Home" />
-        <activity android:name=".IntroHealthy"></activity>
+        <activity android:name=".IntroHealthy" />
+        <activity android:name=".User" />
+        <activity android:name=".DataUser" />
+        <activity android:name=".DiseaseUser"></activity>
     </application>
 
 </manifest>

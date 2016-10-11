@@ -21,7 +21,7 @@ public class MainActivity extends TabActivity{
         TabHost.TabSpec tab1 = tabHost.newTabSpec("Home");
         TabHost.TabSpec tab2 = tabHost.newTabSpec("Food");
         TabHost.TabSpec tab3 = tabHost.newTabSpec("Exercise");
-        TabHost.TabSpec tab4 = tabHost.newTabSpec("IntroHealthy");
+        TabHost.TabSpec tab4 = tabHost.newTabSpec("User");
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab1 **/
         tab1.setIndicator("Home");
@@ -39,9 +39,9 @@ public class MainActivity extends TabActivity{
         tab3.setContent(new Intent(this, Exercise.class));
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab4 **/
-        tab4.setIndicator("Healthy");
+        tab4.setIndicator("User");
         //tab4.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
-        tab4.setContent(new Intent(this, IntroHealthy.class));
+        tab4.setContent(new Intent(this, User.class));
 
 
         tabHost.addTab(tab1);
