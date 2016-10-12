@@ -19,12 +19,14 @@ import java.io.IOException;
 
 public class DataUser extends AppCompatActivity {
 
-    //Explicit การประกาศตัวแปร
+
+    //การประกาศตัวแปร
     private EditText name, age, weight, height;
     private RadioGroup selectsex;
     private RadioButton man, woman;
     private String nameString, ageString, weightString, heightString, sexString;
     private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_user.php";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class DataUser extends AppCompatActivity {
         setContentView(R.layout.activity_data_user);
 
 
-        //Bind Widget
+        //Bind wiget
         name = (EditText) findViewById(R.id.name);
         age = (EditText) findViewById(R.id.age);
         weight = (EditText) findViewById(R.id.weight);
@@ -58,11 +60,11 @@ public class DataUser extends AppCompatActivity {
         });
 
 
-    }//OnCreate
+    }//main method
 
-    public void ClickDisPlayUser(View view) {
+    public void ClickDisPlay(View view) {
 
-        //get value edit text
+        //get value edit tezt
         nameString = name.getText().toString().trim();
         ageString = age.getText().toString().trim();
         weightString = weight.getText().toString().trim();
@@ -85,11 +87,11 @@ public class DataUser extends AppCompatActivity {
             myAlert.myDialog(this,"ยังไม่เลือกเพศ","กรุณาระบุเพศผู้ใช้งาน");
 
 
-
-
-    }//ClickDataUser
+        }//ClickDisPlay
+    }
 
     private void updateNewUserToServer() {
+
         OkHttpClient okHttpClient = new OkHttpClient();
         RequestBody requestBody = new FormEncodingBuilder()
                 .add("isAdd", "true")
@@ -112,14 +114,10 @@ public class DataUser extends AppCompatActivity {
             public void onResponse(Response response) throws IOException {
                 finish();
 
-
             }
         });
 
-
     }//update
-
-
 
 
     private boolean checkChoose() {
@@ -128,7 +126,7 @@ public class DataUser extends AppCompatActivity {
                 woman.isChecked();
 
         return status;
+    }
 
 
-
-}//Main Class
+}//main

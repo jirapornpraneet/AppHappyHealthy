@@ -21,15 +21,15 @@
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/button"
-        android:onClick="ClickDisPlayUser"
+        android:onClick="ClickDisPlay"
         android:nestedScrollingEnabled="false"
         android:layout_marginLeft="140dp"
-        android:layout_marginTop="320dp" />
+        android:layout_marginTop="350dp" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="220dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="150dp"
         android:background="#ff2d38">
