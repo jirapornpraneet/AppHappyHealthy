@@ -1,5 +1,6 @@
 package com.example.nut.happyhealthy;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -79,6 +80,7 @@ public class DataUser extends AppCompatActivity {
         }else if (checkChoose()) {
             //Checked
             updateNewUserToServer();
+            startActivity(new Intent(DataUser.this,DisplayUser.class));
 
 
         }else {
