@@ -25,7 +25,7 @@ public class DiseaseUser extends TabActivity {
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab5 **/
         tab5.setIndicator("Diabetes");
-        tab5.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
+        //tab5.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
         tab5.setContent(new Intent(this, Diabetes.class));
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab6 **/
