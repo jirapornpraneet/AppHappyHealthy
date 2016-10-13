@@ -82,9 +82,7 @@ public class DataUser extends AppCompatActivity {
             updateNewUserToServer();
             startActivity(new Intent(DataUser.this,DisplayUser.class));
 
-
-        }else {
-            //UnCheck
+        }else {//UnCheck
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this,"ยังไม่เลือกเพศ","กรุณาระบุเพศผู้ใช้งาน");
 
@@ -109,13 +107,10 @@ public class DataUser extends AppCompatActivity {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
-
             }
-
             @Override
             public void onResponse(Response response) throws IOException {
                 finish();
-
             }
         });
 

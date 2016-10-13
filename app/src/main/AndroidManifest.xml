@@ -27,7 +27,10 @@
         <activity android:name=".User" />
         <activity android:name=".DataUser" />
         <activity android:name=".DiseaseUser" />
-        <activity android:name=".DisplayUser"></activity>
+        <activity android:name=".DisplayUser" />
+        <activity android:name=".Diabetes" />
+        <activity android:name=".Kidney" />
+        <activity android:name=".Pressure"></activity>
     </application>
 
 </manifest>
