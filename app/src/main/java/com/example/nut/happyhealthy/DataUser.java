@@ -22,8 +22,8 @@ public class DataUser extends AppCompatActivity {
 
 
     //การประกาศตัวแปร
-    private EditText name, age, weight, height;
-    private RadioGroup selectsex;
+    private EditText User_name, User_age, User_weight, User_height;
+    private RadioGroup User_sex;
     private RadioButton man, woman;
     private String nameString, ageString, weightString, heightString, sexString;
     private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_user.php";
@@ -36,16 +36,16 @@ public class DataUser extends AppCompatActivity {
 
 
         //Bind wiget
-        name = (EditText) findViewById(R.id.name);
-        age = (EditText) findViewById(R.id.age);
-        weight = (EditText) findViewById(R.id.weight);
-        height = (EditText) findViewById(R.id.height);
-        selectsex = (RadioGroup) findViewById(R.id.selectsex);
+        User_name = (EditText) findViewById(R.id.User_name);
+        User_age = (EditText) findViewById(R.id.User_age);
+        User_weight = (EditText) findViewById(R.id.User_weight);
+        User_height = (EditText) findViewById(R.id.User_height);
+        User_sex = (RadioGroup) findViewById(R.id.User_sex);
         man = (RadioButton) findViewById(R.id.man);
         woman = (RadioButton) findViewById(R.id.woman);
 
         //Radio Controller
-        selectsex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        User_sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
@@ -66,10 +66,10 @@ public class DataUser extends AppCompatActivity {
     public void ClickDisPlay(View view) {
 
         //get value edit tezt
-        nameString = name.getText().toString().trim();
-        ageString = age.getText().toString().trim();
-        weightString = weight.getText().toString().trim();
-        heightString = height.getText().toString().trim();
+        nameString = User_name.getText().toString().trim();
+        ageString = User_age.getText().toString().trim();
+        weightString = User_weight.getText().toString().trim();
+        heightString = User_height.getText().toString().trim();
 
         //Checkspace
         if (nameString.equals("") || ageString.equals("") || weightString.equals("") || heightString.equals("")) {
@@ -95,11 +95,11 @@ public class DataUser extends AppCompatActivity {
         OkHttpClient okHttpClient = new OkHttpClient();
         RequestBody requestBody = new FormEncodingBuilder()
                 .add("isAdd", "true")
-                .add("name", nameString)
-                .add("age", ageString)
-                .add("weight", weightString)
-                .add("height", heightString)
-                .add("sex", sexString)
+                .add("User_name", nameString)
+                .add("User_age", ageString)
+                .add("User_weight", weightString)
+                .add("User_height", heightString)
+                .add("User_sex", sexString)
                 .build();
         Request.Builder builder = new Request.Builder();
         Request request = builder.url(urlPHP).post(requestBody).build();
