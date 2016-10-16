@@ -1,52 +1,30 @@
 package com.example.nut.happyhealthy;
 
-import android.app.TabActivity;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TabHost;
+import android.view.View;
 
 
-@SuppressWarnings("deprecation")
-public class DiseaseUser extends TabActivity {
+public class DiseaseUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disease_user);
+    }//Oncreate
 
-        /** Pegando id tabhost **/
-        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
+    public void ClickDiabetes(View view) {
+        startActivity(new Intent(DiseaseUser.this,Diabetes.class));
+    }//ClickDiabetes
 
-        /** กำหนดแต่ละส่วนแท็บ **/
-        TabHost.TabSpec tab5 = tabHost.newTabSpec("Diabetes");
-        TabHost.TabSpec tab6 = tabHost.newTabSpec("Kidney");
-        TabHost.TabSpec tab7 = tabHost.newTabSpec("Pressure");
+    public void ClickKidney(View view) {
+        startActivity(new Intent(DiseaseUser.this,Kidney.class));
+    }//ClickKidney
 
-        /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab5 **/
-        tab5.setIndicator("Diabetes");
-        //tab5.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
-        tab5.setContent(new Intent(this, Diabetes.class));
+    public void ClickPressure(View view) {
+        startActivity(new Intent(DiseaseUser.this,Pressure.class));
+    }//ClickPressure
 
-        /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab6 **/
-        tab6.setIndicator("Kidney");
-        //tab6.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
-        tab6.setContent(new Intent(this, Kidney.class));
-
-        /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab7 **/
-        tab7.setIndicator("Pressure");
-        //tab7.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
-        tab7.setContent(new Intent(this, Pressure.class));
-
-
-
-        tabHost.addTab(tab5);
-        tabHost.addTab(tab6);
-        tabHost.addTab(tab7);
-
-
-
-    }//OnCreate
-
-
-}//MainClass
+}//Maina Class
