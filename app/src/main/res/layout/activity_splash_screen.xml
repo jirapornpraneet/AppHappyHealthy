@@ -4,9 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.SplashScreen"
-    android:background="#f58b8b">
+    android:background="#ffa1a1">
 
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true">
 
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:id="@+id/imageView9"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="130dp"
+            android:focusable="false"
+            android:background="@drawable/bglogo" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="130dp"
+            android:id="@+id/imageView10"
+            android:background="@drawable/fontlogo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="220dp" />
+    </LinearLayout>
 </RelativeLayout>
