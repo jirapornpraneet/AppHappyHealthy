@@ -19,10 +19,9 @@ import java.io.IOException;
 public class Diabetes extends AppCompatActivity {
 
     //การประกาศตัวแปร
-    private EditText UH_date,UH_time, UH_costsugar;
-    private double costsugarDouble;
-    private int dateInt, timeInt;
-    private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_user.php";
+    private EditText D_date,D_time,D_costSugar;
+    private String  dateString,timeString,costSugarString ;
+    private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_diabetes.php";
 
 
 
@@ -34,9 +33,9 @@ public class Diabetes extends AppCompatActivity {
 
 
         //Bind wiget
-        UH_date = (EditText) findViewById(R.id.UH_date);
-        UH_time = (EditText) findViewById(R.id.UH_time);
-        UH_costsugar = (EditText) findViewById(R.id.UH_costsugar);
+        D_date = (EditText) findViewById(R.id.D_date);
+        D_time = (EditText) findViewById(R.id.D_time);
+        D_costSugar = (EditText) findViewById(R.id.D_costSugar);
 
 
     }////main method
@@ -44,23 +43,33 @@ public class Diabetes extends AppCompatActivity {
     public void ClickDisLevelsSugar(View view) {
 
         //get value edit tezt
-        dateInt = UH_date.getText().toString().trim();
-        timeInt = UH_time.getText().toString().trim();
-        costsugarDouble = UH_costsugar.getText().toString().trim();
+        dateString = D_date.getText().toString().trim();
+        timeString = D_time.getText().toString().trim();
+        costSugarString = D_costSugar.getText().toString().trim();
 
-        //updatetoserver
-        updateNewUserToServer();
-        startActivity(new Intent(Diabetes.this,DisplayUser.class));
 
-    }
+        //Checkspace
+        if (dateString.equals("") || timeString.equals("") || costSugarString.equals("")) {
+            MyAlert myAlert = new MyAlert();
+            myAlert.myDialog(this, "เบาหวาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");
 
-    private void updateNewUserToServer() {
+
+        }else  {
+            //Checked
+            updateNewDiabetesToServer();
+            startActivity(new Intent(Diabetes.this,DisplayUser.class));
+
+
+        }
+    }//Click
+
+    private void updateNewDiabetesToServer() {
         OkHttpClient okHttpClient = new OkHttpClient();
         RequestBody requestBody = new FormEncodingBuilder()
                 .add("isAdd", "true")
-                .add("UH_date", dateInt)
-                .add("UH_time", timeInt)
-                .add("UH_costsugar", costsugarDouble)
+                .add("D_date", dateString)
+                .add("D_time", timeString)
+                .add("D_costSugar", costSugarString)
                 .build();
         Request.Builder builder = new Request.Builder();
         Request request = builder.url(urlPHP).post(requestBody).build();

@@ -57,6 +57,8 @@ public class DataUser extends AppCompatActivity {
                         sexString = "1";
                         break;
                 }
+
+
             }
         });
 
@@ -94,7 +96,7 @@ public class DataUser extends AppCompatActivity {
 
         OkHttpClient okHttpClient = new OkHttpClient();
         RequestBody requestBody = new FormEncodingBuilder()
-                .add("isAdd", "true")
+                .add("isAdd","true")
                 .add("User_name", nameString)
                 .add("User_age", ageString)
                 .add("User_weight", weightString)

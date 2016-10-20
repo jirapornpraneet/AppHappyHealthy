@@ -73,7 +73,7 @@
                 android:layout_height="35dp"
                 android:inputType="date|text"
                 android:ems="10"
-                android:id="@+id/UH_date"
+                android:id="@+id/K_date"
                 android:layout_weight="2"
                 android:textColor="#fffefe"
                 android:background="#2c3743"
@@ -110,7 +110,7 @@
                 android:layout_height="35dp"
                 android:inputType="date|text"
                 android:ems="10"
-                android:id="@+id/UH_time"
+                android:id="@+id/K_time"
                 android:layout_weight="2"
                 android:textColor="#fffefe"
                 android:background="#2c3743"
@@ -148,7 +148,7 @@
                 android:layout_height="35dp"
                 android:inputType="date|text"
                 android:ems="10"
-                android:id="@+id/UH_costgfr"
+                android:id="@+id/K_costGFR"
                 android:layout_weight="2"
                 android:textColor="#fffefe"
                 android:background="#2c3743"
@@ -165,7 +165,8 @@
             android:text="New Button"
             android:id="@+id/button2"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:onClick="ClickDisLevelsGFR" />
 
     </LinearLayout>
 
