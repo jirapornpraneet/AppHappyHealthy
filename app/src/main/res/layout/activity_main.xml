@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.example.nut.happyhealthy.MainActivity">
+    tools:context="com.example.nut.happyhealthy.MainActivity"
+    android:background="#ffe7e7">
 
     <TabHost
         android:layout_width="match_parent"
@@ -20,16 +21,19 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:focusableInTouchMode="false"
                 android:tabStripEnabled="false"
                 android:contextClickable="false"
-                android:focusable="false"></TabWidget>
+                android:focusable="false"
+                android:background="#f67c8c"
+                android:foreground="#f06666"></TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#f4aeae">
 
                <!-- <LinearLayout
                     android:id="@+id/linearLayout"

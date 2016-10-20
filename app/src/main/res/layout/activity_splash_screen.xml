@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.SplashScreen"
-    android:background="#ffa1a1">
+    android:background="#f9baba">
 
 
     <LinearLayout
