@@ -26,7 +26,7 @@
                 android:tabStripEnabled="false"
                 android:contextClickable="false"
                 android:focusable="false"
-                android:background="#f67c8c"
+                android:background="#d52a3b"
                 android:foreground="#f06666"></TabWidget>
 
             <FrameLayout

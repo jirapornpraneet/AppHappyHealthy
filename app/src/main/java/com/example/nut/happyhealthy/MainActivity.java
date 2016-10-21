@@ -34,22 +34,22 @@ public class MainActivity extends TabActivity{
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab1 **/
         tab1.setIndicator("Home");
-        tab1.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
+        tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_home));
         tab1.setContent(new Intent(this, Home.class));
 
          /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab2 **/
         tab2.setIndicator("Food");
-        //tab2.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
+        tab2.setIndicator("", getResources().getDrawable(R.drawable.ic_food));
         tab2.setContent(new Intent(this, Food.class));
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab3 **/
         tab3.setIndicator("Exercise");
-        //tab3.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
+        tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_exe));
         tab3.setContent(new Intent(this, Exercise.class));
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab4 **/
         tab4.setIndicator("User");
-        //tab4.setIndicator("", getResources().getDrawable(R.mipmap.ic_launcher));
+        tab4.setIndicator("", getResources().getDrawable(R.drawable.ic_user));
         tab4.setContent(new Intent(this, User.class));
 
 
