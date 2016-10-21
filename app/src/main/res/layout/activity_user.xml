@@ -7,15 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nut.happyhealthy.User">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="วันนี้คุณบันทึกข้อมูลหรือยัง?"
-        android:id="@+id/textView5"
-        android:textSize="25dp"
-        android:layout_centerHorizontal="true" />
+    tools:context="com.example.nut.happyhealthy.User"
+    android:background="@drawable/bg">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -32,11 +25,6 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
-                android:background="@drawable/heart" />
         </LinearLayout>
 
     </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#fdaccb">
+    android:background="@drawable/bg">
 
 
     <TextView

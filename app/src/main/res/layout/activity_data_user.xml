@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.DataUser"
-    android:background="#ff2d38">
+    android:background="@drawable/bg">
 
 
     <TextView
@@ -13,77 +13,83 @@
         android:text="ข้อมูลผู้ใช้งาน"
         android:id="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
         android:textSize="25dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="บันทึกข้อมูล"
         android:id="@+id/button"
         android:onClick="ClickDisPlay"
         android:nestedScrollingEnabled="false"
         android:layout_marginLeft="140dp"
-        android:layout_marginTop="350dp" />
+        android:layout_marginTop="400dp"
+        android:background="#f14949" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="150dp"
         android:layout_marginBottom="150dp"
         android:background="#ff2d38">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="ชื่อผู้ใช้ :"
                 android:id="@+id/nametext"
-                android:layout_weight="1"
-                android:textSize="20dp"
-                android:layout_marginLeft="30dp"
+                android:textSize="14dp"
                 android:textColor="#ffffff"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                android:textIsSelectable="false"
+                android:layout_weight="1"
+                android:layout_marginLeft="60dp" />
 
             <EditText
-                android:layout_width="0dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/User_name"
-                android:layout_weight="2"
                 android:textColor="#fffefe"
                 android:background="#f1202b"
                 android:editable="true"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="5dp" />
+                android:layout_marginRight="115dp"
+                android:layout_weight="0.59" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="เพศ :"
                 android:id="@+id/sextext"
-                android:textSize="20dp"
-                android:layout_marginLeft="56dp"
-                android:textColor="#ffffff" />
+                android:textSize="14dp"
+                android:layout_marginLeft="78dp"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false" />
 
             <RadioGroup
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:id="@+id/User_sex"
-                android:layout_marginLeft="28dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1">
 
@@ -114,29 +120,31 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="อายุ :"
                 android:id="@+id/agetext"
-                android:textSize="20dp"
+                android:textSize="14dp"
                 android:layout_weight="1"
-                android:layout_marginLeft="56dp"
-                android:textColor="#ffffff" />
+                android:layout_marginLeft="75dp"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:inputType="number|text"
                 android:ems="10"
                 android:id="@+id/User_age"
                 android:layout_weight="2"
-                android:layout_marginLeft="40dp"
                 android:textColor="#ffffff"
                 android:background="#f1202b"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="110dp" />
 
         </LinearLayout>
 
@@ -144,58 +152,62 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" >
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="น้ำหนัก :"
                 android:id="@+id/weighttext"
-                android:textSize="20dp"
+                android:textSize="14dp"
                 android:layout_weight="1"
-                android:layout_marginLeft="30dp"
-                android:textColor="#ffffff" />
+                android:layout_marginLeft="60dp"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:inputType="date|text"
                 android:ems="10"
                 android:id="@+id/User_weight"
                 android:layout_weight="2"
-                android:layout_marginLeft="40dp"
                 android:textColor="#fffefe"
                 android:background="#f1202b"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="110dp" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ส่วนสูง :"
                 android:id="@+id/heightext"
-                android:textSize="20dp"
+                android:textSize="14dp"
                 android:layout_weight="1"
-                android:layout_marginLeft="33dp"
-                android:textColor="#ffffff" />
+                android:layout_marginLeft="60dp"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:inputType="date|text"
                 android:ems="10"
                 android:id="@+id/User_height"
                 android:layout_weight="2"
-                android:layout_marginLeft="40dp"
                 android:textColor="#fffefe"
-                android:background="#f1202b" />
+                android:background="#f1202b"
+                android:layout_marginRight="110dp" />
         </LinearLayout>
 
     </LinearLayout>

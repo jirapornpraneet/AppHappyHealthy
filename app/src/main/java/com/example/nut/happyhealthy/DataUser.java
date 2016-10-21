@@ -35,6 +35,8 @@ public class DataUser extends AppCompatActivity {
         setContentView(R.layout.activity_data_user);
 
 
+
+
         //Bind wiget
         User_name = (EditText) findViewById(R.id.User_name);
         User_age = (EditText) findViewById(R.id.User_age);

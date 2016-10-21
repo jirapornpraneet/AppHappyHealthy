@@ -1,6 +1,7 @@
 package com.example.nut.happyhealthy;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,13 @@ public class User extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("สวัสดี");
+        builder.setMessage("วันนี้คุณบันทึกข้อมูล" +
+                "สุขภาพของคุณหรือยัง?");
+        builder.setPositiveButton("OK", null);
+        builder.show();
 
 
 
