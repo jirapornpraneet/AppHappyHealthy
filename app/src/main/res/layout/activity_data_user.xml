@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="ชื่อผู้ใช้ :"
                 android:id="@+id/nametext"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textColor="#000000"
                 android:layout_marginTop="20dp"
                 android:textIsSelectable="false"
@@ -55,7 +55,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="115dp"
                 android:layout_weight="0.59"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:text="เพศ :"
                 android:id="@+id/sextext"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:layout_marginLeft="78dp"
                 android:textColor="#FF000000"
                 android:textIsSelectable="false" />
@@ -94,7 +94,7 @@
                     android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:checked="false"
-                    android:textSize="14dp" />
+                    android:textSize="16dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                     android:background="#f7c2c2"
                     android:layout_weight="1"
                     android:layout_marginLeft="20dp"
-                    android:textSize="14dp" />
+                    android:textSize="16dp" />
             </RadioGroup>
 
         </LinearLayout>
@@ -123,9 +123,9 @@
                 android:layout_height="wrap_content"
                 android:text="อายุ :"
                 android:id="@+id/agetext"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:layout_weight="1"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="78dp"
                 android:textColor="#FF000000"
                 android:textIsSelectable="false" />
 
@@ -139,7 +139,7 @@
                 android:textColor="#000000"
                 android:background="#f7c2c2"
                 android:layout_marginRight="110dp"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
 
         </LinearLayout>
 
@@ -156,9 +156,9 @@
                 android:layout_height="wrap_content"
                 android:text="น้ำหนัก :"
                 android:id="@+id/weighttext"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:layout_weight="1"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="57dp"
                 android:textColor="#FF000000"
                 android:textIsSelectable="false" />
 
@@ -173,7 +173,7 @@
                 android:background="#f7c2c2"
                 android:layout_marginRight="110dp"
                 android:autoText="false"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:text="ส่วนสูง :"
                 android:id="@+id/heightext"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="60dp"
                 android:textColor="#FF000000"
@@ -205,7 +205,7 @@
                 android:textColor="#fffefe"
                 android:background="#f7c2c2"
                 android:layout_marginRight="110dp"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
         <LinearLayout
