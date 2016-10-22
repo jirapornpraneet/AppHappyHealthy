@@ -7,39 +7,28 @@
     android:background="@drawable/bg">
 
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ข้อมูลผู้ใช้งาน"
-        android:id="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:textSize="25dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="บันทึกข้อมูล"
-        android:id="@+id/button"
-        android:onClick="ClickDisPlay"
-        android:nestedScrollingEnabled="false"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="400dp"
-        android:background="#f14949" />
+        android:id="@+id/imageView2"
+        android:background="@drawable/userdatahead"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="13dp" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="260dp"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="150dp"
-        android:background="#ff2d38">
+        android:background="#6effffff"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
 
@@ -49,7 +38,7 @@
                 android:text="ชื่อผู้ใช้ :"
                 android:id="@+id/nametext"
                 android:textSize="14dp"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:layout_marginTop="20dp"
                 android:textIsSelectable="false"
                 android:layout_weight="1"
@@ -59,8 +48,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/User_name"
-                android:textColor="#fffefe"
-                android:background="#f1202b"
+                android:textColor="#000000"
+                android:background="#f7c2c2"
                 android:editable="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="115dp"
@@ -82,7 +71,7 @@
                 android:id="@+id/sextext"
                 android:textSize="14dp"
                 android:layout_marginLeft="78dp"
-                android:textColor="#ffffff"
+                android:textColor="#FF000000"
                 android:textIsSelectable="false" />
 
             <RadioGroup
@@ -98,18 +87,19 @@
                     android:layout_height="wrap_content"
                     android:text="man"
                     android:id="@+id/man"
-                    android:textColor="#ffffff"
-                    android:background="#f1202b"
+                    android:textColor="#000000"
+                    android:background="#f7c2c2"
                     android:layout_weight="1"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:checked="false" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="woman"
                     android:id="@+id/woman"
-                    android:textColor="#ffffff"
-                    android:background="#f1202b"
+                    android:textColor="#000000"
+                    android:background="#f7c2c2"
                     android:layout_weight="1"
                     android:layout_marginLeft="20dp" />
             </RadioGroup>
@@ -132,7 +122,7 @@
                 android:textSize="14dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="75dp"
-                android:textColor="#ffffff"
+                android:textColor="#FF000000"
                 android:textIsSelectable="false" />
 
             <EditText
@@ -142,8 +132,8 @@
                 android:ems="10"
                 android:id="@+id/User_age"
                 android:layout_weight="2"
-                android:textColor="#ffffff"
-                android:background="#f1202b"
+                android:textColor="#000000"
+                android:background="#f7c2c2"
                 android:layout_marginRight="110dp" />
 
         </LinearLayout>
@@ -164,7 +154,7 @@
                 android:textSize="14dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="60dp"
-                android:textColor="#ffffff"
+                android:textColor="#FF000000"
                 android:textIsSelectable="false" />
 
             <EditText
@@ -174,9 +164,10 @@
                 android:ems="10"
                 android:id="@+id/User_weight"
                 android:layout_weight="2"
-                android:textColor="#fffefe"
-                android:background="#f1202b"
-                android:layout_marginRight="110dp" />
+                android:textColor="#000000"
+                android:background="#f7c2c2"
+                android:layout_marginRight="110dp"
+                android:autoText="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -195,7 +186,7 @@
                 android:textSize="14dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="60dp"
-                android:textColor="#ffffff"
+                android:textColor="#FF000000"
                 android:textIsSelectable="false" />
 
             <EditText
@@ -206,8 +197,25 @@
                 android:id="@+id/User_height"
                 android:layout_weight="2"
                 android:textColor="#fffefe"
-                android:background="#f1202b"
+                android:background="#f7c2c2"
                 android:layout_marginRight="110dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:background="@drawable/savedatauser"
+                android:layout_marginLeft="110dp" />
         </LinearLayout>
 
     </LinearLayout>
