@@ -44,7 +44,7 @@
             <EditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:inputType="date|text"
+                android:inputType="date"
                 android:ems="10"
                 android:id="@+id/K_date"
                 android:textColor="#000000"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="เวลาที่บันทึก :"
-                android:id="@+id/textView11"
+                android:id="@+id/timekidney"
                 android:textSize="16dp"
                 android:layout_marginLeft="50dp"
                 android:textColor="#000000" />
@@ -73,7 +73,7 @@
             <EditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:inputType="date|text"
+                android:inputType="time"
                 android:ems="10"
                 android:id="@+id/K_time"
                 android:textColor="#000000"
@@ -111,7 +111,7 @@
             <EditText
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:inputType="date|text"
+                android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/K_costGFR"
                 android:textColor="#000000"

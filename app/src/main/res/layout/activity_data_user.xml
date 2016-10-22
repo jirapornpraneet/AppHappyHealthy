@@ -44,6 +44,7 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
+                android:inputType="textPersonName"
                 android:id="@+id/User_name"
                 android:textColor="#000000"
                 android:background="#f7c2c2"
@@ -124,7 +125,7 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:inputType="number|text"
+                android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_age"
                 android:layout_weight="2"
@@ -155,7 +156,7 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:inputType="date|text"
+                android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/User_weight"
                 android:layout_weight="2"
@@ -186,11 +187,11 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:inputType="date|text"
+                android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_height"
                 android:layout_weight="2"
-                android:textColor="#fffefe"
+                android:textColor="#010101"
                 android:background="#f7c2c2"
                 android:layout_marginRight="110dp"
                 android:textSize="16dp" />
