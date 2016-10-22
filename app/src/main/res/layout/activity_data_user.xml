@@ -12,26 +12,23 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
         android:background="@drawable/userdatahead"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="13dp" />
+        android:layout_marginLeft="70dp" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_marginTop="150dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="140dp"
         android:layout_marginBottom="150dp"
         android:background="#6effffff"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="0dp"
@@ -40,7 +37,6 @@
                 android:id="@+id/nametext"
                 android:textSize="16dp"
                 android:textColor="#000000"
-                android:layout_marginTop="20dp"
                 android:textIsSelectable="false"
                 android:layout_weight="1"
                 android:layout_marginLeft="60dp" />
@@ -52,7 +48,6 @@
                 android:textColor="#000000"
                 android:background="#f7c2c2"
                 android:editable="true"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="115dp"
                 android:layout_weight="0.59"
                 android:textSize="16dp" />
@@ -63,7 +58,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
 
             <TextView
@@ -114,9 +108,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginTop="17dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -147,9 +139,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginTop="17dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -180,9 +170,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp">
+            android:layout_marginTop="17dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -208,25 +196,39 @@
                 android:textSize="16dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_gravity="center_vertical">
+            android:id="@+id/imageButton"
+            android:background="@drawable/savedatauser"
+            android:layout_marginLeft="130dp"
+            android:onClick="ClickDisPlay"
+            android:layout_marginTop="10dp" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton"
-                android:background="@drawable/savedatauser"
-                android:layout_marginLeft="110dp"
-                android:onClick="ClickDisPlay" />
-        </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:weightSum="1">
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="238dp"
+        android:layout_height="68dp"
+        android:id="@+id/imageView11"
+        android:background="@drawable/waringuser"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_marginBottom="85dp" />
 
 
 </RelativeLayout>
