@@ -222,7 +222,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton"
                 android:background="@drawable/savedatauser"
-                android:layout_marginLeft="110dp" />
+                android:layout_marginLeft="110dp"
+                android:onClick="ClickDisPlay" />
         </LinearLayout>
 
     </LinearLayout>
