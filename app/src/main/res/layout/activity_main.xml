@@ -26,7 +26,7 @@
                 android:tabStripEnabled="false"
                 android:contextClickable="false"
                 android:focusable="false"
-                android:background="#d52a3b"
+                android:background="#c83542"
                 android:foreground="#f06666"></TabWidget>
 
             <FrameLayout
@@ -53,6 +53,9 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"></LinearLayout>-->
             </FrameLayout>
+
+
         </LinearLayout>
     </TabHost>
+
 </LinearLayout>

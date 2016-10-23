@@ -28,35 +28,32 @@ public class MainActivity extends TabActivity{
 
         /** กำหนดแต่ละส่วนแท็บ **/
         TabHost.TabSpec tab1 = tabHost.newTabSpec("Home");
-        TabHost.TabSpec tab2 = tabHost.newTabSpec("Food");
-        TabHost.TabSpec tab3 = tabHost.newTabSpec("Exercise");
-        TabHost.TabSpec tab4 = tabHost.newTabSpec("User");
+        TabHost.TabSpec tab2 = tabHost.newTabSpec("User");
+        TabHost.TabSpec tab3 = tabHost.newTabSpec("IntroHealthy");
+
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab1 **/
         tab1.setIndicator("Home");
         tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_home));
         tab1.setContent(new Intent(this, Home.class));
 
-         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab2 **/
-        tab2.setIndicator("Food");
-        tab2.setIndicator("", getResources().getDrawable(R.drawable.ic_food));
-        tab2.setContent(new Intent(this, Food.class));
+
+        /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab2 **/
+        tab2.setIndicator("User");
+        tab2.setIndicator("", getResources().getDrawable(R.drawable.ic_user));
+        tab2.setContent(new Intent(this, User.class));
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab3 **/
-        tab3.setIndicator("Exercise");
-        tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_exe));
-        tab3.setContent(new Intent(this, Exercise.class));
+        tab3.setIndicator("IntroHealthy");
+        tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_healthy));
+        tab3.setContent(new Intent(this, IntroHealthy.class));
 
-        /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab4 **/
-        tab4.setIndicator("User");
-        tab4.setIndicator("", getResources().getDrawable(R.drawable.ic_user));
-        tab4.setContent(new Intent(this, User.class));
 
 
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
-        tabHost.addTab(tab4);
+
 
     }//OnCreate
 
