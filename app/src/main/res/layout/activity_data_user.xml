@@ -17,7 +17,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="265dp"
         android:layout_marginTop="140dp"
         android:layout_marginBottom="150dp"
         android:background="#6effffff"
@@ -197,14 +197,13 @@
                 android:textSize="16dp" />
         </LinearLayout>
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
+            android:id="@+id/imageView13"
             android:background="@drawable/savedatauser"
-            android:layout_marginLeft="130dp"
-            android:onClick="ClickDisPlay"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="20dp"
+            android:onClick="ClickDisPlay" />
 
 
     </LinearLayout>

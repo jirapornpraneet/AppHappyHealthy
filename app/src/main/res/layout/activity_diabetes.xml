@@ -112,13 +112,12 @@
 
         </LinearLayout>
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
+            android:id="@+id/imageView13"
             android:background="@drawable/savedatauser"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:onClick="ClickDisPlay" />
 
     </LinearLayout>
