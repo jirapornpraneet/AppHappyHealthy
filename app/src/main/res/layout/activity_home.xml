@@ -4,7 +4,20 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.Home"
-    android:background="@drawable/bg">
+    android:background="#ffe1e3">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingLeft="@dimen/z2_margin_bigspace"
+        android:paddingRight="@dimen/z2_margin_bigspace"
+        android:text="day+month+year"
+        android:id="@+id/showDate"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/my_border_black"
+        android:layout_marginTop="40dp"
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -12,20 +25,19 @@
         android:weightSum="1">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dp"
-            android:layout_marginBottom="150dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:weightSum="1"
+            android:gravity="center">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="258dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView5"
-                android:background="@drawable/pp" />
+                android:background="@drawable/pie"
+                android:layout_weight="0.25" />
         </LinearLayout>
 
     </LinearLayout>
@@ -39,7 +51,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView"
             android:background="@drawable/food"
             android:layout_weight="0.5"
@@ -47,7 +59,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView14"
             android:background="@drawable/exe"
             android:layout_weight="0.5"
