@@ -53,7 +53,6 @@ public class Diabetes extends AppCompatActivity {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         txtTime.setText(i + ":" + i1);
-
                     }
                 }, hour, minute, true);
                 timePickerDialog.setTitle("เลือกเวลา");
@@ -61,13 +60,15 @@ public class Diabetes extends AppCompatActivity {
             }
         });//setTimepicker
 
+
+
         txtDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(Diabetes.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        txtDate.setText(i2 + "-" + i1 + "-" + i);
+                        txtDate.setText(i + "-" + i1 + "-" + i2);
                     }
                 }, day, month, year);
                 datePickerDialog.setTitle("เลือกวันที่");

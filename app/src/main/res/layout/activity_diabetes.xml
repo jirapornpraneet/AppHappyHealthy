@@ -118,7 +118,7 @@
             android:id="@+id/imageView13"
             android:background="@drawable/savedatauser"
             android:layout_marginTop="20dp"
-            android:onClick="ClickDisPlay" />
+            android:onClick="ClickDisLevelsSugar" />
 
     </LinearLayout>
 
