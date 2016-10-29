@@ -3,17 +3,36 @@ package com.example.nut.happyhealthy;
 import android.app.AlertDialog;
 import android.app.TabActivity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TabHost;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity{
 
+    //ประกาศตัวแปร ตารางใน database
+    private UserTABLE objUserTABLE;
+    private DiabetesTABLE objdiabetesTABLE;
+    private BloodSugarTABLE objbloodSugarTABLE;
+    private KidneyTABLE objkidneyTABLE;
+    private KidneyLevelsTABLE objkidneyLevelsTABLE;
+    private PressureTABLE objpressureTABLE;
+    private BloodPressureTABLE objbloodPressureTABLE;
+    private FoodTypeTABLE objfoodTypeTABLE;
+    private FoodTABLE objfoodTABLE;
+    private ExerciseTypeTABLE objexerciseTypeTABLE;
+    private ExerciseTABLE objexerciseTABLE;
+    private ExerciseHistoryTABLE objexerciseHistoryTABLE;
+    private FoodHistoryTABLE objfoodHistoryTABLE;
+    private TimeTABLE objTimeTABLE;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        connectedDatabase();
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -56,5 +75,28 @@ public class MainActivity extends TabActivity{
 
 
     }//OnCreate
+
+    private void connectedDatabase() {
+
+
+        objUserTABLE = new UserTABLE(this);
+        objdiabetesTABLE = new DiabetesTABLE(this);
+        objdiabetesTABLE = new DiabetesTABLE(this);
+        objbloodSugarTABLE = new BloodSugarTABLE(this);
+        objkidneyTABLE = new KidneyTABLE(this);
+        objkidneyLevelsTABLE = new KidneyLevelsTABLE(this);
+        objpressureTABLE = new PressureTABLE(this);
+        objbloodPressureTABLE = new BloodPressureTABLE(this);
+        objfoodTypeTABLE = new FoodTypeTABLE(this);
+        objfoodTABLE = new FoodTABLE(this);
+        objexerciseTypeTABLE = new ExerciseTypeTABLE(this);
+        objexerciseTABLE = new ExerciseTABLE(this);
+        objexerciseHistoryTABLE = new ExerciseHistoryTABLE(this);
+        objfoodHistoryTABLE = new FoodHistoryTABLE(this);
+        objTimeTABLE = new TimeTABLE(this);
+
+
+
+    }//connectedDatabase
 
 }//MainClass

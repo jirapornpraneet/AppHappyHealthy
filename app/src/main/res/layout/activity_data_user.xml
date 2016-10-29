@@ -12,14 +12,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
         android:background="@drawable/userdatahead"
-        android:layout_marginLeft="70dp" />
+        android:layout_marginLeft="90dp" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="265dp"
+        android:layout_height="270dp"
         android:layout_marginTop="140dp"
-        android:layout_marginBottom="150dp"
         android:background="#6effffff"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
@@ -45,7 +44,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:id="@+id/User_name"
+                android:id="@+id/User_Name"
                 android:textColor="#000000"
                 android:background="#f7c2c2"
                 android:editable="true"
@@ -66,16 +65,16 @@
                 android:layout_height="wrap_content"
                 android:text="เพศ :"
                 android:id="@+id/sextext"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:layout_marginLeft="78dp"
                 android:textColor="#FF000000"
                 android:textIsSelectable="false" />
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:id="@+id/User_sex"
+                android:id="@+id/User_Sex"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1">
 
@@ -89,7 +88,7 @@
                     android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:checked="false"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -114,8 +113,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="อายุ :"
-                android:id="@+id/agetext"
+                android:text="วันเกิด :"
+                android:id="@+id/birthdaytext"
                 android:textSize="16dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="78dp"
@@ -127,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/User_age"
+                android:id="@+id/User_BirthDay"
                 android:layout_weight="2"
                 android:textColor="#000000"
                 android:background="#f7c2c2"
@@ -158,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/User_weight"
+                android:id="@+id/User_History_Weight"
                 android:layout_weight="2"
                 android:textColor="#000000"
                 android:background="#f7c2c2"
@@ -189,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/User_height"
+                android:id="@+id/User_Height"
                 android:layout_weight="2"
                 android:textColor="#010101"
                 android:background="#f7c2c2"
@@ -197,38 +196,23 @@
                 android:textSize="16dp" />
         </LinearLayout>
 
-        <ImageView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView13"
-            android:background="@drawable/savedatauser"
-            android:layout_marginTop="20dp"
-            android:onClick="ClickDisPlay" />
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView16"
+                android:layout_weight="1"
+                android:background="@drawable/savedatauser"
+                android:onClick="ClickDisPlay" />
+        </LinearLayout>
 
 
     </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="324dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:weightSum="1">
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="238dp"
-        android:layout_height="68dp"
-        android:id="@+id/imageView11"
-        android:background="@drawable/waringuser"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/imageView2"
-        android:layout_alignEnd="@+id/imageView2"
-        android:layout_marginBottom="85dp" />
 
 
 </RelativeLayout>

@@ -25,12 +25,12 @@
         <activity android:name=".Home" />
         <activity android:name=".IntroHealthy" />
         <activity android:name=".User" />
-        <activity android:name=".DataUser" />
         <activity android:name=".DisplayUser" />
         <activity android:name=".Diabetes" />
         <activity android:name=".Kidney" />
         <activity android:name=".Pressure" />
-        <activity android:name=".DiseaseUser"></activity>
+        <activity android:name=".DiseaseUser" />
+        <activity android:name=".DataUser" />
     </application>
 
 </manifest>
