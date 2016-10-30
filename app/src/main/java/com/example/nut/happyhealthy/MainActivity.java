@@ -35,13 +35,6 @@ public class MainActivity extends TabActivity{
         connectedDatabase();
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("ยินดีต้อนรับ");
-        builder.setMessage("กรุณาบอกข้อมูลเกี่ยวกับท่าน" +
-                "ก่อนเริ่มต้นใช้งานแอพพลิเคชชั่นนะค่ะ");
-        builder.setPositiveButton("OK", null);
-        builder.show();
-
         /** Pegando id tabhost **/
         TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
 

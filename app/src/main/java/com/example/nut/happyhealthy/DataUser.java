@@ -134,7 +134,6 @@ public class DataUser extends AppCompatActivity {
             showAlertSex();
 
 
-
         }//ClickDisPlay
     }
 
@@ -188,32 +187,6 @@ public class DataUser extends AppCompatActivity {
         UpdateUsertoSQLite();
 
 
-
-
-
-        /***AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("บันทึกข้อมูลผู้ใช้?");
-        builder.setMessage("ชื่อผู้ใช้ =" + strName  + "\n" + "เพศผู้ใช้ = "+ strSex + "\n" +
-                            "วันเกิดผู้ใช้ =" + intAge  + "\n" +
-                            "น้ำหนักผู้ใช้ =" + douWeight  + "\n" +
-                            "ส่วนสูงผู้ใช้ =" + intHeight  );
-        builder.setCancelable(false);
-        builder.setNegativeButton("cancle", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                UpdateUsertoSQLite();
-
-            }
-        });
-        builder.show();**/
-
-
     }//confirmData
 
     private void UpdateUsertoSQLite() {
@@ -226,10 +199,10 @@ public class DataUser extends AppCompatActivity {
         User_Height.setText("");
         User_Weight.setText("");
         Toast.makeText(DataUser.this,"Update finish",Toast.LENGTH_SHORT).show();
-        /**WeightTABLE weightTABLE = new WeightTABLE(this);
-        long inSertData = weightTABLE.addNewValueToSQLite(strshowdate, Double.parseDouble(strweight));
-        edtWeight.setText("");
-        Toast.makeText(FormRecordWeightActivity.this,"Update data finish",Toast.LENGTH_SHORT).show();**/
+        Intent objIntent = new Intent(DataUser.this, DiseaseUser.class);
+        startActivity(objIntent);
+        finish();
+
     }//UpdateUsertoSQLite
 
 
@@ -259,11 +232,6 @@ public class DataUser extends AppCompatActivity {
 
         return intResult;
     }
-
-
-
-
-
 
 
     private boolean checkChoose() {
