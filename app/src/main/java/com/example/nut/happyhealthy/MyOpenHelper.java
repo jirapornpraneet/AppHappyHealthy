@@ -18,12 +18,11 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     private static final String USER = "create table  USER (User_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "User_Name text, " +
             "User_Sex text, " +
-            "User_BirthDay text, " +
+            "User_Age integer, " +
             "User_Height integer, " +
             "User_Weight double, " +
-            "User_BMR integer, " +
-            "User_BMI double, " +
-            "User_Disease text);";
+            "User_BMR double, " +
+            "User_BMI double);";
 
     //CreateTableDiabetes
     private static final String Diabetes = "create table Diabetes (D_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +

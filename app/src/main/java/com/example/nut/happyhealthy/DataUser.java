@@ -1,14 +1,19 @@
 package com.example.nut.happyhealthy;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
@@ -23,12 +28,13 @@ public class DataUser extends AppCompatActivity {
 
 
     //การประกาศตัวแปร
-    private EditText User_Name, User_BirthDay, User_History_Weight, User_Height;
+    private UserTABLE objUserTABLE;
+    private EditText User_Name, User_Age, User_Weight, User_Height;
     private RadioGroup User_Sex;
     private RadioButton man, woman;
-    private String nameString, birthdayString, weightString, heightString, sexString ;
-    private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_user.php";
-    private static final String urlPHP2 = "http://csnonrmutsb.com/happyhealthy/php_add_user_history.php";
+    private String strName,strSex  = "male",intAge,intHeight,douWeight,douBmr,douBmi;
+
+
 
 
     @Override
@@ -36,9 +42,13 @@ public class DataUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_user);
 
+        connectDataBase();
+
         //เลือกวันเกิด
         //Use the current date as the default date to the picker
-        final Calendar c = Calendar.getInstance();
+
+
+        /**final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
@@ -56,15 +66,24 @@ public class DataUser extends AppCompatActivity {
                 datePickerDialog.setTitle("เลือกวันที่");
                 datePickerDialog.show();
             }
-        });//setdatepicker
+        });//setdatepicker**/
 
 
+        bindWidget();
 
+
+    }//main method
+
+    private void connectDataBase() {
+        objUserTABLE = new UserTABLE(this);
+    }//ConnectDataBase
+
+    private void bindWidget() {
 
         //Bind wiget
         User_Name = (EditText) findViewById(R.id.User_Name);
-        User_BirthDay = (EditText) findViewById(R.id.User_BirthDay);
-        User_History_Weight = (EditText) findViewById(R.id.User_History_Weight);
+        User_Age = (EditText) findViewById(R.id.User_Age);
+        User_Weight = (EditText) findViewById(R.id.User_Weight);
         User_Height = (EditText) findViewById(R.id.User_Height);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
         man = (RadioButton) findViewById(R.id.man);
@@ -77,10 +96,10 @@ public class DataUser extends AppCompatActivity {
                 switch (i) {
 
                     case R.id.man:
-                        sexString = "man";
+                        strSex = "man";
                         break;
                     case R.id.woman:
-                        sexString = "woman";
+                        strSex = "woman";
                         break;
                 }
 
@@ -88,86 +107,162 @@ public class DataUser extends AppCompatActivity {
             }
         });
 
-
-    }//main method
+    }//bindwidget
 
     public void ClickDisPlay(View view) {
 
         //get value edit tezt
-        nameString = User_Name.getText().toString().trim();
-        birthdayString = User_BirthDay.getText().toString().trim();
-        weightString = User_History_Weight.getText().toString().trim();
-        heightString = User_Height.getText().toString().trim();
+        strName = User_Name.getText().toString().trim();
+        intAge = User_Age   .getText().toString().trim();
+        douWeight = User_Weight.getText().toString().trim();
+        intHeight = User_Height.getText().toString().trim();
+        
 
 
         //Checkspace
-        if (nameString.equals("") || birthdayString.equals("") || weightString.equals("") || heightString.equals("")) {
-            MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "ข้อมูลผู้ใช้งาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");
+        if (strName.equals("") || intAge.equals("") || douWeight.equals("") ||intHeight.equals("")) {
+            showAlert();
 
 
         }else if (checkChoose()) {
-            //Checked
-            updateNewUserToServer();
-            updateNewUserHistoryToServer();
-            startActivity(new Intent(DataUser.this,DisplayUser.class));
+            confirmData();
+
+
 
 
         }else {//UnCheck
-            MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this,"ยังไม่เลือกเพศ","กรุณาระบุเพศผู้ใช้งาน");
+            showAlertSex();
+
 
 
         }//ClickDisPlay
     }
 
+    private void showAlertSex() {
 
-    private void updateNewUserToServer() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("ยังไม่เลือกเพศ");
+        builder.setMessage("กรุณาระบุเพศผู้ใช้งาน");
+        builder.setCancelable(false);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
 
-        OkHttpClient okHttpClient = new OkHttpClient();
-        RequestBody requestBody = new FormEncodingBuilder()
-                .add("isAdd","true")
-                .add("User_Name", nameString)
-                .add("User_BirthDay", birthdayString)
-                .add("User_Height", heightString)
-                .add("User_Sex", sexString)
-                .build();
-        Request.Builder builder = new Request.Builder();
-        Request request = builder.url(urlPHP).post(requestBody).build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Request request, IOException e) {
-            }
-            @Override
-            public void onResponse(Response response) throws IOException {
-                finish();
             }
         });
+        builder.show();
+    }//showAlertSex
 
-    }//updateuser
 
-    private void updateNewUserHistoryToServer() {
-        OkHttpClient okHttpClient = new OkHttpClient();
-        RequestBody requestBody = new FormEncodingBuilder()
-                .add("isAdd", "true")
-                .add("User_History_Weight", weightString)
-                .build();
-        Request.Builder builder = new Request.Builder();
-        Request request = builder.url(urlPHP2).post(requestBody).build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
+    private void confirmData() {
+
+        // Find BMI
+        double douweight = Double.parseDouble(douWeight);
+        double douheight = Double.parseDouble(intHeight);
+        double douAge = Double.parseDouble(intAge);
+
+        double douBMI = douweight / (Math.pow(douheight/100, 2));
+        //  bmiString = Double.toString(douBMI);
+        douBmi = String.format("%.2f", douBMI);
+        Log.d("cal", "Weight = " + douweight);
+        Log.d("cal", "Height = " + douheight);
+        Log.d("cal", "BMI = " + douBmi);
+
+        // Find BMR
+        double douBMR = 0;
+        switch (MaleOrFemale()) {
+            case 0: // male
+                douBMR = 66 + (13.7 * douweight) + (5 * douheight) - (6.8 * douAge);
+                break;
+            case 1: // female
+                douBMR = 665 + (9.6 * douweight) + (1.8 * douheight) - (4.7 * douAge);
+                break;
+        } // switch
+
+
+        douBmr = String.format("%.2f", douBMR);
+
+
+        UpdateUsertoSQLite();
+
+
+
+
+
+        /***AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("บันทึกข้อมูลผู้ใช้?");
+        builder.setMessage("ชื่อผู้ใช้ =" + strName  + "\n" + "เพศผู้ใช้ = "+ strSex + "\n" +
+                            "วันเกิดผู้ใช้ =" + intAge  + "\n" +
+                            "น้ำหนักผู้ใช้ =" + douWeight  + "\n" +
+                            "ส่วนสูงผู้ใช้ =" + intHeight  );
+        builder.setCancelable(false);
+        builder.setNegativeButton("cancle", new DialogInterface.OnClickListener() {
             @Override
-            public void onFailure(Request request, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Response response) throws IOException {
-               finish();
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
         });
-    }//updateuserhistory
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                UpdateUsertoSQLite();
+
+            }
+        });
+        builder.show();**/
+
+
+    }//confirmData
+
+    private void UpdateUsertoSQLite() {
+
+        UserTABLE objUserTABLE = new UserTABLE(this);
+        long inSertDataUser = objUserTABLE.addNewValueToSQLite
+                (strName, strSex,Integer.parseInt(intAge), Integer.parseInt(intHeight), Double.parseDouble(douWeight),Double.parseDouble(douBmr),Double.parseDouble(douBmi));
+        User_Name.setText("");
+        User_Age.setText("");
+        User_Height.setText("");
+        User_Weight.setText("");
+        Toast.makeText(DataUser.this,"Update finish",Toast.LENGTH_SHORT).show();
+        /**WeightTABLE weightTABLE = new WeightTABLE(this);
+        long inSertData = weightTABLE.addNewValueToSQLite(strshowdate, Double.parseDouble(strweight));
+        edtWeight.setText("");
+        Toast.makeText(FormRecordWeightActivity.this,"Update data finish",Toast.LENGTH_SHORT).show();**/
+    }//UpdateUsertoSQLite
+
+
+    private void showAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("ข้อมูลไม่ครบถ้วน");
+        builder.setMessage("กรุณาใส่ข้อมูลให้ครบ");
+        builder.setCancelable(false);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+
+    } //ShowAlert
+    private int MaleOrFemale() {
+
+        int intResult = 0;
+        if (strSex.equals("male")) {
+            intResult = 0;
+        } else {
+            intResult = 1;
+        }
+
+        return intResult;
+    }
+
+
+
+
 
 
 
