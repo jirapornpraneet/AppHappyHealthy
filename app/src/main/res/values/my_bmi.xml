@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="my_alert">
+
+        <item>น้ำหนักน้อยกว่ามาตรฐาน</item>
+        <item>น้ำหนักปกต</item>
+        <item>โรคอ้วนระดับ 1</item>
+        <item>โรคอ้วนระดับ 2</item>
+        <item>โรคอ้วนระดับ 3</item>
+        <item>โรคอ้วนขึ้นสุด</item>
+
+    </string-array>
+
+</resources>

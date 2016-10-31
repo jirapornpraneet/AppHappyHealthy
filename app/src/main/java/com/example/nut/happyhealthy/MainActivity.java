@@ -3,6 +3,8 @@ package com.example.nut.happyhealthy;
 import android.app.AlertDialog;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.TabHost;
 
@@ -33,6 +35,7 @@ public class MainActivity extends TabActivity{
         setContentView(R.layout.activity_main);
 
         connectedDatabase();
+
 
 
         /** Pegando id tabhost **/
@@ -68,6 +71,9 @@ public class MainActivity extends TabActivity{
 
 
     }//OnCreate
+
+
+
 
     private void connectedDatabase() {
 

@@ -32,7 +32,7 @@ public class DataUser extends AppCompatActivity {
     private EditText User_Name, User_Age, User_Weight, User_Height;
     private RadioGroup User_Sex;
     private RadioButton man, woman;
-    private String strName,strSex  = "male",intAge,intHeight,douWeight,douBmr,douBmi;
+    private String strName,strSex  = "male",strAge,intHeight,douWeight,douBmr,douBmi;
 
 
 
@@ -89,6 +89,8 @@ public class DataUser extends AppCompatActivity {
         man = (RadioButton) findViewById(R.id.man);
         woman = (RadioButton) findViewById(R.id.woman);
 
+
+
         //Radio Controller
         User_Sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -113,14 +115,14 @@ public class DataUser extends AppCompatActivity {
 
         //get value edit tezt
         strName = User_Name.getText().toString().trim();
-        intAge = User_Age   .getText().toString().trim();
+        strAge = User_Age   .getText().toString().trim();
         douWeight = User_Weight.getText().toString().trim();
         intHeight = User_Height.getText().toString().trim();
         
 
 
         //Checkspace
-        if (strName.equals("") || intAge.equals("") || douWeight.equals("") ||intHeight.equals("")) {
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") ||intHeight.equals("")) {
             showAlert();
 
 
@@ -160,7 +162,7 @@ public class DataUser extends AppCompatActivity {
         // Find BMI
         double douweight = Double.parseDouble(douWeight);
         double douheight = Double.parseDouble(intHeight);
-        double douAge = Double.parseDouble(intAge);
+        double douAge = Double.parseDouble(strAge);
 
         double douBMI = douweight / (Math.pow(douheight/100, 2));
         //  bmiString = Double.toString(douBMI);
@@ -193,13 +195,13 @@ public class DataUser extends AppCompatActivity {
 
         UserTABLE objUserTABLE = new UserTABLE(this);
         long inSertDataUser = objUserTABLE.addNewValueToSQLite
-                (strName, strSex,Integer.parseInt(intAge), Integer.parseInt(intHeight), Double.parseDouble(douWeight),Double.parseDouble(douBmr),Double.parseDouble(douBmi));
+                (strName, strSex,strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight),Double.parseDouble(douBmr),Double.parseDouble(douBmi));
         User_Name.setText("");
         User_Age.setText("");
         User_Height.setText("");
         User_Weight.setText("");
         Toast.makeText(DataUser.this,"Update finish",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(DataUser.this, DiseaseUser.class);
+        Intent objIntent = new Intent(DataUser.this, DisplayUser.class);
         startActivity(objIntent);
         finish();
 

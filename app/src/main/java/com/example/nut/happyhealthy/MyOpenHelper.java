@@ -11,14 +11,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MyOpenHelper extends SQLiteOpenHelper{
 
     //Explicit
-    private static final String DATABASE_NAME = "DBHappyHealthy.db";
+    public static final String DATABASE_NAME = "DBHappyHealthy.db";
     private static final int DATABASE_VERSION = 1;
 
     //CreateTableUser
     private static final String USER = "create table  USER (User_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "User_Name text, " +
             "User_Sex text, " +
-            "User_Age integer, " +
+            "User_Age text, " +
             "User_Height integer, " +
             "User_Weight double, " +
             "User_BMR double, " +
@@ -146,6 +146,8 @@ public class MyOpenHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        onCreate(db);
 
     }   // onUpgrade
 
