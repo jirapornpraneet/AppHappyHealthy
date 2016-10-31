@@ -29,7 +29,7 @@ public class Pressure extends AppCompatActivity {
     //การประกาศตัวแปร
     private PressureTABLE objpressureTABLE;
     private EditText P_date,P_time,P_costPressureTop,P_costPressureDown;
-    private String  str_P_Date,str_P_Time,intCostPressureLow,intCostPressureHigh;
+    private String  str_P_Date,str_P_Time,intCostPressureDown,intCostPressureTop;
 
 
     @Override
@@ -99,12 +99,12 @@ public class Pressure extends AppCompatActivity {
         //get value edit tezt
         str_P_Date = P_date.getText().toString().trim();
         str_P_Time = P_time.getText().toString().trim();
-        intCostPressureLow = P_costPressureTop.getText().toString().trim();
-        intCostPressureHigh = P_costPressureDown.getText().toString().trim();
+        intCostPressureDown = P_costPressureDown.getText().toString().trim();
+        intCostPressureTop = P_costPressureTop.getText().toString().trim();
 
 
         //Checkspace
-        if (str_P_Date.equals("") || str_P_Time.equals("") || intCostPressureLow.equals("")|| intCostPressureHigh.equals("")) {
+        if (str_P_Date.equals("") || str_P_Time.equals("") || intCostPressureDown.equals("")|| intCostPressureTop.equals("")) {
             showAlert();
 
 
@@ -115,12 +115,20 @@ public class Pressure extends AppCompatActivity {
     }//Click
 
     private void confirmPressure() {
+
+        // Find BMI
+        int  intcostpressuredown = Integer.parseInt(intCostPressureDown);
+        int  intcostpressuretop = Integer.parseInt(intCostPressureTop);
+
+        int IntCostPressureDown = intcostpressuredown;
+        int IntCostPressureTop = intcostpressuretop ;
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage("วันที่ =" + str_P_Date + "\n"
                 + "เวลา = " + str_P_Time + "\n"
-                + "ค่าความดันตัวบนของผู้ใช้งาน = " + intCostPressureLow + "\n"
-                + "ค่าความดันตัวล่างของผู้ใช้งาน = " + intCostPressureHigh);
+                + "ค่าความดันตัวล่างของผู้ใช้งาน = " + intCostPressureDown + "\n"
+                + "ค่าความดันตัวบนของผู้ใช้งาน = " + intCostPressureTop);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
@@ -141,13 +149,13 @@ public class Pressure extends AppCompatActivity {
     private void upDataPressuretoSQLite() {
         PressureTABLE objpressureTABLE = new PressureTABLE(this);
         long inSertDataUser = objpressureTABLE.addNewValueToSQLite
-                (str_P_Date, str_P_Time, Integer.parseInt(intCostPressureLow), Integer.parseInt(intCostPressureHigh));
+                (str_P_Date, str_P_Time, Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop));
         P_date.setText("");
         P_time.setText("");
         P_costPressureTop.setText("");
         P_costPressureDown.setText("");
         Toast.makeText(Pressure.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(Pressure.this, DisplayUser.class);
+        Intent objIntent = new Intent(Pressure.this, DisplayPressure.class);
         startActivity(objIntent);
         finish();
     }// upDataPressuretoSQLit

@@ -52,7 +52,7 @@ public class DisplayDisease extends AppCompatActivity {
     } // Show View
 
     private String findMyLevelDiseaseBefore(String intCostSugarBefore) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease_before);
+        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
 
@@ -60,7 +60,7 @@ public class DisplayDisease extends AppCompatActivity {
             myResult = resultStrings[0];
         } else if (IntCostSugarBefore < 100) {
             myResult = resultStrings[1];
-        } else if (IntCostSugarBefore > 126) {
+        } else if (IntCostSugarBefore < 126) {
             myResult = resultStrings[2];
         } else {
             myResult = resultStrings[3];
@@ -70,7 +70,7 @@ public class DisplayDisease extends AppCompatActivity {
     }//findMyLevelDiseasebefore
 
    private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease_after);
+        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
 
@@ -78,7 +78,7 @@ public class DisplayDisease extends AppCompatActivity {
             myResult = resultStrings[0];
         } else if (IntCostSugarAfter < 199) {
             myResult = resultStrings[1];
-        } else if (IntCostSugarAfter > 200) {
+        } else if (IntCostSugarAfter < 200) {
             myResult = resultStrings[2];
         } else {
             myResult = resultStrings[3];

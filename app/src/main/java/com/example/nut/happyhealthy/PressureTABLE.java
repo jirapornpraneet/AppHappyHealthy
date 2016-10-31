@@ -16,8 +16,8 @@ public class PressureTABLE {
     public static final String Pressure_ID = "P_Id";
     public static final String Pressure_Date = "P_Date";
     public static final String Pressure_Time = "P_Time";
-    public static final String Pressure_CostPressureLow = "P_CostPressureLow";
-    public static final String Pressure_CostPressureHigh = "P_CostPressureHigh";
+    public static final String Pressure_CostPressureDown = "P_CostPressureDown";
+    public static final String Pressure_CostPressureTop = "P_CostPressureTop";
 
 
     public PressureTABLE (Context context) {
@@ -30,13 +30,13 @@ public class PressureTABLE {
 
     //Add New Value
     //Add New Value
-    public long addNewValueToSQLite(String str_P_Date,  String str_P_Time, int intCostPressureLow,int CostPressureHigh) {
+    public long addNewValueToSQLite(String str_P_Date,  String str_P_Time, int intCostPressureDown,int intCostPressureTop) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Pressure_Date, str_P_Date);
         contentValues.put(Pressure_Time, str_P_Time);
-        contentValues.put(Pressure_CostPressureLow, intCostPressureLow);
-        contentValues.put(Pressure_CostPressureHigh, CostPressureHigh);
-        long kidney_id = writeSQLite.insert(Pressure, null, contentValues);
-        return kidney_id;
+        contentValues.put(Pressure_CostPressureDown, intCostPressureDown);
+        contentValues.put(Pressure_CostPressureTop, intCostPressureTop);
+        long pressure_id = writeSQLite.insert(Pressure, null, contentValues);
+        return pressure_id;
     }//Add New Value
 }//MainClass

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_pressure">
+
+        //ค่าความดันตัวบน
+
+        <item>ความดันโลหิตต่ำ</item>
+        <item>ความดันโลหิตปกติ</item>
+        <item>ความดันโลหิตสูงเล็กน้อย</item>
+        <item>ความดันโลหิตสูง</item>
+        <item>ความดันโลหิตสูงมาก</item>
+        <item>ความดันโลหิตสูงมากอันตราย</item>
+    </string-array>
+
+</resources>

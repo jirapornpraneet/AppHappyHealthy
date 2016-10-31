@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="my_disease_after">
+    <string-array name="my_disease">
 
-        //ค่าน้ำตาลในเลือดหลังอาหาร
+        //ค่าน้ำตาลในลือด
 
         <item>น้ำตาลในเลือดต่ำ</item>
         <item>คนปกติ</item>

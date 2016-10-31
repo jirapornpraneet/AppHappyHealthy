@@ -43,8 +43,8 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     private static final String Pressure = "create table Pressure (P_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "P_Date text, " +
             "P_Time text, " +
-            "P_CostPressureLow integer, " +
-            "P_CostPressureHigh integer);";
+            "P_CostPressureDown integer, " +
+            "P_CostPressureTop integer);";
 
 
 
