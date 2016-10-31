@@ -2,13 +2,16 @@ package com.example.nut.happyhealthy;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -24,9 +27,10 @@ import java.util.Calendar;
 public class Pressure extends AppCompatActivity {
 
     //การประกาศตัวแปร
+    private PressureTABLE objpressureTABLE;
     private EditText P_date,P_time,P_costPressureTop,P_costPressureDown;
-    private String  dateString,timeString,PressureTopString,PressureDownString ;
-    private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_pressure.php";
+    private String  str_P_Date,str_P_Time,intCostPressureLow,intCostPressureHigh;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,7 @@ public class Pressure extends AppCompatActivity {
         setContentView(R.layout.activity_pressure);
 
 
-        //Use the current date as the default date to the picker
+        /**Use the current date as the default date to the picker
         final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
@@ -72,7 +76,7 @@ public class Pressure extends AppCompatActivity {
                 datePickerDialog.show();
 
             }
-        });//setdatepicker
+        });//setdatepicker**/
 
 
         //Bind wiget
@@ -81,55 +85,88 @@ public class Pressure extends AppCompatActivity {
         P_costPressureTop = (EditText) findViewById(R.id.P_costPressureTop);
         P_costPressureDown = (EditText) findViewById(R.id.P_costPressureDown);
 
+        connectDataBase();
+
 
     }//Oncreate
+
+    private void connectDataBase() {
+       objpressureTABLE = new PressureTABLE(this);
+    }//ConnectDatabase
 
     public void ClickDisLevelsPre(View view) {
 
         //get value edit tezt
-        dateString = P_date.getText().toString().trim();
-        timeString = P_time.getText().toString().trim();
-        PressureTopString = P_costPressureTop.getText().toString().trim();
-        PressureDownString = P_costPressureDown.getText().toString().trim();
+        str_P_Date = P_date.getText().toString().trim();
+        str_P_Time = P_time.getText().toString().trim();
+        intCostPressureLow = P_costPressureTop.getText().toString().trim();
+        intCostPressureHigh = P_costPressureDown.getText().toString().trim();
 
 
         //Checkspace
-        if (dateString.equals("") || timeString.equals("") || PressureTopString.equals("")|| PressureDownString.equals("")) {
-            MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "ความดัน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");
+        if (str_P_Date.equals("") || str_P_Time.equals("") || intCostPressureLow.equals("")|| intCostPressureHigh.equals("")) {
+            showAlert();
 
 
         }else  {
-            //Checked
-            updateNewPressureToServer();
-            startActivity(new Intent(Pressure.this,DisplayUser.class));
-
+            confirmPressure();
 
         }
     }//Click
 
-    private void updateNewPressureToServer() {
-        OkHttpClient okHttpClient = new OkHttpClient();
-        RequestBody requestBody = new FormEncodingBuilder()
-                .add("isAdd", "true")
-                .add("P_date", dateString)
-                .add("P_time", timeString)
-                .add("P_costPressureTop", PressureTopString)
-                .add("P_costPressureDown", PressureDownString)
-                .build();
-        Request.Builder builder = new Request.Builder();
-        Request request = builder.url(urlPHP).post(requestBody).build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
+    private void confirmPressure() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
+        builder.setMessage("วันที่ =" + str_P_Date + "\n"
+                + "เวลา = " + str_P_Time + "\n"
+                + "ค่าความดันตัวบนของผู้ใช้งาน = " + intCostPressureLow + "\n"
+                + "ค่าความดันตัวล่างของผู้ใช้งาน = " + intCostPressureHigh);
+        builder.setCancelable(false);
+        builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
-            public void onFailure(Request request, IOException e) {
-            }
-            @Override
-            public void onResponse(Response response) throws IOException {
-                finish();
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
         });
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                upDataPressuretoSQLite();
 
-    }//update
+            }
+        });
+        builder.show();
+    }//confirmPressure
+
+    private void upDataPressuretoSQLite() {
+        PressureTABLE objpressureTABLE = new PressureTABLE(this);
+        long inSertDataUser = objpressureTABLE.addNewValueToSQLite
+                (str_P_Date, str_P_Time, Integer.parseInt(intCostPressureLow), Integer.parseInt(intCostPressureHigh));
+        P_date.setText("");
+        P_time.setText("");
+        P_costPressureTop.setText("");
+        P_costPressureDown.setText("");
+        Toast.makeText(Pressure.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
+        Intent objIntent = new Intent(Pressure.this, DisplayUser.class);
+        startActivity(objIntent);
+        finish();
+    }// upDataPressuretoSQLit
+
+    private void showAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("ข้อมูลไม่ครบถ้วน");
+        builder.setMessage("กรุณาใส่ข้อมูลผู้ใช้งานให้ครบ");
+        builder.setCancelable(false);
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+    }//ShowAlert
+
+
 
 }//Main class

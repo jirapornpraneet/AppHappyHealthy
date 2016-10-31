@@ -2,13 +2,16 @@ package com.example.nut.happyhealthy;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -24,19 +27,16 @@ import java.util.Calendar;
 public class Diabetes extends AppCompatActivity {
 
     //การประกาศตัวแปร
+    private DiabetesTABLE objdiabetesTABLE;
     private EditText D_date,D_time,D_costSugar;
-    private String  dateString,timeString,costSugarString ;
-    private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_diabetes.php";
-
-
-
+    private String  str_D_Date,str_D_Time,intCostSugar ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diabetes);
 
-        //Use the current date as the default date to the picker
+        /**Use the current date as the default date to the picker
         final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
@@ -74,9 +74,7 @@ public class Diabetes extends AppCompatActivity {
                 datePickerDialog.setTitle("เลือกวันที่");
                 datePickerDialog.show();
             }
-        });//setdatepicker
-
-
+        });//setdatepicker**/
 
 
         //Bind wiget
@@ -84,53 +82,96 @@ public class Diabetes extends AppCompatActivity {
         D_time = (EditText) findViewById(R.id.D_time);
         D_costSugar = (EditText) findViewById(R.id.D_costSugar);
 
+        connectDataBase();
+
 
     }////main method
+
+    private void connectDataBase() {
+
+        objdiabetesTABLE = new DiabetesTABLE(this);
+
+    }//ConnectDataBase
 
     public void ClickDisLevelsSugar(View view) {
 
         //get value edit tezt
-        dateString = D_date.getText().toString().trim();
-        timeString = D_time.getText().toString().trim();
-        costSugarString = D_costSugar.getText().toString().trim();
+        str_D_Date = D_date.getText().toString().trim();
+        str_D_Time = D_time.getText().toString().trim();
+        intCostSugar = D_costSugar.getText().toString().trim();
 
 
         //Checkspace
-        if (dateString.equals("") || timeString.equals("") || costSugarString.equals("")) {
-            MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "เบาหวาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");
+        if (str_D_Date.equals("") || str_D_Time.equals("") || intCostSugar.equals("")) {
+
+            showAlert();
+
+
+            /**MyAlert myAlert = new MyAlert();
+            myAlert.myDialog(this, "เบาหวาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");**/
 
 
         }else  {
-            //Checked
-            updateNewDiabetesToServer();
-            startActivity(new Intent(Diabetes.this,DisplayUser.class));
+            confirmDiabetes();
 
 
         }
     }//Click
 
-    private void updateNewDiabetesToServer() {
-        OkHttpClient okHttpClient = new OkHttpClient();
-        RequestBody requestBody = new FormEncodingBuilder()
-                .add("isAdd", "true")
-                .add("D_date", dateString)
-                .add("D_time", timeString)
-                .add("D_costSugar", costSugarString)
-                .build();
-        Request.Builder builder = new Request.Builder();
-        Request request = builder.url(urlPHP).post(requestBody).build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
+    private void confirmDiabetes() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
+        builder.setMessage("วันที่ =" + str_D_Date+ "\n"
+                + "เวลา = " + str_D_Time +"\n" +
+                "ค่าน้ำตาลในเลือดของผู้ใช้งาน = " + intCostSugar);
+        builder.setCancelable(false);
+        builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
-            public void onFailure(Request request, IOException e) {
-            }
-            @Override
-            public void onResponse(Response response) throws IOException {
-                finish();
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
         });
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                upDataDiabetestoSQLite();
 
-    }//update
+            }
+        });
+        builder.show();
+    }//ComfirmData
+
+    private void upDataDiabetestoSQLite() {
+
+        DiabetesTABLE objdiabetesTABLE = new DiabetesTABLE(this);
+        long inSertDataUser = objdiabetesTABLE.addNewValueToSQLite
+                (str_D_Date, str_D_Time, Integer.parseInt(intCostSugar));
+        D_date.setText("");
+        D_time.setText("");
+        D_costSugar.setText("");
+        Toast.makeText(Diabetes.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
+        Intent objIntent = new Intent(Diabetes.this, DisplayUser.class);
+        startActivity(objIntent);
+        finish();
+    }//upDataDiabetestoSQLite
+
+    private void showAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("ข้อมูลไม่ครบถ้วน");
+        builder.setMessage("กรุณาใส่ข้อมูลผู้ใช้งานให้ครบ");
+        builder.setCancelable(false);
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+    }//ShowAlert
+
+
+
+
 
 }//Main Class

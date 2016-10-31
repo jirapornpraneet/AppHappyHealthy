@@ -27,7 +27,7 @@ import java.util.Calendar;
 public class DataUser extends AppCompatActivity {
 
 
-    //การประกาศตัวแปร
+    //การประกาศตัวแปรั
     private UserTABLE objUserTABLE;
     private EditText User_Name, User_Age, User_Weight, User_Height;
     private RadioGroup User_Sex;
@@ -75,6 +75,7 @@ public class DataUser extends AppCompatActivity {
     }//main method
 
     private void connectDataBase() {
+
         objUserTABLE = new UserTABLE(this);
     }//ConnectDataBase
 
@@ -115,7 +116,7 @@ public class DataUser extends AppCompatActivity {
 
         //get value edit tezt
         strName = User_Name.getText().toString().trim();
-        strAge = User_Age   .getText().toString().trim();
+        strAge = User_Age.getText().toString().trim();
         douWeight = User_Weight.getText().toString().trim();
         intHeight = User_Height.getText().toString().trim();
 
@@ -146,7 +147,7 @@ public class DataUser extends AppCompatActivity {
         builder.setTitle("ยังไม่เลือกเพศ");
         builder.setMessage("กรุณาระบุเพศผู้ใช้งาน");
         builder.setCancelable(false);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -200,7 +201,7 @@ public class DataUser extends AppCompatActivity {
         User_Age.setText("");
         User_Height.setText("");
         User_Weight.setText("");
-        Toast.makeText(DataUser.this,"Update finish",Toast.LENGTH_SHORT).show();
+        Toast.makeText(DataUser.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
         Intent objIntent = new Intent(DataUser.this, DisplayUser.class);
         startActivity(objIntent);
         finish();
@@ -214,7 +215,7 @@ public class DataUser extends AppCompatActivity {
         builder.setTitle("ข้อมูลไม่ครบถ้วน");
         builder.setMessage("กรุณาใส่ข้อมูลให้ครบ");
         builder.setCancelable(false);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();

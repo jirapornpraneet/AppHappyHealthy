@@ -2,13 +2,16 @@ package com.example.nut.happyhealthy;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -25,16 +28,16 @@ public class Kidney extends AppCompatActivity {
 
 
     //การประกาศตัวแปร
+    private KidneyTABLE  objkidneyTABLE;
     private EditText K_date,K_time,K_costGFR;
-    private String  dateString,timeString,costGFRString ;
-    private static final String urlPHP = "http://csnonrmutsb.com/happyhealthy/php_add_kidney.php";
+    private String  str_K_Date,str_K_Time,intCostGFR ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kidney);
 
-        //Use the current date as the default date to the picker
+        /**Use the current date as the default date to the picker
         final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
@@ -43,7 +46,6 @@ public class Kidney extends AppCompatActivity {
         final int minute = c.get(Calendar.MINUTE);
         final EditText txtTime = (EditText) findViewById(R.id.K_time);
         final EditText txtDate = (EditText) findViewById(R.id.K_date);
-
         txtTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,60 +73,97 @@ public class Kidney extends AppCompatActivity {
                 datePickerDialog.show();
 
             }
-        });//setdatepicker
+        });//setdatepicker**/
 
         //Bind widget
         K_date = (EditText) findViewById(R.id.K_date);
         K_time = (EditText) findViewById(R.id.K_time);
         K_costGFR = (EditText) findViewById(R.id.K_costGFR);
 
+        connectDataBase();
+
     }//Oncreate
+
+    private void connectDataBase() {
+
+        objkidneyTABLE = new KidneyTABLE(this);
+    }//ConnectDatabase
 
 
     public void ClickDisLevelsGFR(View view) {
 
         //get value edit tezt
-        dateString = K_date.getText().toString().trim();
-        timeString = K_time.getText().toString().trim();
-        costGFRString = K_costGFR.getText().toString().trim();
+        str_K_Date = K_date.getText().toString().trim();
+        str_K_Time = K_time.getText().toString().trim();
+        intCostGFR = K_costGFR.getText().toString().trim();
 
 
         //Checkspace
-        if (dateString.equals("") || timeString.equals("") || costGFRString.equals("")) {
-            MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "ไต", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");
+        if (str_K_Date.equals("") || str_K_Time.equals("") || intCostGFR.equals("")) {
+            showAlert();
 
 
         }else  {
-            //Checked
-            updateNewKidneyToServer();
-            startActivity(new Intent(Kidney.this,DisplayUser.class));
+
+            confirmKidney();
+
 
 
         }
     }//Click
 
-    private void updateNewKidneyToServer() {
-        OkHttpClient okHttpClient = new OkHttpClient();
-        RequestBody requestBody = new FormEncodingBuilder()
-                .add("isAdd", "true")
-                .add("K_date", dateString)
-                .add("K_time", timeString)
-                .add("K_costGFR", costGFRString)
-                .build();
-        Request.Builder builder = new Request.Builder();
-        Request request = builder.url(urlPHP).post(requestBody).build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
+    private void confirmKidney() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
+        builder.setMessage("วันที่ =" + str_K_Date+ "\n"
+                + "เวลา = " + str_K_Time +"\n" +
+                "ค่าการทำงานไตของผู้ใช้งาน = " + intCostGFR);
+        builder.setCancelable(false);
+        builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
-            public void onFailure(Request request, IOException e) {
-            }
-            @Override
-            public void onResponse(Response response) throws IOException {
-                finish();
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
         });
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                upDataKidneytoSQLite();
 
-    }//update
+            }
+        });
+        builder.show();
+    }//ConfirmKidney
+
+    private void upDataKidneytoSQLite() {
+
+        KidneyTABLE objkidneyTABLE = new KidneyTABLE(this);
+        long inSertDataUser = objkidneyTABLE.addNewValueToSQLite
+                (str_K_Date, str_K_Time, Integer.parseInt(intCostGFR));
+        K_date.setText("");
+        K_time.setText("");
+        K_costGFR.setText("");
+        Toast.makeText(Kidney.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
+        Intent objIntent = new Intent(Kidney.this, DisplayUser.class);
+        startActivity(objIntent);
+        finish();
+    }//UpDateKidneytoSQLite
+
+    private void showAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("ข้อมูลไม่ครบถ้วน");
+        builder.setMessage("กรุณาใส่ข้อมูลผู้ใช้งานให้ครบ");
+        builder.setCancelable(false);
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+
+    }//ShowAlert
+
 
 }//Main class
