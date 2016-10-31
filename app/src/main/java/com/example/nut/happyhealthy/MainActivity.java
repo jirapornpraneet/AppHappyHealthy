@@ -12,11 +12,8 @@ public class MainActivity extends TabActivity {
     //ประกาศตัวแปร ตารางใน database
     private UserTABLE objUserTABLE;
     private DiabetesTABLE objdiabetesTABLE;
-    private BloodSugarTABLE objbloodSugarTABLE;
     private KidneyTABLE objkidneyTABLE;
-    private KidneyLevelsTABLE objkidneyLevelsTABLE;
     private PressureTABLE objpressureTABLE;
-    private BloodPressureTABLE objbloodPressureTABLE;
     private FoodTypeTABLE objfoodTypeTABLE;
     private FoodTABLE objfoodTABLE;
     private ExerciseTypeTABLE objexerciseTypeTABLE;
@@ -75,11 +72,8 @@ public class MainActivity extends TabActivity {
         objUserTABLE = new UserTABLE(this);
         objdiabetesTABLE = new DiabetesTABLE(this);
         objdiabetesTABLE = new DiabetesTABLE(this);
-        objbloodSugarTABLE = new BloodSugarTABLE(this);
         objkidneyTABLE = new KidneyTABLE(this);
-        objkidneyLevelsTABLE = new KidneyLevelsTABLE(this);
         objpressureTABLE = new PressureTABLE(this);
-        objbloodPressureTABLE = new BloodPressureTABLE(this);
         objfoodTypeTABLE = new FoodTypeTABLE(this);
         objfoodTABLE = new FoodTABLE(this);
         objexerciseTypeTABLE = new ExerciseTypeTABLE(this);

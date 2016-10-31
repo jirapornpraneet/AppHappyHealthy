@@ -28,15 +28,9 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     private static final String Diabetes = "create table Diabetes (D_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "D_Date text, " +
             "D_Time text, " +
-            "D_CostSugar integer);";
+            "D_CostSugarBefore integer, " +
+            "D_CostSugarAfter integer);";
 
-    //CreateTableBloodSugar_Levels
-    private static final String BloodSugar_Levels = "create table BloodSugar_Levels (BS_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "BS_Description text, " +
-            "BS_BeforLow integer, " +
-            "BS_BeforHigh integer, " +
-            "BS_AfterLow integer, " +
-            "BS_AfterHigh integer);";
 
     //CreateTableKidney
     private static final String Kidney = "create table Kidney (K_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -44,11 +38,6 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "K_Time text, " +
             "K_CostGFR integer);";
 
-    //CreateTableKidney_Levels
-    private static final String Kidney_Levels = "create table Kidney_Levels (Kidney_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "Kidney_Description text, " +
-            "Kidney_Low integer, " +
-            "Kidney_High integer);";
 
     //CreateTablePressure
     private static final String Pressure = "create table Pressure (P_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -57,13 +46,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "P_CostPressureLow integer, " +
             "P_CostPressureHigh integer);";
 
-    //CreateTableBloodPressure_Levels
-    private static final String BloodPressure_Levels = "create table BloodPressure_Levels (BP_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "BP_Description text, " +
-            "BP_TopLow integer, " +
-            "BP_TopHigh integer, " +
-            "BP_DownLow integer, " +
-            "BP_DownHigh integer);";
+
 
     //CreateTableFoodType
     private static final String Food_Type = "create table Food_Type (FoodType_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -124,11 +107,8 @@ public class MyOpenHelper extends SQLiteOpenHelper{
 
         /**1**/  db.execSQL(USER);
         /**2**/  db.execSQL(Diabetes);
-        /**3**/ db.execSQL(BloodSugar_Levels);
         /**4**/ db.execSQL(Kidney);
-        /**5**/ db.execSQL(Kidney_Levels);
         /**6**/ db.execSQL(Pressure);
-        /**7**/ db.execSQL(BloodPressure_Levels);
         /**8**/  db.execSQL(Food_Type);
         /**9**/ db.execSQL(Food);
         /**10**/ db.execSQL(Exercise_Type);
