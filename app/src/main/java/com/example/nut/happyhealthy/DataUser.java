@@ -49,23 +49,23 @@ public class DataUser extends AppCompatActivity {
 
 
         /**final Calendar c = Calendar.getInstance();
-        final int year = c.get(Calendar.YEAR);
-        final int month = c.get(Calendar.MONTH);
-        final int day = c.get(Calendar.DAY_OF_MONTH);
-        final EditText txtDate = (EditText) findViewById(R.id.User_BirthDay);
+         final int year = c.get(Calendar.YEAR);
+         final int month = c.get(Calendar.MONTH);
+         final int day = c.get(Calendar.DAY_OF_MONTH);
+         final EditText txtDate = (EditText) findViewById(R.id.User_BirthDay);
 
-        txtDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(DataUser.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        txtDate.setText(i2 + "-" + i1 + "-" + i);
-                    }
-                }, day, month, year);
-                datePickerDialog.setTitle("เลือกวันที่");
-                datePickerDialog.show();
-            }
+         txtDate.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(DataUser.this, new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+        txtDate.setText(i2 + "-" + i1 + "-" + i);
+        }
+        }, day, month, year);
+        datePickerDialog.setTitle("เลือกวันที่");
+        datePickerDialog.show();
+        }
         });//setdatepicker**/
 
 
@@ -118,7 +118,7 @@ public class DataUser extends AppCompatActivity {
         strAge = User_Age   .getText().toString().trim();
         douWeight = User_Weight.getText().toString().trim();
         intHeight = User_Height.getText().toString().trim();
-        
+
 
 
         //Checkspace

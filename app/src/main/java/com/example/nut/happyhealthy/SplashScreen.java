@@ -1,6 +1,8 @@
 package com.example.nut.happyhealthy;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,10 +47,18 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent objIntent = new Intent(SplashScreen.this, MainActivity.class);
-                startActivity(objIntent);
-                finish();
+                SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
+                Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + UserTABLE.USER, null);
 
+                if(cursor.getCount()==0) {
+                    Intent objIntent = new Intent(SplashScreen.this, DataUser.class);
+                    startActivity(objIntent);
+                    finish();
+                }else {
+                    Intent objIntent = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(objIntent);
+                    finish();
+                }
             }
         }, 3000);
 

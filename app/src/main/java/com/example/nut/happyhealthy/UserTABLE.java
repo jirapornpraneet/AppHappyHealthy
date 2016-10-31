@@ -13,7 +13,7 @@ public class UserTABLE {
     private MyOpenHelper objMyOpenHelper;
     private SQLiteDatabase writeSQLite, readSQLite;
 
-    public static final String USER = "USER";
+    public static final String USER = "userTABLE";
     public static final String UserId = "User_Id";
     public static final String UserName = "User_Name";
     public static final String UserSex = "User_Sex";
@@ -34,17 +34,17 @@ public class UserTABLE {
 
     //Add New Value
     //Add New Value
-    public long addNewValueToSQLite(String strName, String strSex,String strAge, int intHeight, double douWeight,double douBmr, double douBmi) {
+    public long addNewValueToSQLite(String strName, String strSex, String strAge, int intHeight, double douWeight, double douBmr, double douBmi) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(UserName, strName);
         contentValues.put(UserSex, strSex);
-        contentValues.put(UserAge,strAge);
-        contentValues.put(UserHeight,intHeight);
+        contentValues.put(UserAge, strAge);
+        contentValues.put(UserHeight, intHeight);
         contentValues.put(UserWeight, douWeight);
         contentValues.put(UserBMR, douBmr);
-        contentValues.put(UserBMI,douBmi);
-
-        return writeSQLite.insert(USER, null, contentValues);
+        contentValues.put(UserBMI, douBmi);
+        long user_id = writeSQLite.insert(USER, null, contentValues);
+        return user_id;
     }//Add New Value
 
 

@@ -9,9 +9,8 @@ import android.widget.TextView;
 public class DisplayUser extends AppCompatActivity {
 
     //Explicit
-    private TextView TVName,TVSex,TVAge,TVWeight,TVHeight,TVBMR, TVBMI,weightStdTextView;
-    private String strName,strSex,strAge,intHeight,douWeight,douBmr,douBmi,weightStdString;
-
+    private TextView TVName, TVSex, TVAge, TVWeight, TVHeight, TVBMR, TVBMI, weightStdTextView;
+    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,26 +25,29 @@ public class DisplayUser extends AppCompatActivity {
 
     }//OnCreate
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        showView();
-    }
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        showView();
+//    }
 
     private void showView() {
 
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM" + UserTABLE.USER, null);
-        cursor.moveToFirst();
-        strName = cursor.getString(cursor.getColumnIndex(UserTABLE.UserName));
-        strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.UserSex));
-        strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.UserAge));
-        intHeight = cursor.getString(cursor.getColumnIndex(UserTABLE.UserHeight));
-        douWeight = cursor.getString(cursor.getColumnIndex(UserTABLE.UserWeight));
-        weightStdString = findMyAlertWeight(douBmi);
-        douBmr = cursor.getString(cursor.getColumnIndex(UserTABLE.UserBMR));
-        douBmi = cursor.getString(cursor.getColumnIndex(UserTABLE.UserBMI));
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + UserTABLE.USER, null);
 
+        if (cursor.moveToFirst()) {
+            do {
+                strName = cursor.getString(cursor.getColumnIndex(UserTABLE.UserName));
+                strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.UserSex));
+                strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.UserAge));
+                intHeight = cursor.getString(cursor.getColumnIndex(UserTABLE.UserHeight));
+                douWeight = cursor.getString(cursor.getColumnIndex(UserTABLE.UserWeight));
+                douBmr = cursor.getString(cursor.getColumnIndex(UserTABLE.UserBMR));
+                douBmi = cursor.getString(cursor.getColumnIndex(UserTABLE.UserBMI));
+                weightStdString = findMyAlertWeight(douBmi);
+            } while (cursor.moveToNext());
+        }
 
         cursor.close();
         TVName.setText(strName);
@@ -86,15 +88,14 @@ public class DisplayUser extends AppCompatActivity {
 
         TVName = (TextView) findViewById(R.id.tv_Name);
         TVSex = (TextView) findViewById(R.id.tv_Sex);
-        TVAge   = (TextView) findViewById(R.id.tv_Age);
+        TVAge = (TextView) findViewById(R.id.tv_Age);
         TVWeight = (TextView) findViewById(R.id.tv_Weight);
         TVHeight = (TextView) findViewById(R.id.tv_Height);
         TVBMR = (TextView) findViewById(R.id.tv_BMR);
-        TVBMI= (TextView) findViewById(R.id.tv_BMI);
+        TVBMI = (TextView) findViewById(R.id.tv_BMI);
         weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
 
     }//bindWidget
-
 
 
 }//MainClass

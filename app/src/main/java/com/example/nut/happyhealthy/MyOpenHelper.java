@@ -15,7 +15,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
 
     //CreateTableUser
-    private static final String USER = "create table  USER (User_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+    private static final String USER = "create table  userTABLE (User_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "User_Name text, " +
             "User_Sex text, " +
             "User_Age text, " +
@@ -122,8 +122,6 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-
-
         /**1**/  db.execSQL(USER);
         /**2**/  db.execSQL(Diabetes);
         /**3**/ db.execSQL(BloodSugar_Levels);
@@ -138,9 +136,6 @@ public class MyOpenHelper extends SQLiteOpenHelper{
         /**12**/ db.execSQL(Exercise_History);
         /**13**/ db.execSQL(Food_History);
         /**14**/ db.execSQL(Time);
-
-
-
 
     }   // onCreate
 

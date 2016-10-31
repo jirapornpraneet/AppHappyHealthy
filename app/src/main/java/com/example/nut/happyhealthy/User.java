@@ -3,16 +3,27 @@ package com.example.nut.happyhealthy;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class User extends Activity {
+
+    //ประกาศตัวแปร ตารางใน database
+    private UserTABLE objUserTABLE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
+        connectedDatabase();
+
+        //Check userTABLE
+
 
 
     }//OnCreate
@@ -24,5 +35,15 @@ public class User extends Activity {
     public void ClickDiseaseUser(View view) {
         startActivity(new Intent(User.this,DiseaseUser.class));
     }
+
+    private void connectedDatabase() {
+
+        objUserTABLE = new UserTABLE(this);
+
+
+    }//connectedDatabase
+
+
+
 
 }//Main Class
