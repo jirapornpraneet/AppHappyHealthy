@@ -21,13 +21,12 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true"
+                android:clickable="false"
                 android:focusableInTouchMode="false"
                 android:tabStripEnabled="false"
                 android:contextClickable="false"
                 android:focusable="false"
-                android:background="#ff6370"
-                android:foreground="#f06666"></TabWidget>
+                android:background="#ff6370"></TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"

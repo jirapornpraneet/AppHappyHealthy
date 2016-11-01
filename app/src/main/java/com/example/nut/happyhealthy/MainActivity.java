@@ -2,7 +2,10 @@ package com.example.nut.happyhealthy;
 
 import android.app.TabActivity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TabHost;
 
 
@@ -21,8 +24,6 @@ public class MainActivity extends TabActivity {
     private ExerciseHistoryTABLE objexerciseHistoryTABLE;
     private FoodHistoryTABLE objfoodHistoryTABLE;
     private TimeTABLE objTimeTABLE;
-
-
 
 
 
@@ -61,10 +62,12 @@ public class MainActivity extends TabActivity {
         tab3.setContent(new Intent(this, IntroHealthy.class));
 
 
-
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
+        //Check Empty Databaseเช็คว่าในแอพเรามีข้อมูลมั้ยถ้าไม่มีให้ไปที่หน้าไไหนถ้ามีไปหน้าไหน เพื่อถ้าไม่มีข้อมูลจะสามารถรันได้ปกติ
+        checkUserTABLE();
 
 
     }//OnCreate
@@ -88,5 +91,25 @@ public class MainActivity extends TabActivity {
 
 
     }//connectedDatabase
+
+
+
+    private void checkUserTABLE() {
+
+        SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
+                MODE_PRIVATE, null);
+        Cursor objCursor = objSqLiteDatabase.rawQuery("SELECT * FROM userTABLE", null);
+        if (objCursor.getCount() <= 0) {
+
+            Log.d("cal1", "objCursor = null");
+            Intent objIntent = new Intent(MainActivity.this, DataUser.class);
+            startActivity(objIntent);
+
+        } else {
+            objCursor.close();
+            Log.d("cal1", "objCursor = Have Data");
+        }
+
+    }   // checkUserTABLe
 
 }//MainClass
