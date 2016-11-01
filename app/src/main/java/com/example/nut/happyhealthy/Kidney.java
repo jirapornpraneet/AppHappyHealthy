@@ -113,6 +113,15 @@ public class Kidney extends AppCompatActivity {
     }//Click
 
     private void confirmKidney() {
+
+
+        // Find BMI
+        int  intcostgfr = Integer.parseInt(intCostGFR);
+
+
+        int IntCostGFR = intcostgfr;
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage("วันที่ =" + str_K_Date+ "\n"
@@ -144,7 +153,7 @@ public class Kidney extends AppCompatActivity {
         K_time.setText("");
         K_costGFR.setText("");
         Toast.makeText(Kidney.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(Kidney.this, DisplayUser.class);
+        Intent objIntent = new Intent(Kidney.this, DisplayKidney.class);
         startActivity(objIntent);
         finish();
     }//UpDateKidneytoSQLite

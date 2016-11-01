@@ -31,13 +31,11 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "D_CostSugarBefore integer, " +
             "D_CostSugarAfter integer);";
 
-
     //CreateTableKidney
     private static final String Kidney = "create table Kidney (K_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "K_Date text, " +
             "K_Time text, " +
             "K_CostGFR integer);";
-
 
     //CreateTablePressure
     private static final String Pressure = "create table Pressure (P_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -45,8 +43,6 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "P_Time text, " +
             "P_CostPressureDown integer, " +
             "P_CostPressureTop integer);";
-
-
 
     //CreateTableFoodType
     private static final String Food_Type = "create table Food_Type (FoodType_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +

@@ -2,7 +2,7 @@
 <resources>
     <string-array name="my_pressure">
 
-        //ค่าความดันตัวบน
+        //ค่าความดัน
 
         <item>ความดันโลหิตต่ำ</item>
         <item>ความดันโลหิตปกติ</item>

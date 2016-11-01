@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_kidney">
+
+        //ค่าการทำงานของไต GFR อัตราการกรองของไต
+
+        <item>ไตผิดปกติ และ GFR ปกติหรือเพิ่มขึ้น </item>
+        <item>ไตผิดปกติ และ GFR ลดลงเล็กน้อยิ</item>
+        <item>GFR ลดลงปานกลาง</item>
+        <item>GFR ลดลงมาก</item>
+        <item>ไตวายระยะสุดท้าย</item>
+    </string-array>
+
+</resources>
