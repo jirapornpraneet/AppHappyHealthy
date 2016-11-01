@@ -112,4 +112,12 @@ public class MainActivity extends TabActivity {
 
     }   // checkUserTABLe
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        checkUserTABLE();
+
+    }
+
 }//MainClass

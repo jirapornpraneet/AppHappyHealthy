@@ -25,7 +25,11 @@ public class DisplayUser extends AppCompatActivity {
 
     }//OnCreate
 
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        showView();
+    }
 
     private void showView() {
 

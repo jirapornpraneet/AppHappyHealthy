@@ -3,8 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.DisplayUser"
-    android:background="#f6b9b9">
+    android:background="#ffdbdb">
 
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -75,4 +80,5 @@
             android:textSize="30dp"
             android:layout_margin="10dp" />
     </LinearLayout>
+
 </RelativeLayout>
