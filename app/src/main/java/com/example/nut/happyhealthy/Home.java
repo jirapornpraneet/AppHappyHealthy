@@ -14,7 +14,9 @@ import java.util.Calendar;
 public class Home extends Activity implements DatePickerDialog.OnDateSetListener {
 
     //Button picDate;
-    TextView showDate;
+    //TextView showDate;
+    //ประกาศตัวแปร
+    private TextView showDate;
 
     int day,month, year;
     int dayFinal,monthFinal, yearFinal;
@@ -45,6 +47,8 @@ public class Home extends Activity implements DatePickerDialog.OnDateSetListener
 
             }
         });
+
+
 
     }//Oncreate
 

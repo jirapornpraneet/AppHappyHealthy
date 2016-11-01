@@ -36,8 +36,8 @@
                 android:layout_width="258dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView5"
-                android:background="@drawable/pie"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.25"
+                android:src="@drawable/pie" />
         </LinearLayout>
 
     </LinearLayout>
@@ -47,23 +47,24 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:weightSum="1"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="#ff6370">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/imageView"
-            android:background="@drawable/food"
             android:layout_weight="0.5"
-            android:onClick="ClickFood" />
+            android:onClick="ClickFood"
+            android:src="@drawable/food" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/imageView14"
-            android:background="@drawable/exe"
             android:layout_weight="0.5"
-            android:onClick="ClickExe" />
+            android:onClick="ClickExe"
+            android:src="@drawable/exe" />
 
     </LinearLayout>
 

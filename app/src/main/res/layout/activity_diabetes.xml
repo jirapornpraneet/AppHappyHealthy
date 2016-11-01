@@ -15,7 +15,8 @@
         android:id="@+id/imageView12"
         android:layout_marginTop="60dp"
         android:background="@drawable/userdiahead"
-        android:layout_marginLeft="75dp" />
+        android:layout_marginLeft="75dp"
+        android:src="@drawable/userdiahead" />
 
     <LinearLayout
         android:orientation="vertical"
