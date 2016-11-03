@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.Home"
-    android:background="#ffe1e3">
+    android:background="#feffc8">
 
     <TextView
         android:layout_width="wrap_content"
