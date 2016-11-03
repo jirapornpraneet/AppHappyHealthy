@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.Home"
-    android:background="#feffc8">
+    android:background="@drawable/wal">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
         android:id="@+id/showDate"
         android:layout_centerHorizontal="true"
         android:background="@drawable/my_border_black"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:textSize="18dp" />
 
     <LinearLayout
@@ -33,39 +33,52 @@
             android:gravity="center">
 
             <ImageView
-                android:layout_width="258dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView5"
-                android:layout_weight="0.25"
-                android:src="@drawable/pie" />
+                android:layout_width="165dp"
+                android:layout_height="270dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/woman"
+                android:layout_marginTop="160dp"
+                android:layout_marginLeft="15dp" />
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:layout_alignParentBottom="true"
-        android:background="#ff6370">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/imageView"
-            android:layout_weight="0.5"
-            android:onClick="ClickFood"
-            android:src="@drawable/food" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:background="@drawable/ee"
+            android:scrollIndicators="left" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/imageView14"
-            android:layout_weight="0.5"
-            android:onClick="ClickExe"
-            android:src="@drawable/exe" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView5"
+            android:background="@drawable/ff"
+            android:scrollIndicators="right" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView7"
+            android:background="@drawable/rr" />
     </LinearLayout>
 
 </RelativeLayout>

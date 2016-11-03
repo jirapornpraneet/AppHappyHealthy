@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.SplashScreen"
-    android:background="@drawable/w">
+    android:background="@drawable/wal3">
 
 
     <LinearLayout
@@ -14,12 +14,13 @@
         android:layout_centerVertical="true">
 
         <ImageView
-            android:layout_width="410dp"
-            android:layout_height="fill_parent"
+            android:layout_width="300dp"
+            android:layout_height="320dp"
             android:id="@+id/imageView9"
             android:layout_gravity="center_horizontal"
             android:focusable="false"
-            android:background="@drawable/splashlist" />
+            android:background="@drawable/splashlist"
+            android:layout_marginTop="140dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -28,12 +29,12 @@
         android:layout_height="match_parent" >
 
         <ImageView
-            android:layout_width="300dp"
+            android:layout_width="320dp"
             android:layout_height="130dp"
             android:id="@+id/imageView10"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="245dp"
-            android:src="@drawable/font"
+            android:layout_marginTop="235dp"
+            android:src="@drawable/fontlogo"
             android:layout_marginLeft="5dp" />
     </LinearLayout>
 </RelativeLayout>
