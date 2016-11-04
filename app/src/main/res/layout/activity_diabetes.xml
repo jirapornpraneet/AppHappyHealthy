@@ -159,7 +159,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/imageView13"
-            android:background="@drawable/savedatauser"
             android:onClick="ClickDisLevelsSugar"
             android:layout_marginTop="20dp" />
 

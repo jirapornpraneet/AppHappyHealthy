@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.Home"
-    android:background="@drawable/wal">
+    android:background="@drawable/wal5">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
         android:id="@+id/showDate"
         android:layout_centerHorizontal="true"
         android:background="@drawable/my_border_black"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:textSize="18dp" />
 
     <LinearLayout
@@ -38,7 +38,7 @@
                 android:id="@+id/imageView"
                 android:src="@drawable/woman"
                 android:layout_marginTop="160dp"
-                android:layout_marginLeft="15dp" />
+                android:layout_marginLeft="25dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -78,7 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView7"
-            android:background="@drawable/rr" />
+            android:background="@drawable/rr"
+            android:layout_marginTop="27dp" />
     </LinearLayout>
 
 </RelativeLayout>

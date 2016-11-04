@@ -35,8 +35,6 @@ public class DataUser extends AppCompatActivity {
     private String strName,strSex  = "male",strAge,intHeight,douWeight,douBmr,douBmi;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
