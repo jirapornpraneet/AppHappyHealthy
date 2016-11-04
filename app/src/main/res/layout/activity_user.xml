@@ -8,62 +8,70 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.nut.happyhealthy.User"
-    android:background="@drawable/bg">
+    android:background="@drawable/bguserall">
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="200dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp">
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="280dp"
-        android:layout_marginBottom="120dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentRight="false"
-        android:layout_marginRight="200dp">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:id="@+id/imageView3"
-            android:background="@drawable/user"
-            android:onClick="ClickDataUser" />
+            android:src="@drawable/userdia"
+            android:layout_marginTop="240dp"
+            android:onClick="ClickDiabetes" />
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="280dp"
-        android:layout_marginBottom="120dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentLeft="false"
         android:layout_alignParentBottom="false"
-        android:layout_alignParentRight="false"
-        android:layout_marginLeft="200dp">
+        android:layout_alignParentRight="false">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:id="@+id/imageView4"
-            android:background="@drawable/user"
-            android:onClick="ClickDiseaseUser" />
+            android:src="@drawable/userkid"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="55dp"
+            android:onClick="ClickKidney" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageView16"
+            android:src="@drawable/userpre"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="175dp"
+            android:onClick="ClickPressure" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageView21"
+            android:src="@drawable/userbasic"
+            android:layout_marginLeft="235dp"
+            android:layout_marginTop="240dp"
+            android:onClick="ClickDataUser" />
     </LinearLayout>
 </RelativeLayout>

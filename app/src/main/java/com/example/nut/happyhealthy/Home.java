@@ -57,6 +57,8 @@ public class Home extends Activity implements DatePickerDialog.OnDateSetListener
 
     public void ClickExe(View view) {startActivity(new Intent(Home.this,Exercise.class));}//Clickexe
 
+    public void ClickReport(View view) {startActivity(new Intent(Home.this,Report.class));}//ClickReport
+
 
     @Override
     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {

@@ -102,7 +102,7 @@ public class MainActivity extends TabActivity {
         if (objCursor.getCount() <= 0) {
 
             Log.d("cal1", "objCursor = null");
-            Intent objIntent = new Intent(MainActivity.this, DataUser.class);
+            Intent objIntent = new Intent(MainActivity.this, User.class);
             startActivity(objIntent);
 
         } else {
