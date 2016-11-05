@@ -45,7 +45,8 @@
                 android:textSize="16dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/my_border_box" />
+                android:background="@drawable/my_border_box"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -82,7 +83,8 @@
                     android:textSize="16sp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
-                    android:background="@drawable/my_border_box" />
+                    android:background="@drawable/my_border_box"
+                    android:textStyle="bold" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -93,7 +95,8 @@
                     android:layout_weight="1"
                     android:textSize="16dp"
                     android:layout_marginRight="5dp"
-                    android:background="@drawable/my_border_box" />
+                    android:background="@drawable/my_border_box"
+                    android:textStyle="bold" />
             </RadioGroup>
 
         </LinearLayout>
@@ -125,7 +128,8 @@
                 android:hint="ปี"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="10dp"
-                android:autoText="false" />
+                android:autoText="false"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -156,7 +160,8 @@
                 android:textSize="16dp"
                 android:hint="กิโลกรัม"
                 android:layout_marginTop="9dp"
-                android:layout_marginLeft="11dp" />
+                android:layout_marginLeft="11dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -186,7 +191,8 @@
                 android:textSize="16dp"
                 android:layout_marginLeft="11dp"
                 android:hint="เซนติเมตร"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

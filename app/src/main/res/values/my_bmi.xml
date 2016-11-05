@@ -6,12 +6,14 @@
         //ค่าดัชนีมวลกาย
 
         <item>น้ำหนักน้อยกว่ามาตรฐาน</item>
-        <item>น้ำหนักปกต</item>
-        <item>โรคอ้วนระดับ 1</item>
-        <item>โรคอ้วนระดับ 2</item>
-        <item>โรคอ้วนระดับ 3</item>
+        <item>น้ำหนักปกติ</item>
+        <item>น้ำหนักตัวมากกว่าปกติ</item>
+        <item>ท้วม</item>
+        <item>อ้วนปานกลาง</item>
         <item>โรคอ้วนขึ้นสุด</item>
 
     </string-array>
+
+
 
 </resources>

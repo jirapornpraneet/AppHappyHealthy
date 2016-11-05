@@ -31,9 +31,9 @@ public class User extends Activity {
 
     }//OnCreate
 
-    public void ClickDataUser(View view) {
-        startActivity(new Intent(User.this,DataUser.class));
-    }//ClickDataUser
+    public void ClickDisplayUser(View view) {
+        startActivity(new Intent(User.this,DisplayUser.class));
+    }//ClickUser
 
     public void ClickDiabetes(View view) {
        startActivity(new Intent(User.this,Diabetes.class));

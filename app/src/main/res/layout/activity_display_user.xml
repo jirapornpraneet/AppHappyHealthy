@@ -3,82 +3,250 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.DisplayUser"
-    android:background="@drawable/wal5">
+    android:background="@drawable/displayuser">
 
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_Name"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
+    </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_Sex"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="90dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_Age"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_Weight"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_Height"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageView15"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/da5" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_BMR"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_Name"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/my_border_box"
+                android:layout_marginLeft="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_BMI"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageView17"
+                android:src="@drawable/da6"
+                android:layout_marginLeft="50dp" />
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_Sex"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/my_border_box" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageView20"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/da7" />
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_Age"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/my_border_box" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageView18"
+                android:src="@drawable/da8"
+                android:layout_marginLeft="50dp" />
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_Weight"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/my_border_box" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageView19"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/da9" />
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_Height"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/my_border_box" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/weightStdTextView"
-            android:textSize="30dp"
-            android:layout_margin="10dp" />
+            android:layout_marginTop="3dp">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageViewbmr"
+                android:layout_marginLeft="55dp"
+                android:src="@drawable/da11" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_BMR"
+                android:textSize="20dp"
+                android:layout_marginLeft="120dp"
+                android:background="@drawable/my_border_box"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageViewbmi"
+                android:layout_marginLeft="55dp"
+                android:src="@drawable/da12" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_BMI"
+                android:textSize="20dp"
+                android:layout_marginLeft="120dp"
+                android:textStyle="bold"
+                android:background="@drawable/my_border_box" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/weightStdTextView"
+                android:textSize="20dp"
+                android:layout_marginLeft="95dp"
+                android:textStyle="bold"
+                android:background="@drawable/my_border_box" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imageView6"
+                android:src="@drawable/editdata"
+                android:layout_weight="1"
+                android:layout_marginLeft="32dp"
+                android:nestedScrollingEnabled="false"
+                android:onClick="ClickEditDataUser" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imageView22"
+                android:src="@drawable/savedata"
+                android:layout_weight="1"
+                android:layout_marginRight="28dp"
+                android:onClick="ClickSaveDataUser" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

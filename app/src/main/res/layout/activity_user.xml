@@ -72,6 +72,6 @@
             android:src="@drawable/userbasic"
             android:layout_marginLeft="235dp"
             android:layout_marginTop="240dp"
-            android:onClick="ClickDataUser" />
+            android:onClick="ClickDisplayUser" />
     </LinearLayout>
 </RelativeLayout>

@@ -1,9 +1,11 @@
 package com.example.nut.happyhealthy;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class DisplayUser extends AppCompatActivity {
@@ -96,6 +98,14 @@ public class DisplayUser extends AppCompatActivity {
         weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
 
     }//bindWidget
+
+    public void ClickEditDataUser(View view) {
+        startActivity(new Intent(DisplayUser.this,DataUser.class));
+    }//ClickEditUser
+
+    public void ClickSaveDataUser(View view) {
+        startActivity(new Intent(DisplayUser.this,User.class));
+    }//ClickSaveUser
 
 
 }//MainClass
