@@ -37,7 +37,7 @@ public class Kidney extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kidney);
 
-        /**Use the current date as the default date to the picker
+        //Use the current date as the default date to the picker
         final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
@@ -73,7 +73,7 @@ public class Kidney extends AppCompatActivity {
                 datePickerDialog.show();
 
             }
-        });//setdatepicker**/
+        });//setdatepicker
 
         //Bind widget
         K_date = (EditText) findViewById(R.id.K_date);

@@ -39,7 +39,8 @@
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
                 android:textSize="16dp"
-                android:layout_marginLeft="18dp" />
+                android:layout_marginLeft="18dp"
+                android:hint="วัน-เดือน-ปี" />
         </LinearLayout>
 
         <LinearLayout
@@ -64,7 +65,8 @@
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
                 android:textSize="16dp"
-                android:layout_marginLeft="15dp" />
+                android:layout_marginLeft="15dp"
+                android:hint="ชั่วโมง-นาที" />
         </LinearLayout>
 
         <LinearLayout
