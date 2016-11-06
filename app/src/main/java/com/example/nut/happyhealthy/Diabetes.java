@@ -36,7 +36,7 @@ public class Diabetes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diabetes);
 
-        /**Use the current date as the default date to the picker
+        //Use the current date as the default date to the picker
         final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
@@ -68,13 +68,13 @@ public class Diabetes extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(Diabetes.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        txtDate.setText(i + "-" + i1 + "-" + i2);
+                        txtDate.setText(i2 + "-" + i1 + "-" + i);
                     }
                 }, day, month, year);
                 datePickerDialog.setTitle("เลือกวันที่");
                 datePickerDialog.show();
             }
-        });//setdatepicker**/
+        });//setdatepicker
 
 
         //Bind wiget
@@ -133,8 +133,8 @@ public class Diabetes extends AppCompatActivity {
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage("วันที่ =" + str_D_Date+ "\n"
                 + "เวลา = " + str_D_Time +"\n"
-                + "ค่าน้ำตาลในเลือดก่อนอาหารของผู้ใช้งาน = " + intCostSugarBefore +"\n"
-                + "ค่าน้ำตาลในเลือดหลังอาหารของผู้ใช้งาน = " + intCostSugarAfter);
+                + "ค่าน้ำตาลก่อนอาหารของผู้ใช้งาน = " + intCostSugarBefore +"\n"
+                + "ค่าน้ำตาลหลังอาหารของผู้ใช้งาน = " + intCostSugarAfter);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override

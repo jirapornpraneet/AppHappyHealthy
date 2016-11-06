@@ -30,7 +30,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
 
             }
-        }, 4000);
+        }, 3000);
 
         ImageView image = (ImageView) findViewById(R.id.imageView9);
         splash = (AnimationDrawable) image.getBackground();
@@ -52,7 +52,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
 
             }
-        }, 4000);
+        }, 3000);
 
     }//oncreate
 
