@@ -2,6 +2,7 @@ package com.example.nut.happyhealthy;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -11,6 +12,8 @@ public class DiabetesTABLE {
     //ตัวแปร
     private MyOpenHelper objMyOpenHelper;
     private SQLiteDatabase writeSQLite, readSQLite;
+
+    private String strLastDate;
 
     public static final String Diabetes = "Diabetes";
     public static final String Diabetes_ID = "D_Id";
@@ -27,6 +30,41 @@ public class DiabetesTABLE {
 
     }//Constructor
 
+    public Cursor readAllData() {
+
+        Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time,Diabetes_CostSugarBefore,Diabetes_CostSugarAfter}, null, null, null, null, null);
+
+        if (objCursor != null) {
+            objCursor.moveToFirst();
+        }
+
+        return objCursor;
+    }   // readAllData
+
+    public boolean checkCursor() {
+
+        Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time,Diabetes_CostSugarBefore,Diabetes_CostSugarAfter}, null, null, null, null, null);
+
+        if (objCursor != null) {
+            objCursor.moveToLast();
+        }
+
+        return objCursor.isBeforeFirst();
+    }   // checkCursor
+
+
+    public String lastUpdata() {
+
+        Cursor objCursor = readSQLite.query(Diabetes, new String[] {Diabetes_ID, Diabetes_Date, Diabetes_Time}, null, null, null, null, null);
+
+        if (objCursor != null) {
+            objCursor.moveToLast();
+            strLastDate = objCursor.getString(objCursor.getColumnIndex( Diabetes_Date));
+        }
+
+        return strLastDate;
+    }   // lastUpdate
+
 
     //Add New Value
     //Add New Value
@@ -39,5 +77,6 @@ public class DiabetesTABLE {
         long diabetes_id = writeSQLite.insert(Diabetes, null, contentValues);
         return diabetes_id;
     }//Add New Value
+
 
 }//MainClass

@@ -48,6 +48,8 @@ public class User extends Activity {
         startActivity(new Intent(User.this,Pressure.class));
     }//ClickPressure
 
+
+
     private void connectedDatabase() {
 
         objUserTABLE = new UserTABLE(this);

@@ -33,7 +33,9 @@
         <activity android:name=".DisplayDisease" />
         <activity android:name=".DisplayPressure" />
         <activity android:name=".DisplayKidney" />
-        <activity android:name=".Report"></activity>
+        <activity android:name=".Report" />
+        <activity android:name=".FoodType" />
+        <activity android:name=".ExerciseType"></activity>
     </application>
 
 </manifest>

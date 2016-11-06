@@ -4,11 +4,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 public class DisplayDisease extends AppCompatActivity {
 
-    //Explicit
+
+    //**Explicit
     private TextView TV_D_Date,TV_D_Time,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
     private String  str_D_Date,str_D_Time,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
 
@@ -18,11 +20,13 @@ public class DisplayDisease extends AppCompatActivity {
         setContentView(R.layout.activity_display_disease);
 
         // Bind Widget
-        bindWidget();
+       bindWidget();
 
         // Show View
         showView();
+
     }//OnCreate
+
 
     private void showView() {
 
@@ -97,4 +101,9 @@ public class DisplayDisease extends AppCompatActivity {
         TV_D_LevelAfter = (TextView) findViewById(R.id.tv_D_LevelAfter);
 
     }//bindWidget
+
+
+
+
+
 }//MainClass
