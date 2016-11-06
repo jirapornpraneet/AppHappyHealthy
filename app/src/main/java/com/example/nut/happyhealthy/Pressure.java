@@ -38,7 +38,7 @@ public class Pressure extends AppCompatActivity {
         setContentView(R.layout.activity_pressure);
 
 
-        /**Use the current date as the default date to the picker
+        //Use the current date as the default date to the picker
         final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
@@ -76,7 +76,7 @@ public class Pressure extends AppCompatActivity {
                 datePickerDialog.show();
 
             }
-        });//setdatepicker**/
+        });//setdatepicker
 
 
         //Bind wiget
