@@ -36,6 +36,7 @@
         <activity android:name=".FoodType" />
         <activity android:name=".ExerciseType" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".History_Diabetes"></activity>
     </application>
 
 </manifest>
