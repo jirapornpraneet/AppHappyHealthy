@@ -20,7 +20,7 @@ public class DisplayDisease extends AppCompatActivity {
         setContentView(R.layout.activity_display_disease);
 
         // Bind Widget
-       bindWidget();
+        bindWidget();
 
         // Show View
         showView();
@@ -73,7 +73,7 @@ public class DisplayDisease extends AppCompatActivity {
         return myResult;
     }//findMyLevelDiseasebefore
 
-   private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
+    private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);

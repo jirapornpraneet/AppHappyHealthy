@@ -92,7 +92,7 @@
 
             <ImageView
                 android:layout_width="280dp"
-                android:layout_height="32dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageViewsugatbefroe"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/tstsugarbefore" />
@@ -125,7 +125,7 @@
 
             <ImageView
                 android:layout_width="280dp"
-                android:layout_height="32dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageViewsugatafter"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/tstsugarafter" />

@@ -70,7 +70,7 @@
             android:layout_height="120dp"
             android:id="@+id/imageView21"
             android:src="@drawable/userbasic"
-            android:layout_marginLeft="235dp"
+            android:layout_marginLeft="230dp"
             android:layout_marginTop="240dp"
             android:onClick="ClickDisplayUser" />
     </LinearLayout>

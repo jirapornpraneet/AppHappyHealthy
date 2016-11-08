@@ -39,7 +39,7 @@
                 android:id="@+id/imageView"
                 android:src="@drawable/woman"
                 android:layout_marginTop="160dp"
-                android:layout_marginLeft="25dp" />
+                android:layout_marginLeft="20dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -55,7 +55,7 @@
             android:id="@+id/imageView5"
             android:layout_marginTop="230dp"
             android:src="@drawable/ff"
-            android:layout_marginLeft="255dp"
+            android:layout_marginLeft="235dp"
             android:nestedScrollingEnabled="false"
             android:onClick="ClickFood" />
     </LinearLayout>
@@ -70,7 +70,7 @@
             android:layout_height="130dp"
             android:id="@+id/imageView7"
             android:layout_marginTop="75dp"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="120dp"
             android:src="@drawable/rr"
             android:onClick="ClickReport" />
     </LinearLayout>
@@ -87,7 +87,7 @@
             android:scrollIndicators="left"
             android:src="@drawable/ee"
             android:layout_marginTop="230dp"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="5dp"
             android:onClick="ClickExe" />
     </LinearLayout>
 

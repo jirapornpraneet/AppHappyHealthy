@@ -110,7 +110,7 @@ public class Diabetes extends AppCompatActivity {
 
 
             /**MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "เบาหวาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");**/
+             myAlert.myDialog(this, "เบาหวาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");**/
 
 
         }else  {

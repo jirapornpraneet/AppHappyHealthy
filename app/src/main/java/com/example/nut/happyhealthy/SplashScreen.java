@@ -1,7 +1,6 @@
 package com.example.nut.happyhealthy;
 
 
-
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -62,4 +61,3 @@ public class SplashScreen extends AppCompatActivity {
         }
     }
 }//MainClass
-

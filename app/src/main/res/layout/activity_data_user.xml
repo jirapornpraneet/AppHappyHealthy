@@ -7,12 +7,6 @@
     android:background="@drawable/da">
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView14"
-        android:src="@drawable/da4" />
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -23,7 +17,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp">
+            android:layout_marginTop="155dp">
 
             <ImageView
                 android:layout_width="30dp"
@@ -44,17 +38,16 @@
                 android:layout_weight="1"
                 android:textSize="16dp"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="10dp"
                 android:background="@drawable/my_border_box"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="10dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="95dp"
@@ -104,8 +97,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="95dp"
@@ -136,8 +128,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="95dp"
@@ -168,8 +159,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="95dp"
@@ -200,13 +190,13 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="350dp"
-        android:layout_height="45dp"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
         android:id="@+id/imageView8"
-        android:background="@drawable/da10"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:onClick="ClickDisPlay" />
+        android:layout_marginTop="325dp"
+        android:onClick="ClickDisPlay"
+        android:src="@drawable/savedis" />
 
 
 </RelativeLayout>

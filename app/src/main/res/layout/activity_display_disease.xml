@@ -8,60 +8,212 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.nut.happyhealthy.DisplayDisease"
-    android:background="#ed7373">
+    android:background="@drawable/displaydisaese">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="110dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_D_Date"
-            android:textSize="30dp"
-            android:layout_margin="20dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_D_Time"
-            android:textSize="30dp"
-            android:layout_margin="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_D_CostSugarBefore"
-            android:textSize="30dp"
-            android:layout_margin="20dp" />
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageView19"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/calendi" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_D_CostSugarAfter"
-            android:textSize="30dp"
-            android:layout_margin="20dp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_D_Date"
+                android:textSize="16dp"
+                android:background="@drawable/my_box_dis"
+                android:textColor="#000000"
+                android:hint="วัน-เดือน-ปี"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_D_LevelBefore"
-            android:textSize="30dp"
-            android:layout_margin="20dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageViewtime"
+                android:layout_marginLeft="53dp"
+                android:src="@drawable/timedis" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_D_Time"
+                android:textSize="16dp"
+                android:background="@drawable/my_box_dis"
+                android:textColor="#000000"
+                android:hint="ชั่วโมง-นาที"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tv_D_LevelAfter"
-            android:textSize="30dp"
-            android:layout_margin="20dp" />
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="28dp"
+                android:id="@+id/imageViewsugatbefroe"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/tstsugarbefore" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_D_CostSugarBefore"
+                android:textSize="16dp"
+                android:background="@drawable/my_box_dis"
+                android:textColor="#000000"
+                android:layout_marginLeft="70dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="28dp"
+                android:id="@+id/imageView14"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/tstsugarafter"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_D_CostSugarAfter"
+                android:textSize="16dp"
+                android:background="@drawable/my_box_dis"
+                android:textColor="#000000"
+                android:layout_marginLeft="70dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="32dp"
+                android:id="@+id/imageView23"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/tstsugarbeforedis"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_D_LevelBefore"
+                android:textSize="16dp"
+                android:background="@drawable/my_border_waring"
+                android:textColor="#000000"
+                android:layout_marginLeft="70dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="32dp"
+                android:id="@+id/imageView24"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/tstsugarafterdis"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_D_LevelAfter"
+                android:textSize="16dp"
+                android:background="@drawable/my_border_waring"
+                android:textColor="#000000"
+                android:layout_marginLeft="70dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/imageView6"
+                android:src="@drawable/addbutton"
+                android:nestedScrollingEnabled="false"
+                android:onClick="ClickEditDataUser"
+                android:layout_weight="1"
+                android:layout_marginLeft="13dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/imageView22"
+                android:src="@drawable/button"
+                android:onClick="ClickSaveDataUser"
+                android:layout_weight="1"
+                android:layout_marginRight="13dp" />
+        </LinearLayout>
 
     </LinearLayout>
+
 </RelativeLayout>

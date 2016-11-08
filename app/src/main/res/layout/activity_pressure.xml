@@ -77,7 +77,7 @@
 
             <ImageView
                 android:layout_width="200dp"
-                android:layout_height="30dp"
+                android:layout_height="28dp"
                 android:id="@+id/imageViewsugatafter"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/txtpretop" />
@@ -112,7 +112,7 @@
 
             <ImageView
                 android:layout_width="200dp"
-                android:layout_height="30dp"
+                android:layout_height="28dp"
                 android:id="@+id/imageViewpreDown"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/txtpredown" />

@@ -60,14 +60,14 @@ public class DisplayKidney extends AppCompatActivity {
             myResult = resultStrings[0];
         } else if (IntCostGFR > 60 ) {
             myResult = resultStrings[1];
-       } else if (IntCostGFR > 30) {
+        } else if (IntCostGFR > 30) {
             myResult = resultStrings[2];
         } else if (IntCostGFR > 15) {
             myResult = resultStrings[3];
         } else {
             myResult = resultStrings[4];
         }
-                return myResult;
+        return myResult;
     }//findMyLevelDiseaseafter
 
     private void bindWidget() {
