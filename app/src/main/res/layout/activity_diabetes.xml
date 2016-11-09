@@ -86,7 +86,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="2dp">
 
 
 
@@ -121,7 +121,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="3dp">
 
             <ImageView
                 android:layout_width="280dp"
@@ -152,10 +152,11 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:id="@+id/imageView13"
             android:onClick="ClickDisLevelsSugar"
-            android:src="@drawable/savedis" />
+            android:src="@drawable/savedis"
+            android:layout_marginTop="5dp" />
 
     </LinearLayout>
 
@@ -163,7 +164,7 @@
         android:orientation="vertical"
         android:layout_width="324dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:weightSum="1">

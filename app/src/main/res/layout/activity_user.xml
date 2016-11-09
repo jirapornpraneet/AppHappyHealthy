@@ -16,7 +16,7 @@
         android:layout_height="fill_parent">
 
         <ImageView
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="120dp"
             android:id="@+id/imageView3"
             android:src="@drawable/userdia"
@@ -32,7 +32,7 @@
         android:layout_alignParentRight="false">
 
         <ImageView
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="120dp"
             android:id="@+id/imageView4"
             android:src="@drawable/userkid"
@@ -49,12 +49,12 @@
         android:layout_alignParentRight="false">
 
         <ImageView
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="120dp"
             android:id="@+id/imageView16"
             android:src="@drawable/userpre"
             android:layout_marginTop="130dp"
-            android:layout_marginLeft="175dp"
+            android:layout_marginLeft="165dp"
             android:onClick="ClickPressure" />
     </LinearLayout>
 
@@ -66,11 +66,11 @@
         android:layout_alignParentRight="false">
 
         <ImageView
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="120dp"
             android:id="@+id/imageView21"
             android:src="@drawable/userbasic"
-            android:layout_marginLeft="230dp"
+            android:layout_marginLeft="218dp"
             android:layout_marginTop="240dp"
             android:onClick="ClickDisplayUser" />
     </LinearLayout>

@@ -19,7 +19,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="1dp">
 
 
             <ImageView
@@ -197,7 +198,7 @@
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="13dp"
                 android:layout_weight="1"
                 android:nestedScrollingEnabled="false"
@@ -207,7 +208,7 @@
             <ImageView
                 android:id="@+id/imageView22"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="13dp"
                 android:layout_weight="1"
                 android:onClick="ClickHistoryDiabetes"

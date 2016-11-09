@@ -20,7 +20,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
 
 
             <ImageView
@@ -109,7 +110,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:id="@+id/imageView13"
             android:onClick="ClickDisLevelsGFR"
             android:src="@drawable/savedis"

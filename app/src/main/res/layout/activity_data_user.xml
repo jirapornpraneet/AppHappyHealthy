@@ -17,7 +17,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="155dp">
+            android:layout_marginTop="160dp">
 
             <ImageView
                 android:layout_width="30dp"
@@ -54,7 +54,7 @@
                 android:layout_height="35dp"
                 android:id="@+id/imageView17"
                 android:src="@drawable/da6"
-                android:layout_marginLeft="62dp" />
+                android:layout_marginLeft="58dp" />
 
             <RadioGroup
                 android:layout_width="0dp"
@@ -62,7 +62,7 @@
                 android:orientation="horizontal"
                 android:id="@+id/User_Sex"
                 android:layout_weight="1"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="40dp"
                 android:layout_marginTop="8dp">
 
                 <RadioButton
@@ -74,10 +74,10 @@
                     android:layout_weight="1"
                     android:checked="false"
                     android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
                     android:background="@drawable/my_border_box"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
                 android:layout_width="95dp"
                 android:layout_height="35dp"
                 android:id="@+id/imageView20"
-                android:layout_marginLeft="62dp"
+                android:layout_marginLeft="58dp"
                 android:src="@drawable/da7" />
 
             <EditText
@@ -118,7 +118,7 @@
                 android:layout_marginRight="100dp"
                 android:textSize="16dp"
                 android:hint="ปี"
-                android:layout_marginLeft="11dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:autoText="false"
                 android:textStyle="bold" />
@@ -135,7 +135,7 @@
                 android:layout_height="35dp"
                 android:id="@+id/imageView18"
                 android:src="@drawable/da8"
-                android:layout_marginLeft="62dp" />
+                android:layout_marginLeft="58dp" />
 
             <EditText
                 android:layout_width="40dp"
@@ -151,7 +151,7 @@
                 android:textSize="16dp"
                 android:hint="กิโลกรัม"
                 android:layout_marginTop="9dp"
-                android:layout_marginLeft="11dp"
+                android:layout_marginLeft="5dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -165,7 +165,7 @@
                 android:layout_width="95dp"
                 android:layout_height="35dp"
                 android:id="@+id/imageView19"
-                android:layout_marginLeft="62dp"
+                android:layout_marginLeft="58dp"
                 android:src="@drawable/da9" />
 
             <EditText
@@ -179,7 +179,7 @@
                 android:background="@drawable/my_border_box"
                 android:layout_marginRight="100dp"
                 android:textSize="16dp"
-                android:layout_marginLeft="11dp"
+                android:layout_marginLeft="5dp"
                 android:hint="เซนติเมตร"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold" />
@@ -190,13 +190,15 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="320dp"
-        android:layout_height="70dp"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView8"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="325dp"
         android:onClick="ClickDisPlay"
-        android:src="@drawable/savedis" />
+        android:src="@drawable/savedis"
+        android:layout_marginTop="330dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
 
 </RelativeLayout>
