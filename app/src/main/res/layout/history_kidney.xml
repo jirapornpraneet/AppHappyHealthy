@@ -8,34 +8,32 @@
 
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/history"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
-                android:src="@drawable/ic_user"
-                android:padding="5dp" />
-
-            <TextView
-                android:id="@+id/dateKidney"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                android:textIsSelectable="false"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_weight="1" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/dateKidney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textIsSelectable="false"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/my_box_dis" />
     </LinearLayout>
-
 
 
 </RelativeLayout>

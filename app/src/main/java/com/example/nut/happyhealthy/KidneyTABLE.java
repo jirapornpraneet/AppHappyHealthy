@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +32,6 @@ public class KidneyTABLE {
     }//Constructor
 
 
-    //Add New Value
     //Add New Value
     public long addNewValueToSQLite(String str_K_Date,  String str_K_Time, int intCostGFR) {
         ContentValues contentValues = new ContentValues();
@@ -66,6 +66,7 @@ public class KidneyTABLE {
         db.close();
         return kidneyList;
     }
+
 
 
 

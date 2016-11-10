@@ -24,6 +24,8 @@ public class DiabetesTABLE {
     public static final String Diabetes_Time = "D_Time";
     public static final String Diabetes_CostSugarBefore = "D_CostSugarBefore";
     public static final String Diabetes_CostSugarAfter = "D_CostSugarAfter";
+    public static final String Diabetes_LevelCostBefore = "D_LevelCostBefore";
+    public static final String Diabetes_LevelCostAfter = "D_LevelCostAfter";
 
 
     public DiabetesTABLE(Context context) {
@@ -33,55 +35,59 @@ public class DiabetesTABLE {
 
     }//Constructor
 
-    public Cursor readAllData() {
-
-        Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time, Diabetes_CostSugarBefore, Diabetes_CostSugarAfter}, null, null, null, null, null);
-
-        if (objCursor != null) {
-            objCursor.moveToFirst();
-        }
-
-        return objCursor;
-    }   // readAllData
-
-    public boolean checkCursor() {
-
-        Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time, Diabetes_CostSugarBefore, Diabetes_CostSugarAfter}, null, null, null, null, null);
-
-        if (objCursor != null) {
-            objCursor.moveToLast();
-        }
-
-        return objCursor.isBeforeFirst();
-    }   // checkCursor
-
-
-    public String lastUpdata() {
-
-        Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time}, null, null, null, null, null);
-
-        if (objCursor != null) {
-            objCursor.moveToLast();
-            strLastDate = objCursor.getString(objCursor.getColumnIndex(Diabetes_Date));
-        }
-
-        return strLastDate;
-    }   // lastUpdate
+    /**
+     * public Cursor readAllData() {
+     * <p>
+     * Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time, Diabetes_CostSugarBefore, Diabetes_CostSugarAfter}, null, null, null, null, null);
+     * <p>
+     * if (objCursor != null) {
+     * objCursor.moveToFirst();
+     * }
+     * <p>
+     * return objCursor;
+     * }   // readAllData
+     * <p>
+     * public boolean checkCursor() {
+     * <p>
+     * Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time, Diabetes_CostSugarBefore, Diabetes_CostSugarAfter}, null, null, null, null, null);
+     * <p>
+     * if (objCursor != null) {
+     * objCursor.moveToLast();
+     * }
+     * <p>
+     * return objCursor.isBeforeFirst();
+     * }   // checkCursor
+     * <p>
+     * <p>
+     * public String lastUpdata() {
+     * <p>
+     * Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time}, null, null, null, null, null);
+     * <p>
+     * if (objCursor != null) {
+     * objCursor.moveToLast();
+     * strLastDate = objCursor.getString(objCursor.getColumnIndex(Diabetes_Date));
+     * }
+     * <p>
+     * return strLastDate;
+     * }   // lastUpdate
+     **/
 
 
     //Add New Value
-    //Add New Value
-    public long addNewValueToSQLite(String str_D_Date, String str_D_Time, int intCostSugarBefore, int intCostSugarAfter) {
+    public long addNewValueToSQLite(String str_D_Date, String str_D_Time, int intCostSugarBefore, int intCostSugarAfter,String str_L_before,String str_L_after) {
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(Diabetes_Date, str_D_Date);
         contentValues.put(Diabetes_Time, str_D_Time);
         contentValues.put(Diabetes_CostSugarBefore, intCostSugarBefore);
         contentValues.put(Diabetes_CostSugarAfter, intCostSugarAfter);
+        contentValues.put(Diabetes_LevelCostBefore,str_L_before);
+        contentValues.put(Diabetes_LevelCostAfter,str_L_after);
         long diabetes_id = writeSQLite.insert(Diabetes, null, contentValues);
         return diabetes_id;
     }//Add New Value
 
-//เอใส่เพิ่มlistview
+    //เอใส่เพิ่มlistview
     public ArrayList<HashMap<String, String>> getDiabetesList() {
         SQLiteDatabase db = objMyOpenHelper.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + Diabetes;
@@ -98,6 +104,8 @@ public class DiabetesTABLE {
                 diab.put("time", cursor.getString(cursor.getColumnIndex(Diabetes_Time)));
                 diab.put("cos_1", cursor.getString(cursor.getColumnIndex(Diabetes_CostSugarBefore)));
                 diab.put("cos_2", cursor.getString(cursor.getColumnIndex(Diabetes_CostSugarAfter)));
+                diab.put("cos_L_before", cursor.getString(cursor.getColumnIndex(Diabetes_LevelCostBefore)));
+                diab.put("cos_L_after", cursor.getString(cursor.getColumnIndex(Diabetes_LevelCostAfter)));
                 diabList.add(diab);
             } while (cursor.moveToNext());
         }

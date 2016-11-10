@@ -18,7 +18,7 @@ public class History_Kidney extends AppCompatActivity {
     ListAdapter adapterKidney;
     KidneyTABLE kid;
     ArrayList<HashMap<String, String>> kidneyList;
-    String DateKidney, TimeKidney;
+    String DateKidney, TimeKidney,LevelCostGFR;
     int CostGFR;
 
     @Override
@@ -36,6 +36,7 @@ public class History_Kidney extends AppCompatActivity {
                 DateKidney = kidneyList.get(i).get("dateKidney").toString();
                 TimeKidney = kidneyList.get(i).get("timeKidney").toString();
                 CostGFR = Integer.parseInt(kidneyList.get(i).get("cos_gfr"));
+
 
                 AlertHistoryKidney();
             }

@@ -29,7 +29,9 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "D_Date text, " +
             "D_Time text, " +
             "D_CostSugarBefore integer, " +
-            "D_CostSugarAfter integer);";
+            "D_CostSugarAfter integer,"+
+            "D_LevelCostBefore text,"+
+            "D_LevelCostAfter text);";
 
     //CreateTableKidney
     private static final String Kidney = "create table Kidney (K_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -127,4 +129,3 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     }   // onUpgrade
 
 }   // Main Class
-

@@ -19,7 +19,7 @@ public class History_Diabetes extends AppCompatActivity {
     ListAdapter adapter;
     DiabetesTABLE dia;
     ArrayList<HashMap<String, String>> diabList;
-    String DateDiabetes, TimeDiabetes;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
+    String DateDiabetes, TimeDiabetes,LevelBefore,LevelAfter;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
     int Cost1Diabetes, Cost2Diabetes;
 
     @Override
@@ -38,6 +38,9 @@ public class History_Diabetes extends AppCompatActivity {
                 TimeDiabetes = diabList.get(i).get("time").toString();
                 Cost1Diabetes = Integer.parseInt(diabList.get(i).get("cos_1"));
                 Cost2Diabetes = Integer.parseInt(diabList.get(i).get("cos_2"));
+                LevelBefore = diabList.get(i).get("cos_L_before").toString();
+                LevelAfter = diabList.get(i).get("cos_L_after").toString();
+
 
                 AlertHistory();
 
@@ -51,10 +54,14 @@ public class History_Diabetes extends AppCompatActivity {
 
     private void AlertHistory() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
-        objAlert.setTitle("วันที่บันทึก : " + DateDiabetes );
-        objAlert.setMessage("เวลาที่บันทึก : " + TimeDiabetes + "\n"+
-                            "ค่าน้ำตาลก่อนอาหารของผู้ใช้งาน : " + Cost1Diabetes+ "\n"+
-                            "ค่าน้ำตาลหลังอาหารของผู้ใช้งาน : " + Cost2Diabetes    );
+        objAlert.setTitle(" วันที่บันทึก : " + DateDiabetes );
+        objAlert.setMessage(" เวลาที่บันทึก : " + TimeDiabetes + "\n"+
+                            " ค่าน้ำตาลก่อนอาหารของผู้ใช้งาน : " + Cost1Diabetes+ "\n"+
+                            " ช่วงระดับน้ำตาลก่อนอาหาร " + "\n" +
+                            " อยู่ในเกณฑ์ที่ : " +LevelBefore + "\n" +
+                            " ค่าน้ำตาลหลังอาหารของผู้ใช้งาน : " + Cost2Diabetes+"\n" +
+                            " ช่วงระดับน้ำตาลหลังอาหาร " + "\n" +
+                            " อยู่ในเกณฑ์ที่ : "+ LevelAfter);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
