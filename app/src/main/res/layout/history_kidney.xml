@@ -7,7 +7,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/dateKidney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date"
@@ -17,7 +17,7 @@
         android:layout_weight="1" />
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/timeKidney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Time"

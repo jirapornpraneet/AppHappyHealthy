@@ -1,10 +1,12 @@
 package com.example.nut.happyhealthy;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class DisplayKidney extends AppCompatActivity {
@@ -78,4 +80,14 @@ public class DisplayKidney extends AppCompatActivity {
         TV_K_LevelCostGFR = (TextView) findViewById(R.id.tv_K_LevelCostGFR);
 
     }//bindWidget
+
+    public void ClickAddKidney(View view) {
+        startActivity(new Intent(DisplayKidney.this,Kidney.class));
+    }//ClickAddKidney
+
+    public void ClickHistoryKidney(View view) {
+        startActivity(new Intent(DisplayKidney.this,History_Kidney.class));
+    }//ClickHistoryKidney
+
+
 }//MainClass

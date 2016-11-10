@@ -145,7 +145,7 @@
                 android:id="@+id/imageView6"
                 android:src="@drawable/addbutton"
                 android:nestedScrollingEnabled="false"
-                android:onClick="ClickEditDataUser"
+                android:onClick="ClickAddKidney"
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="2dp" />
@@ -155,7 +155,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/imageView22"
                 android:src="@drawable/button"
-                android:onClick="ClickSaveDataUser"
+                android:onClick="ClickHistoryKidney"
                 android:layout_weight="1"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="2dp" />

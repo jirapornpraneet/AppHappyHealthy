@@ -202,7 +202,7 @@
                 android:layout_marginLeft="13dp"
                 android:layout_weight="1"
                 android:nestedScrollingEnabled="false"
-                android:onClick="ClickEditDataUser"
+                android:onClick="ClickAddDiabetes"
                 android:src="@drawable/addbutton" />
 
             <ImageView

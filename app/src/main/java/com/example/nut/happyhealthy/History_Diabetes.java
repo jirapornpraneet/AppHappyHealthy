@@ -54,15 +54,13 @@ public class History_Diabetes extends AppCompatActivity {
         objAlert.setTitle("You Click " + DateDiabetes + " Time " + TimeDiabetes);
         objAlert.setMessage("Your Weight = " + "CostSugar " + Cost1Diabetes + " cost " + Cost2Diabetes);
         objAlert.setCancelable(false);
-        objAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
         });
         objAlert.show();
-
     }
-
 }
 

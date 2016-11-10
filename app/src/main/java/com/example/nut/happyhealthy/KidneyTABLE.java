@@ -2,7 +2,11 @@ package com.example.nut.happyhealthy;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Nut on 30/10/2559.
@@ -37,4 +41,32 @@ public class KidneyTABLE {
         long kidney_id = writeSQLite.insert(Kidney, null, contentValues);
         return kidney_id;
     }//Add New Value
+
+    //เอใส่เพิ่มlistview
+    public ArrayList<HashMap<String, String>> getKidneyList() {
+        SQLiteDatabase db = objMyOpenHelper.getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + Kidney;
+
+        ArrayList<HashMap<String, String>> kidneyList = new ArrayList<HashMap<String, String>>();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                HashMap<String, String> kidb = new HashMap<String, String>();
+                kidb.put("id", cursor.getString(cursor.getColumnIndex(Kidney_ID)));
+                kidb.put("dateKidney", cursor.getString(cursor.getColumnIndex(Kidney_Date)));
+                kidb.put("timeKidney", cursor.getString(cursor.getColumnIndex(Kidney_Time)));
+                kidb.put("cos_gfr", cursor.getString(cursor.getColumnIndex(Kidney_CostGFR)));
+                kidneyList.add(kidb);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return kidneyList;
+    }
+
+
+
 }//MainClass
