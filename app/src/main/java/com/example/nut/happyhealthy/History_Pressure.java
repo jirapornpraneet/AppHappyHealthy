@@ -46,15 +46,17 @@ public class History_Pressure extends AppCompatActivity {
         });//OnItemClickList
 
         preList = pre.getPreList();
-        adapterPre = new SimpleAdapter(History_Pressure.this, preList, R.layout.history_pressure, new String[]{"datePre", "timePre"}, new int[]{R.id.datePre, R.id.timePre});
+        adapterPre = new SimpleAdapter(History_Pressure.this, preList, R.layout.history_pressure, new String[]{"datePre"}, new int[]{R.id.datePre});
         listViewPre.setAdapter(adapterPre);
 
     }//OnCreate
 
     private void AlertHistoryPre() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
-        objAlert.setTitle("You Click " + DatePre + " Time " + TimePre);
-        objAlert.setMessage("Your Weight = " + "CostSugar " + Cost_Down + " cost " + Cost_Top);
+        objAlert.setTitle("วันที่บันทึก : " + DatePre );
+        objAlert.setMessage("เวลาที่บันทึก : " + TimePre + "\n" +
+                            "ค่าความดันล่างของผู้ใช้งาน :" + Cost_Down + "\n"+
+                            "ค่าความดันบนของผู้ใช้งาน " + Cost_Top);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

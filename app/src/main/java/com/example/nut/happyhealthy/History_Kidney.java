@@ -43,15 +43,18 @@ public class History_Kidney extends AppCompatActivity {
         });
 
         kidneyList = kid.getKidneyList();
-        adapterKidney = new SimpleAdapter(History_Kidney.this, kidneyList, R.layout.history_kidney, new String[]{"dateKidney", "timeKidney"}, new int[]{R.id.dateKidney, R.id.timeKidney});
-        listViewKidney.setAdapter(adapterKidney);
+        adapterKidney = new SimpleAdapter(History_Kidney.this, kidneyList, R.layout.history_kidney, new String[]{"dateKidney"}, new int[]{R.id.dateKidney});
+        listViewKidney.setAdapter(adapterKidney); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
 
     }
 
+
+    //เมื่อกดคลิกเข้าไปที่วันที่นั้นจะแสดงข้อมูลที่เราทำการเขียนไว้ใน OnItem
     private void AlertHistoryKidney() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
-        objAlert.setTitle("You Click " + DateKidney + " Time " + TimeKidney);
-        objAlert.setMessage("Your Weight = " + "CostSugar " + CostGFR);
+        objAlert.setTitle("วันที่บันทึก : " + DateKidney);
+        objAlert.setMessage("เวลาที่บันทึก : " + TimeKidney + "\n"+
+                            "ค่าการทำงานไต(GFR)ของผู้ใช้งาน : " + CostGFR);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

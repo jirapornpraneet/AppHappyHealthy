@@ -45,14 +45,16 @@ public class History_Diabetes extends AppCompatActivity {
         });
 
         diabList = dia.getDiabetesList();
-        adapter = new SimpleAdapter(History_Diabetes.this, diabList, R.layout.history_diabetes, new String[]{"date", "time"}, new int[]{R.id.date, R.id.time});
+        adapter = new SimpleAdapter(History_Diabetes.this, diabList, R.layout.history_diabetes, new String[]{"date"}, new int[]{R.id.date});
         listView.setAdapter(adapter);
     }
 
     private void AlertHistory() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
-        objAlert.setTitle("You Click " + DateDiabetes + " Time " + TimeDiabetes);
-        objAlert.setMessage("Your Weight = " + "CostSugar " + Cost1Diabetes + " cost " + Cost2Diabetes);
+        objAlert.setTitle("วันที่บันทึก : " + DateDiabetes );
+        objAlert.setMessage("เวลาที่บันทึก : " + TimeDiabetes + "\n"+
+                            "ค่าน้ำตาลก่อนอาหารของผู้ใช้งาน : " + Cost1Diabetes+ "\n"+
+                            "ค่าน้ำตาลหลังอาหารของผู้ใช้งาน : " + Cost2Diabetes    );
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
