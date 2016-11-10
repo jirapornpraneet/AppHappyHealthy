@@ -1,9 +1,11 @@
 package com.example.nut.happyhealthy;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class DisplayPressure extends AppCompatActivity {
@@ -113,4 +115,14 @@ public class DisplayPressure extends AppCompatActivity {
         TV_P_LevelTop = (TextView) findViewById(R.id.tv_P_LevelTop);
 
     }//bindWidget
+
+    public void ClickAddPre(View view) {
+        startActivity(new Intent(DisplayPressure.this,Pressure.class));
+    }//ClickAddKidney
+
+    public void ClickHistoryPre(View view) {
+        startActivity(new Intent(DisplayPressure.this,History_Pressure.class));
+    }//ClickHistoryKidney
+
+
 }//MainClass

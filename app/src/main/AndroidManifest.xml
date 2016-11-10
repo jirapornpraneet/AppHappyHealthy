@@ -37,7 +37,8 @@
         <activity android:name=".ExerciseType" />
         <activity android:name=".MainActivity" />
         <activity android:name=".History_Diabetes" />
-        <activity android:name=".History_Kidney"></activity>
+        <activity android:name=".History_Kidney" />
+        <activity android:name=".History_Pressure"></activity>
     </application>
 
 </manifest>
