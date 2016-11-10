@@ -72,6 +72,7 @@ public class Diabetes extends AppCompatActivity {
                     }
                 }, day, month, year);
                 datePickerDialog.setTitle("เลือกวันที่");
+
                 datePickerDialog.show();
             }
         });//setdatepicker
