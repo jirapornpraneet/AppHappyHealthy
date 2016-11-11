@@ -104,7 +104,7 @@ public class DisplayUser extends AppCompatActivity {
     }//ClickEditUser
 
     public void ClickSaveDataUser(View view) {
-        startActivity(new Intent(DisplayUser.this,User.class));
+        startActivity(new Intent(DisplayUser.this,MainActivity.class));
     }//ClickSaveUser
 
 

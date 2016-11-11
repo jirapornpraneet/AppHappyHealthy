@@ -130,9 +130,9 @@ public class Pressure extends AppCompatActivity {
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่  : " + str_P_Date + "\n"
                 + " เวลา : " + str_P_Time + "\n"
-                + " ค่าความดันตัวล่างของผู้ใช้งาน : " + intCostPressureDown + "\n"
+                + " ค่าความดันตัวล่าง : " + intCostPressureDown + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_down+"\n"
-                + " ค่าความดันตัวบนของผู้ใช้งาน : " + intCostPressureTop + "\n"
+                + " ค่าความดันตัวบน : " + intCostPressureTop + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_top);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {

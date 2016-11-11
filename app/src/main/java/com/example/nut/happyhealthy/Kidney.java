@@ -128,7 +128,7 @@ public class Kidney extends AppCompatActivity {
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่ : " + str_K_Date+ "\n"
                 + " เวลา : " + str_K_Time +"\n" +
-                " ค่าการทำงานไตของผู้ใช้งาน : " + intCostGFR + "\n"+
+                " ค่าการทำงานไต : " + intCostGFR + "\n"+
                 " อยู่ในเกณฑ์ที่ : " + str_L_cost);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {

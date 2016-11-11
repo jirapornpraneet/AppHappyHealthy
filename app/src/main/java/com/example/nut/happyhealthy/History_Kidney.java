@@ -56,7 +56,7 @@ public class History_Kidney extends AppCompatActivity {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DateKidney);
         objAlert.setMessage(" เวลาที่บันทึก : " + TimeKidney + "\n"+
-                            " ค่าการทำงานไต(GFR)ของผู้ใช้งาน : " + CostGFR +"\n"+
+                            " ค่าการทำงานไต(GFR) : " + CostGFR +"\n"+
                             " อยู่ในเกณฑ์ที่ : " + LevelCostGFR);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {

@@ -57,9 +57,9 @@ public class History_Pressure extends AppCompatActivity {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DatePre );
         objAlert.setMessage(" เวลาที่บันทึก : " + TimePre + "\n" +
-                            " ค่าความดันล่างของผู้ใช้งาน : " + Cost_Down + "\n"+
+                            " ค่าความดันล่าง : " + Cost_Down + "\n"+
                             " อยู่ในเกณฑ์ที่ : " + Level_P_Down + "\n"+
-                            " ค่าความดันบนของผู้ใช้งาน : " + Cost_Top + "\n"+
+                            " ค่าความดันบน : " + Cost_Top + "\n"+
                             " อยู่ในเกณฑ์ที่ : " + Level_P_Top );
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {

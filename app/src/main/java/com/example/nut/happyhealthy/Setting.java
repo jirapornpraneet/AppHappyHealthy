@@ -5,14 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class FoodType extends AppCompatActivity {
+public class Setting extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_type);
+        setContentView(R.layout.activity_setting);
     }//Oncreate
 
+    public void ClickSetBackHome(View view) {startActivity(new Intent(Setting.this,MainActivity.class));}//ClickBackHome
 
-    public void ClickFoodBackHome(View view) {startActivity(new Intent(FoodType.this,MainActivity.class));}//ClickBackHome
 }//MainClass
