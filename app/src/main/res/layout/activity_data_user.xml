@@ -11,7 +11,8 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -191,12 +192,12 @@
 
     <ImageView
         android:layout_width="290dp"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:id="@+id/imageView8"
         android:layout_centerHorizontal="true"
         android:onClick="ClickDisPlay"
-        android:src="@drawable/savedis"
-        android:layout_marginTop="330dp"
+        android:src="@drawable/savedis2"
+        android:layout_marginTop="350dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
 

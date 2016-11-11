@@ -150,13 +150,30 @@
                 android:layout_marginLeft="100dp" />
         </LinearLayout>
 
-        <ImageView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/imageView13"
-            android:onClick="ClickDisLevelsSugar"
-            android:src="@drawable/savedis"
-            android:layout_marginTop="5dp" />
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/imageView13"
+                android:onClick="ClickDisLevelsSugar"
+                android:src="@drawable/savedis"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/imageView26"
+                android:src="@drawable/button"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:onClick="ClickHistoryDiabetes" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

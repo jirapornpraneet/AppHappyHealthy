@@ -230,7 +230,9 @@ public class Diabetes extends AppCompatActivity {
         builder.show();
     }//ShowAlert
 
-
+    public void ClickHistoryDiabetes(View view) {
+        startActivity(new Intent(Diabetes.this,History_Diabetes.class));
+    }//ClickHistoryDiabetes
 
 
 
