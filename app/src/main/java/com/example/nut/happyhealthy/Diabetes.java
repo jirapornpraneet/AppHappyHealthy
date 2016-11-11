@@ -136,13 +136,11 @@ public class Diabetes extends AppCompatActivity {
 
        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
-        builder.setMessage("วันที่ :" + str_D_Date+ "\n"
+        builder.setMessage(" วันที่ :" + str_D_Date+ "\n"
                 + " เวลา : " + str_D_Time +"\n"
                 + " ค่าน้ำตาลก่อนอาหารของผู้ใช้งาน : " + intCostSugarBefore +"\n"
-                +" ช่วงระดับน้ำตาลก่อนอาหาร" + "\n"
                 + " อยู่ในเกณฑ์ที่ :" + str_L_before + "\n"
                 + " ค่าน้ำตาลหลังอาหารของผู้ใช้งาน : " + intCostSugarAfter+"\n"
-                + " ช่วงระดับน้ำตาลหลังอาหาร "+"\n"
                 +" อยู่ในเกณฑ์ที่ : " + str_L_after);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
@@ -212,7 +210,7 @@ public class Diabetes extends AppCompatActivity {
         D_costSugarBefore.setText("");
         D_costSugarAfter.setText("");
         Toast.makeText(Diabetes.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(Diabetes.this, History_Diabetes.class);
+        Intent objIntent = new Intent(Diabetes.this, DisplayDisease.class);
         startActivity(objIntent);
         finish();
     }//upDataDiabetestoSQLite

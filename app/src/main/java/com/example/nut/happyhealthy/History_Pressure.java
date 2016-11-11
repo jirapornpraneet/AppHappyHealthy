@@ -19,7 +19,7 @@ public class History_Pressure extends AppCompatActivity {
     ListAdapter adapterPre;
     PressureTABLE pre;
     ArrayList<HashMap<String, String>> preList;
-    String DatePre, TimePre;
+    String DatePre, TimePre,Level_P_Down,Level_P_Top;
     int Cost_Down, Cost_Top;
 
 
@@ -40,6 +40,8 @@ public class History_Pressure extends AppCompatActivity {
                 TimePre = preList.get(i).get("timePre").toString();
                 Cost_Down = Integer.parseInt(preList.get(i).get("cos_down"));
                 Cost_Top = Integer.parseInt(preList.get(i).get("cos_top"));
+                Level_P_Down = preList.get(i).get("cos_level_down").toString();
+                Level_P_Top = preList.get(i).get("cos_level_top").toString();
 
                 AlertHistoryPre();
             }
@@ -53,10 +55,12 @@ public class History_Pressure extends AppCompatActivity {
 
     private void AlertHistoryPre() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
-        objAlert.setTitle("วันที่บันทึก : " + DatePre );
-        objAlert.setMessage("เวลาที่บันทึก : " + TimePre + "\n" +
-                            "ค่าความดันล่างของผู้ใช้งาน :" + Cost_Down + "\n"+
-                            "ค่าความดันบนของผู้ใช้งาน " + Cost_Top);
+        objAlert.setTitle(" วันที่บันทึก : " + DatePre );
+        objAlert.setMessage(" เวลาที่บันทึก : " + TimePre + "\n" +
+                            " ค่าความดันล่างของผู้ใช้งาน : " + Cost_Down + "\n"+
+                            " อยู่ในเกณฑ์ที่ : " + Level_P_Down + "\n"+
+                            " ค่าความดันบนของผู้ใช้งาน : " + Cost_Top + "\n"+
+                            " อยู่ในเกณฑ์ที่ : " + Level_P_Top );
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

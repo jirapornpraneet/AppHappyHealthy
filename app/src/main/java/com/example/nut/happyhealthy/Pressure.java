@@ -29,7 +29,7 @@ public class Pressure extends AppCompatActivity {
     //การประกาศตัวแปร
     private PressureTABLE objpressureTABLE;
     private EditText P_date,P_time,P_costPressureTop,P_costPressureDown;
-    private String  str_P_Date,str_P_Time,intCostPressureDown,intCostPressureTop;
+    private String  str_P_Date,str_P_Time,intCostPressureDown,intCostPressureTop,str_LP_cost_down,str_LP_cost_top;
 
 
     @Override
@@ -116,19 +116,24 @@ public class Pressure extends AppCompatActivity {
 
     private void confirmPressure() {
 
-        // Find BMI
+        str_LP_cost_down = findMyLevelPressureDown();
+        str_LP_cost_top = findMyLevelPressureTop();
+
+        /** Find BMI
         int  intcostpressuredown = Integer.parseInt(intCostPressureDown);
         int  intcostpressuretop = Integer.parseInt(intCostPressureTop);
 
         int IntCostPressureDown = intcostpressuredown;
-        int IntCostPressureTop = intcostpressuretop ;
+        int IntCostPressureTop = intcostpressuretop ;**/
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
-        builder.setMessage("วันที่ =" + str_P_Date + "\n"
-                + "เวลา = " + str_P_Time + "\n"
-                + "ค่าความดันตัวล่างของผู้ใช้งาน = " + intCostPressureDown + "\n"
-                + "ค่าความดันตัวบนของผู้ใช้งาน = " + intCostPressureTop);
+        builder.setMessage(" วันที่  : " + str_P_Date + "\n"
+                + " เวลา : " + str_P_Time + "\n"
+                + " ค่าความดันตัวล่างของผู้ใช้งาน : " + intCostPressureDown + "\n"
+                + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_down+"\n"
+                + " ค่าความดันตัวบนของผู้ใช้งาน : " + intCostPressureTop + "\n"
+                + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_top);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
@@ -146,10 +151,56 @@ public class Pressure extends AppCompatActivity {
         builder.show();
     }//confirmPressure
 
+    private String findMyLevelPressureTop() {
+            String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
+            String myResult = null;
+            Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
+
+            if (IntCostPressureTop < 100) {
+                myResult = resultStrings[0];
+            } else if (IntCostPressureTop < 130) {
+                myResult = resultStrings[1];
+            } else if (IntCostPressureTop < 140) {
+                myResult = resultStrings[2];
+            } else if (IntCostPressureTop < 160) {
+                myResult = resultStrings[3];
+            } else if (IntCostPressureTop < 180) {
+                myResult = resultStrings[4];
+            } else {
+                myResult = resultStrings[5];
+            }
+
+            return myResult;
+
+    }//findMyLevelPressureTop
+
+    private String findMyLevelPressureDown() {
+            String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
+            String myResult = null;
+            Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
+
+            if (IntCostPressureDown < 60) {
+                myResult = resultStrings[0];
+            } else if (IntCostPressureDown < 88) {
+                myResult = resultStrings[1];
+            } else if (IntCostPressureDown < 90) {
+                myResult = resultStrings[2];
+            } else if (IntCostPressureDown < 100) {
+                myResult = resultStrings[3];
+            } else if (IntCostPressureDown < 110) {
+                myResult = resultStrings[4];
+            } else {
+                myResult = resultStrings[5];
+            }
+
+            return myResult;
+
+        }//findMyLevelPressureDown
+
     private void upDataPressuretoSQLite() {
         PressureTABLE objpressureTABLE = new PressureTABLE(this);
         long inSertDataUser = objpressureTABLE.addNewValueToSQLite
-                (str_P_Date, str_P_Time, Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop));
+                (str_P_Date, str_P_Time, Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top);
         P_date.setText("");
         P_time.setText("");
         P_costPressureTop.setText("");

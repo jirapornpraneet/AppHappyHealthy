@@ -30,7 +30,7 @@ public class Kidney extends AppCompatActivity {
     //การประกาศตัวแปร
     private KidneyTABLE  objkidneyTABLE;
     private EditText K_date,K_time,K_costGFR;
-    private String  str_K_Date,str_K_Time,intCostGFR ;
+    private String  str_K_Date,str_K_Time,intCostGFR,str_L_cost ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,19 +114,22 @@ public class Kidney extends AppCompatActivity {
 
     private void confirmKidney() {
 
+        str_L_cost = findMyLevelCostGFR();
 
-        // Find BMI
+
+        /** Find BMI
         int  intcostgfr = Integer.parseInt(intCostGFR);
 
 
-        int IntCostGFR = intcostgfr;
+        int IntCostGFR = intcostgfr;**/
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
-        builder.setMessage("วันที่ =" + str_K_Date+ "\n"
-                + "เวลา = " + str_K_Time +"\n" +
-                "ค่าการทำงานไตของผู้ใช้งาน = " + intCostGFR);
+        builder.setMessage(" วันที่ : " + str_K_Date+ "\n"
+                + " เวลา : " + str_K_Time +"\n" +
+                " ค่าการทำงานไตของผู้ใช้งาน : " + intCostGFR + "\n"+
+                " อยู่ในเกณฑ์ที่ : " + str_L_cost);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
@@ -144,11 +147,30 @@ public class Kidney extends AppCompatActivity {
         builder.show();
     }//ConfirmKidney
 
+    private String findMyLevelCostGFR() {
+        String[] resultStrings = getResources().getStringArray(R.array.my_kidney);
+        String myResult = null;
+        Integer IntCostGFR = Integer.parseInt(intCostGFR);
+
+        if (IntCostGFR > 90) {
+            myResult = resultStrings[0];
+        } else if (IntCostGFR > 60 ) {
+            myResult = resultStrings[1];
+        } else if (IntCostGFR > 30) {
+            myResult = resultStrings[2];
+        } else if (IntCostGFR > 15) {
+            myResult = resultStrings[3];
+        } else {
+            myResult = resultStrings[4];
+        }
+        return myResult;
+    }//findMyLevelCostGFR
+
     private void upDataKidneytoSQLite() {
 
         KidneyTABLE objkidneyTABLE = new KidneyTABLE(this);
         long inSertDataUser = objkidneyTABLE.addNewValueToSQLite
-                (str_K_Date, str_K_Time, Integer.parseInt(intCostGFR));
+                (str_K_Date, str_K_Time, Integer.parseInt(intCostGFR),str_L_cost);
         K_date.setText("");
         K_time.setText("");
         K_costGFR.setText("");

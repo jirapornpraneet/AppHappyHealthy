@@ -57,10 +57,8 @@ public class History_Diabetes extends AppCompatActivity {
         objAlert.setTitle(" วันที่บันทึก : " + DateDiabetes );
         objAlert.setMessage(" เวลาที่บันทึก : " + TimeDiabetes + "\n"+
                             " ค่าน้ำตาลก่อนอาหารของผู้ใช้งาน : " + Cost1Diabetes+ "\n"+
-                            " ช่วงระดับน้ำตาลก่อนอาหาร " + "\n" +
                             " อยู่ในเกณฑ์ที่ : " +LevelBefore + "\n" +
                             " ค่าน้ำตาลหลังอาหารของผู้ใช้งาน : " + Cost2Diabetes+"\n" +
-                            " ช่วงระดับน้ำตาลหลังอาหาร " + "\n" +
                             " อยู่ในเกณฑ์ที่ : "+ LevelAfter);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {

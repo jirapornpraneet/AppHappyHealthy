@@ -212,7 +212,8 @@
                 android:layout_marginRight="13dp"
                 android:layout_weight="1"
                 android:onClick="ClickHistoryDiabetes"
-                android:src="@drawable/button" />
+                android:src="@drawable/button"
+                android:nestedScrollingEnabled="false" />
         </LinearLayout>
 
     </LinearLayout>

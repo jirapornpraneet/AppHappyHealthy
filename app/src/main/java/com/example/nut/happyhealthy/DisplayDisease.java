@@ -110,9 +110,9 @@ public class DisplayDisease extends AppCompatActivity {
     }//ClickAddDiabetes
 
 
-   /** public void ClickHistoryDiabetes(View view) {
+    public void ClickHistoryDiabetes(View view) {
         startActivity(new Intent(DisplayDisease.this,History_Diabetes.class));
-    }//ClickHistoryDiabetes**/
+    }//ClickHistoryDiabetes
 
 
 

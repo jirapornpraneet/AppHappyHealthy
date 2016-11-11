@@ -22,6 +22,9 @@ public class PressureTABLE {
     public static final String Pressure_Time = "P_Time";
     public static final String Pressure_CostPressureDown = "P_CostPressureDown";
     public static final String Pressure_CostPressureTop = "P_CostPressureTop";
+    public static final String Pressure_CostLevel_Down = "P_Cost_Level_Down";
+    public static final String Pressure_CostLevel_Top = "P_Cost_Level_Top";
+
 
 
     public PressureTABLE (Context context) {
@@ -34,12 +37,14 @@ public class PressureTABLE {
 
     //Add New Value
     //Add New Value
-    public long addNewValueToSQLite(String str_P_Date,  String str_P_Time, int intCostPressureDown,int intCostPressureTop) {
+    public long addNewValueToSQLite(String str_P_Date,  String str_P_Time, int intCostPressureDown,int intCostPressureTop,String str_LP_cost_down,String str_LP_cost_top) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Pressure_Date, str_P_Date);
         contentValues.put(Pressure_Time, str_P_Time);
         contentValues.put(Pressure_CostPressureDown, intCostPressureDown);
         contentValues.put(Pressure_CostPressureTop, intCostPressureTop);
+        contentValues.put(Pressure_CostLevel_Down, str_LP_cost_down);
+        contentValues.put(Pressure_CostLevel_Top,str_LP_cost_top);
         long pressure_id = writeSQLite.insert(Pressure, null, contentValues);
         return pressure_id;
     }//Add New Value
@@ -61,6 +66,8 @@ public class PressureTABLE {
                 pre.put("timePre", cursor.getString(cursor.getColumnIndex(Pressure_Time)));
                 pre.put("cos_down", cursor.getString(cursor.getColumnIndex(Pressure_CostPressureDown)));
                 pre.put("cos_top", cursor.getString(cursor.getColumnIndex(Pressure_CostPressureTop)));
+                pre.put("cos_level_down", cursor.getString(cursor.getColumnIndex(Pressure_CostLevel_Down)));
+                pre.put("cos_level_top", cursor.getString(cursor.getColumnIndex(Pressure_CostPressureTop)));
                 preList.add(pre);
             } while (cursor.moveToNext());
         }

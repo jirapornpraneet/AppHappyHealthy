@@ -37,14 +37,17 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     private static final String Kidney = "create table Kidney (K_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "K_Date text, " +
             "K_Time text, " +
-            "K_CostGFR integer);";
+            "K_CostGFR integer,"+
+            "K_LevelCostGFR text);";
 
     //CreateTablePressure
     private static final String Pressure = "create table Pressure (P_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "P_Date text, " +
             "P_Time text, " +
             "P_CostPressureDown integer, " +
-            "P_CostPressureTop integer);";
+            "P_CostPressureTop integer,"+
+            "P_Cost_Level_Down,"+
+            "P_Cost_Level_Top);";
 
     //CreateTableFoodType
     private static final String Food_Type = "create table Food_Type (FoodType_Id INTEGER PRIMARY KEY AUTOINCREMENT, " +

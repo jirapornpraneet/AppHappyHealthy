@@ -36,6 +36,7 @@ public class History_Kidney extends AppCompatActivity {
                 DateKidney = kidneyList.get(i).get("dateKidney").toString();
                 TimeKidney = kidneyList.get(i).get("timeKidney").toString();
                 CostGFR = Integer.parseInt(kidneyList.get(i).get("cos_gfr"));
+                LevelCostGFR = kidneyList.get(i).get("cos_level").toString();
 
 
                 AlertHistoryKidney();
@@ -53,9 +54,10 @@ public class History_Kidney extends AppCompatActivity {
     //เมื่อกดคลิกเข้าไปที่วันที่นั้นจะแสดงข้อมูลที่เราทำการเขียนไว้ใน OnItem
     private void AlertHistoryKidney() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
-        objAlert.setTitle("วันที่บันทึก : " + DateKidney);
-        objAlert.setMessage("เวลาที่บันทึก : " + TimeKidney + "\n"+
-                            "ค่าการทำงานไต(GFR)ของผู้ใช้งาน : " + CostGFR);
+        objAlert.setTitle(" วันที่บันทึก : " + DateKidney);
+        objAlert.setMessage(" เวลาที่บันทึก : " + TimeKidney + "\n"+
+                            " ค่าการทำงานไต(GFR)ของผู้ใช้งาน : " + CostGFR +"\n"+
+                            " อยู่ในเกณฑ์ที่ : " + LevelCostGFR);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

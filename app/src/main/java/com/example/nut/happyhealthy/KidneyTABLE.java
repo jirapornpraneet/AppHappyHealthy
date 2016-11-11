@@ -22,6 +22,7 @@ public class KidneyTABLE {
     public static final String Kidney_Date = "K_Date";
     public static final String Kidney_Time= "K_Time";
     public static final String Kidney_CostGFR = "K_CostGFR";
+    public static final String Kidney_LevelCost = "K_LevelCostGFR";
 
 
     public KidneyTABLE (Context context) {
@@ -33,11 +34,12 @@ public class KidneyTABLE {
 
 
     //Add New Value
-    public long addNewValueToSQLite(String str_K_Date,  String str_K_Time, int intCostGFR) {
+    public long addNewValueToSQLite(String str_K_Date,  String str_K_Time, int intCostGFR,String str_L_cost) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Kidney_Date, str_K_Date);
         contentValues.put(Kidney_Time, str_K_Time);
         contentValues.put(Kidney_CostGFR, intCostGFR);
+        contentValues.put(Kidney_LevelCost,str_L_cost);
         long kidney_id = writeSQLite.insert(Kidney, null, contentValues);
         return kidney_id;
     }//Add New Value
@@ -58,6 +60,7 @@ public class KidneyTABLE {
                 kidb.put("dateKidney", cursor.getString(cursor.getColumnIndex(Kidney_Date)));
                 kidb.put("timeKidney", cursor.getString(cursor.getColumnIndex(Kidney_Time)));
                 kidb.put("cos_gfr", cursor.getString(cursor.getColumnIndex(Kidney_CostGFR)));
+                kidb.put("cos_level", cursor.getString(cursor.getColumnIndex(Kidney_LevelCost)));
                 kidneyList.add(kidb);
             } while (cursor.moveToNext());
         }
