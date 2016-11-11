@@ -196,5 +196,9 @@ public class Kidney extends AppCompatActivity {
 
     }//ShowAlert
 
+    public void ClickHistoryKidney(View view) {
+        startActivity(new Intent(Kidney.this,History_Kidney.class));
+    }//ClickHistoryKidney
+
 
 }//Main class

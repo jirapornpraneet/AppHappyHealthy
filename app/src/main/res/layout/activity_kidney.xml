@@ -108,14 +108,30 @@
 
         </LinearLayout>
 
-        <ImageView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:id="@+id/imageView13"
-            android:onClick="ClickDisLevelsGFR"
-            android:src="@drawable/savedis"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="4dp" />
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/imageView13"
+                android:onClick="ClickDisLevelsGFR"
+                android:src="@drawable/savedis"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/imageView26"
+                android:src="@drawable/button"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:onClick="ClickHistoryKidney" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

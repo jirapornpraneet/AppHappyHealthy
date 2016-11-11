@@ -226,6 +226,11 @@ public class Pressure extends AppCompatActivity {
         builder.show();
     }//ShowAlert
 
+    public void ClickHisPre(View view) {
+        startActivity(new Intent(Pressure.this,History_Pressure.class));
+    }//ClickHistoryPre
+
+
 
 
 }//Main class
