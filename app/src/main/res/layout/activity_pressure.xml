@@ -11,7 +11,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="fill_parent"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="165dp">
@@ -139,7 +139,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -162,20 +162,22 @@
         </LinearLayout>
 
         <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="324dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:weightSum="1">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:weightSum="1"
+            android:layout_marginTop="10dp">
 
-        <ImageView
-            android:layout_width="238dp"
-            android:layout_height="68dp"
-            android:id="@+id/imageView11"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/wpre" />
-    </LinearLayout>
+            <ImageView
+                android:layout_width="238dp"
+                android:layout_height="68dp"
+                android:id="@+id/imageView11"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/wpre" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
 
