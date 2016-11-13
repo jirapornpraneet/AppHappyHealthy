@@ -7,6 +7,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nut.happyhealthy.Report">
+    tools:context="com.example.nut.happyhealthy.Report"
+    android:background="@drawable/bgreport">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="true"
+        android:onClick="ClickFoodBackHome">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView28"
+            android:src="@drawable/backhome"
+            android:onClick="ClickReportBackHome" />
+    </LinearLayout>
 
 </RelativeLayout>
