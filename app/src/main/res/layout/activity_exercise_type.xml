@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="100dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp">
 
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="175dp" >
+        android:layout_marginTop="230dp" >
 
         <ImageView
             android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="230dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp" >
 
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="290dp" >
+        android:layout_marginTop="360dp" >
 
         <ImageView
             android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="360dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp" >
 
@@ -111,35 +111,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageView35"
             android:src="@drawable/exe6" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="400dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView36"
-            android:src="@drawable/exe7" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginTop="400dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView37"
-            android:src="@drawable/exe8" />
     </LinearLayout>
 
 
