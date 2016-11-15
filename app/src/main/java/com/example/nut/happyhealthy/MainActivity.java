@@ -1,6 +1,7 @@
 package com.example.nut.happyhealthy;
 
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,15 +26,21 @@ public class MainActivity extends TabActivity {
     private FoodHistoryTABLE objfoodHistoryTABLE;
     private TimeTABLE objTimeTABLE;
 
+    MyDatabase myDatabase;
+    SQLiteDatabase writeSQLite, readSQLite;
+    MainActivity(Context context) {
+        myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
 
-
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        connectedDatabase();
+//        connectedDatabase();
 
 
         /** Pegando id tabhost **/
@@ -95,12 +102,9 @@ public class MainActivity extends TabActivity {
 
 
     private void checkUserTABLE() {
-
-        SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
-                MODE_PRIVATE, null);
-        Cursor objCursor = objSqLiteDatabase.rawQuery("SELECT * FROM userTABLE", null);
+        Cursor objCursor = readSQLite.rawQuery("SELECT * FROM userTABLE",null);
+//        rawQuery("SELECT * FROM userTABLE",null);
         if (objCursor.getCount() <= 0) {
-
             Log.d("cal1", "objCursor = null");
             Intent objIntent = new Intent(MainActivity.this, DataUser.class);
             startActivity(objIntent);

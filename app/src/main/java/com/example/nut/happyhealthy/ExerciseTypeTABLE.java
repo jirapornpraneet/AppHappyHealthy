@@ -8,14 +8,14 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public class ExerciseTypeTABLE {
     //ตัวแปร
-    private MyOpenHelper objMyOpenHelper;
+    private MyDatabase myDatabase;
     private SQLiteDatabase writeSQLite, readSQLite;
 
 
     public ExerciseTypeTABLE(Context context) {
-        objMyOpenHelper = new MyOpenHelper(context);
-        writeSQLite = objMyOpenHelper.getWritableDatabase();
-        readSQLite = objMyOpenHelper.getReadableDatabase();
+         myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
 
 
     }//Constructor

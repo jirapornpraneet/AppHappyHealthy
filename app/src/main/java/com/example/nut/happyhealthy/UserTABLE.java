@@ -10,24 +10,24 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public class UserTABLE {
     //ตัวแปร
-    private MyOpenHelper objMyOpenHelper;
+    private MyDatabase myDatabase;
     private SQLiteDatabase writeSQLite, readSQLite;
 
     public static final String USER = "userTABLE";
-    public static final String UserId = "User_Id";
-    public static final String UserName = "User_Name";
-    public static final String UserSex = "User_Sex";
-    public static final String UserAge = "User_Age";
-    public static final String UserHeight = "User_Height";
-    public static final String UserWeight = "User_Weight";
-    public static final String UserBMR = "User_BMR";
-    public static final String UserBMI = "User_BMI";
+    public static final String User_Id = "User_Id";
+    public static final String User_Name = "User_Name";
+    public static final String User_Sex = "User_Sex";
+    public static final String User_Age = "User_Age";
+    public static final String User_Height = "User_Height";
+    public static final String User_Weight = "User_Weight";
+    public static final String User_BMR = "User_BMR";
+    public static final String User_BMI = "User_BMI";  //ถ้าเปลี่ยนมาใช้เป็นก้อนให้เป็นชื่อเหมือนกัน
 
 
     public UserTABLE(Context context) {
-        objMyOpenHelper = new MyOpenHelper(context);
-        writeSQLite = objMyOpenHelper.getWritableDatabase();
-        readSQLite = objMyOpenHelper.getReadableDatabase();
+        myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
 
     }//Constructor
 
@@ -36,13 +36,13 @@ public class UserTABLE {
     //Add New Value
     public long addNewValueToSQLite(String strName, String strSex, String strAge, int intHeight, double douWeight, double douBmr, double douBmi) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(UserName, strName);
-        contentValues.put(UserSex, strSex);
-        contentValues.put(UserAge, strAge);
-        contentValues.put(UserHeight, intHeight);
-        contentValues.put(UserWeight, douWeight);
-        contentValues.put(UserBMR, douBmr);
-        contentValues.put(UserBMI, douBmi);
+        contentValues.put(User_Name, strName);
+        contentValues.put(User_Sex, strSex);
+        contentValues.put(User_Age, strAge);
+        contentValues.put(User_Height, intHeight);
+        contentValues.put(User_Weight, douWeight);
+        contentValues.put(User_BMR, douBmr);
+        contentValues.put(User_BMI, douBmi);
         long user_id = writeSQLite.insert(USER, null, contentValues);
         return user_id;
     }//Add New Value

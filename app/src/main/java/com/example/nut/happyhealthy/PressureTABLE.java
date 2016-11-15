@@ -13,24 +13,24 @@ import java.util.HashMap;
  */
 public class PressureTABLE {
     //ตัวแปร
-    private MyOpenHelper objMyOpenHelper;
+    private MyDatabase myDatabase;
     private SQLiteDatabase writeSQLite, readSQLite;
 
     public static final String Pressure = "Pressure";
-    public static final String Pressure_ID = "P_Id";
-    public static final String Pressure_Date = "P_Date";
-    public static final String Pressure_Time = "P_Time";
-    public static final String Pressure_CostPressureDown = "P_CostPressureDown";
-    public static final String Pressure_CostPressureTop = "P_CostPressureTop";
-    public static final String Pressure_CostLevel_Down = "P_Cost_Level_Down";
-    public static final String Pressure_CostLevel_Top = "P_Cost_Level_Top";
+    public static final String P_ID = "P_Id";
+    public static final String P_Date = "P_Date";
+    public static final String P_Time = "P_Time";
+    public static final String P_CostPressureDown = "P_CostPressureDown";
+    public static final String P_CostPressureTop = "P_CostPressureTop";
+    public static final String P_Cost_Level_Down = "P_Cost_Level_Down";
+    public static final String P_Cost_Level_Top = "P_Cost_Level_Top";
 
 
 
     public PressureTABLE (Context context) {
-        objMyOpenHelper = new MyOpenHelper(context);
-        writeSQLite = objMyOpenHelper.getWritableDatabase();
-        readSQLite = objMyOpenHelper.getReadableDatabase();
+        myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
 
     }//Constructor
 
@@ -39,19 +39,19 @@ public class PressureTABLE {
     //Add New Value
     public long addNewValueToSQLite(String str_P_Date,  String str_P_Time, int intCostPressureDown,int intCostPressureTop,String str_LP_cost_down,String str_LP_cost_top) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Pressure_Date, str_P_Date);
-        contentValues.put(Pressure_Time, str_P_Time);
-        contentValues.put(Pressure_CostPressureDown, intCostPressureDown);
-        contentValues.put(Pressure_CostPressureTop, intCostPressureTop);
-        contentValues.put(Pressure_CostLevel_Down, str_LP_cost_down);
-        contentValues.put(Pressure_CostLevel_Top,str_LP_cost_top);
+        contentValues.put(P_Date, str_P_Date);
+        contentValues.put(P_Time, str_P_Time);
+        contentValues.put(P_CostPressureDown, intCostPressureDown);
+        contentValues.put(P_CostPressureTop, intCostPressureTop);
+        contentValues.put(P_Cost_Level_Down, str_LP_cost_down);
+        contentValues.put(P_Cost_Level_Top,str_LP_cost_top);
         long pressure_id = writeSQLite.insert(Pressure, null, contentValues);
         return pressure_id;
     }//Add New Value
 
     //เอใส่เพิ่มlistview
     public ArrayList<HashMap<String, String>> getPreList() {
-        SQLiteDatabase db = objMyOpenHelper.getReadableDatabase();
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + Pressure;
 
         ArrayList<HashMap<String, String>> preList = new ArrayList<HashMap<String, String>>();
@@ -61,13 +61,13 @@ public class PressureTABLE {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> pre = new HashMap<String, String>();
-                pre.put("id", cursor.getString(cursor.getColumnIndex(Pressure_ID)));
-                pre.put("datePre", cursor.getString(cursor.getColumnIndex(Pressure_Date)));
-                pre.put("timePre", cursor.getString(cursor.getColumnIndex(Pressure_Time)));
-                pre.put("cos_down", cursor.getString(cursor.getColumnIndex(Pressure_CostPressureDown)));
-                pre.put("cos_top", cursor.getString(cursor.getColumnIndex(Pressure_CostPressureTop)));
-                pre.put("cos_level_down", cursor.getString(cursor.getColumnIndex(Pressure_CostLevel_Down)));
-                pre.put("cos_level_top", cursor.getString(cursor.getColumnIndex(Pressure_CostPressureTop)));
+                pre.put("id", cursor.getString(cursor.getColumnIndex(P_ID)));
+                pre.put("datePre", cursor.getString(cursor.getColumnIndex(P_Date)));
+                pre.put("timePre", cursor.getString(cursor.getColumnIndex(P_Time)));
+                pre.put("cos_down", cursor.getString(cursor.getColumnIndex(P_CostPressureDown)));
+                pre.put("cos_top", cursor.getString(cursor.getColumnIndex(P_CostPressureTop)));
+                pre.put("cos_level_down", cursor.getString(cursor.getColumnIndex(P_Cost_Level_Down)));
+                pre.put("cos_level_top", cursor.getString(cursor.getColumnIndex(P_Cost_Level_Top)));
                 preList.add(pre);
             } while (cursor.moveToNext());
         }

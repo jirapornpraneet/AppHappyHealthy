@@ -13,25 +13,25 @@ import java.util.HashMap;
  */
 public class DiabetesTABLE {
     //ตัวแปร
-    private MyOpenHelper objMyOpenHelper;
+    private MyDatabase myDatabase;
     private SQLiteDatabase writeSQLite, readSQLite;
 
     private String strLastDate;
 
     public static final String Diabetes = "Diabetes";
-    public static final String Diabetes_ID = "D_Id";
-    public static final String Diabetes_Date = "D_Date";
-    public static final String Diabetes_Time = "D_Time";
-    public static final String Diabetes_CostSugarBefore = "D_CostSugarBefore";
-    public static final String Diabetes_CostSugarAfter = "D_CostSugarAfter";
-    public static final String Diabetes_LevelCostBefore = "D_LevelCostBefore";
-    public static final String Diabetes_LevelCostAfter = "D_LevelCostAfter";
+    public static final String D_Id = "D_Id";
+    public static final String D_Date = "D_Date";
+    public static final String D_Time = "D_Time";
+    public static final String D_CostSugarBefore = "D_CostSugarBefore";
+    public static final String D_CostSugarAfter = "D_CostSugarAfter";
+    public static final String D_LevelCostBefore = "D_LevelCostBefore";
+    public static final String D_LevelCostAfter = "D_LevelCostAfter";
 
 
     public DiabetesTABLE(Context context) {
-        objMyOpenHelper = new MyOpenHelper(context);
-        writeSQLite = objMyOpenHelper.getWritableDatabase();
-        readSQLite = objMyOpenHelper.getReadableDatabase();
+        myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
 
     }//Constructor
 
@@ -77,19 +77,19 @@ public class DiabetesTABLE {
     public long addNewValueToSQLite(String str_D_Date, String str_D_Time, int intCostSugarBefore, int intCostSugarAfter,String str_L_before,String str_L_after) {
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Diabetes_Date, str_D_Date);
-        contentValues.put(Diabetes_Time, str_D_Time);
-        contentValues.put(Diabetes_CostSugarBefore, intCostSugarBefore);
-        contentValues.put(Diabetes_CostSugarAfter, intCostSugarAfter);
-        contentValues.put(Diabetes_LevelCostBefore,str_L_before);
-        contentValues.put(Diabetes_LevelCostAfter,str_L_after);
+        contentValues.put(D_Date, str_D_Date);
+        contentValues.put(D_Time, str_D_Time);
+        contentValues.put(D_CostSugarBefore, intCostSugarBefore);
+        contentValues.put(D_CostSugarAfter, intCostSugarAfter);
+        contentValues.put(D_LevelCostBefore,str_L_before);
+        contentValues.put(D_LevelCostAfter,str_L_after);
         long diabetes_id = writeSQLite.insert(Diabetes, null, contentValues);
         return diabetes_id;
     }//Add New Value
 
     //เอใส่เพิ่มlistview
     public ArrayList<HashMap<String, String>> getDiabetesList() {
-        SQLiteDatabase db = objMyOpenHelper.getReadableDatabase();
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + Diabetes;
 
         ArrayList<HashMap<String, String>> diabList = new ArrayList<HashMap<String, String>>();
@@ -99,13 +99,13 @@ public class DiabetesTABLE {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> diab = new HashMap<String, String>();
-                diab.put("id", cursor.getString(cursor.getColumnIndex(Diabetes_ID)));
-                diab.put("date", cursor.getString(cursor.getColumnIndex(Diabetes_Date)));
-                diab.put("time", cursor.getString(cursor.getColumnIndex(Diabetes_Time)));
-                diab.put("cos_1", cursor.getString(cursor.getColumnIndex(Diabetes_CostSugarBefore)));
-                diab.put("cos_2", cursor.getString(cursor.getColumnIndex(Diabetes_CostSugarAfter)));
-                diab.put("cos_L_before", cursor.getString(cursor.getColumnIndex(Diabetes_LevelCostBefore)));
-                diab.put("cos_L_after", cursor.getString(cursor.getColumnIndex(Diabetes_LevelCostAfter)));
+                diab.put("id", cursor.getString(cursor.getColumnIndex(D_Id)));
+                diab.put("date", cursor.getString(cursor.getColumnIndex(D_Date)));
+                diab.put("time", cursor.getString(cursor.getColumnIndex(D_Time)));
+                diab.put("cos_1", cursor.getString(cursor.getColumnIndex(D_CostSugarBefore)));
+                diab.put("cos_2", cursor.getString(cursor.getColumnIndex(D_CostSugarAfter)));
+                diab.put("cos_L_before", cursor.getString(cursor.getColumnIndex(D_LevelCostBefore)));
+                diab.put("cos_L_after", cursor.getString(cursor.getColumnIndex(D_LevelCostAfter)));
                 diabList.add(diab);
             } while (cursor.moveToNext());
         }

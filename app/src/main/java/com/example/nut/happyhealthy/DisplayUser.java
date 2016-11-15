@@ -1,5 +1,6 @@
 package com.example.nut.happyhealthy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +14,15 @@ public class DisplayUser extends AppCompatActivity {
     //Explicit
     private TextView TVName, TVSex, TVAge, TVWeight, TVHeight, TVBMR, TVBMI, weightStdTextView;
     private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString;
+
+    MyDatabase myDatabase;
+    SQLiteDatabase writeSQLite, readSQLite;
+    DisplayUser(Context context) {
+        myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +45,17 @@ public class DisplayUser extends AppCompatActivity {
 
     private void showView() {
 
-        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + UserTABLE.USER, null);
+        Cursor cursor = readSQLite.rawQuery("SELECT * FROM " + UserTABLE.USER, null);
 
         if (cursor.moveToFirst()) {
             do {
-                strName = cursor.getString(cursor.getColumnIndex(UserTABLE.UserName));
-                strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.UserSex));
-                strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.UserAge));
-                intHeight = cursor.getString(cursor.getColumnIndex(UserTABLE.UserHeight));
-                douWeight = cursor.getString(cursor.getColumnIndex(UserTABLE.UserWeight));
-                douBmr = cursor.getString(cursor.getColumnIndex(UserTABLE.UserBMR));
-                douBmi = cursor.getString(cursor.getColumnIndex(UserTABLE.UserBMI));
+                strName = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Name));
+                strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Sex));
+                strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Age));
+                intHeight = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Height));
+                douWeight = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Weight));
+                douBmr = cursor.getString(cursor.getColumnIndex(UserTABLE.User_BMR));
+                douBmi = cursor.getString(cursor.getColumnIndex(UserTABLE.User_BMI));
                 weightStdString = findMyAlertWeight(douBmi);
             } while (cursor.moveToNext());
         }

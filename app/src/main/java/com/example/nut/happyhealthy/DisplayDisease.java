@@ -1,5 +1,6 @@
 package com.example.nut.happyhealthy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,7 +16,13 @@ public class DisplayDisease extends AppCompatActivity {
     //**Explicit
     private TextView TV_D_Date,TV_D_Time,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
     private String  str_D_Date,str_D_Time,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
-
+    MyDatabase myDatabase;
+    SQLiteDatabase writeSQLite, readSQLite;
+    DisplayDisease(Context context) {
+        myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +39,14 @@ public class DisplayDisease extends AppCompatActivity {
 
     private void showView() {
 
-        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + DiabetesTABLE.Diabetes, null);
+        Cursor cursor = readSQLite.rawQuery("SELECT * FROM " + DiabetesTABLE.Diabetes, null);
 
         if (cursor.moveToFirst()) {
             do {
-                str_D_Date = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.Diabetes_Date));
-                str_D_Time = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.Diabetes_Time));
-                intCostSugarBefore = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.Diabetes_CostSugarBefore));
-                intCostSugarAfter = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.Diabetes_CostSugarAfter));
+                str_D_Date = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_Date));
+                str_D_Time = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_Time));
+                intCostSugarBefore = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_CostSugarBefore));
+                intCostSugarAfter = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_CostSugarAfter));
                 tv_D_LevelBefore = findMyLevelDiseaseBefore(intCostSugarBefore);
                 tv_D_LevelAfter = findMyLevelDiseaseAfter(intCostSugarAfter);
             } while (cursor.moveToNext());

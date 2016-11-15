@@ -1,6 +1,7 @@
 package com.example.nut.happyhealthy;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +15,13 @@ public class DisplayKidney extends AppCompatActivity {
     //Explicit
     private TextView TV_K_Date,TV_K_Time,TV_K_CostGFR,TV_K_LevelCostGFR;
     private String  str_K_Date,str_K_Time,intCostGFR,tv_K_LevelCostGFR;
-
+    MyDatabase myDatabase;
+    SQLiteDatabase writeSQLite, readSQLite;
+    DisplayKidney(Context context) {
+        myDatabase = new MyDatabase(context);
+        writeSQLite = myDatabase.getWritableDatabase();
+        readSQLite = myDatabase.getReadableDatabase();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +39,14 @@ public class DisplayKidney extends AppCompatActivity {
 
     private void showView() {
 
-        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + KidneyTABLE.Kidney, null);
+
+        Cursor cursor = readSQLite.rawQuery("SELECT * FROM " + KidneyTABLE.Kidney, null);
 
         if (cursor.moveToFirst()) {
             do {
-                str_K_Date = cursor.getString(cursor.getColumnIndex(KidneyTABLE.Kidney_Date));
-                str_K_Time = cursor.getString(cursor.getColumnIndex(KidneyTABLE.Kidney_Time));
-                intCostGFR = cursor.getString(cursor.getColumnIndex(KidneyTABLE.Kidney_CostGFR));
+                str_K_Date = cursor.getString(cursor.getColumnIndex(KidneyTABLE.K_Date));
+                str_K_Time = cursor.getString(cursor.getColumnIndex(KidneyTABLE.K_Time));
+                intCostGFR = cursor.getString(cursor.getColumnIndex(KidneyTABLE.K_CostGFR));
                 tv_K_LevelCostGFR = findMyLevelCostGFR(intCostGFR);
             } while (cursor.moveToNext());
         }
