@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#FFA7D6E9"
     android:padding="15dp">
 
 
@@ -30,9 +29,9 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/my_box_dis"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="25dp" />
+            android:layout_marginRight="25dp"
+            android:textColor="#3575a2" />
     </LinearLayout>
 
 

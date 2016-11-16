@@ -33,7 +33,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/my_box_dis" />
+            android:textColor="#3575a2" />
     </LinearLayout>
 
 
