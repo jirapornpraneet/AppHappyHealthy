@@ -12,6 +12,10 @@ public class FoodTypeTABLE {
     private SQLiteDatabase writeSQLite, readSQLite;
 
 
+    public static final String FoodType_Id = "FoodType_Id";
+    public static final String FoodType_Name = "FoodType_Name";
+
+
     public FoodTypeTABLE(Context context) {
         myDatabase = new MyDatabase(context);
         writeSQLite = myDatabase.getWritableDatabase();

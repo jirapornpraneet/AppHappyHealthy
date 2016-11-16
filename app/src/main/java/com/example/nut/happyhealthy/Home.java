@@ -52,7 +52,7 @@ public class Home extends Activity implements DatePickerDialog.OnDateSetListener
     }//Oncreate
 
     public void ClickFood(View view) {
-        startActivity(new Intent(Home.this,FoodType.class));
+        startActivity(new Intent(Home.this,Food.class));
     }//ClickFood
 
     public void ClickExe(View view) {startActivity(new Intent(Home.this,ExerciseType.class));}//Clickexe

@@ -14,5 +14,5 @@ public class FoodType extends AppCompatActivity {
     }//Oncreate
 
 
-    public void ClickFoodBackHome(View view) {startActivity(new Intent(FoodType.this,MainActivity.class));}//ClickBackHome
+   // public void ClickFoodBackHome(View view) {startActivity(new Intent(FoodType.this,MainActivity.class));}//ClickBackHome
 }//MainClass
