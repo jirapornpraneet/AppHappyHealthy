@@ -12,21 +12,20 @@ import android.widget.TextView;
 
 public class DisplayKidney extends AppCompatActivity {
 
+    SQLiteDatabase db;
+    MyDatabase myDatabase;
+
     //Explicit
     private TextView TV_K_Date,TV_K_Time,TV_K_CostGFR,TV_K_LevelCostGFR;
     private String  str_K_Date,str_K_Time,intCostGFR,tv_K_LevelCostGFR;
-    MyDatabase myDatabase;
-    SQLiteDatabase writeSQLite, readSQLite;
-    DisplayKidney(Context context) {
-        myDatabase = new MyDatabase(context);
-        writeSQLite = myDatabase.getWritableDatabase();
-        readSQLite = myDatabase.getReadableDatabase();
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_kidney);
+
+        myDatabase = new MyDatabase(this);
 
 
         // Bind Widget
@@ -38,9 +37,8 @@ public class DisplayKidney extends AppCompatActivity {
     }//OnCreate
 
     private void showView() {
-
-
-        Cursor cursor = readSQLite.rawQuery("SELECT * FROM " + KidneyTABLE.Kidney, null);
+        db = myDatabase.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + KidneyTABLE.Kidney, null);
 
         if (cursor.moveToFirst()) {
             do {

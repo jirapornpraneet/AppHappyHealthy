@@ -1,34 +1,32 @@
 package com.example.nut.happyhealthy;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class DisplayUser extends AppCompatActivity {
 
+    SQLiteDatabase db;
+    MyDatabase myDatabase;
     //Explicit
     private TextView TVName, TVSex, TVAge, TVWeight, TVHeight, TVBMR, TVBMI, weightStdTextView;
     private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString;
-
-    MyDatabase myDatabase;
-    SQLiteDatabase writeSQLite, readSQLite;
-    DisplayUser(Context context) {
-        myDatabase = new MyDatabase(context);
-        writeSQLite = myDatabase.getWritableDatabase();
-        readSQLite = myDatabase.getReadableDatabase();
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_user);
 
+        myDatabase = new MyDatabase(this);
         // Bind Widget
         bindWidget();
 
@@ -44,8 +42,8 @@ public class DisplayUser extends AppCompatActivity {
     }
 
     private void showView() {
-
-        Cursor cursor = readSQLite.rawQuery("SELECT * FROM " + UserTABLE.USER, null);
+        db = myDatabase.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + UserTABLE.USER, null);
 
         if (cursor.moveToFirst()) {
             do {
@@ -109,12 +107,15 @@ public class DisplayUser extends AppCompatActivity {
     }//bindWidget
 
     public void ClickEditDataUser(View view) {
-        startActivity(new Intent(DisplayUser.this,DataUser.class));
+        startActivity(new Intent(DisplayUser.this, DataUser.class));
     }//ClickEditUser
 
     public void ClickSaveDataUser(View view) {
-        startActivity(new Intent(DisplayUser.this,MainActivity.class));
+        startActivity(new Intent(DisplayUser.this, MainActivity.class));
     }//ClickSaveUser
 
 
+    /**
+     * Created by Nut on 30/10/2559.
+     */
 }//MainClass

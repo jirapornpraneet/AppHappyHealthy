@@ -2,6 +2,7 @@ package com.example.nut.happyhealthy;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
@@ -46,6 +47,12 @@ public class UserTABLE {
         long user_id = writeSQLite.insert(USER, null, contentValues);
         return user_id;
     }//Add New Value
+
+    public int checkUserTABLE() {
+        readSQLite = myDatabase.getReadableDatabase();
+        Cursor objCursor = readSQLite.rawQuery("SELECT * FROM userTABLE", null);
+        return objCursor.getCount();
+    }
 
 
 }//MainClass

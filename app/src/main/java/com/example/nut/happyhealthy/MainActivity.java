@@ -1,12 +1,8 @@
 package com.example.nut.happyhealthy;
 
 import android.app.TabActivity;
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TabHost;
 
 
@@ -14,34 +10,35 @@ import android.widget.TabHost;
 public class MainActivity extends TabActivity {
 
     //ประกาศตัวแปร ตารางใน database
-    private UserTABLE objUserTABLE;
-    private DiabetesTABLE objdiabetesTABLE;
-    private KidneyTABLE objkidneyTABLE;
-    private PressureTABLE objpressureTABLE;
-    private FoodTypeTABLE objfoodTypeTABLE;
-    private FoodTABLE objfoodTABLE;
-    private ExerciseTypeTABLE objexerciseTypeTABLE;
-    private ExerciseTABLE objexerciseTABLE;
-    private ExerciseHistoryTABLE objexerciseHistoryTABLE;
-    private FoodHistoryTABLE objfoodHistoryTABLE;
-    private TimeTABLE objTimeTABLE;
+    UserTABLE objUserTABLE;
+//    private DiabetesTABLE objdiabetesTABLE;
+//    private KidneyTABLE objkidneyTABLE;
+//    private PressureTABLE objpressureTABLE;
+//    private FoodTypeTABLE objfoodTypeTABLE;
+//    private FoodTABLE objfoodTABLE;
+//    private ExerciseTypeTABLE objexerciseTypeTABLE;
+//    private ExerciseTABLE objexerciseTABLE;
+//    private ExerciseHistoryTABLE objexerciseHistoryTABLE;
+//    private FoodHistoryTABLE objfoodHistoryTABLE;
+//    private TimeTABLE objTimeTABLE;
 
-    MyDatabase myDatabase;
-    SQLiteDatabase writeSQLite, readSQLite;
-    MainActivity(Context context) {
-        myDatabase = new MyDatabase(context);
-        writeSQLite = myDatabase.getWritableDatabase();
-        readSQLite = myDatabase.getReadableDatabase();
-
-    }
+//    private MyDatabase myDatabase;
+//    SQLiteDatabase writeSQLite, readSQLite;
+//
+//    public MainActivity(Context context) {
+//        myDatabase = new MyDatabase(context);
+//        writeSQLite = myDatabase.getWritableDatabase();
+//        readSQLite = myDatabase.getReadableDatabase();
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        objUserTABLE = new UserTABLE(this);
 //        connectedDatabase();
-
 
         /** Pegando id tabhost **/
         TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
@@ -76,43 +73,43 @@ public class MainActivity extends TabActivity {
         //Check Empty Databaseเช็คว่าในแอพเรามีข้อมูลมั้ยถ้าไม่มีให้ไปที่หน้าไไหนถ้ามีไปหน้าไหน เพื่อถ้าไม่มีข้อมูลจะสามารถรันได้ปกติ
         checkUserTABLE();
 
-
     }//OnCreate
 
     private void connectedDatabase() {
 
-
-        objUserTABLE = new UserTABLE(this);
-        objdiabetesTABLE = new DiabetesTABLE(this);
-        objdiabetesTABLE = new DiabetesTABLE(this);
-        objkidneyTABLE = new KidneyTABLE(this);
-        objpressureTABLE = new PressureTABLE(this);
-        objfoodTypeTABLE = new FoodTypeTABLE(this);
-        objfoodTABLE = new FoodTABLE(this);
-        objexerciseTypeTABLE = new ExerciseTypeTABLE(this);
-        objexerciseTABLE = new ExerciseTABLE(this);
-        objexerciseHistoryTABLE = new ExerciseHistoryTABLE(this);
-        objfoodHistoryTABLE = new FoodHistoryTABLE(this);
-        objTimeTABLE = new TimeTABLE(this);
-
+//        objdiabetesTABLE = new DiabetesTABLE(this);
+//        objdiabetesTABLE = new DiabetesTABLE(this);
+//        objkidneyTABLE = new KidneyTABLE(this);
+//        objpressureTABLE = new PressureTABLE(this);
+//        objfoodTypeTABLE = new FoodTypeTABLE(this);
+//        objfoodTABLE = new FoodTABLE(this);
+//        objexerciseTypeTABLE = new ExerciseTypeTABLE(this);
+//        objexerciseTABLE = new ExerciseTABLE(this);
+//        objexerciseHistoryTABLE = new ExerciseHistoryTABLE(this);
+//        objfoodHistoryTABLE = new FoodHistoryTABLE(this);
+//        objTimeTABLE = new TimeTABLE(this);
 
 
     }//connectedDatabase
 
 
-
     private void checkUserTABLE() {
-        Cursor objCursor = readSQLite.rawQuery("SELECT * FROM userTABLE",null);
-//        rawQuery("SELECT * FROM userTABLE",null);
-        if (objCursor.getCount() <= 0) {
-            Log.d("cal1", "objCursor = null");
+        if (objUserTABLE.checkUserTABLE()==0) {
             Intent objIntent = new Intent(MainActivity.this, DataUser.class);
             startActivity(objIntent);
-
-        } else {
-            objCursor.close();
-            Log.d("cal1", "objCursor = Have Data");
         }
+//        readSQLite = myDatabase.getReadableDatabase();
+//        Cursor objCursor = readSQLite.rawQuery("SELECT * FROM userTABLE", null);
+//        rawQuery("SELECT * FROM userTABLE",null);
+//        if (objCursor.getCount() <= 0) {
+//            Log.d("cal1", "objCursor = null");
+//            Intent objIntent = new Intent(MainActivity.this, DataUser.class);
+//            startActivity(objIntent);
+//
+//        } else {
+//            objCursor.close();
+//            Log.d("cal1", "objCursor = Have Data");
+//        }
 
     }   // checkUserTABLe
 

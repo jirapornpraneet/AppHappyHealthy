@@ -13,20 +13,20 @@ import android.widget.TextView;
 public class DisplayDisease extends AppCompatActivity {
 
 
+    SQLiteDatabase db;
+    MyDatabase myDatabase;
     //**Explicit
     private TextView TV_D_Date,TV_D_Time,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
     private String  str_D_Date,str_D_Time,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
-    MyDatabase myDatabase;
-    SQLiteDatabase writeSQLite, readSQLite;
-    DisplayDisease(Context context) {
-        myDatabase = new MyDatabase(context);
-        writeSQLite = myDatabase.getWritableDatabase();
-        readSQLite = myDatabase.getReadableDatabase();
-    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_disease);
+
+        myDatabase = new MyDatabase(this);
 
         // Bind Widget
         bindWidget();
@@ -38,8 +38,9 @@ public class DisplayDisease extends AppCompatActivity {
 
 
     private void showView() {
+        db = myDatabase.getReadableDatabase();
 
-        Cursor cursor = readSQLite.rawQuery("SELECT * FROM " + DiabetesTABLE.Diabetes, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + DiabetesTABLE.Diabetes, null);
 
         if (cursor.moveToFirst()) {
             do {

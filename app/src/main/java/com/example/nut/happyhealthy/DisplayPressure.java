@@ -11,20 +11,21 @@ import android.widget.TextView;
 
 public class DisplayPressure extends AppCompatActivity {
 
+    SQLiteDatabase db;
+    MyDatabase myDatabase;
+
+
+
     //Explicit
     private TextView TV_P_Date,TV_P_Time,TV_P_CostPressureDown,TV_P_CostPressureTop,TV_P_LevelDown,TV_P_LevelTop;
     private String  str_P_Date,str_P_Time,intCostPressureDown,intCostPressureTop,tv_P_LevelDown,tv_P_LevelTop ;
-    MyDatabase myDatabase;
-    SQLiteDatabase writeSQLite, readSQLite;
-    DisplayPressure(Context context) {
-        myDatabase = new MyDatabase(context);
-        writeSQLite = myDatabase.getWritableDatabase();
-        readSQLite = myDatabase.getReadableDatabase();
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_pressure);
+
+        myDatabase = new MyDatabase(this);
 
         // Bind Widget
         bindWidget();
@@ -38,8 +39,9 @@ public class DisplayPressure extends AppCompatActivity {
 
 
     private void showView() {
+        db = myDatabase.getReadableDatabase();
 
-        Cursor cursor = readSQLite.rawQuery("SELECT * FROM " + PressureTABLE.Pressure, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + PressureTABLE.Pressure, null);
 
         if (cursor.moveToFirst()) {
             do {
