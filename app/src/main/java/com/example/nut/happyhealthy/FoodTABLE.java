@@ -60,7 +60,7 @@ public class FoodTABLE {
     //เอใส่เพิ่มlistview
     public ArrayList<HashMap<String, String>> getFoodList(int type) {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + Food + "WHERE " + FoodType_Id + " = " + type;
+        String selectQuery = "SELECT * FROM " + Food + " WHERE " + FoodType_Id + " = " + type;
 
         ArrayList<HashMap<String, String>> foodList = new ArrayList<HashMap<String, String>>();
 

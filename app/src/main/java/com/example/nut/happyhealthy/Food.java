@@ -21,6 +21,11 @@ public class Food extends Activity {
         //คลิกเลือกว่ากำหนดจะไปประเภทอาหารไหน
         ImageView imgB_1 = (ImageView) findViewById(R.id.food1);
         ImageView imgB_2 = (ImageView) findViewById(R.id.food2);
+        ImageView imgB_3 = (ImageView) findViewById(R.id.food3);
+        ImageView imgB_4 = (ImageView) findViewById(R.id.food4);
+        ImageView imgB_5 = (ImageView) findViewById(R.id.food5);
+        ImageView imgB_6 = (ImageView) findViewById(R.id.food6);
+
 
 
         imgB_1.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +35,7 @@ public class Food extends Activity {
                 intent.putExtra("type_food",1);
                 startActivity(intent);
             }
-        });
+        });//imgB_1
 
         imgB_2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +44,47 @@ public class Food extends Activity {
                 intent.putExtra("type_food",2);
                 startActivity(intent);
             }
-        });
+        });//imgB_2
+
+        imgB_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Food.this,Food_Type_1.class);
+                intent.putExtra("type_food",3);
+                startActivity(intent);
+
+            }
+        });//imgB_3
+
+        imgB_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Food.this,Food_Type_1.class);
+                intent.putExtra("type_food",4);
+                startActivity(intent);
+
+            }
+        });//imgB_4
+
+        imgB_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Food.this,Food_Type_1.class);
+                intent.putExtra("type_food",5);
+                startActivity(intent);
+
+            }
+        });//imgB_5
+
+        imgB_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Food.this,Food_Type_1.class);
+                intent.putExtra("type_food",6);
+                startActivity(intent);
+
+            }
+        });//imgB_6
 
 
     }
