@@ -56,7 +56,7 @@ public class Food_Type_1 extends AppCompatActivity {
         });
 
         foodList = foodTABLE.getFoodList(type);
-        adapterFood1 = new SimpleAdapter(Food_Type_1.this, foodList, R.layout.food_1, new String[]{"food_name", "food_calories"}, new int[]{R.id.food_name, R.id.food_calories});
+        adapterFood1 = new SimpleAdapter(Food_Type_1.this, foodList, R.layout.food_1, new String[]{"food_name", "food_calories","food_unit"}, new int[]{R.id.food_name, R.id.food_calories,R.id.food_unit});
         //new String[]{TB_5_PARTS.Part_Name, "countKilo", "countDate"}, new int[]{R.id.part_name, R.id.textView10, R.id.textView12});
         listViewFood1.setAdapter(adapterFood1); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
 
