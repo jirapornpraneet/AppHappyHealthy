@@ -20,7 +20,7 @@ public class Food_Type_1 extends AppCompatActivity {
     ArrayList<HashMap<String, String>> foodList;
     String Foodname, FoodUnit, FoodNetUnit;
     double FoodCalories, FoodNetweight, FoodProtein, FoodFat, FoodCarbohydrate, FoodSugars, FoodSodium;
-    int FoodAmount;
+    int FoodAmount,FoodId;
 
 
     @Override
@@ -29,7 +29,7 @@ public class Food_Type_1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food__type_1);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         //กำหนดว่าจะไปหน้าไหนของประเภทอาหาร
         int type = intent.getIntExtra("type_food", 0);
 
@@ -40,6 +40,7 @@ public class Food_Type_1 extends AppCompatActivity {
         listViewFood1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                FoodId = Integer.parseInt(foodList.get(i).get("food_id"));
                 Foodname = foodList.get(i).get("food_name").toString();
                 FoodCalories = Double.parseDouble(foodList.get(i).get("food_calories"));
                 FoodAmount = Integer.parseInt(foodList.get(i).get("food_amount"));
@@ -51,6 +52,12 @@ public class Food_Type_1 extends AppCompatActivity {
                 FoodCarbohydrate = Double.parseDouble(foodList.get(i).get("food_carbohydrate"));
                 FoodSugars = Double.parseDouble(foodList.get(i).get("food_sugars"));
                 FoodSodium = Double.parseDouble(foodList.get(i).get("food_sodium"));
+
+                //ส่งค่าไปอีกหน้าหนึ่ง putExtra
+                Intent intent2;
+                intent2 = new Intent(Food_Type_1.this, MainActivity.class);
+                intent2.putExtra("food_id", FoodId);
+                startActivity(intent2);
 
             }
         });

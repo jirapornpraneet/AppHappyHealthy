@@ -11,6 +11,9 @@ public class ExerciseTypeTABLE {
     private MyDatabase myDatabase;
     private SQLiteDatabase writeSQLite, readSQLite;
 
+    public static final String ExerciseType_Id = "ExerciseType_Id";
+    public static final String ExerciseType_Name = "ExerciseType_Name";
+
 
     public ExerciseTypeTABLE(Context context) {
          myDatabase = new MyDatabase(context);
@@ -19,4 +22,4 @@ public class ExerciseTypeTABLE {
 
 
     }//Constructor
-}
+}//MainClass

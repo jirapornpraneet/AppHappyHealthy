@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.ArrayMap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +15,6 @@ import java.util.HashMap;
 public class FoodTABLE {
     //ตัวแปร
     private MyDatabase myDatabase;
-    private SQLiteDatabase writeSQLite, readSQLite;
 
     public static final String Food = "Food";
     public static final String Food_Id = "Food_Id";
@@ -33,14 +33,14 @@ public class FoodTABLE {
 
     public FoodTABLE(Context context) {
         myDatabase = new MyDatabase(context);
-        writeSQLite = myDatabase.getWritableDatabase();
-        readSQLite = myDatabase.getReadableDatabase();
-
     }//Constructor
 
     //Add New Value
     public long addNewValueToSQLite(String str_food_name, double dou_food_cal, int int_food_amount, String str_food_unit,
                                     double dou_food_netweight, String str_net_unit, double dou_protein, double dou_fat, double dou_carbohydrate, double dou_sugar, double dou_sodium) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(Food_Name, str_food_name);
         contentValues.put(Food_Calories, dou_food_cal);
@@ -53,7 +53,9 @@ public class FoodTABLE {
         contentValues.put(Food_Carbohydrate, dou_carbohydrate);
         contentValues.put(Food_Sugars, dou_sugar);
         contentValues.put(Food_Sodium, dou_sodium);
-        long food_id = writeSQLite.insert(Food, null, contentValues);
+
+        long food_id = db.insert(Food, null, contentValues);
+        db.close();
         return food_id;
     }//Add New Value
 
@@ -91,6 +93,31 @@ public class FoodTABLE {
     }
 
 
+    public HashMap<String, String> selectDetailByFoodId(int foodId) {
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
+        HashMap<String, String> food = new HashMap<String, String>();
+        String query = "SELECT * FROM " + Food + " WHERE " + Food_Id + " = " + foodId;
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                food.put("food_id", cursor.getString(cursor.getColumnIndex(Food_Id)));
+                food.put("food_name", cursor.getString(cursor.getColumnIndex(Food_Name)));
+                food.put("food_calories", cursor.getString(cursor.getColumnIndex(Food_Calories)));
+                food.put("food_amount", cursor.getString(cursor.getColumnIndex(Food_Amount)));
+                food.put("food_unit", cursor.getString(cursor.getColumnIndex(Food_Unit)));
+                food.put("food_netweight", cursor.getString(cursor.getColumnIndex(Food_Netweight)));
+                food.put("food_netunit", cursor.getString(cursor.getColumnIndex(Food_NetUnit)));
+                food.put("food_protein", cursor.getString(cursor.getColumnIndex(Food_Protein)));
+                food.put("food_fat", cursor.getString(cursor.getColumnIndex(Food_Fat)));
+                food.put("food_carbohydrate", cursor.getString(cursor.getColumnIndex(Food_Carbohydrate)));
+                food.put("food_sugars", cursor.getString(cursor.getColumnIndex(Food_Sugars)));
+                food.put("food_sodium", cursor.getString(cursor.getColumnIndex(Food_Sodium)));
+            } while (cursor.moveToNext());
+        }
+
+        return food;
+    }
 }//MainClass
 
 

@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingTop="15dp"
-    android:paddingLeft="15dp">
+    android:paddingLeft="15dp"
+    android:paddingTop="15dp">
 
 
     <LinearLayout
@@ -13,10 +13,10 @@
 
 
         <TextView
-            android:id="@+id/food_name"
+            android:id="@+id/exercise_name"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:text="Food"
+            android:text="Exercise"
             android:textIsSelectable="false"
             android:textSize="15dp"
             android:layout_gravity="center_vertical"
@@ -27,8 +27,8 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="Cal"
-            android:id="@+id/food_calories"
-            android:layout_marginLeft="85dp" />
+            android:id="@+id/exercise_calories"
+            android:layout_marginLeft="90dp" />
 
         <TextView
             android:layout_width="30dp"
@@ -36,7 +36,6 @@
             android:text="kcal"
             android:id="@+id/textView"
             android:layout_gravity="right"
-            android:layout_marginLeft="5dp"
             android:textSize="12dp" />
     </LinearLayout>
 
@@ -51,14 +50,14 @@
             android:layout_height="wrap_content"
             android:text="ต่อ"
             android:id="@+id/textView2"
-            android:layout_marginLeft="286dp"
+            android:layout_marginLeft="272dp"
             android:textSize="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="unit"
-            android:id="@+id/food_unit"
+            android:text="minute"
+            android:id="@+id/exercise_duration"
             android:textSize="12dp"
             android:layout_marginLeft="5dp" />
 

@@ -7,6 +7,111 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nut.happyhealthy.Exercise">
+    tools:context="com.example.nut.happyhealthy.ExerciseType"
+    android:background="@drawable/bgtypeexe">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView28"
+            android:src="@drawable/backhome"
+            android:onClick="ClickExeBackHome" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exe1"
+            android:src="@drawable/exe1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exe2"
+            android:src="@drawable/exe2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="230dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exe3"
+            android:src="@drawable/exe3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="230dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exe4"
+            android:src="@drawable/exe4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="360dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exe5"
+            android:src="@drawable/exe5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="360dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exe6"
+            android:src="@drawable/exe6" />
+    </LinearLayout>
+
 
 </RelativeLayout>

@@ -1,117 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nut.happyhealthy.ExerciseType"
-    android:background="@drawable/bgtypeexe">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.nut.happyhealthy.Food_Type_1"
+    android:background="@drawable/bglistexe">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_alignParentTop="true">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView28"
-        android:src="@drawable/backhome"
-        android:onClick="ClickExeBackHome" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="100dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView30"
-            android:src="@drawable/exe1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView31"
-            android:src="@drawable/exe2" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="230dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView32"
-            android:src="@drawable/exe3" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginTop="230dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView33"
-            android:src="@drawable/exe4" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="360dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView34"
-            android:src="@drawable/exe5" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginTop="360dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView35"
-            android:src="@drawable/exe6" />
-    </LinearLayout>
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listViewExeType"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="47dp"
+        android:background="#dd84c765"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false" />
 
 
 </RelativeLayout>
