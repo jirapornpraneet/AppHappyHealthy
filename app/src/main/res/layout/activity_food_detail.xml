@@ -24,65 +24,77 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView12"
+                android:text="food_name"
+                android:id="@+id/food_name"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView13"
+                android:text="food_cal"
+                android:id="@+id/food_cal"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView14"
+                android:text="food_amount"
+                android:id="@+id/food_amount"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView15"
+                android:text="food_unit"
+                android:id="@+id/food_unit"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView16"
+                android:text="food_netweight"
+                android:id="@+id/food_netweight"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView17"
+                android:text="food_netunit"
+                android:id="@+id/food_netunit"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView18"
+                android:text="food_protein"
+                android:id="@+id/food_protein"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView19"
+                android:text="food_fat"
+                android:id="@+id/food_fat"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView20"
+                android:text="food_carbohydrate"
+                android:id="@+id/food_carbohydrate"
                 android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="food_sugar"
+                android:id="@+id/food_sugar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="food_sodium"
+                android:id="@+id/food_sodium" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,65 +107,77 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView3"
+                android:text="food_name2"
+                android:id="@+id/food_name2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView4"
+                android:text="food_cal2"
+                android:id="@+id/food_cal2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView5"
+                android:text="food_amount2"
+                android:id="@+id/food_amount2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView6"
+                android:text="food_unit2"
+                android:id="@+id/food_unit2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView7"
+                android:text="food_netweight2"
+                android:id="@+id/food_netweight2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView8"
+                android:text="food_netunit2"
+                android:id="@+id/food_netunit2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView9"
+                android:text="food_protein2"
+                android:id="@+id/food_protein2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView10"
+                android:text="food_fat2"
+                android:id="@+id/food_fat2"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Text"
-                android:id="@+id/textView11"
+                android:text="food_carbohydrate2"
+                android:id="@+id/food_carbohydrate2"
                 android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="food_sugar2"
+                android:id="@+id/food_sugar2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="food_sodium2"
+                android:id="@+id/food_sodium2" />
         </LinearLayout>
     </LinearLayout>
 

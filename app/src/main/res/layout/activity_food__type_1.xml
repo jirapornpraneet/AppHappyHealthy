@@ -13,10 +13,11 @@
         android:layout_alignParentTop="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="false"
-        android:background="#dde29696"
+        android:background="#c1f4d4d4"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:drawSelectorOnTop="false" />
 
 
 </RelativeLayout>

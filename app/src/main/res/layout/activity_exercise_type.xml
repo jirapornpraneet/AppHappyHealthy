@@ -14,7 +14,7 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="false"
         android:layout_marginTop="47dp"
-        android:background="#dd84c765"
+        android:background="#bfd5edda"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false" />
 
