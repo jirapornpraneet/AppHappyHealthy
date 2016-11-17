@@ -32,11 +32,5 @@
         android:layout_alignParentTop="true"
         android:onClick="ClickFoodBackHome">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView28"
-            android:src="@drawable/backhome"
-            android:onClick="ClickSetBackHome" />
     </LinearLayout>
 </RelativeLayout>

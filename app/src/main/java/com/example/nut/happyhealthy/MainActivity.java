@@ -49,6 +49,7 @@ public class MainActivity extends TabActivity {
         TabHost.TabSpec tab3 = tabHost.newTabSpec("IntroHealthy");
 
 
+
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab1 **/
         tab1.setIndicator("Home");
         tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_home));
@@ -66,9 +67,16 @@ public class MainActivity extends TabActivity {
         tab3.setContent(new Intent(this, IntroHealthy.class));
 
 
+
+
+
+
+
+
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
 
         //Check Empty Databaseเช็คว่าในแอพเรามีข้อมูลมั้ยถ้าไม่มีให้ไปที่หน้าไไหนถ้ามีไปหน้าไหน เพื่อถ้าไม่มีข้อมูลจะสามารถรันได้ปกติ
         checkUserTABLE();

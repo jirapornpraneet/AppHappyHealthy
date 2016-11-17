@@ -20,7 +20,7 @@ public class Food_Type_1 extends AppCompatActivity {
     ArrayList<HashMap<String, String>> foodList;
     String Foodname, FoodUnit, FoodNetUnit;
     double FoodCalories, FoodNetweight, FoodProtein, FoodFat, FoodCarbohydrate, FoodSugars, FoodSodium;
-    int FoodAmount,FoodId;
+    int FoodAmount, FoodId;
 
 
     @Override
@@ -55,7 +55,7 @@ public class Food_Type_1 extends AppCompatActivity {
 
                 //ส่งค่าไปอีกหน้าหนึ่ง putExtra
                 Intent intent2;
-                intent2 = new Intent(Food_Type_1.this, MainActivity.class);
+                intent2 = new Intent(Food_Type_1.this, FoodDetail.class);
                 intent2.putExtra("food_id", FoodId);
                 startActivity(intent2);
 
@@ -63,7 +63,7 @@ public class Food_Type_1 extends AppCompatActivity {
         });
 
         foodList = foodTABLE.getFoodList(type);
-        adapterFood1 = new SimpleAdapter(Food_Type_1.this, foodList, R.layout.food_1, new String[]{"food_name", "food_calories","food_unit"}, new int[]{R.id.food_name, R.id.food_calories,R.id.food_unit});
+        adapterFood1 = new SimpleAdapter(Food_Type_1.this, foodList, R.layout.food_1, new String[]{"food_name", "food_calories", "food_unit"}, new int[]{R.id.food_name, R.id.food_calories, R.id.food_unit});
         //new String[]{TB_5_PARTS.Part_Name, "countKilo", "countDate"}, new int[]{R.id.part_name, R.id.textView10, R.id.textView12});
         listViewFood1.setAdapter(adapterFood1); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
 
