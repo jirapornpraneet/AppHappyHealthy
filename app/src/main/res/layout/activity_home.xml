@@ -107,9 +107,9 @@
             android:src="@drawable/setting"
             android:nestedScrollingEnabled="false"
             android:layout_gravity="right"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
-            android:onClick="ClickSetting" />
+            android:layout_marginTop="13dp"
+            android:onClick="ClickSetting"
+            android:layout_marginRight="5dp" />
     </LinearLayout>
 
 </RelativeLayout>
