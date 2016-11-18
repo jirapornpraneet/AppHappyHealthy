@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="115dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="40dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="25dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="100dp"
-        android:layout_marginLeft="30dp">
+        android:layout_marginLeft="50dp">
 
         <EditText
             android:layout_width="60dp"
@@ -78,7 +78,8 @@
             android:ems="10"
             android:id="@+id/et_exe"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:text="1" />
 
         <Button
             android:layout_width="60dp"
@@ -106,7 +107,8 @@
             android:id="@+id/food_unit2"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="60dp" />
+            android:layout_marginRight="60dp"
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -115,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="190dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="60dp">
+        android:layout_marginRight="30dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -130,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="210dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="110dp">
+        android:layout_marginRight="70dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -146,7 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="210dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="30dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -175,7 +177,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:layout_marginLeft="50dp">
+        android:layout_marginLeft="70dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -229,7 +231,7 @@
         android:id="@+id/linearLayout2"
         android:layout_marginTop="300dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="110dp"
+        android:layout_marginRight="140dp"
         android:orientation="vertical">
 
         <TextView
@@ -237,7 +239,6 @@
             android:layout_height="match_parent"
             android:text="food_protein2"
             android:id="@+id/food_protein2"
-            android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:textSize="12dp" />
 
@@ -281,7 +282,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
+        android:layout_marginRight="70dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
