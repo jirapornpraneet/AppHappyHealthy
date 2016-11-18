@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class ExerciseTABLE {
     //ตัวแปร
     private MyDatabase myDatabase;
-    private SQLiteDatabase writeSQLite, readSQLite;
+
 
 
     public static final String Exercise = "Exercise";
@@ -27,26 +27,28 @@ public class ExerciseTABLE {
 
     public ExerciseTABLE(Context context) {
         myDatabase = new MyDatabase(context);
-        writeSQLite = myDatabase.getWritableDatabase();
-        readSQLite = myDatabase.getReadableDatabase();
 
 
     }//Constructor
 
     //Add New Value
     public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal, int int_food_amount, String str_duration) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Exercise_Name, str_exe_name);
         contentValues.put(Exercise_Calories, dou_exe_cal);
         contentValues.put(Exercise_Duration, str_duration);
 
-        long exercise_id = writeSQLite.insert(Exercise, null, contentValues);
+        long exercise_id = db.insert(Exercise, null, contentValues);
+        db.close();
         return exercise_id;
     }//Add New Value
 
 
     //เอใส่เพิ่มlistview
     public ArrayList<HashMap<String, String>> getExeList (int type) {
+
         SQLiteDatabase db = myDatabase.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + Exercise + " WHERE " + ExerciseType_Id + " = " + type;
 
@@ -68,6 +70,26 @@ public class ExerciseTABLE {
         cursor.close();
         db.close();
         return exeList;
+    }
+
+    //ตัวfoodDetail
+    public HashMap<String, String> selectDetailByExeId(int ExeId) {
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
+        HashMap<String, String> exe = new HashMap<String, String>();
+        String query = "SELECT * FROM " + Exercise + " WHERE " + Exercise_Id + " = " + ExeId;
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                exe.put("exercise_id", cursor.getString(cursor.getColumnIndex(Exercise_Id)));
+                exe.put("exercise_name", cursor.getString(cursor.getColumnIndex(Exercise_Name)));
+                exe.put("exercise_calories", cursor.getString(cursor.getColumnIndex(Exercise_Calories)));
+                exe.put("exercise_duration", cursor.getString(cursor.getColumnIndex(Exercise_Duration)));
+
+            } while (cursor.moveToNext());
+        }
+
+        return exe;
     }
 
 }//MainClass

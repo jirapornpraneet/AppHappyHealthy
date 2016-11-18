@@ -20,6 +20,7 @@ public class ExerciseType extends AppCompatActivity {
     ArrayList<HashMap<String, String>> exeList;
     String Exename, ExeDuration;
     double ExeCalories;
+    int ExeId;
 
 
     @Override
@@ -41,10 +42,18 @@ public class ExerciseType extends AppCompatActivity {
        listViewExeType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+               ExeId = Integer.parseInt(exeList.get(i).get("exercise_id"));
                Exename = exeList.get(i).get("exercise_name").toString();
                ExeCalories = Double.parseDouble(exeList.get(i).get("exercise_calories"));
                ExeDuration = exeList.get(i).get("exercise_duration").toString();
-               
+
+               //ส่งค่าไปอีกหน้าหนึ่ง putExtra
+               Intent intent2;
+               intent2 = new Intent(ExerciseType.this, Exercise_Detail.class);
+               intent2.putExtra("exercise_id", ExeId);
+               startActivity(intent2);
+
+
 
            }
        });

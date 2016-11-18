@@ -92,7 +92,7 @@ public class FoodTABLE {
         return foodList;
     }
 
-
+    //ตัวfoodDetail
     public HashMap<String, String> selectDetailByFoodId(int foodId) {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
         HashMap<String, String> food = new HashMap<String, String>();

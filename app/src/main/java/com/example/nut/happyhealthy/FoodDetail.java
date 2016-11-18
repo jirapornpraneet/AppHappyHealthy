@@ -28,12 +28,12 @@ public class FoodDetail extends AppCompatActivity {
         total = 1.0;
         foodTABLE = new FoodTABLE(this);
 
-        editCal_Total = (EditText) findViewById(R.id.editText);
+        editCal_Total = (EditText) findViewById(R.id.et_exe);
         bCal_Total = (Button) findViewById(R.id.button);
 
         f_name = (TextView) findViewById(R.id.food_name2);
         f_cal = (TextView) findViewById(R.id.food_cal2);
-        f_amount = (TextView) findViewById(R.id.food_amount2);
+       // f_amount = (TextView) findViewById(R.id.food_amount2);
         f_unit = (TextView) findViewById(R.id.food_unit2);
         f_netweight = (TextView) findViewById(R.id.food_netweight2);
         f_netunit = (TextView) findViewById(R.id.food_netunit2);
@@ -68,7 +68,7 @@ public class FoodDetail extends AppCompatActivity {
         
         f_name.setText(detailFood.get("food_name"));
         f_cal.setText(String.format("%.2f",(Double.parseDouble(detailFood.get("food_calories"))* t) ));
-        f_amount.setText(String.format("%.0f",(t) ));
+       // f_amount.setText(String.format("%.0f",(t) ));
         f_unit.setText(detailFood.get("food_unit"));
         f_netweight.setText(String.format("%.2f",(Double.parseDouble(detailFood.get("food_netweight"))*t)));
         f_netunit.setText(detailFood.get("food_netunit"));
