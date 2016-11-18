@@ -113,7 +113,22 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="195dp"
+        android:layout_marginTop="190dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="น้ำหนักสุทธิที่บริโภค"
+            android:id="@+id/textView5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="110dp">
 
@@ -129,7 +144,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="195dp"
+        android:layout_marginTop="210dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp">
 
@@ -144,62 +159,171 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView4"
-            android:layout_marginTop="240dp" />
+            android:text="ข้อมูลโภชนาการ(Nutrition Information)"
+            android:id="@+id/textView4" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="โปรตีน"
+            android:id="@+id/textView6"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="left"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ไขมัน"
+            android:id="@+id/textView7"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="left"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="คาร์โบไฮเดรต"
+            android:id="@+id/textView8"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="left"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="น้ำตาล"
+            android:id="@+id/textView9"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="left"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="โซเดียม"
+            android:id="@+id/textView10"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="left"
+            android:textSize="12dp" />
+    </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2"
-        android:layout_weight="1"
         android:layout_marginTop="300dp"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="110dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="food_protein2"
             android:id="@+id/food_protein2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="food_fat2"
             android:id="@+id/food_fat2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="food_carbohydrate2"
             android:id="@+id/food_carbohydrate2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="food_sugar2"
-            android:id="@+id/food_sugar2" />
+            android:id="@+id/food_sugar2"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="food_sodium2"
-            android:id="@+id/food_sodium2" />
+            android:id="@+id/food_sodium2"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="กรัม"
+            android:id="@+id/textView11"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="กรัม"
+            android:id="@+id/textView12"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="กรัม"
+            android:id="@+id/textView13"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="กรัม"
+            android:id="@+id/textView14"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="มิลลิกรัม"
+            android:id="@+id/textView15"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp" />
     </LinearLayout>
 
 </RelativeLayout>
