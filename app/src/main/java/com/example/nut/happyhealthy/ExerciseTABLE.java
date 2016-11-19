@@ -72,7 +72,7 @@ public class ExerciseTABLE {
         return exeList;
     }
 
-    //ตัวfoodDetail
+    //ตัวExeDetail
     public HashMap<String, String> selectDetailByExeId(int ExeId) {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
         HashMap<String, String> exe = new HashMap<String, String>();

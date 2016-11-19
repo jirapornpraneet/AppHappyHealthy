@@ -28,7 +28,7 @@ public class FoodDetail extends AppCompatActivity {
         total = 1.0;
         foodTABLE = new FoodTABLE(this);
 
-        editCal_Total = (EditText) findViewById(R.id.et_exe);
+        editCal_Total = (EditText) findViewById(R.id.et_exe2);
         bCal_Total = (Button) findViewById(R.id.button);
 
         f_name = (TextView) findViewById(R.id.food_name2);

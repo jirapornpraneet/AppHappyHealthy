@@ -21,27 +21,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="food_name"
-                android:id="@+id/food_name"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="food_cal"
-                android:id="@+id/food_cal"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="food_amount"
-                android:id="@+id/food_amount"
-                android:layout_weight="1" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -54,22 +33,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="food_name2"
-                android:id="@+id/food_name2"
+                android:text="exercise_name"
+                android:id="@+id/exercise_name"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="food_cal2"
-                android:id="@+id/food_cal2"
+                android:text="exercise_calories"
+                android:id="@+id/exercise_calories"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="food_amount2"
-                android:id="@+id/food_amount2"
+                android:text="exercise_duration"
+                android:id="@+id/exercise_duration"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -79,8 +58,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="คำนวณ"
-        android:id="@+id/buttonExe"
-        android:layout_below="@+id/et_exe"
+        android:id="@+id/buttonExe2"
+        android:layout_below="@+id/et_exe2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false" />
 
@@ -89,7 +68,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/et_exe"
+        android:id="@+id/et_exe2"
         android:layout_below="@+id/linearLayout3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

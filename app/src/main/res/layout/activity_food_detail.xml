@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/et_exe"
+            android:id="@+id/et_exe2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="1"
@@ -88,7 +88,7 @@
             android:layout_height="35dp"
             android:text="จำนวน"
             android:id="@+id/button"
-            android:layout_below="@+id/et_exe"
+            android:layout_below="@+id/et_exe2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
             android:textSize="11dp" />
