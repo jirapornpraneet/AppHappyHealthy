@@ -34,7 +34,7 @@ public class Exercise_Detail extends AppCompatActivity {
 
         e_name = (TextView) findViewById(R.id.exercise_name);
         e_cal = (TextView) findViewById(R.id.exercise_calories);
-        e_duration = (TextView) findViewById(R.id.exercise_duration);
+        //e_duration = (TextView) findViewById(R.id.exercise_duration);
 
         Intent intent4 = getIntent();
         int exercise_id = intent4.getIntExtra("exercise_id", 0);
@@ -60,9 +60,7 @@ public class Exercise_Detail extends AppCompatActivity {
 
         e_name.setText(detailExe.get("exercise_name"));
         e_cal.setText(String.format("%.2f",(Double.parseDouble(detailExe.get("exercise_calories"))* t) ));
-        // f_amount.setText(String.format("%.0f",(t) ));
-        e_duration.setText(detailExe.get("exercise_duration"));
-        //e_duration.setText(String.format("%.2f",(Double.parseDouble(detailExe.get("exercise_duration"))*e)));
+       //e_duration.setText(String.format("%.2f",(Double.parseDouble(detailExe.get("exercise_duration"))* t) ));
 
 
     }//setdetailfood

@@ -7,70 +7,117 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nut.happyhealthy.FoodDetail">
+    tools:context="com.example.nut.happyhealthy.FoodDetail"
+    android:background="@drawable/bgsaveexe">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout3">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout2"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="exercise_name"
-                android:id="@+id/exercise_name"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="exercise_calories"
-                android:id="@+id/exercise_calories"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="exercise_duration"
-                android:id="@+id/exercise_duration"
-                android:layout_weight="1" />
-
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:text="exercise_name"
+            android:id="@+id/exercise_name"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:background="@drawable/my_bg_saveexe_name" />
     </LinearLayout>
 
-    <Button
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="คำนวณ"
-        android:id="@+id/buttonExe2"
-        android:layout_below="@+id/et_exe2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false" />
+        android:layout_marginTop="160dp"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true">
 
-    <EditText
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="exercise_calories"
+            android:id="@+id/exercise_calories"
+            android:textSize="20dp"
+            android:background="@drawable/my_bg_saveexe_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/et_exe2"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="190dp"
+        android:layout_marginRight="35dp"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="พลังงาน(กิโลแคลอรี่)"
+            android:id="@+id/textView17"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:layout_marginRight="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="นาที"
+            android:id="@+id/textView16"
+            android:layout_marginRight="70dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="45dp"
+        android:layout_alignParentLeft="true">
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/et_exe2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="18dp"
+            android:background="@drawable/my_bg_saveexe_name"
+            android:text="1" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:text="ระยะเวลา"
+            android:id="@+id/buttonExe2"
+            android:layout_below="@+id/et_exe2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:textSize="11dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="650dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView30"
+        android:src="@drawable/buttonsaveexe"
+        android:layout_below="@+id/linearLayout4" />
+
 
 </RelativeLayout>

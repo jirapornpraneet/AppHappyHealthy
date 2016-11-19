@@ -32,13 +32,13 @@ public class ExerciseTABLE {
     }//Constructor
 
     //Add New Value
-    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal, int int_food_amount, String str_duration) {
+    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal,  double dou_duration) {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Exercise_Name, str_exe_name);
         contentValues.put(Exercise_Calories, dou_exe_cal);
-        contentValues.put(Exercise_Duration, str_duration);
+        contentValues.put(Exercise_Duration, dou_duration);
 
         long exercise_id = db.insert(Exercise, null, contentValues);
         db.close();

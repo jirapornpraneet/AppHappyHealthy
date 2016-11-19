@@ -5,16 +5,15 @@ package com.example.nut.happyhealthy;
  */
 import android.content.Context;
 
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
+ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 
-public class MyDatabase extends SQLiteAssetHelper {
+ public class MyDatabase extends SQLiteAssetHelper {
 
-    private static final String DATABASE_NAME = "HappyHealthy_Sqlite.db";
-    private static final int DATABASE_VERSION = 1;
+ private static final String DATABASE_NAME = "HappyHealthy_Sqlite.db";
+ private static final int DATABASE_VERSION = 1;
 
-    public MyDatabase(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
+ public MyDatabase(Context context) { super(context, DATABASE_NAME, null, DATABASE_VERSION);
+ }
 
-}
+ }

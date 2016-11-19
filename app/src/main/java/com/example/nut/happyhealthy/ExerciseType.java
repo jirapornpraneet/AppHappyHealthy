@@ -18,8 +18,8 @@ public class ExerciseType extends AppCompatActivity {
     ListAdapter adapterExeType;
     ExerciseTABLE exerciseTABLE;
     ArrayList<HashMap<String, String>> exeList;
-    String Exename, ExeDuration;
-    double ExeCalories;
+    String Exename;
+    double ExeCalories, ExeDuration;
     int ExeId;
 
 
@@ -45,7 +45,8 @@ public class ExerciseType extends AppCompatActivity {
                ExeId = Integer.parseInt(exeList.get(i).get("exercise_id"));
                Exename = exeList.get(i).get("exercise_name").toString();
                ExeCalories = Double.parseDouble(exeList.get(i).get("exercise_calories"));
-               ExeDuration = exeList.get(i).get("exercise_duration").toString();
+               ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
+               //ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
 
                //ส่งค่าไปอีกหน้าหนึ่ง putExtra
                Intent intent2;
@@ -59,8 +60,8 @@ public class ExerciseType extends AppCompatActivity {
        });
 
         exeList = exerciseTABLE.getExeList(type);
-        adapterExeType = new SimpleAdapter(ExerciseType.this,exeList,R.layout.exercise_type,new String[]{"exercise_name" ,"exercise_calories" ,"exercise_duration"}, new int[]{R.id.exercise_name, R.id.exercise_calories,R.id.exercise_duration});
-       listViewExeType.setAdapter(adapterExeType);
+        adapterExeType = new SimpleAdapter(ExerciseType.this,exeList,R.layout.exercise_type,new String[]{"exercise_name" ,"exercise_calories" }, new int[]{R.id.exercise_name, R.id.exercise_calories});
+        listViewExeType.setAdapter(adapterExeType);
 
     }//OnCreate
 
