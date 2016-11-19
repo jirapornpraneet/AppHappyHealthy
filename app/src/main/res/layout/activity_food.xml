@@ -22,9 +22,9 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -36,10 +36,10 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -52,7 +52,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="230dp"
         android:orientation="horizontal">
@@ -67,7 +67,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="230dp"
@@ -83,9 +83,9 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="370dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -98,10 +98,10 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="370dp"
         android:orientation="horizontal">
 
         <ImageView
