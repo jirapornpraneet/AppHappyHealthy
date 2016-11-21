@@ -33,7 +33,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="145dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="50dp">
 
@@ -51,7 +51,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="172dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30dp">
 
@@ -69,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="148dp"
         android:layout_marginLeft="40dp">
 
         <EditText
@@ -97,7 +97,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="148dp"
         android:layout_alignWithParentIfMissing="false"
         android:layout_centerHorizontal="true"
         android:layout_marginRight="40dp">
@@ -117,9 +117,9 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp">
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="205dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="207dp"
+        android:layout_marginTop="225dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="70dp">
 
@@ -152,7 +152,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="207dp"
+        android:layout_marginTop="225dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30dp">
 
@@ -170,7 +170,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="265dp">
+        android:layout_marginTop="275dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -185,7 +185,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="329dp"
         android:layout_marginLeft="70dp">
 
         <TextView
@@ -238,13 +238,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="329dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="140dp"
+        android:layout_marginRight="75dp"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="94dp"
             android:layout_height="match_parent"
             android:text="food_protein2"
             android:id="@+id/food_protein2"
@@ -254,18 +254,17 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="94dp"
             android:layout_height="match_parent"
             android:text="food_fat2"
             android:id="@+id/food_fat2"
-            android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
             android:textColor="#fffcfc"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="94dp"
             android:layout_height="match_parent"
             android:text="food_carbohydrate2"
             android:id="@+id/food_carbohydrate2"
@@ -276,7 +275,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:text="food_sugar2"
             android:id="@+id/food_sugar2"
@@ -286,7 +285,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:text="food_sodium2"
             android:id="@+id/food_sodium2"
@@ -299,9 +298,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="329dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="70dp"
+        android:layout_marginRight="60dp"
         android:layout_weight="1"
         android:orientation="vertical">
 

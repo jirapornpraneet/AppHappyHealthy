@@ -13,7 +13,7 @@
         android:layout_alignParentTop="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="false"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="50dp"
         android:background="#bfd5edda"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false" />

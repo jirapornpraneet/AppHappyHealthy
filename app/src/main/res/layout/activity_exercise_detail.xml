@@ -117,7 +117,8 @@
         android:layout_height="200dp"
         android:id="@+id/imageView30"
         android:src="@drawable/buttonsaveexe"
-        android:layout_below="@+id/linearLayout4" />
+        android:layout_below="@+id/linearLayout4"
+        android:layout_marginTop="30dp" />
 
 
 </RelativeLayout>

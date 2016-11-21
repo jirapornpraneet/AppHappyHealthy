@@ -16,7 +16,7 @@
         android:background="#c1f4d4d4"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="48dp"
         android:drawSelectorOnTop="false" />
 
 
