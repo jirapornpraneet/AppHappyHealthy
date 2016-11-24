@@ -11,26 +11,8 @@ public class MainActivity extends TabActivity {
 
     //ประกาศตัวแปร ตารางใน database
     UserTABLE objUserTABLE;
-//    private DiabetesTABLE objdiabetesTABLE;
-//    private KidneyTABLE objkidneyTABLE;
-//    private PressureTABLE objpressureTABLE;
-//    private FoodTypeTABLE objfoodTypeTABLE;
-//    private FoodTABLE objfoodTABLE;
-//    private ExerciseTypeTABLE objexerciseTypeTABLE;
-//    private ExerciseTABLE objexerciseTABLE;
-//    private ExerciseHistoryTABLE objexerciseHistoryTABLE;
-//    private FoodHistoryTABLE objfoodHistoryTABLE;
-//    private TimeTABLE objTimeTABLE;
 
-//    private MyDatabase myDatabase;
-//    SQLiteDatabase writeSQLite, readSQLite;
-//
-//    public MainActivity(Context context) {
-//        myDatabase = new MyDatabase(context);
-//        writeSQLite = myDatabase.getWritableDatabase();
-//        readSQLite = myDatabase.getReadableDatabase();
-//
-//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +27,9 @@ public class MainActivity extends TabActivity {
 
         /** กำหนดแต่ละส่วนแท็บ **/
         TabHost.TabSpec tab1 = tabHost.newTabSpec("Home");
-        TabHost.TabSpec tab2 = tabHost.newTabSpec("User");
+        TabHost.TabSpec tab2 = tabHost.newTabSpec("Report");
         TabHost.TabSpec tab3 = tabHost.newTabSpec("IntroHealthy");
+        TabHost.TabSpec tab4 = tabHost.newTabSpec("User");
 
 
 
@@ -57,18 +40,19 @@ public class MainActivity extends TabActivity {
 
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab2 **/
-        tab2.setIndicator("User");
+        tab2.setIndicator("Report");
         tab2.setIndicator("", getResources().getDrawable(R.drawable.ic_user));
-        tab2.setContent(new Intent(this, User.class));
+        tab2.setContent(new Intent(this,Report.class));
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab3 **/
         tab3.setIndicator("IntroHealthy");
         tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_healthy));
         tab3.setContent(new Intent(this, IntroHealthy.class));
 
-
-
-
+        /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab4 **/
+        tab4.setIndicator("User");
+        tab4.setIndicator("", getResources().getDrawable(R.drawable.ic_healthy));
+        tab4.setContent(new Intent(this, User.class));
 
 
 
@@ -76,6 +60,7 @@ public class MainActivity extends TabActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+        tabHost.addTab(tab4);
 
 
         //Check Empty Databaseเช็คว่าในแอพเรามีข้อมูลมั้ยถ้าไม่มีให้ไปที่หน้าไไหนถ้ามีไปหน้าไหน เพื่อถ้าไม่มีข้อมูลจะสามารถรันได้ปกติ
@@ -85,17 +70,7 @@ public class MainActivity extends TabActivity {
 
     private void connectedDatabase() {
 
-//        objdiabetesTABLE = new DiabetesTABLE(this);
-//        objdiabetesTABLE = new DiabetesTABLE(this);
-//        objkidneyTABLE = new KidneyTABLE(this);
-//        objpressureTABLE = new PressureTABLE(this);
-//        objfoodTypeTABLE = new FoodTypeTABLE(this);
-//        objfoodTABLE = new FoodTABLE(this);
-//        objexerciseTypeTABLE = new ExerciseTypeTABLE(this);
-//        objexerciseTABLE = new ExerciseTABLE(this);
-//        objexerciseHistoryTABLE = new ExerciseHistoryTABLE(this);
-//        objfoodHistoryTABLE = new FoodHistoryTABLE(this);
-//        objTimeTABLE = new TimeTABLE(this);
+
 
 
     }//connectedDatabase
@@ -106,18 +81,7 @@ public class MainActivity extends TabActivity {
             Intent objIntent = new Intent(MainActivity.this, DataUser.class);
             startActivity(objIntent);
         }
-//        readSQLite = myDatabase.getReadableDatabase();
-//        Cursor objCursor = readSQLite.rawQuery("SELECT * FROM userTABLE", null);
-//        rawQuery("SELECT * FROM userTABLE",null);
-//        if (objCursor.getCount() <= 0) {
-//            Log.d("cal1", "objCursor = null");
-//            Intent objIntent = new Intent(MainActivity.this, DataUser.class);
-//            startActivity(objIntent);
-//
-//        } else {
-//            objCursor.close();
-//            Log.d("cal1", "objCursor = Have Data");
-//        }
+
 
     }   // checkUserTABLe
 

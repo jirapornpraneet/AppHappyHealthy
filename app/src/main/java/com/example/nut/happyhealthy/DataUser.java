@@ -3,6 +3,7 @@ package com.example.nut.happyhealthy;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,17 +15,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
-import java.io.IOException;
-import java.util.Calendar;
+
+
 
 public class DataUser extends AppCompatActivity {
+
 
 
     //การประกาศตัวแปรั
@@ -42,28 +37,11 @@ public class DataUser extends AppCompatActivity {
 
         connectDataBase();
 
-        //เลือกวันเกิด
-        //Use the current date as the default date to the picker
 
 
-        /**final Calendar c = Calendar.getInstance();
-         final int year = c.get(Calendar.YEAR);
-         final int month = c.get(Calendar.MONTH);
-         final int day = c.get(Calendar.DAY_OF_MONTH);
-         final EditText txtDate = (EditText) findViewById(R.id.User_BirthDay);
-         txtDate.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(DataUser.this, new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-        txtDate.setText(i2 + "-" + i1 + "-" + i);
-        }
-        }, day, month, year);
-        datePickerDialog.setTitle("เลือกวันที่");
-        datePickerDialog.show();
-        }
-        });//setdatepicker**/
+
+
+
 
 
         bindWidget();
@@ -94,7 +72,6 @@ public class DataUser extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
-
                     case R.id.man:
                         strSex = "man";
                         break;
@@ -102,8 +79,6 @@ public class DataUser extends AppCompatActivity {
                         strSex = "woman";
                         break;
                 }
-
-
             }
         });
 
@@ -117,8 +92,6 @@ public class DataUser extends AppCompatActivity {
         douWeight = User_Weight.getText().toString().trim();
         intHeight = User_Height.getText().toString().trim();
 
-
-
         //Checkspace
         if (strName.equals("") || strAge.equals("") || douWeight.equals("") ||intHeight.equals("")) {
             showAlert();
@@ -127,12 +100,8 @@ public class DataUser extends AppCompatActivity {
         }else if (checkChoose()) {
             confirmData();
 
-
-
-
         }else {//UnCheck
             showAlertSex();
-
 
         }//ClickDisPlay
     }

@@ -10,10 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DisplayUser extends AppCompatActivity {
+
 
     SQLiteDatabase db;
     MyDatabase myDatabase;
@@ -32,8 +35,9 @@ public class DisplayUser extends AppCompatActivity {
 
         // Show View
         showView();
+    }
 
-    }//OnCreate
+
 
     @Override
     protected void onRestart() {

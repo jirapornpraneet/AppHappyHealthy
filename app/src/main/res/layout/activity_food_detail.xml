@@ -3,12 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nut.happyhealthy.FoodDetail"
-    android:background="@drawable/bgsavefood">
+    tools:context="com.example.nut.happyhealthy.FoodDetail">
+
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -185,7 +192,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="329dp"
+        android:layout_marginTop="315dp"
         android:layout_marginLeft="70dp">
 
         <TextView
@@ -238,7 +245,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2"
-        android:layout_marginTop="329dp"
+        android:layout_marginTop="315dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="75dp"
         android:orientation="vertical">
@@ -298,7 +305,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="329dp"
+        android:layout_marginTop="315dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="60dp"
         android:layout_weight="1"

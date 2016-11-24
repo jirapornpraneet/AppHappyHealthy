@@ -9,19 +9,19 @@
         android:icon="@drawable/ic"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/MyMaterialTheme">
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"
+                    />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Food" />
         <activity android:name=".Exercise" />
-        <activity android:name=".Home" />
         <activity android:name=".IntroHealthy" />
         <activity android:name=".User" />
         <activity android:name=".DisplayUser" />
@@ -33,16 +33,16 @@
         <activity android:name=".DisplayPressure" />
         <activity android:name=".DisplayKidney" />
         <activity android:name=".Report" />
-        <activity android:name=".FoodType" />
         <activity android:name=".ExerciseType" />
         <activity android:name=".MainActivity" />
         <activity android:name=".History_Diabetes" />
         <activity android:name=".History_Kidney" />
         <activity android:name=".History_Pressure" />
-        <activity android:name=".Setting" />
         <activity android:name=".Food_Type_1" />
         <activity android:name=".FoodDetail" />
-        <activity android:name=".Exercise_Detail"></activity>
+        <activity android:name=".Exercise_Detail" />
+        <activity android:name=".Home"
+            android:label="@string/app_name"></activity>
     </application>
 
 </manifest>

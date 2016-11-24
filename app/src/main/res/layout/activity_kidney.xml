@@ -3,9 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:background="@drawable/bgkidney">
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
 
 
     <LinearLayout
@@ -15,7 +25,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="170dp">
+        android:layout_marginTop="60dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -133,22 +143,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="324dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:weightSum="1">
-
-        <ImageView
-            android:layout_width="238dp"
-            android:layout_height="68dp"
-            android:id="@+id/imageView11"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/wggfr" />
     </LinearLayout>
 
     <RelativeLayout

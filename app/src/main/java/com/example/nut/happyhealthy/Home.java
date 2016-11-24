@@ -1,10 +1,12 @@
 package com.example.nut.happyhealthy;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -13,10 +15,13 @@ import java.util.Calendar;
 
 public class Home extends Activity implements DatePickerDialog.OnDateSetListener {
 
+
     //Button picDate;
     //TextView showDate;
     //ประกาศตัวแปร
     private TextView showDate;
+
+
 
     int day,month, year;
     int dayFinal,monthFinal, yearFinal;
@@ -25,6 +30,11 @@ public class Home extends Activity implements DatePickerDialog.OnDateSetListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+
+
+
 
 
         //picDate = (Button) findViewById(R.id.picDate);
@@ -60,7 +70,7 @@ public class Home extends Activity implements DatePickerDialog.OnDateSetListener
     public void ClickReport(View view) {startActivity(new Intent(Home.this,Report.class));}//ClickReport
 
 
-    public void ClickSetting(View view) {startActivity(new Intent(Home.this,Setting.class));}//ClickSetting
+
 
 
     @Override

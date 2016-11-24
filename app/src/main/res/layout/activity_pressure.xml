@@ -3,9 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:background="@drawable/bgpre">
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
 
 
     <LinearLayout
@@ -14,7 +24,7 @@
         android:layout_height="fill_parent"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="165dp">
+        android:layout_marginTop="60dp">
 
 
         <LinearLayout
@@ -170,12 +180,6 @@
             android:weightSum="1"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="238dp"
-                android:layout_height="68dp"
-                android:id="@+id/imageView11"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/wpre" />
         </LinearLayout>
 
     </LinearLayout>

@@ -3,8 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.example.nut.happyhealthy.Home"
-    android:background="@drawable/wal5">
+    tools:context="com.example.nut.happyhealthy.Home">
+
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+    </LinearLayout>
 
 
     <TextView
@@ -17,99 +29,17 @@
         android:id="@+id/showDate"
         android:layout_centerHorizontal="true"
         android:background="@drawable/my_border_black"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="70dp"
         android:textSize="18dp" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:weightSum="1"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_centerHorizontal="true"
-            android:weightSum="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="165dp"
-                android:layout_height="270dp"
-                android:id="@+id/imageView"
-                android:src="@drawable/woman"
-                android:layout_marginTop="160dp"
-                android:layout_marginLeft="20dp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="130dp"
-            android:id="@+id/imageView5"
-            android:layout_marginTop="230dp"
-            android:src="@drawable/ff"
-            android:layout_marginLeft="235dp"
-            android:nestedScrollingEnabled="false"
-            android:onClick="ClickFood" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="130dp"
-            android:id="@+id/imageView7"
-            android:layout_marginTop="75dp"
-            android:layout_marginLeft="120dp"
-            android:src="@drawable/rr"
-            android:onClick="ClickReport" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="130dp"
-            android:id="@+id/imageView2"
-            android:scrollIndicators="left"
-            android:src="@drawable/ee"
-            android:layout_marginTop="230dp"
-            android:layout_marginLeft="5dp"
-            android:onClick="ClickExe" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true">
-
-        <ImageView
-            android:layout_width="59dp"
-            android:layout_height="59dp"
-            android:id="@+id/imageView27"
-            android:src="@drawable/setting"
-            android:nestedScrollingEnabled="false"
-            android:layout_gravity="right"
-            android:layout_marginTop="13dp"
-            android:onClick="ClickSetting"
-            android:layout_marginRight="5dp" />
-    </LinearLayout>
+        android:text="Home"
+        android:id="@+id/textView18"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
