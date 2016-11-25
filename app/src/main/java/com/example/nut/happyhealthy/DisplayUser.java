@@ -2,14 +2,20 @@ package com.example.nut.happyhealthy;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -20,9 +26,12 @@ public class DisplayUser extends AppCompatActivity {
 
     SQLiteDatabase db;
     MyDatabase myDatabase;
+
+    private UserTABLE objUserTABLE;
     //Explicit
-    private TextView TVName, TVSex, TVAge, TVWeight, TVHeight, TVBMR, TVBMI, weightStdTextView;
-    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString;
+    private EditText TVName, TVAge, TVWeight, TVHeight,TVSex;
+    private TextView TVBMR, TVBMI, weightStdTextView;
+    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString,strSex ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,27 +108,129 @@ public class DisplayUser extends AppCompatActivity {
 
     private void bindWidget() {
 
-        TVName = (TextView) findViewById(R.id.tv_Name);
-        TVSex = (TextView) findViewById(R.id.tv_Sex);
-        TVAge = (TextView) findViewById(R.id.tv_Age);
-        TVWeight = (TextView) findViewById(R.id.tv_Weight);
-        TVHeight = (TextView) findViewById(R.id.tv_Height);
+        TVName = (EditText) findViewById(R.id.tv_Name);
+        TVSex = (EditText)findViewById(R.id.tv_Sex);
+        TVAge = (EditText) findViewById(R.id.tv_Age);
+        TVWeight = (EditText) findViewById(R.id.tv_Weight);
+        TVHeight = (EditText) findViewById(R.id.tv_Height);
         TVBMR = (TextView) findViewById(R.id.tv_BMR);
         TVBMI = (TextView) findViewById(R.id.tv_BMI);
         weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
 
+
+
     }//bindWidget
 
-    public void ClickEditDataUser(View view) {
-        startActivity(new Intent(DisplayUser.this, DataUser.class));
-    }//ClickEditUser
+
 
     public void ClickSaveDataUser(View view) {
-        startActivity(new Intent(DisplayUser.this, MainActivity.class));
+
+        //get value edit tezt
+        strName = TVName.getText().toString().trim();
+        strAge = TVAge.getText().toString().trim();
+        douWeight =  TVWeight.getText().toString().trim();
+        intHeight = TVHeight.getText().toString().trim();
+        strSex = TVSex.getText().toString().trim();
+
+        //Checkspace
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") ||intHeight.equals("")|| strSex.equals("")) {
+            showAlert();
+
+
+        }else {//UnCheck
+            confirmData();
+
+        }
+
+
     }//ClickSaveUser
 
 
-    /**
-     * Created by Nut on 30/10/2559.
-     */
+
+
+
+
+    private void confirmData() {
+
+        // Find BMI
+        double douweight = Double.parseDouble(douWeight);
+        double douheight = Double.parseDouble(intHeight);
+        double douAge = Double.parseDouble(strAge);
+
+        double douBMI = douweight / (Math.pow(douheight/100, 2));
+        //  bmiString = Double.toString(douBMI);
+        douBmi = String.format("%.2f", douBMI);
+        Log.d("cal", "Weight = " + douweight);
+        Log.d("cal", "Height = " + douheight);
+        Log.d("cal", "BMI = " + douBmi);
+
+        // Find BMR
+        double douBMR = 0;
+        switch (MaleOrFemale()) {
+            case 0: // male
+                douBMR = 66 + (13.7 * douweight) + (5 * douheight) - (6.8 * douAge);
+                break;
+            case 1: // female
+                douBMR = 665 + (9.6 * douweight) + (1.8 * douheight) - (4.7 * douAge);
+                break;
+        } // switch
+
+
+        douBmr = String.format("%.2f", douBMR);
+
+
+        UpdateUsertoSQLite();
+
+
+    }//confirmData
+
+    private void UpdateUsertoSQLite() {
+
+        UserTABLE objUserTABLE = new UserTABLE(this);
+        long inSertDataUser = objUserTABLE.addNewValueToSQLite
+                (strName, strSex,strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight),Double.parseDouble(douBmr),Double.parseDouble(douBmi));
+        TVName.setText("");
+        TVAge.setText("");
+        TVHeight.setText("");
+        TVWeight.setText("");
+        Toast.makeText(DisplayUser.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
+        Intent objIntent = new Intent(DisplayUser.this, DisplayUser.class);
+        startActivity(objIntent);
+        finish();
+
+    }//UpdateUsertoSQLite
+
+
+    private void showAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("ข้อมูลไม่ครบถ้วน");
+        builder.setMessage("กรุณาใส่ข้อมูลให้ครบ");
+        builder.setCancelable(false);
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+
+    } //ShowAlert
+
+
+    private int MaleOrFemale() {
+
+        int intResult = 0;
+        if (strSex.equals("male")) {
+            intResult = 0;
+        } else {
+            intResult = 1;
+        }
+
+        return intResult;
+    }
+
+
+
+
 }//MainClass

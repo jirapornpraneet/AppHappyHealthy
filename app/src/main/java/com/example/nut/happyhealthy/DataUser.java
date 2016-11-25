@@ -41,9 +41,6 @@ public class DataUser extends AppCompatActivity {
 
 
 
-
-
-
         bindWidget();
 
 
@@ -62,6 +59,7 @@ public class DataUser extends AppCompatActivity {
         User_Weight = (EditText) findViewById(R.id.User_Weight);
         User_Height = (EditText) findViewById(R.id.User_Height);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
+
         man = (RadioButton) findViewById(R.id.man);
         woman = (RadioButton) findViewById(R.id.woman);
 
