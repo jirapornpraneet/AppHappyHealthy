@@ -53,7 +53,7 @@ public class MainActivity extends TabActivity {
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab4 **/
         tab4.setIndicator("SaveDis");
         tab4.setIndicator("", getResources().getDrawable(R.drawable.ic_heart));
-        tab4.setContent(new Intent(this, DataUser.class));
+        tab4.setContent(new Intent(this, User.class));
 
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab5 **/

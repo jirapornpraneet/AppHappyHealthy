@@ -61,11 +61,11 @@
                 android:layout_width="95dp"
                 android:layout_height="35dp"
                 android:id="@+id/imageView15"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:src="@drawable/da5" />
 
             <EditText
-                android:layout_width="135dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/tv_Name"
@@ -91,10 +91,10 @@
                 android:layout_height="35dp"
                 android:id="@+id/imageView17"
                 android:src="@drawable/da6"
-                android:layout_marginLeft="50dp" />
+                android:layout_marginLeft="30dp" />
 
             <EditText
-                android:layout_width="135dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/tv_Sex"
@@ -105,6 +105,56 @@
                 android:background="@drawable/my_border_box"
                 android:textColor="#625f5f" />
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageView17"
+                android:src="@drawable/da6"
+                android:layout_marginLeft="58dp" />
+
+            <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/User_Sex"
+                android:layout_weight="1"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ชาย"
+                    android:id="@+id/man"
+                    android:textColor="#000000"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:textSize="16sp"
+                    android:background="@drawable/my_border_box"
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="หญิง"
+                    android:id="@+id/woman"
+                    android:textColor="#000000"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/my_border_box"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+        </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -114,11 +164,11 @@
                 android:layout_width="95dp"
                 android:layout_height="35dp"
                 android:id="@+id/imageView20"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:src="@drawable/da7" />
 
             <EditText
-                android:layout_width="135dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/tv_Age"
@@ -142,10 +192,10 @@
                 android:layout_height="35dp"
                 android:id="@+id/imageView18"
                 android:src="@drawable/da8"
-                android:layout_marginLeft="50dp" />
+                android:layout_marginLeft="30dp" />
 
             <EditText
-                android:layout_width="135dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/tv_Weight"
@@ -166,11 +216,11 @@
                 android:layout_width="95dp"
                 android:layout_height="35dp"
                 android:id="@+id/imageView19"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:src="@drawable/da9" />
 
             <EditText
-                android:layout_width="135dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/tv_Height"

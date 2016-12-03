@@ -35,7 +35,7 @@ public class UserTABLE {
 
     //Add New Value
     //Add New Value
-    public long addNewValueToSQLite(String strName, String strSex, String strAge, int intHeight, double douWeight, double douBmr, double douBmi) {
+    public void addNewValueToSQLite(String strName, String strSex, String strAge, int intHeight, double douWeight, double douBmr, double douBmi) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(User_Name, strName);
         contentValues.put(User_Sex, strSex);
@@ -44,8 +44,9 @@ public class UserTABLE {
         contentValues.put(User_Weight, douWeight);
         contentValues.put(User_BMR, douBmr);
         contentValues.put(User_BMI, douBmi);
-        long user_id = writeSQLite.insert(USER, null, contentValues);
-        return user_id;
+//        long user_id = writeSQLite.insert(USER, null, contentValues);
+        writeSQLite.update(USER,contentValues,null,null);
+//        return user_id;
     }//Add New Value
 
     public int checkUserTABLE() {

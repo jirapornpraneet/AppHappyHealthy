@@ -29,9 +29,13 @@ public class DisplayUser extends AppCompatActivity {
 
     private UserTABLE objUserTABLE;
     //Explicit
-    private EditText TVName, TVAge, TVWeight, TVHeight,TVSex;
+    private EditText TVName, TVAge, TVWeight, TVHeight, TVSex;
     private TextView TVBMR, TVBMI, weightStdTextView;
-    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString,strSex ;
+    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex;
+    private RadioButton man,women;
+    private RadioGroup User_Sex;
+
+    RadioGroup choose_sex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +49,6 @@ public class DisplayUser extends AppCompatActivity {
         // Show View
         showView();
     }
-
 
 
     @Override
@@ -70,8 +73,14 @@ public class DisplayUser extends AppCompatActivity {
                 weightStdString = findMyAlertWeight(douBmi);
             } while (cursor.moveToNext());
         }
-
         cursor.close();
+
+        if (strSex.equals("man")) {
+            man.setChecked(true);
+        }else{
+            women.setChecked(true);
+        }
+
         TVName.setText(strName);
         TVSex.setText(strSex);
         TVAge.setText(strAge);
@@ -109,18 +118,33 @@ public class DisplayUser extends AppCompatActivity {
     private void bindWidget() {
 
         TVName = (EditText) findViewById(R.id.tv_Name);
-        TVSex = (EditText)findViewById(R.id.tv_Sex);
+        TVSex = (EditText) findViewById(R.id.tv_Sex);
         TVAge = (EditText) findViewById(R.id.tv_Age);
         TVWeight = (EditText) findViewById(R.id.tv_Weight);
         TVHeight = (EditText) findViewById(R.id.tv_Height);
         TVBMR = (TextView) findViewById(R.id.tv_BMR);
         TVBMI = (TextView) findViewById(R.id.tv_BMI);
         weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
+        man = (RadioButton) findViewById(R.id.man);
+        women = (RadioButton) findViewById(R.id.woman);
+        User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
 
-
+        User_Sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.man:
+                        strSex = "man";
+                        break;
+                    case R.id.woman:
+                        strSex = "woman";
+                        break;
+                }
+                TVSex.setText(strSex);
+            }
+        });
 
     }//bindWidget
-
 
 
     public void ClickSaveDataUser(View view) {
@@ -128,26 +152,21 @@ public class DisplayUser extends AppCompatActivity {
         //get value edit tezt
         strName = TVName.getText().toString().trim();
         strAge = TVAge.getText().toString().trim();
-        douWeight =  TVWeight.getText().toString().trim();
+        douWeight = TVWeight.getText().toString().trim();
         intHeight = TVHeight.getText().toString().trim();
         strSex = TVSex.getText().toString().trim();
 
         //Checkspace
-        if (strName.equals("") || strAge.equals("") || douWeight.equals("") ||intHeight.equals("")|| strSex.equals("")) {
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") || strSex.equals("")) {
             showAlert();
 
-
-        }else {//UnCheck
+        } else {//UnCheck
             confirmData();
-
+            showView();
         }
 
 
     }//ClickSaveUser
-
-
-
-
 
 
     private void confirmData() {
@@ -157,7 +176,7 @@ public class DisplayUser extends AppCompatActivity {
         double douheight = Double.parseDouble(intHeight);
         double douAge = Double.parseDouble(strAge);
 
-        double douBMI = douweight / (Math.pow(douheight/100, 2));
+        double douBMI = douweight / (Math.pow(douheight / 100, 2));
         //  bmiString = Double.toString(douBMI);
         douBmi = String.format("%.2f", douBMI);
         Log.d("cal", "Weight = " + douweight);
@@ -187,16 +206,16 @@ public class DisplayUser extends AppCompatActivity {
     private void UpdateUsertoSQLite() {
 
         UserTABLE objUserTABLE = new UserTABLE(this);
-        long inSertDataUser = objUserTABLE.addNewValueToSQLite
-                (strName, strSex,strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight),Double.parseDouble(douBmr),Double.parseDouble(douBmi));
+//        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
+        objUserTABLE.addNewValueToSQLite(
+                strName, strSex,
+                strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight),
+                Double.parseDouble(douBmr), Double.parseDouble(douBmi));
         TVName.setText("");
         TVAge.setText("");
         TVHeight.setText("");
         TVWeight.setText("");
-        Toast.makeText(DisplayUser.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(DisplayUser.this, DisplayUser.class);
-        startActivity(objIntent);
-        finish();
+        Toast.makeText(DisplayUser.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
 
     }//UpdateUsertoSQLite
 
@@ -229,8 +248,6 @@ public class DisplayUser extends AppCompatActivity {
 
         return intResult;
     }
-
-
 
 
 }//MainClass

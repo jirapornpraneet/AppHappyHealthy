@@ -16,10 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
-
-
 public class DataUser extends AppCompatActivity {
-
 
 
     //การประกาศตัวแปรั
@@ -27,8 +24,7 @@ public class DataUser extends AppCompatActivity {
     private EditText User_Name, User_Age, User_Weight, User_Height;
     private RadioGroup User_Sex;
     private RadioButton man, woman;
-    private String strName,strSex  = "male",strAge,intHeight,douWeight,douBmr,douBmi;
-
+    private String strName, strSex = "male", strAge, intHeight, douWeight, douBmr, douBmi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +32,6 @@ public class DataUser extends AppCompatActivity {
         setContentView(R.layout.activity_data_user);
 
         connectDataBase();
-
-
-
 
 
         bindWidget();
@@ -62,7 +55,6 @@ public class DataUser extends AppCompatActivity {
 
         man = (RadioButton) findViewById(R.id.man);
         woman = (RadioButton) findViewById(R.id.woman);
-
 
 
         //Radio Controller
@@ -91,14 +83,14 @@ public class DataUser extends AppCompatActivity {
         intHeight = User_Height.getText().toString().trim();
 
         //Checkspace
-        if (strName.equals("") || strAge.equals("") || douWeight.equals("") ||intHeight.equals("")) {
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("")) {
             showAlert();
 
 
-        }else if (checkChoose()) {
+        } else if (checkChoose()) {
             confirmData();
 
-        }else {//UnCheck
+        } else {//UnCheck
             showAlertSex();
 
         }//ClickDisPlay
@@ -129,7 +121,7 @@ public class DataUser extends AppCompatActivity {
         double douheight = Double.parseDouble(intHeight);
         double douAge = Double.parseDouble(strAge);
 
-        double douBMI = douweight / (Math.pow(douheight/100, 2));
+        double douBMI = douweight / (Math.pow(douheight / 100, 2));
         //  bmiString = Double.toString(douBMI);
         douBmi = String.format("%.2f", douBMI);
         Log.d("cal", "Weight = " + douweight);
@@ -159,13 +151,14 @@ public class DataUser extends AppCompatActivity {
     private void UpdateUsertoSQLite() {
 
         UserTABLE objUserTABLE = new UserTABLE(this);
-        long inSertDataUser = objUserTABLE.addNewValueToSQLite
-                (strName, strSex,strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight),Double.parseDouble(douBmr),Double.parseDouble(douBmi));
+//        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
+        objUserTABLE.addNewValueToSQLite
+                (strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
         User_Name.setText("");
         User_Age.setText("");
         User_Height.setText("");
         User_Weight.setText("");
-        Toast.makeText(DataUser.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
+        Toast.makeText(DataUser.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
         Intent objIntent = new Intent(DataUser.this, DisplayUser.class);
         startActivity(objIntent);
         finish();
@@ -188,6 +181,7 @@ public class DataUser extends AppCompatActivity {
         builder.show();
 
     } //ShowAlert
+
     private int MaleOrFemale() {
 
         int intResult = 0;
@@ -208,7 +202,6 @@ public class DataUser extends AppCompatActivity {
 
         return status;
     }
-
 
 
 }//main
