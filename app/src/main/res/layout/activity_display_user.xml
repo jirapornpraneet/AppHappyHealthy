@@ -93,30 +93,7 @@
                 android:src="@drawable/da6"
                 android:layout_marginLeft="30dp" />
 
-            <EditText
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/tv_Sex"
-                android:textSize="18dp"
-                android:layout_marginLeft="4.5dp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:background="@drawable/my_border_box"
-                android:textColor="#625f5f" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
-                android:id="@+id/imageView17"
-                android:src="@drawable/da6"
-                android:layout_marginLeft="58dp" />
 
             <RadioGroup
                 android:layout_width="0dp"
@@ -155,6 +132,7 @@
             </RadioGroup>
 
         </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

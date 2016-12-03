@@ -82,7 +82,7 @@ public class DisplayUser extends AppCompatActivity {
         }
 
         TVName.setText(strName);
-        TVSex.setText(strSex);
+        //TVSex.setText(strSex);
         TVAge.setText(strAge);
         TVWeight.setText(douWeight);
         TVHeight.setText(intHeight);
@@ -118,7 +118,7 @@ public class DisplayUser extends AppCompatActivity {
     private void bindWidget() {
 
         TVName = (EditText) findViewById(R.id.tv_Name);
-        TVSex = (EditText) findViewById(R.id.tv_Sex);
+       // TVSex = (EditText) findViewById(R.id.tv_Sex);
         TVAge = (EditText) findViewById(R.id.tv_Age);
         TVWeight = (EditText) findViewById(R.id.tv_Weight);
         TVHeight = (EditText) findViewById(R.id.tv_Height);
@@ -140,7 +140,7 @@ public class DisplayUser extends AppCompatActivity {
                         strSex = "woman";
                         break;
                 }
-                TVSex.setText(strSex);
+               // TVSex.setText(strSex);
             }
         });
 
@@ -154,7 +154,7 @@ public class DisplayUser extends AppCompatActivity {
         strAge = TVAge.getText().toString().trim();
         douWeight = TVWeight.getText().toString().trim();
         intHeight = TVHeight.getText().toString().trim();
-        strSex = TVSex.getText().toString().trim();
+        //strSex = TVSex.getText().toString().trim();
 
         //Checkspace
         if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") || strSex.equals("")) {
