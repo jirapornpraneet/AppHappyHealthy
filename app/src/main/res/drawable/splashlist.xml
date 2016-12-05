@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/splashAnimation"
-    android:duration="6"> //android:duration="2"ลนลูป
-    <item android:drawable="@drawable/logo" android:duration="300" />
-    <item android:drawable="@drawable/logo2" android:duration="300" />
-    <item android:drawable="@drawable/logo3" android:duration="300" />
-    <item android:drawable="@drawable/logo4" android:duration="300" />
+    android:oneshot="true"> //android:duration="2"ลนลูป //android:oneshot="true"
+    <item android:drawable="@drawable/fisrt" android:duration="500" />
+    <item android:drawable="@drawable/fisrt1" android:duration="500" />
+    <item android:drawable="@drawable/fisrt2" android:duration="500" />
+
 
 </animation-list>
 

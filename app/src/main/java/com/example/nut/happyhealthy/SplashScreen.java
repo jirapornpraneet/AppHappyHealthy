@@ -29,17 +29,17 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
 
             }
-        }, 3000);
+        }, 2000);
 
         ImageView image = (ImageView) findViewById(R.id.imageView9);
         splash = (AnimationDrawable) image.getBackground();
         image.post(new Starter());
 
 
-        ImageView imageView = (ImageView) findViewById(R.id.imageView10);
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        //ImageView imageView = (ImageView) findViewById(R.id.imageView10);
+        //Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 
-        imageView.setAnimation(anim);
+        //imageView.setAnimation(anim);
 
         objHandler = new Handler();
         objHandler.postDelayed(new Runnable() {
@@ -51,7 +51,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
 
             }
-        }, 3000);
+        }, 2000);
 
     }//oncreate
 

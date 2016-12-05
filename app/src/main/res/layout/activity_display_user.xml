@@ -49,7 +49,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="120dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -210,86 +210,57 @@
                 android:textColor="#625f5f" />
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </LinearLayout>
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="23dp"
-                android:id="@+id/imageViewbmr"
-                android:layout_marginLeft="62dp"
-                android:src="@drawable/da11" />
+    <LinearLayout
+        android:layout_width="170dp"
+        android:layout_height="160dp"
+        android:background="@drawable/bmr"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="320dp">
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/tv_BMR"
-                android:textSize="18dp"
-                android:layout_marginLeft="105dp"
-                android:background="@drawable/my_border_box"
-                android:textStyle="bold"
-                android:textColor="#625f5f" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="22dp"
-                android:id="@+id/imageViewbmi"
-                android:layout_marginLeft="55dp"
-                android:src="@drawable/da12" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/tv_BMI"
-                android:textSize="18dp"
-                android:layout_marginLeft="105dp"
-                android:textStyle="bold"
-                android:background="@drawable/my_border_box"
-                android:textColor="#625f5f" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:text="New Text"
+            android:id="@+id/tv_BMR"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#625f5f"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="10dp" />
 
-            <TextView
-                android:layout_width="220dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/weightStdTextView"
-                android:textSize="18dp"
-                android:layout_marginLeft="70dp"
-                android:textStyle="bold"
-                android:background="@drawable/my_border_waring" />
+    </LinearLayout>
 
-        </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="170dp"
+        android:layout_height="160dp"
+        android:background="@drawable/bmi"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="320dp"
+        android:layout_marginRight="10dp">
 
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tv_BMI"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#625f5f"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/weightStdTextView"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp" />
     </LinearLayout>
 
 </RelativeLayout>
