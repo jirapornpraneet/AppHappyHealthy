@@ -5,69 +5,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.DataUser"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/bgdatauser">
 
-    <LinearLayout
-        android:id="@+id/container_toolbar"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="ยินดีต้อนรับสู่ Happy Healthy"
+        android:id="@+id/textView18"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff" />
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
-    </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="กรุณาบอกเราเกี่ยวกับตัวท่าน"
+        android:id="@+id/textView19"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="88dp"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:id="@+id/linearLayout"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/my_bgdata">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
                 android:id="@+id/imageView15"
-                android:layout_marginLeft="60dp"
-                android:layout_weight="1"
                 android:src="@drawable/da5" />
 
             <EditText
-                android:layout_width="50dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:id="@+id/User_Name"
-                android:textColor="#000000"
+                android:textColor="#7d7d7d"
                 android:editable="true"
-                android:layout_marginRight="100dp"
-                android:layout_weight="1"
                 android:textSize="16dp"
-                android:layout_marginLeft="12dp"
-                android:background="@drawable/my_border_box"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp" />
+                android:background="@drawable/my_bg_bordar_datauser"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="10dp">
 
             <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
                 android:id="@+id/imageView17"
                 android:src="@drawable/da6"
-                android:layout_marginLeft="58dp" />
+                android:layout_marginLeft="38dp" />
+
+
 
             <RadioGroup
                 android:layout_width="0dp"
@@ -75,19 +91,18 @@
                 android:orientation="horizontal"
                 android:id="@+id/User_Sex"
                 android:layout_weight="1"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="8dp">
+                android:layout_marginRight="40dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ชาย"
                     android:id="@+id/man"
-                    android:textColor="#000000"
+                    android:textColor="#7d7d7d"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:textSize="16sp"
-                    android:background="@drawable/my_border_box"
+                    android:textSize="17dp"
+                    android:background="@drawable/my_bg_bordar_datauser"
                     android:textStyle="bold"
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp" />
@@ -97,11 +112,11 @@
                     android:layout_height="wrap_content"
                     android:text="หญิง"
                     android:id="@+id/woman"
-                    android:textColor="#000000"
+                    android:textColor="#7d7d7d"
                     android:layout_weight="1"
-                    android:textSize="16dp"
+                    android:textSize="17dp"
                     android:layout_marginRight="5dp"
-                    android:background="@drawable/my_border_box"
+                    android:background="@drawable/my_bg_bordar_datauser"
                     android:textStyle="bold" />
             </RadioGroup>
 
@@ -110,92 +125,89 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="10dp">
 
             <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
                 android:id="@+id/imageView20"
-                android:layout_marginLeft="58dp"
-                android:src="@drawable/da7" />
+                android:src="@drawable/da7"
+                android:layout_marginLeft="40dp" />
 
             <EditText
-                android:layout_width="50dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_Age"
-                android:layout_weight="2"
-                android:textColor="#000000"
-                android:background="@drawable/my_border_box"
-                android:layout_marginRight="100dp"
+                android:textColor="#7d7d7d"
+                android:background="@drawable/my_bg_bordar_datauser"
                 android:textSize="16dp"
                 android:hint="ปี"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
                 android:autoText="false"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="10dp">
 
             <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
                 android:id="@+id/imageView18"
                 android:src="@drawable/da8"
-                android:layout_marginLeft="58dp" />
+                android:layout_marginLeft="25dp" />
 
             <EditText
-                android:layout_width="40dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/User_Weight"
-                android:layout_weight="2"
-                android:textColor="#000000"
-                android:background="@drawable/my_border_box"
-                android:layout_marginRight="100dp"
+                android:textColor="#7d7d7d"
+                android:background="@drawable/my_bg_bordar_datauser"
                 android:autoText="false"
                 android:textSize="16dp"
                 android:hint="กิโลกรัม"
-                android:layout_marginTop="9dp"
-                android:layout_marginLeft="5dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="10dp">
 
             <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
                 android:id="@+id/imageView19"
-                android:layout_marginLeft="58dp"
-                android:src="@drawable/da9" />
+                android:src="@drawable/da9"
+                android:layout_marginLeft="25dp" />
 
             <EditText
-                android:layout_width="50dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_Height"
-                android:layout_weight="2"
-                android:textColor="#000000"
-                android:background="@drawable/my_border_box"
-                android:layout_marginRight="100dp"
+                android:textColor="#7d7d7d"
+                android:background="@drawable/my_bg_bordar_datauser"
                 android:textSize="16dp"
-                android:layout_marginLeft="5dp"
                 android:hint="เซนติเมตร"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp" />
 
         </LinearLayout>
 
@@ -203,15 +215,14 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="290dp"
-        android:layout_height="65dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView8"
         android:layout_centerHorizontal="true"
         android:onClick="ClickDisPlay"
-        android:src="@drawable/savedis2"
-        android:layout_marginTop="280dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:src="@drawable/savedatauser"
+        android:layout_marginTop="350dp"
+        android:layout_alignParentBottom="false" />
 
 
 </RelativeLayout>
