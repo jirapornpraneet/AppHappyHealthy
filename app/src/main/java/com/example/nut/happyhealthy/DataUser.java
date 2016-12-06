@@ -24,7 +24,7 @@ public class DataUser extends AppCompatActivity {
     private EditText User_Name, User_Age, User_Weight, User_Height;
     private RadioGroup User_Sex;
     private RadioButton man, woman;
-    private String strName, strSex = "male", strAge, intHeight, douWeight, douBmr, douBmi;
+    private String strName, strSex , strAge, intHeight, douWeight, douBmr, douBmi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class DataUser extends AppCompatActivity {
                         strSex = "woman";
                         break;
                 }
+                // TVSex.setText(strSex);
             }
         });
 
@@ -152,14 +153,14 @@ public class DataUser extends AppCompatActivity {
 
         UserTABLE objUserTABLE = new UserTABLE(this);
 //        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewValueToSQLite
+        objUserTABLE.addNewInsertToSQLite
                 (strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
         User_Name.setText("");
         User_Age.setText("");
         User_Height.setText("");
         User_Weight.setText("");
         Toast.makeText(DataUser.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(DataUser.this, DisplayUser.class);
+        Intent objIntent = new Intent(DataUser.this, MainActivity.class);
         startActivity(objIntent);
         finish();
 
