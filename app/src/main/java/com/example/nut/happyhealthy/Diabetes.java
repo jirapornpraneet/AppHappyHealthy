@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -22,69 +23,42 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Diabetes extends AppCompatActivity {
 
     //การประกาศตัวแปร
     private DiabetesTABLE objdiabetesTABLE;
-    private EditText D_date,D_time,D_costSugarBefore,D_costSugarAfter;
-    private String  str_D_Date,str_D_Time,intCostSugarBefore,intCostSugarAfter,str_L_before,str_L_after ;
+    private EditText D_costSugarBefore,D_costSugarAfter,D_time;
+    private String  str_D_Date,str_D_Time, intCostSugarBefore,intCostSugarAfter,str_L_before,str_L_after ;
+    private TextView  D_date;
+    SimpleDateFormat df_show,df_insert;
+    Calendar c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diabetes);
 
-        //Use the current date as the default date to the picker
-        final Calendar c = Calendar.getInstance();
-        final int year = c.get(Calendar.YEAR);
-        final int month = c.get(Calendar.MONTH);
-        final int day = c.get(Calendar.DAY_OF_MONTH);
-        final int hour = c.get(Calendar.HOUR_OF_DAY);
-        final int minute = c.get(Calendar.MINUTE);
-        final EditText txtTime = (EditText) findViewById(R.id.D_time);
-        final EditText txtDate = (EditText) findViewById(R.id.D_date);
-
-        txtTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TimePickerDialog timePickerDialog = new TimePickerDialog(Diabetes.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                        txtTime.setText(i + ":" + i1);
-                    }
-                }, hour, minute, true);
-                timePickerDialog.setTitle("เลือกเวลา");
-                timePickerDialog.show();
-            }
-        });//setTimepicker
-
-
-
-        txtDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(Diabetes.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        txtDate.setText(i2 + "-" + i1 + "-" + i);
-                    }
-                }, day, month, year);
-                datePickerDialog.setTitle("เลือกวันที่");
-
-                datePickerDialog.show();
-            }
-        });//setdatepicker
 
 
         //Bind wiget
-        D_date = (EditText) findViewById(R.id.D_date);
+        D_date = (TextView)findViewById(R.id.D_date);
         D_time = (EditText) findViewById(R.id.D_time);
         D_costSugarBefore = (EditText) findViewById(R.id.D_costSugarBefore);
         D_costSugarAfter = (EditText) findViewById(R.id.D_costSugarAfter);
 
         connectDataBase();
+
+
+        df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        df_insert = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        c = Calendar.getInstance();
+        D_date.setText(df_show.format(c.getTime()));
+
 
 
     }////main method
@@ -98,14 +72,14 @@ public class Diabetes extends AppCompatActivity {
     public void ClickDisLevelsSugar(View view) {
 
         //get value edit tezt
-        str_D_Date = D_date.getText().toString().trim();
+        str_D_Date = df_insert.format(c.getTime());
         str_D_Time = D_time.getText().toString().trim();
         intCostSugarBefore = D_costSugarBefore.getText().toString().trim();
         intCostSugarAfter = D_costSugarAfter.getText().toString().trim();
 
 
         //Checkspace
-        if (str_D_Date.equals("") || str_D_Time.equals("") || intCostSugarBefore.equals("")|| intCostSugarAfter.equals("")) {
+        if (str_D_Date.equals("") ||  intCostSugarBefore.equals("")|| intCostSugarAfter.equals("")) {
 
             showAlert();
 
