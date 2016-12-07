@@ -215,13 +215,13 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView8"
         android:layout_centerHorizontal="true"
         android:onClick="ClickDisPlay"
         android:src="@drawable/savedatauser"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="370dp"
         android:layout_alignParentBottom="false" />
 
 

@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.DisplayUser"
-    android:background="#f2fbfbfb">
+    android:background="#f7eaea">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -50,7 +50,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="130dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="15dp">
 
