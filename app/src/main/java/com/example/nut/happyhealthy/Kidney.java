@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Kidney extends AppCompatActivity {
@@ -29,58 +31,32 @@ public class Kidney extends AppCompatActivity {
 
     //การประกาศตัวแปร
     private KidneyTABLE  objkidneyTABLE;
-    private EditText K_date,K_time,K_costGFR;
+    private EditText K_time,K_costGFR;
     private String  str_K_Date,str_K_Time,intCostGFR,str_L_cost ;
+    private TextView K_date;
+    SimpleDateFormat df_show,df_insert;
+    Calendar c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kidney);
 
-        //Use the current date as the default date to the picker
-        final Calendar c = Calendar.getInstance();
-        final int year = c.get(Calendar.YEAR);
-        final int month = c.get(Calendar.MONTH);
-        final int day = c.get(Calendar.DAY_OF_MONTH);
-        final int hour = c.get(Calendar.HOUR_OF_DAY);
-        final int minute = c.get(Calendar.MINUTE);
-        final EditText txtTime = (EditText) findViewById(R.id.K_time);
-        final EditText txtDate = (EditText) findViewById(R.id.K_date);
-        txtTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TimePickerDialog timePickerDialog = new TimePickerDialog(Kidney.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                        txtTime.setText(i + ":" + i1);
-                    }
-                }, hour, minute, true);
-                timePickerDialog.setTitle("เลือกเวลา");
-                timePickerDialog.show();
-            }
-        });//setTimepicker
 
-        txtDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(Kidney.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        txtDate.setText(i2 + "-" + i1 + "-" + i);
-                    }
-                }, day, month, year);
-                datePickerDialog.setTitle("เลือกวันที่");
-                datePickerDialog.show();
 
-            }
-        });//setdatepicker
+
 
         //Bind widget
-        K_date = (EditText) findViewById(R.id.K_date);
+        K_date = (TextView) findViewById(R.id.K_date);
         K_time = (EditText) findViewById(R.id.K_time);
         K_costGFR = (EditText) findViewById(R.id.K_costGFR);
 
         connectDataBase();
+
+        df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        df_insert = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        c = Calendar.getInstance();
+        K_date.setText(df_show.format(c.getTime()));
 
     }//Oncreate
 
@@ -99,7 +75,7 @@ public class Kidney extends AppCompatActivity {
 
 
         //Checkspace
-        if (str_K_Date.equals("") || str_K_Time.equals("") || intCostGFR.equals("")) {
+        if (str_K_Date.equals("") || intCostGFR.equals("")) {
             showAlert();
 
 
@@ -126,8 +102,7 @@ public class Kidney extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
-        builder.setMessage(" วันที่ : " + str_K_Date+ "\n"
-                + " เวลา : " + str_K_Time +"\n" +
+        builder.setMessage(" วันที่ : " + str_K_Date+ "\n" +
                 " ค่าการทำงานไต : " + intCostGFR + "\n"+
                 " อยู่ในเกณฑ์ที่ : " + str_L_cost);
         builder.setCancelable(false);

@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffebeb">
 
 
     <LinearLayout
@@ -41,7 +42,7 @@
                 android:layout_marginLeft="50dp"
                 android:src="@drawable/calendi" />
 
-            <EditText
+            <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:inputType="date"

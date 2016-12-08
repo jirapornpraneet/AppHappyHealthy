@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -22,14 +23,18 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Pressure extends AppCompatActivity {
 
     //การประกาศตัวแปร
     private PressureTABLE objpressureTABLE;
-    private EditText P_date,P_time,P_costPressureTop,P_costPressureDown;
+    private EditText P_time,P_costPressureTop,P_costPressureDown;
     private String  str_P_Date,str_P_Time,intCostPressureDown,intCostPressureTop,str_LP_cost_down,str_LP_cost_top;
+    private TextView P_date;
+    SimpleDateFormat df_show,df_insert;
+    Calendar c;
 
 
     @Override
@@ -38,49 +43,8 @@ public class Pressure extends AppCompatActivity {
         setContentView(R.layout.activity_pressure);
 
 
-        //Use the current date as the default date to the picker
-        final Calendar c = Calendar.getInstance();
-        final int year = c.get(Calendar.YEAR);
-        final int month = c.get(Calendar.MONTH);
-        final int day = c.get(Calendar.DAY_OF_MONTH);
-        final int hour = c.get(Calendar.HOUR_OF_DAY);
-        final int minute = c.get(Calendar.MINUTE);
-        final EditText txtTime = (EditText) findViewById(R.id.P_time);
-        final EditText txtDate = (EditText) findViewById(R.id.P_date);
-
-        txtTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TimePickerDialog timePickerDialog = new TimePickerDialog(Pressure.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                        txtTime.setText(i + ":" + i1);
-                    }
-                }, hour, minute, true);
-                timePickerDialog.setTitle("เลือกเวลา");
-                timePickerDialog.show();
-            }
-        });//setTimepicker
-
-
-        txtDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(Pressure.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        txtDate.setText(i2 + "-" + i1 + "-" + i);
-                    }
-                }, day, month, year);
-                datePickerDialog.setTitle("เลือกวันที่");
-                datePickerDialog.show();
-
-            }
-        });//setdatepicker
-
-
         //Bind wiget
-        P_date = (EditText) findViewById(R.id.P_date);
+        P_date = (TextView) findViewById(R.id.P_date);
         P_time = (EditText) findViewById(R.id.P_time);
         P_costPressureTop = (EditText) findViewById(R.id.P_costPressureTop);
         P_costPressureDown = (EditText) findViewById(R.id.P_costPressureDown);
@@ -104,7 +68,7 @@ public class Pressure extends AppCompatActivity {
 
 
         //Checkspace
-        if (str_P_Date.equals("") || str_P_Time.equals("") || intCostPressureDown.equals("")|| intCostPressureTop.equals("")) {
+        if (str_P_Date.equals("") || intCostPressureDown.equals("")|| intCostPressureTop.equals("")) {
             showAlert();
 
 
