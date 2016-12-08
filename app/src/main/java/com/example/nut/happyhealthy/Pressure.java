@@ -30,8 +30,8 @@ public class Pressure extends AppCompatActivity {
 
     //การประกาศตัวแปร
     private PressureTABLE objpressureTABLE;
-    private EditText P_time,P_costPressureTop,P_costPressureDown;
-    private String  str_P_Date,str_P_Time,intCostPressureDown,intCostPressureTop,str_LP_cost_down,str_LP_cost_top;
+    private EditText P_costPressureTop,P_costPressureDown;
+    private String  str_P_Date,intCostPressureDown,intCostPressureTop,str_LP_cost_down,str_LP_cost_top;
     private TextView P_date;
     SimpleDateFormat df_show,df_insert;
     Calendar c;
@@ -45,7 +45,6 @@ public class Pressure extends AppCompatActivity {
 
         //Bind wiget
         P_date = (TextView) findViewById(R.id.P_date);
-        P_time = (EditText) findViewById(R.id.P_time);
         P_costPressureTop = (EditText) findViewById(R.id.P_costPressureTop);
         P_costPressureDown = (EditText) findViewById(R.id.P_costPressureDown);
 
@@ -68,7 +67,6 @@ public class Pressure extends AppCompatActivity {
 
         //get value edit tezt
         str_P_Date = P_date.getText().toString().trim();
-        str_P_Time = P_time.getText().toString().trim();
         intCostPressureDown = P_costPressureDown.getText().toString().trim();
         intCostPressureTop = P_costPressureTop.getText().toString().trim();
 
@@ -99,7 +97,6 @@ public class Pressure extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่  : " + str_P_Date + "\n"
-                + " เวลา : " + str_P_Time + "\n"
                 + " ค่าความดันตัวล่าง : " + intCostPressureDown + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_down+"\n"
                 + " ค่าความดันตัวบน : " + intCostPressureTop + "\n"
@@ -172,7 +169,6 @@ public class Pressure extends AppCompatActivity {
         long inSertDataUser = objpressureTABLE.addNewValueToSQLite
                 (str_P_Date,  Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top);
         P_date.setText("");
-        P_time.setText("");
         P_costPressureTop.setText("");
         P_costPressureDown.setText("");
         Toast.makeText(Pressure.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();

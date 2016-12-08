@@ -31,8 +31,8 @@ public class Kidney extends AppCompatActivity {
 
     //การประกาศตัวแปร
     private KidneyTABLE  objkidneyTABLE;
-    private EditText K_time,K_costGFR;
-    private String  str_K_Date,str_K_Time,intCostGFR,str_L_cost ;
+    private EditText K_costGFR;
+    private String  str_K_Date,intCostGFR,str_L_cost ;
     private TextView K_date;
     SimpleDateFormat df_show,df_insert;
     Calendar c;
@@ -48,7 +48,6 @@ public class Kidney extends AppCompatActivity {
 
         //Bind widget
         K_date = (TextView) findViewById(R.id.K_date);
-        K_time = (EditText) findViewById(R.id.K_time);
         K_costGFR = (EditText) findViewById(R.id.K_costGFR);
 
         connectDataBase();
@@ -70,7 +69,6 @@ public class Kidney extends AppCompatActivity {
 
         //get value edit tezt
         str_K_Date = K_date.getText().toString().trim();
-        str_K_Time = K_time.getText().toString().trim();
         intCostGFR = K_costGFR.getText().toString().trim();
 
 
@@ -147,7 +145,6 @@ public class Kidney extends AppCompatActivity {
         long inSertDataUser = objkidneyTABLE.addNewValueToSQLite
                 (str_K_Date, Integer.parseInt(intCostGFR),str_L_cost);
         K_date.setText("");
-        K_time.setText("");
         K_costGFR.setText("");
         Toast.makeText(Kidney.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
         Intent objIntent = new Intent(Kidney.this, DisplayKidney.class);

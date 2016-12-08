@@ -85,32 +85,6 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
-                android:id="@+id/imageViewtime"
-                android:layout_marginLeft="53dp"
-                android:src="@drawable/timedis" />
-
-            <EditText
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:inputType="time"
-                android:ems="10"
-                android:id="@+id/P_time"
-                android:textColor="#000000"
-                android:background="@drawable/my_box_dis"
-                android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="15dp"
-                android:hint="ชั่วโมง-นาที" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
 

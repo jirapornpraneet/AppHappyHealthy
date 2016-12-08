@@ -32,8 +32,8 @@ public class Diabetes extends AppCompatActivity {
 
     //การประกาศตัวแปร
     private DiabetesTABLE objdiabetesTABLE;
-    private EditText D_costSugarBefore,D_costSugarAfter,D_time;
-    private String  str_D_Date,str_D_Time, intCostSugarBefore,intCostSugarAfter,str_L_before,str_L_after ;
+    private EditText D_costSugarBefore,D_costSugarAfter;
+    private String  str_D_Date, intCostSugarBefore,intCostSugarAfter,str_L_before,str_L_after ;
     private TextView  D_date;
     SimpleDateFormat df_show,df_insert;
     Calendar c;
@@ -47,7 +47,6 @@ public class Diabetes extends AppCompatActivity {
 
         //Bind wiget
         D_date = (TextView)findViewById(R.id.D_date);
-        D_time = (EditText) findViewById(R.id.D_time);
         D_costSugarBefore = (EditText) findViewById(R.id.D_costSugarBefore);
         D_costSugarAfter = (EditText) findViewById(R.id.D_costSugarAfter);
 
@@ -73,7 +72,6 @@ public class Diabetes extends AppCompatActivity {
 
         //get value edit tezt
         str_D_Date = df_insert.format(c.getTime());
-        str_D_Time = D_time.getText().toString().trim();
         intCostSugarBefore = D_costSugarBefore.getText().toString().trim();
         intCostSugarAfter = D_costSugarAfter.getText().toString().trim();
 
@@ -111,7 +109,6 @@ public class Diabetes extends AppCompatActivity {
        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่ :" + str_D_Date+ "\n"
-                + " เวลา : " + str_D_Time +"\n"
                 + " ค่าน้ำตาลก่อนอาหาร : " + intCostSugarBefore +"\n"
                 + " อยู่ในเกณฑ์ที่ :" + str_L_before + "\n"
                 + " ค่าน้ำตาลหลังอาหาร : " + intCostSugarAfter+"\n"
@@ -180,7 +177,6 @@ public class Diabetes extends AppCompatActivity {
         long inSertDataUser = objdiabetesTABLE.addNewValueToSQLite
                 (str_D_Date, Integer.parseInt(intCostSugarBefore), Integer.parseInt(intCostSugarAfter),str_L_before,str_L_after);
         D_date.setText("");
-        D_time.setText("");
         D_costSugarBefore.setText("");
         D_costSugarAfter.setText("");
         Toast.makeText(Diabetes.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
