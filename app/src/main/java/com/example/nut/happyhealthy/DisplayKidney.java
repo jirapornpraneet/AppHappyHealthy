@@ -42,8 +42,7 @@ public class DisplayKidney extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             do {
-                str_K_Date = cursor.getString(cursor.getColumnIndex(KidneyTABLE.K_Date));
-                str_K_Time = cursor.getString(cursor.getColumnIndex(KidneyTABLE.K_Time));
+                str_K_Date = cursor.getString(cursor.getColumnIndex(KidneyTABLE.K_DateTime));
                 intCostGFR = cursor.getString(cursor.getColumnIndex(KidneyTABLE.K_CostGFR));
                 tv_K_LevelCostGFR = findMyLevelCostGFR(intCostGFR);
             } while (cursor.moveToNext());

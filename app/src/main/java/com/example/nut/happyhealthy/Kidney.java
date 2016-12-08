@@ -145,7 +145,7 @@ public class Kidney extends AppCompatActivity {
 
         KidneyTABLE objkidneyTABLE = new KidneyTABLE(this);
         long inSertDataUser = objkidneyTABLE.addNewValueToSQLite
-                (str_K_Date, str_K_Time, Integer.parseInt(intCostGFR),str_L_cost);
+                (str_K_Date, Integer.parseInt(intCostGFR),str_L_cost);
         K_date.setText("");
         K_time.setText("");
         K_costGFR.setText("");

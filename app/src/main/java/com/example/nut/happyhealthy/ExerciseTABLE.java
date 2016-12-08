@@ -19,7 +19,6 @@ public class ExerciseTABLE {
 
     public static final String Exercise = "Exercise";
     public static final String Exercise_Id = "Exercise_Id";
-    public static final String ExerciseType_Id = "ExerciseType_Id";
     public static final String Exercise_Name = "Exercise_Name";
     public static final String Exercise_Calories = "Exercise_Calories";
     public static final String Exercise_Duration = "Exercise_Duration";
@@ -50,7 +49,7 @@ public class ExerciseTABLE {
     public ArrayList<HashMap<String, String>> getExeList (int type) {
 
         SQLiteDatabase db = myDatabase.getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + Exercise + " WHERE " + ExerciseType_Id + " = " + type;
+        String selectQuery = "SELECT * FROM " + Exercise ;
 
         ArrayList<HashMap<String, String>> exeList = new ArrayList<HashMap<String, String>>();
 

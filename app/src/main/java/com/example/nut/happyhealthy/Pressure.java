@@ -52,6 +52,12 @@ public class Pressure extends AppCompatActivity {
         connectDataBase();
 
 
+        df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        df_insert = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        c = Calendar.getInstance();
+        P_date.setText(df_show.format(c.getTime()));
+
+
     }//Oncreate
 
     private void connectDataBase() {
@@ -164,7 +170,7 @@ public class Pressure extends AppCompatActivity {
     private void upDataPressuretoSQLite() {
         PressureTABLE objpressureTABLE = new PressureTABLE(this);
         long inSertDataUser = objpressureTABLE.addNewValueToSQLite
-                (str_P_Date, str_P_Time, Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top);
+                (str_P_Date,  Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top);
         P_date.setText("");
         P_time.setText("");
         P_costPressureTop.setText("");

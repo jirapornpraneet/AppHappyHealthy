@@ -28,9 +28,6 @@ public class Home extends Activity  {
 
 
 
-
-
-
     }//Oncreate
 
     public void ClickFood(View view) {

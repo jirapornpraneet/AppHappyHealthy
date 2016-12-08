@@ -18,7 +18,6 @@ public class FoodTABLE {
 
     public static final String Food = "Food";
     public static final String Food_Id = "Food_Id";
-    public static final String FoodType_Id = "FoodType_Id";
     public static final String Food_Name = "Food_Name";
     public static final String Food_Calories = "Food_Calories";
     public static final String Food_Amount = "Food_Amount";
@@ -62,7 +61,7 @@ public class FoodTABLE {
     //เอใส่เพิ่มlistview
     public ArrayList<HashMap<String, String>> getFoodList(int type) {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + Food + " WHERE " + FoodType_Id + " = " + type;
+        String selectQuery = "SELECT * FROM " + Food ;
 
         ArrayList<HashMap<String, String>> foodList = new ArrayList<HashMap<String, String>>();
 

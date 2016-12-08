@@ -44,8 +44,7 @@ public class DisplayDisease extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             do {
-                str_D_Date = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_Date));
-                str_D_Time = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_Time));
+                str_D_Date = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_DateTime));
                 intCostSugarBefore = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_CostSugarBefore));
                 intCostSugarAfter = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_CostSugarAfter));
                 tv_D_LevelBefore = findMyLevelDiseaseBefore(intCostSugarBefore);

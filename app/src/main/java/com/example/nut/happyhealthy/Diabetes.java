@@ -178,7 +178,7 @@ public class Diabetes extends AppCompatActivity {
 
         DiabetesTABLE objdiabetesTABLE = new DiabetesTABLE(this);
         long inSertDataUser = objdiabetesTABLE.addNewValueToSQLite
-                (str_D_Date, str_D_Time, Integer.parseInt(intCostSugarBefore), Integer.parseInt(intCostSugarAfter),str_L_before,str_L_after);
+                (str_D_Date, Integer.parseInt(intCostSugarBefore), Integer.parseInt(intCostSugarAfter),str_L_before,str_L_after);
         D_date.setText("");
         D_time.setText("");
         D_costSugarBefore.setText("");

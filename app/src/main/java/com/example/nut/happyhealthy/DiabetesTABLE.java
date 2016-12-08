@@ -20,8 +20,7 @@ public class DiabetesTABLE {
 
     public static final String Diabetes = "Diabetes";
     public static final String D_Id = "D_Id";
-    public static final String D_Date = "D_Date";
-    public static final String D_Time = "D_Time";
+    public static final String D_DateTime = "D_DateTime";
     public static final String D_CostSugarBefore = "D_CostSugarBefore";
     public static final String D_CostSugarAfter = "D_CostSugarAfter";
     public static final String D_LevelCostBefore = "D_LevelCostBefore";
@@ -74,11 +73,10 @@ public class DiabetesTABLE {
 
 
     //Add New Value
-    public long addNewValueToSQLite(String str_D_Date, String str_D_Time, int intCostSugarBefore, int intCostSugarAfter,String str_L_before,String str_L_after) {
+    public long addNewValueToSQLite(String str_D_Date, int intCostSugarBefore, int intCostSugarAfter,String str_L_before,String str_L_after) {
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(D_Date, str_D_Date);
-        contentValues.put(D_Time, str_D_Time);
+        contentValues.put(D_DateTime, str_D_Date);
         contentValues.put(D_CostSugarBefore, intCostSugarBefore);
         contentValues.put(D_CostSugarAfter, intCostSugarAfter);
         contentValues.put(D_LevelCostBefore,str_L_before);
@@ -100,8 +98,7 @@ public class DiabetesTABLE {
             do {
                 HashMap<String, String> diab = new HashMap<String, String>();
                 diab.put("id", cursor.getString(cursor.getColumnIndex(D_Id)));
-                diab.put("date", cursor.getString(cursor.getColumnIndex(D_Date)));
-                diab.put("time", cursor.getString(cursor.getColumnIndex(D_Time)));
+                diab.put("date", cursor.getString(cursor.getColumnIndex(D_DateTime)));
                 diab.put("cos_1", cursor.getString(cursor.getColumnIndex(D_CostSugarBefore)));
                 diab.put("cos_2", cursor.getString(cursor.getColumnIndex(D_CostSugarAfter)));
                 diab.put("cos_L_before", cursor.getString(cursor.getColumnIndex(D_LevelCostBefore)));

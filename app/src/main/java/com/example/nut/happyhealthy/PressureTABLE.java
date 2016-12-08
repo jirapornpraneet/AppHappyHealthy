@@ -18,8 +18,7 @@ public class PressureTABLE {
 
     public static final String Pressure = "Pressure";
     public static final String P_ID = "P_Id";
-    public static final String P_Date = "P_Date";
-    public static final String P_Time = "P_Time";
+    public static final String P_DateTime = "P_DateTime";
     public static final String P_CostPressureDown = "P_CostPressureDown";
     public static final String P_CostPressureTop = "P_CostPressureTop";
     public static final String P_Cost_Level_Down = "P_Cost_Level_Down";
@@ -37,10 +36,9 @@ public class PressureTABLE {
 
     //Add New Value
     //Add New Value
-    public long addNewValueToSQLite(String str_P_Date,  String str_P_Time, int intCostPressureDown,int intCostPressureTop,String str_LP_cost_down,String str_LP_cost_top) {
+    public long addNewValueToSQLite(String str_P_Date,   int intCostPressureDown,int intCostPressureTop,String str_LP_cost_down,String str_LP_cost_top) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(P_Date, str_P_Date);
-        contentValues.put(P_Time, str_P_Time);
+        contentValues.put(P_DateTime, str_P_Date);
         contentValues.put(P_CostPressureDown, intCostPressureDown);
         contentValues.put(P_CostPressureTop, intCostPressureTop);
         contentValues.put(P_Cost_Level_Down, str_LP_cost_down);
@@ -62,8 +60,7 @@ public class PressureTABLE {
             do {
                 HashMap<String, String> pre = new HashMap<String, String>();
                 pre.put("id", cursor.getString(cursor.getColumnIndex(P_ID)));
-                pre.put("datePre", cursor.getString(cursor.getColumnIndex(P_Date)));
-                pre.put("timePre", cursor.getString(cursor.getColumnIndex(P_Time)));
+                pre.put("datePre", cursor.getString(cursor.getColumnIndex(P_DateTime)));
                 pre.put("cos_down", cursor.getString(cursor.getColumnIndex(P_CostPressureDown)));
                 pre.put("cos_top", cursor.getString(cursor.getColumnIndex(P_CostPressureTop)));
                 pre.put("cos_level_down", cursor.getString(cursor.getColumnIndex(P_Cost_Level_Down)));

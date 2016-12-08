@@ -45,8 +45,7 @@ public class DisplayPressure extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             do {
-                str_P_Date = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_Date));
-                str_P_Time = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_Time));
+                str_P_Date = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_DateTime));
                 intCostPressureDown = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_CostPressureDown));
                 intCostPressureTop = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_CostPressureTop));
                 tv_P_LevelDown = findMyLevelPressureDown(intCostPressureDown);
