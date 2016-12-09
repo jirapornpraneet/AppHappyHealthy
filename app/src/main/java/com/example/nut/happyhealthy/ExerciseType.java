@@ -45,6 +45,13 @@ public class ExerciseType extends AppCompatActivity {
                //ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
 
 
+               //ส่งค่าไปอีกหน้าหนึ่ง putExtra
+               Intent intent2;
+               intent2 = new Intent(ExerciseType.this, Exercise_Detail.class);
+               intent2.putExtra("exercise_id", ExeId);
+                startActivity(intent2);
+
+
 
 
 
