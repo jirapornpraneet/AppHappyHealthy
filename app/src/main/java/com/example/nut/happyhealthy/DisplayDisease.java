@@ -16,8 +16,8 @@ public class DisplayDisease extends AppCompatActivity {
     SQLiteDatabase db;
     MyDatabase myDatabase;
     //**Explicit
-    private TextView TV_D_Date,TV_D_Time,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
-    private String  str_D_Date,str_D_Time,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
+    private TextView TV_D_Date,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
+    private String  str_D_Date,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
 
 
 
@@ -54,7 +54,6 @@ public class DisplayDisease extends AppCompatActivity {
 
         cursor.close();
         TV_D_Date.setText(str_D_Date);
-        TV_D_Time.setText(str_D_Time);
         TV_D_CostSugarBefore.setText(intCostSugarBefore);
         TV_D_CostSugarAfter.setText(intCostSugarAfter);
         TV_D_LevelBefore.setText(tv_D_LevelBefore);
@@ -102,7 +101,6 @@ public class DisplayDisease extends AppCompatActivity {
     private void bindWidget() {
 
         TV_D_Date = (TextView) findViewById(R.id.tv_D_Date);
-        TV_D_Time = (TextView) findViewById(R.id.tv_D_Time);
         TV_D_CostSugarBefore = (TextView) findViewById(R.id.tv_D_CostSugarBefore);
         TV_D_CostSugarAfter = (TextView) findViewById(R.id.tv_D_CostSugarAfter);
         TV_D_LevelBefore = (TextView) findViewById(R.id.tv_D_LevelBefore);

@@ -50,30 +50,6 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
-                android:id="@+id/imageViewtime"
-                android:layout_marginLeft="53dp"
-                android:src="@drawable/timedis" />
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/tv_P_Time"
-                android:textSize="16dp"
-                android:autoText="false"
-                android:background="@drawable/my_box_dis"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="10dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
 

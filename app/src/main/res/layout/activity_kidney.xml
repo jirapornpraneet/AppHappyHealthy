@@ -31,19 +31,18 @@
         android:layout_marginTop="15dp"
         android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="บันทึก"
-        android:id="@+id/savedatauser"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="16dp"
+
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView26"
+        android:src="@drawable/listhistory"
+        android:onClick="ClickHistoryKidney"
+        android:layout_marginTop="15dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="false"
-        android:textColor="#ffffff"
-        android:layout_marginRight="15dp"
-        android:onClick="ClickDisLevelsGFR"/>
+        android:layout_marginRight="15dp" />
 
 
     <LinearLayout
@@ -119,21 +118,18 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:id="@+id/imageView26"
-                android:src="@drawable/button"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
-                android:onClick="ClickHistoryKidney" />
-
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="บันทึก"
+            android:id="@+id/savedatauser"
+            android:layout_centerHorizontal="true"
+            android:textSize="50dp"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentLeft="false"
+            android:textColor="#3c3737"
+            android:onClick="ClickDisLevelsGFR"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

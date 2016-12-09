@@ -16,8 +16,8 @@ public class DisplayKidney extends AppCompatActivity {
     MyDatabase myDatabase;
 
     //Explicit
-    private TextView TV_K_Date,TV_K_Time,TV_K_CostGFR,TV_K_LevelCostGFR;
-    private String  str_K_Date,str_K_Time,intCostGFR,tv_K_LevelCostGFR;
+    private TextView TV_K_Date,TV_K_CostGFR,TV_K_LevelCostGFR;
+    private String  str_K_Date,intCostGFR,tv_K_LevelCostGFR;
 
 
     @Override
@@ -50,7 +50,6 @@ public class DisplayKidney extends AppCompatActivity {
 
         cursor.close();
         TV_K_Date.setText(str_K_Date);
-        TV_K_Time.setText(str_K_Time);
         TV_K_CostGFR.setText(intCostGFR);
         TV_K_LevelCostGFR.setText(tv_K_LevelCostGFR);
 
@@ -79,7 +78,6 @@ public class DisplayKidney extends AppCompatActivity {
     private void bindWidget() {
 
         TV_K_Date = (TextView) findViewById(R.id.tv_K_Date);
-        TV_K_Time = (TextView) findViewById(R.id.tv_K_Time);
         TV_K_CostGFR = (TextView) findViewById(R.id.tv_K_CostGFR);
         TV_K_LevelCostGFR = (TextView) findViewById(R.id.tv_K_LevelCostGFR);
 

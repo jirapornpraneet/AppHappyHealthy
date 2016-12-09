@@ -17,8 +17,8 @@ public class DisplayPressure extends AppCompatActivity {
 
 
     //Explicit
-    private TextView TV_P_Date,TV_P_Time,TV_P_CostPressureDown,TV_P_CostPressureTop,TV_P_LevelDown,TV_P_LevelTop;
-    private String  str_P_Date,str_P_Time,intCostPressureDown,intCostPressureTop,tv_P_LevelDown,tv_P_LevelTop ;
+    private TextView TV_P_Date,TV_P_CostPressureDown,TV_P_CostPressureTop,TV_P_LevelDown,TV_P_LevelTop;
+    private String  str_P_Date,intCostPressureDown,intCostPressureTop,tv_P_LevelDown,tv_P_LevelTop ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,6 @@ public class DisplayPressure extends AppCompatActivity {
 
         cursor.close();
         TV_P_Date.setText(str_P_Date);
-        TV_P_Time.setText(str_P_Time);
         TV_P_CostPressureDown.setText(intCostPressureDown);
         TV_P_CostPressureTop.setText(intCostPressureTop);
         TV_P_LevelDown.setText(tv_P_LevelDown);
@@ -115,7 +114,6 @@ public class DisplayPressure extends AppCompatActivity {
     private void bindWidget() {
 
         TV_P_Date = (TextView) findViewById(R.id.tv_P_Date);
-        TV_P_Time = (TextView) findViewById(R.id.tv_P_Time);
         TV_P_CostPressureDown = (TextView) findViewById(R.id.tv_P_CostPressureDown);
         TV_P_CostPressureTop = (TextView) findViewById(R.id.tv_P_CostPressureTop);
         TV_P_LevelDown = (TextView) findViewById(R.id.tv_P_LevelDown);

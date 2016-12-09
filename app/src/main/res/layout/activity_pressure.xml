@@ -31,19 +31,17 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#fbf8f8" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="บันทึก"
-        android:id="@+id/savedatauser"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="16dp"
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView26"
+        android:src="@drawable/listhistory"
+        android:onClick="ClickHisPre"
+        android:layout_marginTop="15dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="false"
-        android:textColor="#ffffff"
-        android:layout_marginRight="15dp"
-        android:onClick="ClickDisLevelsPre"/>
+        android:layout_marginRight="15dp" />
+
+
 
 
     <LinearLayout
@@ -148,33 +146,20 @@
                 android:layout_marginLeft="90dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:id="@+id/imageView88"
-                android:src="@drawable/button"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
-                android:onClick="ClickHisPre" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:weightSum="1"
-            android:layout_marginTop="10dp">
-
-        </LinearLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:text="บันทึก"
+            android:id="@+id/savedatauser"
+            android:layout_centerHorizontal="true"
+            android:textSize="50dp"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentLeft="false"
+            android:textColor="#3c3737"
+            android:onClick="ClickDisLevelsPre"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </RelativeLayout>
 
