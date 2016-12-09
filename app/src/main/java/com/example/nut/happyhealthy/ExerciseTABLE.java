@@ -46,7 +46,7 @@ public class ExerciseTABLE {
 
 
     //เอใส่เพิ่มlistview
-    public ArrayList<HashMap<String, String>> getExeList (int type) {
+    public ArrayList<HashMap<String, String>> getExeList () {
 
         SQLiteDatabase db = myDatabase.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + Exercise ;

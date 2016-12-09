@@ -28,10 +28,6 @@ public class ExerciseType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_type);
 
-        Intent intent = getIntent();
-        //กำหนดว่าจะไปหน้าไหนของประเภทอาหาร
-        int type = intent.getIntExtra("type_exe", 0);
-
 
 
         listViewExeType = (ListView) findViewById(R.id.listViewExeType);
@@ -48,18 +44,14 @@ public class ExerciseType extends AppCompatActivity {
                ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
                //ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
 
-               //ส่งค่าไปอีกหน้าหนึ่ง putExtra
-               Intent intent2;
-               intent2 = new Intent(ExerciseType.this, Exercise_Detail.class);
-               intent2.putExtra("exercise_id", ExeId);
-               startActivity(intent2);
+
 
 
 
            }
        });
 
-        exeList = exerciseTABLE.getExeList(type);
+        exeList = exerciseTABLE.getExeList();
         adapterExeType = new SimpleAdapter(ExerciseType.this,exeList,R.layout.exercise_type,new String[]{"exercise_name" ,"exercise_calories" }, new int[]{R.id.exercise_name, R.id.exercise_calories});
         listViewExeType.setAdapter(adapterExeType);
 

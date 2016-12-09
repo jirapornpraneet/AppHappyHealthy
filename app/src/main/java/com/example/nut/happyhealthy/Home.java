@@ -32,7 +32,7 @@ public class Home extends Activity  {
         startActivity(new Intent(Home.this,Food_Type_1.class));
     }//ClickFood
 
-    public void ClickExe(View view) {startActivity(new Intent(Home.this,Exercise.class));}//Clickexe
+    public void ClickExe(View view) {startActivity(new Intent(Home.this,ExerciseType.class));}//Clickexe
 
     public void ClickDiabetes(View view) {
         startActivity(new Intent(Home.this,Diabetes.class));
