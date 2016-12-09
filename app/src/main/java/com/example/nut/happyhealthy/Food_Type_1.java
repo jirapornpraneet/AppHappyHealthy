@@ -51,7 +51,11 @@ public class Food_Type_1 extends AppCompatActivity {
                 FoodSugars = Double.parseDouble(foodList.get(i).get("food_sugars"));
                 FoodSodium = Double.parseDouble(foodList.get(i).get("food_sodium"));
 
-
+                //ส่งค่าไปอีกหน้าหนึ่ง putExtra
+                Intent intent2;
+                intent2 = new Intent(Food_Type_1.this, FoodDetail.class);
+                intent2.putExtra("food_id", FoodId);
+                startActivity(intent2);
 
             }
         });
