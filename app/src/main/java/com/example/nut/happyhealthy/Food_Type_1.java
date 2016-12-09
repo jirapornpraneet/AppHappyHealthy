@@ -29,9 +29,7 @@ public class Food_Type_1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food__type_1);
 
-        final Intent intent = getIntent();
-        //กำหนดว่าจะไปหน้าไหนของประเภทอาหาร
-        int type = intent.getIntExtra("type_food", 0);
+
 
         listViewFood1 = (ListView) findViewById(R.id.listViewFood1);
 
@@ -53,18 +51,13 @@ public class Food_Type_1 extends AppCompatActivity {
                 FoodSugars = Double.parseDouble(foodList.get(i).get("food_sugars"));
                 FoodSodium = Double.parseDouble(foodList.get(i).get("food_sodium"));
 
-                //ส่งค่าไปอีกหน้าหนึ่ง putExtra
-                Intent intent2;
-                intent2 = new Intent(Food_Type_1.this, FoodDetail.class);
-                intent2.putExtra("food_id", FoodId);
-                startActivity(intent2);
+
 
             }
         });
 
-        foodList = foodTABLE.getFoodList(type);
+        foodList = foodTABLE.getFoodList();
         adapterFood1 = new SimpleAdapter(Food_Type_1.this, foodList, R.layout.food_1, new String[]{"food_name", "food_calories", "food_unit"}, new int[]{R.id.food_name, R.id.food_calories, R.id.food_unit});
-        //new String[]{TB_5_PARTS.Part_Name, "countKilo", "countDate"}, new int[]{R.id.part_name, R.id.textView10, R.id.textView12});
         listViewFood1.setAdapter(adapterFood1); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
 
     }//onCreate

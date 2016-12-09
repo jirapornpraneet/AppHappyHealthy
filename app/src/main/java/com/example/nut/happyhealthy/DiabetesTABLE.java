@@ -25,6 +25,7 @@ public class DiabetesTABLE {
     public static final String D_CostSugarAfter = "D_CostSugarAfter";
     public static final String D_LevelCostBefore = "D_LevelCostBefore";
     public static final String D_LevelCostAfter = "D_LevelCostAfter";
+    public static final String User_Id = "User_Id";
 
 
     public DiabetesTABLE(Context context) {

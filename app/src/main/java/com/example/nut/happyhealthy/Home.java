@@ -26,12 +26,10 @@ public class Home extends Activity  {
 
 
 
-
-
     }//Oncreate
 
     public void ClickFood(View view) {
-        startActivity(new Intent(Home.this,Food.class));
+        startActivity(new Intent(Home.this,Food_Type_1.class));
     }//ClickFood
 
     public void ClickExe(View view) {startActivity(new Intent(Home.this,Exercise.class));}//Clickexe

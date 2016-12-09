@@ -59,7 +59,7 @@ public class FoodTABLE {
     }//Add New Value
 
     //เอใส่เพิ่มlistview
-    public ArrayList<HashMap<String, String>> getFoodList(int type) {
+    public ArrayList<HashMap<String, String>> getFoodList() {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + Food ;
 
@@ -90,6 +90,8 @@ public class FoodTABLE {
         db.close();
         return foodList;
     }
+
+
 
     //ตัวfoodDetail
     public HashMap<String, String> selectDetailByFoodId(int foodId) {

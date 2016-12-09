@@ -22,6 +22,7 @@ public class KidneyTABLE {
     public static final String K_DateTime = "K_DateTime";
     public static final String K_CostGFR  = "K_CostGFR";
     public static final String K_LevelCostGFR = "K_LevelCostGFR";
+    public static final String User_Id = "User_Id";
 
 
     public KidneyTABLE (Context context) {
