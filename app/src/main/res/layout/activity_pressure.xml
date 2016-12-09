@@ -147,6 +147,24 @@
         </LinearLayout>
 
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/P_HeartRate"
+                android:textColor="#000000"
+                android:background="@drawable/my_box_dis"
+                android:layout_gravity="center_vertical"
+                android:textSize="16dp"
+                android:layout_marginLeft="90dp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -159,7 +177,9 @@
             android:layout_alignParentLeft="false"
             android:textColor="#3c3737"
             android:onClick="ClickDisLevelsPre"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="150dp" />
+
     </LinearLayout>
 </RelativeLayout>
 

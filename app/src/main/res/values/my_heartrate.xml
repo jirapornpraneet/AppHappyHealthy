@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_heartrate">
+
+        //ค่าการเต้นหัวใจ
+
+        <item>ดีมาก</item>
+        <item>ดี</item>
+        <item>พอใช้</item>
+        <item>สูงเกินไป</item>
+        <item>ผิดปกติ</item>
+    </string-array>
+
+</resources>

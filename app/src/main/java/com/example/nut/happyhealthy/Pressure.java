@@ -30,8 +30,8 @@ public class Pressure extends AppCompatActivity {
 
     //การประกาศตัวแปร
     private PressureTABLE objpressureTABLE;
-    private EditText P_costPressureTop,P_costPressureDown;
-    private String  str_P_Date,intCostPressureDown,intCostPressureTop,str_LP_cost_down,str_LP_cost_top;
+    private EditText P_costPressureTop,P_costPressureDown,P_HeartRate;
+    private String  str_P_Date,intCostPressureDown,intCostPressureTop,str_LP_cost_down,str_LP_cost_top,intHeart,str_heart;
     private TextView P_date;
     SimpleDateFormat df_show,df_insert;
     Calendar c;
@@ -47,6 +47,7 @@ public class Pressure extends AppCompatActivity {
         P_date = (TextView) findViewById(R.id.P_date);
         P_costPressureTop = (EditText) findViewById(R.id.P_costPressureTop);
         P_costPressureDown = (EditText) findViewById(R.id.P_costPressureDown);
+        P_HeartRate = (EditText) findViewById(R.id.P_HeartRate);
 
         connectDataBase();
 
@@ -69,10 +70,11 @@ public class Pressure extends AppCompatActivity {
         str_P_Date = P_date.getText().toString().trim();
         intCostPressureDown = P_costPressureDown.getText().toString().trim();
         intCostPressureTop = P_costPressureTop.getText().toString().trim();
+        intHeart = P_HeartRate.getText().toString().trim();
 
 
         //Checkspace
-        if (str_P_Date.equals("") || intCostPressureDown.equals("")|| intCostPressureTop.equals("")) {
+        if (str_P_Date.equals("") || intCostPressureDown.equals("")|| intCostPressureTop.equals("") || intHeart.equals("")) {
             showAlert();
 
 
@@ -86,6 +88,7 @@ public class Pressure extends AppCompatActivity {
 
         str_LP_cost_down = findMyLevelPressureDown();
         str_LP_cost_top = findMyLevelPressureTop();
+        str_heart = findMyLevelHeart();
 
         /** Find BMI
         int  intcostpressuredown = Integer.parseInt(intCostPressureDown);
@@ -100,7 +103,9 @@ public class Pressure extends AppCompatActivity {
                 + " ค่าความดันตัวล่าง : " + intCostPressureDown + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_down+"\n"
                 + " ค่าความดันตัวบน : " + intCostPressureTop + "\n"
-                + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_top);
+                + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_top+ "\n"
+                + " อัตราการเต้นหัวใจ : " + intHeart + "\n"
+                + " อยู่ในเกณฑ์ที่ : " + str_heart + "\n");
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
@@ -164,13 +169,35 @@ public class Pressure extends AppCompatActivity {
 
         }//findMyLevelPressureDown
 
+    private String findMyLevelHeart() {
+        String[] resultStrings = getResources().getStringArray(R.array.my_heartrate);
+        String myResult = null;
+        Integer IntHeart = Integer.parseInt(intHeart);
+
+        if (IntHeart < 60) {
+            myResult = resultStrings[0];
+        } else if (IntHeart < 70) {
+            myResult = resultStrings[1];
+        } else if (IntHeart < 85) {
+            myResult = resultStrings[2];
+        } else if (IntHeart < 101 ) {
+            myResult = resultStrings[3];
+        } else {
+            myResult = resultStrings[4];
+        }
+
+        return myResult;
+
+    }//findMyLevelPressureDown
+
     private void upDataPressuretoSQLite() {
         PressureTABLE objpressureTABLE = new PressureTABLE(this);
         long inSertDataUser = objpressureTABLE.addNewValueToSQLite
-                (str_P_Date,  Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top);
+                (str_P_Date,  Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top,Integer.parseInt(intHeart),str_heart);
         P_date.setText("");
         P_costPressureTop.setText("");
         P_costPressureDown.setText("");
+        P_HeartRate.setText("");
         Toast.makeText(Pressure.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
         Intent objIntent = new Intent(Pressure.this, DisplayPressure.class);
         startActivity(objIntent);

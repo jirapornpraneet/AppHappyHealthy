@@ -23,6 +23,9 @@ public class PressureTABLE {
     public static final String P_CostPressureTop = "P_CostPressureTop";
     public static final String P_Cost_Level_Down = "P_Cost_Level_Down";
     public static final String P_Cost_Level_Top = "P_Cost_Level_Top";
+    public static final String P_HeartRate = "P_HeartRate";
+    public static final String P_HeartRate_Level = "P_HeartRate_Level";
+    public static final String User_Id = "User_Id";
 
 
 
@@ -35,14 +38,15 @@ public class PressureTABLE {
 
 
     //Add New Value
-    //Add New Value
-    public long addNewValueToSQLite(String str_P_Date,   int intCostPressureDown,int intCostPressureTop,String str_LP_cost_down,String str_LP_cost_top) {
+    public long addNewValueToSQLite(String str_P_Date,   int intCostPressureDown,int intCostPressureTop,String str_LP_cost_down,String str_LP_cost_top,int intHeart,String str_heart) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(P_DateTime, str_P_Date);
         contentValues.put(P_CostPressureDown, intCostPressureDown);
         contentValues.put(P_CostPressureTop, intCostPressureTop);
         contentValues.put(P_Cost_Level_Down, str_LP_cost_down);
         contentValues.put(P_Cost_Level_Top,str_LP_cost_top);
+        contentValues.put(P_HeartRate, intHeart);
+        contentValues.put(P_HeartRate_Level,str_heart);
         long pressure_id = writeSQLite.insert(Pressure, null, contentValues);
         return pressure_id;
     }//Add New Value
@@ -65,6 +69,8 @@ public class PressureTABLE {
                 pre.put("cos_top", cursor.getString(cursor.getColumnIndex(P_CostPressureTop)));
                 pre.put("cos_level_down", cursor.getString(cursor.getColumnIndex(P_Cost_Level_Down)));
                 pre.put("cos_level_top", cursor.getString(cursor.getColumnIndex(P_Cost_Level_Top)));
+                pre.put("heart_rate", cursor.getString(cursor.getColumnIndex(P_HeartRate)));
+                pre.put("level_heart_rate", cursor.getString(cursor.getColumnIndex(P_HeartRate_Level)));
                 preList.add(pre);
             } while (cursor.moveToNext());
         }
