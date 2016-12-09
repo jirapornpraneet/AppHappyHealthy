@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#f7f3f3">
+    android:background="#da8f91">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -44,11 +44,36 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="90dp"
-        android:weightSum="1">
+        android:layout_height="280dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="140dp"
+        android:weightSum="1"
+        android:id="@+id/linearLayout5"
+        android:background="@drawable/my_box_diabetes">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/D_date"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_vertical"
+                android:textSize="27dp"
+                android:hint="DD-MM-YYYY  HH:MM"
+                android:gravity="center_horizontal"
+                android:textStyle="bold" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:orientation="horizontal"
@@ -57,110 +82,90 @@
             android:layout_marginTop="5dp">
 
 
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
-                android:id="@+id/imageView19"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/calendi" />
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:inputType="date"
-                android:ems="10"
-                android:id="@+id/D_date"
-                android:textColor="#000000"
-                android:background="@drawable/my_box_dis"
-                android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
-                android:hint="วัน-เดือน-ปี" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
-
-
 
             <ImageView
-                android:layout_width="280dp"
-                android:layout_height="30dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/imageViewsugatbefroe"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/tstsugarbefore" />
+                android:src="@drawable/tstsugarbefore"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="200dp"
+            android:layout_height="32dp"
+            android:background="@drawable/my_box_dis"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="1">
 
             <EditText
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/D_costSugarBefore"
-                android:textColor="#000000"
-                android:background="@drawable/my_box_dis"
+                android:textColor="#6f6f6f"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="80dp" />
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/my_box_dis"
+                android:textStyle="bold"
+                android:layout_weight="5" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
+            android:layout_marginTop="5dp">
 
             <ImageView
-                android:layout_width="280dp"
-                android:layout_height="30dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/imageViewsugatafter"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/tstsugarafter" />
+                android:src="@drawable/tstsugarafter"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="200dp"
+            android:layout_height="32dp"
+            android:background="@drawable/my_box_dis"
+            android:layout_gravity="center_horizontal">
 
             <EditText
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/D_costSugarAfter"
-                android:textColor="#000000"
-                android:background="@drawable/my_box_dis"
+                android:textColor="#6f6f6f"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="80dp" />
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/my_box_dis"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="บันทึก"
-            android:id="@+id/savedatauser"
-            android:layout_centerHorizontal="true"
-            android:textSize="50dp"
-            android:layout_alignParentRight="false"
-            android:layout_alignParentLeft="false"
-            android:textColor="#3c3737"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView3"
+            android:src="@drawable/buttonsave"
             android:onClick="ClickDisLevelsSugar"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
+
+
+
 
 </RelativeLayout>
