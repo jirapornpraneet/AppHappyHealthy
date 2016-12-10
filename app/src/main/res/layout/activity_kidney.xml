@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#f7f3f3">
+    android:background="#e8e8e8">
 
 
     <LinearLayout
@@ -45,53 +45,56 @@
         android:layout_marginRight="15dp" />
 
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:id="@+id/imageView12"
+        android:src="@drawable/arowback"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="ClickBackKidHome" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="60dp">
+        android:layout_height="190dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/my_box_diabetes">
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_vertical">
 
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
-                android:id="@+id/imageView19"
-                android:layout_marginLeft="50dp"
-                android:src="@drawable/calendi" />
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:ems="10"
                 android:id="@+id/K_date"
-                android:textColor="#000000"
-                android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="20dp"
+                android:textColor="#a6a6a6"
+                android:layout_gravity="center_horizontal"
+                android:textSize="24dp"
                 android:autoText="false"
-                android:background="@drawable/my_box_dis"
-                android:layout_marginTop="2dp"
-                android:hint="วัน-เดือน-ปี" />
+                android:hint="DD-MM-YYYY  HH:MM"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="5dp" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="10dp">
 
             <ImageView
-                android:layout_width="280dp"
+                android:layout_width="fill_parent"
                 android:layout_height="28dp"
                 android:id="@+id/imageViewGFR"
                 android:layout_marginLeft="20dp"
@@ -101,34 +104,34 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:background="@drawable/my_box_dis"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp">
 
             <EditText
-                android:layout_width="165dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/K_costGFR"
-                android:textColor="#000000"
-                android:background="@drawable/my_box_dis"
+                android:textColor="#6f6f6f"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="80dp" />
+                android:textSize="20dp"
+                android:background="@drawable/my_box_dis" />
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="บันทึก"
-            android:id="@+id/savedatauser"
-            android:layout_centerHorizontal="true"
-            android:textSize="50dp"
-            android:layout_alignParentRight="false"
-            android:layout_alignParentLeft="false"
-            android:textColor="#3c3737"
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/imageView25"
+            android:src="@drawable/buttonsave"
             android:onClick="ClickDisLevelsGFR"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>

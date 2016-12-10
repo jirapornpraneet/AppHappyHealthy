@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#f7f3f3">
+    android:background="#e8e8e8">
 
 
     <LinearLayout
@@ -47,37 +47,32 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="60dp">
+        android:layout_height="300dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/my_box_diabetes">
 
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="35dp"
-                android:id="@+id/imageView19"
-                android:layout_marginLeft="50dp"
-                android:src="@drawable/calendi" />
+            android:layout_marginTop="10dp">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:ems="10"
                 android:id="@+id/P_date"
                 android:textColor="#000000"
-                android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
+                android:textSize="24dp"
                 android:layout_marginLeft="18dp"
-                android:hint="วัน-เดือน-ปี" />
+                android:hint="DD-MM-YYYY  HH:MM"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,30 +82,33 @@
             android:layout_marginTop="5dp">
 
             <ImageView
-                android:layout_width="200dp"
+                android:layout_width="fill_parent"
                 android:layout_height="28dp"
                 android:id="@+id/imageViewsugatafter"
                 android:layout_marginLeft="20dp"
-                android:src="@drawable/txtpretop" />
+                android:src="@drawable/txtpretop"
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:background="@drawable/my_box_dis"
+            android:layout_gravity="center_horizontal">
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/P_costPressureTop"
                 android:textColor="#000000"
-                android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="90dp" />
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/my_box_dis" />
 
         </LinearLayout>
 
@@ -121,7 +119,7 @@
             android:layout_marginTop="5dp">
 
             <ImageView
-                android:layout_width="200dp"
+                android:layout_width="fill_parent"
                 android:layout_height="28dp"
                 android:id="@+id/imageViewpreDown"
                 android:layout_marginLeft="20dp"
@@ -130,11 +128,13 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/my_box_dis">
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
@@ -142,8 +142,8 @@
                 android:textColor="#000000"
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="90dp" />
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp" />
         </LinearLayout>
 
 
@@ -151,10 +151,25 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="5dp" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="28dp"
+                android:id="@+id/imageView28"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/textheart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/my_box_dis">
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
@@ -162,24 +177,28 @@
                 android:textColor="#000000"
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginLeft="90dp" />
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="49dp"
-            android:text="บันทึก"
-            android:id="@+id/savedatauser"
-            android:layout_centerHorizontal="true"
-            android:textSize="50dp"
-            android:layout_alignParentRight="false"
-            android:layout_alignParentLeft="false"
-            android:textColor="#3c3737"
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/imageView29"
+            android:src="@drawable/buttonsave"
             android:onClick="ClickDisLevelsPre"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="150dp" />
+            android:layout_marginTop="15dp" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:id="@+id/imageView27"
+        android:src="@drawable/arowback"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp" />
 </RelativeLayout>
 

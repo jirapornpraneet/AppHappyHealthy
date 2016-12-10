@@ -173,4 +173,9 @@ public class Kidney extends AppCompatActivity {
     }//ClickHistoryKidney
 
 
+    public void ClickBackKidHome(View view) {
+        startActivity(new Intent(Kidney.this,MainActivity.class));
+    }//ClickBackHome
+
+
 }//Main class

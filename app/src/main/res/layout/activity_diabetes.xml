@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#da8f91">
+    android:background="#e8e8e8">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -32,6 +32,16 @@
 
 
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/arowback"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="ClickBackDiaHome" />
+
+
+    <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/imageView26"
@@ -44,9 +54,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginRight="23dp"
+        android:layout_height="255dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginTop="140dp"
         android:weightSum="1"
         android:id="@+id/linearLayout5"
@@ -56,7 +66,7 @@
             android:orientation="horizontal"
             android:layout_width="280dp"
             android:layout_height="45dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal">
 
 
@@ -66,9 +76,9 @@
                 android:inputType="date"
                 android:ems="10"
                 android:id="@+id/D_date"
-                android:textColor="#ffffff"
+                android:textColor="#a6a6a6"
                 android:layout_gravity="center_vertical"
-                android:textSize="27dp"
+                android:textSize="24dp"
                 android:hint="DD-MM-YYYY  HH:MM"
                 android:gravity="center_horizontal"
                 android:textStyle="bold" />
@@ -85,7 +95,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="30dp"
                 android:id="@+id/imageViewsugatbefroe"
                 android:src="@drawable/tstsugarbefore"
                 android:layout_marginLeft="15dp"
@@ -96,8 +106,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="200dp"
-            android:layout_height="32dp"
-            android:background="@drawable/my_box_dis"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:weightSum="1">
 
@@ -112,7 +121,6 @@
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/my_box_dis"
-                android:textStyle="bold"
                 android:layout_weight="5" />
         </LinearLayout>
 
@@ -120,11 +128,12 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:background="#FFFBF6F6">
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="30dp"
                 android:id="@+id/imageViewsugatafter"
                 android:src="@drawable/tstsugarafter"
                 android:layout_marginLeft="15dp"
@@ -135,7 +144,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="200dp"
-            android:layout_height="32dp"
+            android:layout_height="30dp"
             android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal">
 
@@ -149,18 +158,17 @@
                 android:layout_gravity="center_vertical"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/my_box_dis"
-                android:textStyle="bold" />
+                android:background="@drawable/my_box_dis" />
 
         </LinearLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
             android:id="@+id/imageView3"
             android:src="@drawable/buttonsave"
             android:onClick="ClickDisLevelsSugar"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>

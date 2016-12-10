@@ -205,5 +205,10 @@ public class Diabetes extends AppCompatActivity {
     }//ClickHistoryDiabetes
 
 
+    public void ClickBackDiaHome(View view) {
+        startActivity(new Intent(Diabetes.this,MainActivity.class));
+    }//ClickBackHome
+
+
 
 }//Main Class
