@@ -68,7 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
 
 
             <TextView
@@ -78,13 +79,13 @@
                 android:ems="10"
                 android:id="@+id/K_date"
                 android:textColor="#a6a6a6"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="top|center_vertical"
                 android:textSize="24dp"
                 android:autoText="false"
                 android:hint="DD-MM-YYYY  HH:MM"
                 android:textStyle="bold"
-                android:gravity="center_horizontal"
-                android:layout_marginLeft="5dp" />
+                android:layout_marginLeft="5dp"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -120,7 +121,9 @@
                 android:textColor="#6f6f6f"
                 android:layout_gravity="center_vertical"
                 android:textSize="20dp"
-                android:background="@drawable/my_box_dis" />
+                android:background="@drawable/my_box_dis"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
 
         </LinearLayout>
 

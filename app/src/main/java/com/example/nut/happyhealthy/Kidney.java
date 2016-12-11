@@ -34,7 +34,7 @@ public class Kidney extends AppCompatActivity {
     private EditText K_costGFR;
     private String  str_K_Date,intCostGFR,str_L_cost ;
     private TextView K_date;
-    SimpleDateFormat df_show,df_insert;
+    SimpleDateFormat df_show;
     Calendar c;
 
     @Override
@@ -53,7 +53,6 @@ public class Kidney extends AppCompatActivity {
         connectDataBase();
 
         df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        df_insert = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         c = Calendar.getInstance();
         K_date.setText(df_show.format(c.getTime()));
 
@@ -68,7 +67,7 @@ public class Kidney extends AppCompatActivity {
     public void ClickDisLevelsGFR(View view) {
 
         //get value edit tezt
-        str_K_Date = K_date.getText().toString().trim();
+        str_K_Date = df_show.format(c.getTime());
         intCostGFR = K_costGFR.getText().toString().trim();
 
 

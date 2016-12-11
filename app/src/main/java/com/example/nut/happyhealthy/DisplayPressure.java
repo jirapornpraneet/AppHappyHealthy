@@ -17,8 +17,8 @@ public class DisplayPressure extends AppCompatActivity {
 
 
     //Explicit
-    private TextView TV_P_Date,TV_P_CostPressureDown,TV_P_CostPressureTop,TV_P_LevelDown,TV_P_LevelTop;
-    private String  str_P_Date,intCostPressureDown,intCostPressureTop,tv_P_LevelDown,tv_P_LevelTop ;
+    private TextView TV_P_Date,TV_P_CostPressureDown,TV_P_CostPressureTop,TV_P_LevelDown,TV_P_LevelTop,TV_P_Heart,TV_P_level_heart;
+    private String  str_P_Date,intCostPressureDown,intCostPressureTop,tv_P_LevelDown,tv_P_LevelTop,intCostHeart,tv_level_heart ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +48,10 @@ public class DisplayPressure extends AppCompatActivity {
                 str_P_Date = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_DateTime));
                 intCostPressureDown = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_CostPressureDown));
                 intCostPressureTop = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_CostPressureTop));
+                intCostHeart = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_HeartRate));
                 tv_P_LevelDown = findMyLevelPressureDown(intCostPressureDown);
                 tv_P_LevelTop = findMyLevelPressureTop(intCostPressureTop);
+                tv_level_heart = findMyLevelHeart(intCostHeart);
             } while (cursor.moveToNext());
         }
 
@@ -57,8 +59,10 @@ public class DisplayPressure extends AppCompatActivity {
         TV_P_Date.setText(str_P_Date);
         TV_P_CostPressureDown.setText(intCostPressureDown);
         TV_P_CostPressureTop.setText(intCostPressureTop);
+        TV_P_Heart.setText(intCostHeart);
         TV_P_LevelDown.setText(tv_P_LevelDown);
         TV_P_LevelTop.setText(tv_P_LevelTop);
+        TV_P_level_heart.setText(tv_level_heart);
 
 
     } // Show View
@@ -111,17 +115,41 @@ public class DisplayPressure extends AppCompatActivity {
     }//findMyLevelPressureTop
 
 
+    private String findMyLevelHeart(String intCostHeart) {
+        String[] resultStrings = getResources().getStringArray(R.array.my_heartrate);
+        String myResult = null;
+        Integer IntHeart = Integer.parseInt(intCostHeart);
+
+        if (IntHeart < 60) {
+            myResult = resultStrings[0];
+        } else if (IntHeart < 70) {
+            myResult = resultStrings[1];
+        } else if (IntHeart < 85) {
+            myResult = resultStrings[2];
+        } else if (IntHeart < 101 ) {
+            myResult = resultStrings[3];
+        } else {
+            myResult = resultStrings[4];
+        }
+
+        return myResult;
+
+    }//findMyLevelHeart
+
+
     private void bindWidget() {
 
         TV_P_Date = (TextView) findViewById(R.id.tv_P_Date);
         TV_P_CostPressureDown = (TextView) findViewById(R.id.tv_P_CostPressureDown);
         TV_P_CostPressureTop = (TextView) findViewById(R.id.tv_P_CostPressureTop);
+        TV_P_Heart = (TextView) findViewById(R.id.tv_P_Heart);
         TV_P_LevelDown = (TextView) findViewById(R.id.tv_P_LevelDown);
         TV_P_LevelTop = (TextView) findViewById(R.id.tv_P_LevelTop);
+        TV_P_level_heart = (TextView) findViewById(R.id.tv_P_level_heart);
 
     }//bindWidget
 
-    public void ClickAddPre(View view) {
+    public void ClickBackHomeDisPre(View view) {
         startActivity(new Intent(DisplayPressure.this,Pressure.class));
     }//ClickAddKidney
 

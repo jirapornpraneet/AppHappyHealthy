@@ -35,7 +35,7 @@ public class Diabetes extends AppCompatActivity {
     private EditText D_costSugarBefore,D_costSugarAfter;
     private String  str_D_Date, intCostSugarBefore,intCostSugarAfter,str_L_before,str_L_after ;
     private TextView  D_date;
-    SimpleDateFormat df_show,df_insert;
+    SimpleDateFormat df_show;
     Calendar c;
 
     @Override
@@ -54,7 +54,6 @@ public class Diabetes extends AppCompatActivity {
 
 
         df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        df_insert = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         c = Calendar.getInstance();
         D_date.setText(df_show.format(c.getTime()));
 
@@ -71,7 +70,7 @@ public class Diabetes extends AppCompatActivity {
     public void ClickDisLevelsSugar(View view) {
 
         //get value edit tezt
-        str_D_Date = df_insert.format(c.getTime());
+        str_D_Date = df_show.format(c.getTime());
         intCostSugarBefore = D_costSugarBefore.getText().toString().trim();
         intCostSugarAfter = D_costSugarAfter.getText().toString().trim();
 

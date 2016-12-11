@@ -83,8 +83,8 @@ public class DisplayKidney extends AppCompatActivity {
 
     }//bindWidget
 
-    public void ClickAddKidney(View view) {
-        startActivity(new Intent(DisplayKidney.this,Kidney.class));
+    public void ClickBackHomeDisKidney(View view) {
+        startActivity(new Intent(DisplayKidney.this,MainActivity.class));
     }//ClickAddKidney
 
     public void ClickHistoryKidney(View view) {

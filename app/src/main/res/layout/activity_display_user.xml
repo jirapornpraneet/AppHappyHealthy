@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.DisplayUser"
-    android:background="#f7eaea">
+    android:background="#e8e8e8">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -50,7 +50,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="15dp">
 
@@ -62,21 +62,22 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView15"
                 android:src="@drawable/da5"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp" />
 
             <EditText
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
+                android:layout_height="30dp"
                 android:id="@+id/tv_Name"
-                android:textSize="17dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
                 android:layout_marginLeft="10dp"
-                android:textColor="#505050" />
+                android:textColor="#505050"
+                android:layout_gravity="center_vertical" />
 
         </LinearLayout>
 
@@ -91,10 +92,10 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView17"
                 android:src="@drawable/da6"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="48dp" />
 
 
@@ -111,29 +112,31 @@
 
                 <RadioButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:text="ชาย"
                     android:id="@+id/man"
                     android:textColor="#505050"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:textSize="17dp"
+                    android:textSize="18dp"
                     android:background="@drawable/my_border_box"
                     android:textStyle="bold"
                     android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center_vertical" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:text="หญิง"
                     android:id="@+id/woman"
                     android:textColor="#505050"
                     android:layout_weight="1"
-                    android:textSize="17dp"
+                    android:textSize="18dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/my_border_box"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical" />
             </RadioGroup>
 
         </LinearLayout>
@@ -142,27 +145,27 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="12dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView20"
                 android:src="@drawable/da7"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="50dp" />
 
             <EditText
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
+                android:layout_height="30dp"
                 android:id="@+id/tv_Age"
-                android:textSize="17dp"
+                android:textSize="18dp"
                 android:layout_marginLeft="16dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
                 android:textColor="#505050"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
 
@@ -171,65 +174,65 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="15dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView18"
                 android:src="@drawable/da8"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="35dp" />
 
             <EditText
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
+                android:layout_height="30dp"
                 android:id="@+id/tv_Weight"
-                android:textSize="17dp"
+                android:textSize="18dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
-                android:textColor="#505050" />
+                android:textColor="#505050"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="15dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView19"
                 android:src="@drawable/da9"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="35dp" />
 
             <EditText
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
+                android:layout_height="30dp"
                 android:id="@+id/tv_Height"
-                android:textSize="17dp"
+                android:textSize="18dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="3dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
-                android:textColor="#505050" />
+                android:textColor="#505050"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="15dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView10"
                 android:src="@drawable/bmr"
                 android:layout_marginLeft="47dp"
@@ -237,26 +240,26 @@
 
             <TextView
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
+                android:layout_height="30dp"
                 android:id="@+id/tv_BMR"
-                android:textSize="17dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/my_border_box" />
+                android:background="@drawable/my_border_box"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="15dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView21"
                 android:src="@drawable/bmi"
                 android:layout_marginLeft="50dp"
@@ -264,35 +267,35 @@
 
             <TextView
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
+                android:layout_height="30dp"
                 android:id="@+id/tv_BMI"
-                android:textSize="17dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="18dp"
-                android:background="@drawable/my_border_box" />
+                android:background="@drawable/my_border_box"
+                android:layout_gravity="center_vertical" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp">
 
             <TextView
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
+                android:layout_height="30dp"
                 android:id="@+id/weightStdTextView"
-                android:textSize="17dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
                 android:layout_marginLeft="118dp"
                 android:textColor="#505050"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
     </LinearLayout>

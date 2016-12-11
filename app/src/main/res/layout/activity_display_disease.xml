@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nut.happyhealthy.DisplayDisease">
+    tools:context="com.example.nut.happyhealthy.DisplayDisease"
+    android:background="#e8e8e8">
 
 
     <LinearLayout
@@ -17,98 +18,100 @@
             layout="@layout/toolbar" />
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView31"
+        android:src="@drawable/listhistory"
+        android:onClick="ClickHistoryDiabetes"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="เบาหวาน"
+        android:id="@+id/textView20"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#fbf8f8" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:id="@+id/imageView32"
+        android:src="@drawable/arowback"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="ClickBackHomeDisDiabetes" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="330dp"
         android:layout_marginTop="110dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/my_box_diabetes">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
 
-
-            <ImageView
-                android:id="@+id/imageView19"
-                android:layout_width="95dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="50dp"
-                android:src="@drawable/calendi" />
 
             <TextView
                 android:id="@+id/tv_D_Date"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/my_box_dis"
-                android:hint="วัน-เดือน-ปี"
-                android:text="New Text"
-                android:textColor="#000000"
-                android:textSize="16dp" />
+                android:hint="DD-MM-YYYY  HH:MM"
+                android:textColor="#a6a6a6"
+                android:textSize="24dp"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageViewsugatbefroe"
-                android:layout_width="280dp"
-                android:layout_height="28dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/tstsugarbefore" />
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/tstsugarbefore"
+                android:layout_marginRight="15dp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:background="@drawable/my_box_dis"
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:id="@+id/tv_D_CostSugarBefore"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="5dp"
                 android:background="@drawable/my_box_dis"
-                android:text="New Text"
-                android:textColor="#000000"
-                android:textSize="16dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="280dp"
-                android:layout_height="28dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/tstsugarafter" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv_D_CostSugarAfter"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:background="@drawable/my_box_dis"
-                android:text="New Text"
-                android:textColor="#000000"
-                android:textSize="16dp" />
+                android:textColor="#a6a6a6"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="5"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -118,11 +121,33 @@
 
             <ImageView
                 android:id="@+id/imageView23"
-                android:layout_width="280dp"
-                android:layout_height="32dp"
-                android:layout_marginLeft="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/tstsugarbefore" />
+                android:src="@drawable/tstsugarbeforedis"
+                android:layout_marginRight="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:background="@drawable/my_border_waring"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_D_LevelBefore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/my_border_waring"
+                android:textColor="#a6a6a6"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="5"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -130,15 +155,35 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/tstsugarafter"
+                android:layout_marginRight="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:background="@drawable/my_box_dis"
+            android:layout_gravity="center_horizontal">
+
             <TextView
-                android:id="@+id/tv_D_LevelBefore"
-                android:layout_width="185dp"
+                android:id="@+id/tv_D_CostSugarAfter"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="73dp"
-                android:background="@drawable/my_border_waring"
-                android:text="New Text"
-                android:textColor="#000000"
-                android:textSize="16dp" />
+                android:background="@drawable/my_box_dis"
+                android:textColor="#a6a6a6"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="5"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -148,55 +193,35 @@
 
             <ImageView
                 android:id="@+id/imageView24"
-                android:layout_width="280dp"
-                android:layout_height="32dp"
-                android:layout_marginLeft="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/tstsugarafterdis" />
+                android:src="@drawable/tstsugarafterdis"
+                android:layout_marginRight="15dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:background="@drawable/my_border_waring"
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:id="@+id/tv_D_LevelAfter"
-                android:layout_width="185dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="73dp"
+                android:layout_marginLeft="5dp"
                 android:background="@drawable/my_border_waring"
-                android:text="New Text"
-                android:textColor="#000000"
-                android:textSize="16dp" />
+                android:textColor="#a6a6a6"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="5"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="13dp"
-                android:layout_weight="1"
-                android:nestedScrollingEnabled="false"
-                android:onClick="ClickAddDiabetes"
-                android:src="@drawable/addbutton" />
-
-            <ImageView
-                android:id="@+id/imageView22"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginRight="13dp"
-                android:layout_weight="1"
-                android:onClick="ClickHistoryDiabetes"
-                android:src="@drawable/button"
-                android:nestedScrollingEnabled="false" />
-        </LinearLayout>
 
     </LinearLayout>
 

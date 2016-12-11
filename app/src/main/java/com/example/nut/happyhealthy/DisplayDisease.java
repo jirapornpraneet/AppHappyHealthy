@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class DisplayDisease extends AppCompatActivity {
 
 
@@ -18,6 +21,8 @@ public class DisplayDisease extends AppCompatActivity {
     //**Explicit
     private TextView TV_D_Date,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
     private String  str_D_Date,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
+
+
 
 
 
@@ -33,6 +38,11 @@ public class DisplayDisease extends AppCompatActivity {
 
         // Show View
         showView();
+
+
+
+
+
 
     }//OnCreate
 
@@ -109,8 +119,8 @@ public class DisplayDisease extends AppCompatActivity {
     }//bindWidget
 
 
-    public void ClickAddDiabetes(View view) {
-        startActivity(new Intent(DisplayDisease.this,Diabetes.class));
+    public void ClickBackHomeDisDiabetes(View view) {
+        startActivity(new Intent(DisplayDisease.this,MainActivity.class));
     }//ClickAddDiabetes
 
 

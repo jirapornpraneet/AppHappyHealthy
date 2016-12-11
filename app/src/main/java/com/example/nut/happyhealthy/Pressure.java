@@ -33,7 +33,7 @@ public class Pressure extends AppCompatActivity {
     private EditText P_costPressureTop,P_costPressureDown,P_HeartRate;
     private String  str_P_Date,intCostPressureDown,intCostPressureTop,str_LP_cost_down,str_LP_cost_top,intHeart,str_heart;
     private TextView P_date;
-    SimpleDateFormat df_show,df_insert;
+    SimpleDateFormat df_show;
     Calendar c;
 
 
@@ -53,7 +53,6 @@ public class Pressure extends AppCompatActivity {
 
 
         df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        df_insert = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         c = Calendar.getInstance();
         P_date.setText(df_show.format(c.getTime()));
 
@@ -67,7 +66,7 @@ public class Pressure extends AppCompatActivity {
     public void ClickDisLevelsPre(View view) {
 
         //get value edit tezt
-        str_P_Date = P_date.getText().toString().trim();
+        str_P_Date = df_show.format(c.getTime());
         intCostPressureDown = P_costPressureDown.getText().toString().trim();
         intCostPressureTop = P_costPressureTop.getText().toString().trim();
         intHeart = P_HeartRate.getText().toString().trim();
@@ -188,7 +187,7 @@ public class Pressure extends AppCompatActivity {
 
         return myResult;
 
-    }//findMyLevelPressureDown
+    }//findMyLevelHeart
 
     private void upDataPressuretoSQLite() {
         PressureTABLE objpressureTABLE = new PressureTABLE(this);
