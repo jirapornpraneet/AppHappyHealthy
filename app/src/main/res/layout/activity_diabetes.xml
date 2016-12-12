@@ -33,11 +33,11 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:id="@+id/imageView4"
         android:src="@drawable/arowback"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="3dp"
         android:onClick="ClickBackDiaHome" />
 
 
@@ -124,7 +124,8 @@
                 android:background="@drawable/my_box_dis"
                 android:layout_weight="5"
                 android:textStyle="bold"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:hint="100 มก./ดล." />
         </LinearLayout>
 
         <LinearLayout
@@ -163,7 +164,8 @@
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/my_box_dis"
                 android:textStyle="bold"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:hint="100 มก./ดล." />
 
         </LinearLayout>
 

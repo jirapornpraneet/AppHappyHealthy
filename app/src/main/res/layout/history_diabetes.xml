@@ -6,31 +6,32 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/my_border_his"
-        android:layout_marginTop="60dp">
+        android:background="#f1fff2f2"
+        android:layout_marginTop="2dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/imageView2"
             android:padding="5dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/calender" />
 
         <TextView
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date"
             android:textIsSelectable="false"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="25dp"
-            android:textColor="#3575a2" />
+            android:textColor="#a6a6a6"
+            android:hint="DD-MM-YYYY  HH:MM" />
     </LinearLayout>
 
 

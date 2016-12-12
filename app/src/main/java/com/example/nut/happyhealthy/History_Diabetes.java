@@ -2,6 +2,7 @@ package com.example.nut.happyhealthy;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ public class History_Diabetes extends AppCompatActivity {
     ListAdapter adapter;
     DiabetesTABLE dia;
     ArrayList<HashMap<String, String>> diabList;
-    String DateDiabetes, TimeDiabetes,LevelBefore,LevelAfter;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
+    String DateDiabetes,LevelBefore,LevelAfter;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
     int Cost1Diabetes, Cost2Diabetes;
 
     @Override
@@ -35,7 +36,6 @@ public class History_Diabetes extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 DateDiabetes = diabList.get(i).get("date").toString();
-                TimeDiabetes = diabList.get(i).get("time").toString();
                 Cost1Diabetes = Integer.parseInt(diabList.get(i).get("cos_1"));
                 Cost2Diabetes = Integer.parseInt(diabList.get(i).get("cos_2"));
                 LevelBefore = diabList.get(i).get("cos_L_before").toString();
@@ -55,8 +55,7 @@ public class History_Diabetes extends AppCompatActivity {
     private void AlertHistory() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DateDiabetes );
-        objAlert.setMessage(" เวลาที่บันทึก : " + TimeDiabetes + "\n"+
-                            " ค่าน้ำตาลก่อนอาหาร : " + Cost1Diabetes+ "\n"+
+        objAlert.setMessage(" ค่าน้ำตาลก่อนอาหาร : " + Cost1Diabetes+ "\n"+
                             " อยู่ในเกณฑ์ที่ : " +LevelBefore + "\n" +
                             " ค่าน้ำตาลหลังอาหาร : " + Cost2Diabetes+"\n" +
                             " อยู่ในเกณฑ์ที่ : "+ LevelAfter);
@@ -68,6 +67,16 @@ public class History_Diabetes extends AppCompatActivity {
             }
         });
         objAlert.show();
-    }
-}
+    }//AlertHistory
+
+    public void ClickBackHisDiaHome(View view) {
+        startActivity(new Intent(History_Diabetes.this,MainActivity.class));
+    }//ClickBackHome
+
+    public void ClickAddDia(View view) {
+        startActivity(new Intent(History_Diabetes.this,Diabetes.class));
+    }//ClickAddDia
+
+
+}//MainClass
 

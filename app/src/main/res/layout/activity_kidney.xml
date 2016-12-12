@@ -47,11 +47,11 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:id="@+id/imageView12"
         android:src="@drawable/arowback"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="3dp"
         android:onClick="ClickBackKidHome" />
 
     <LinearLayout
@@ -120,10 +120,11 @@
                 android:id="@+id/K_costGFR"
                 android:textColor="#6f6f6f"
                 android:layout_gravity="center_vertical"
-                android:textSize="20dp"
+                android:textSize="19dp"
                 android:background="@drawable/my_box_dis"
                 android:textStyle="bold"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:hint="100 มล.นาที/1.73 ตร.ม" />
 
         </LinearLayout>
 

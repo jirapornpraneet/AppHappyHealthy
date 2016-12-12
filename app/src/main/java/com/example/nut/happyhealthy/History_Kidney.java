@@ -2,6 +2,7 @@ package com.example.nut.happyhealthy;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,7 @@ public class History_Kidney extends AppCompatActivity {
     ListAdapter adapterKidney;
     KidneyTABLE kid;
     ArrayList<HashMap<String, String>> kidneyList;
-    String DateKidney, TimeKidney,LevelCostGFR;
+    String DateKidney,LevelCostGFR;
     int CostGFR;
 
     @Override
@@ -34,7 +35,6 @@ public class History_Kidney extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 DateKidney = kidneyList.get(i).get("dateKidney").toString();
-                TimeKidney = kidneyList.get(i).get("timeKidney").toString();
                 CostGFR = Integer.parseInt(kidneyList.get(i).get("cos_gfr"));
                 LevelCostGFR = kidneyList.get(i).get("cos_level").toString();
 
@@ -55,8 +55,7 @@ public class History_Kidney extends AppCompatActivity {
     private void AlertHistoryKidney() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DateKidney);
-        objAlert.setMessage(" เวลาที่บันทึก : " + TimeKidney + "\n"+
-                            " ค่าการทำงานไต(GFR) : " + CostGFR +"\n"+
+        objAlert.setMessage(" ค่าการทำงานไต(GFR) : " + CostGFR +"\n"+
                             " อยู่ในเกณฑ์ที่ : " + LevelCostGFR);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
@@ -66,8 +65,15 @@ public class History_Kidney extends AppCompatActivity {
             }
         });
         objAlert.show();
-
     }//AlertHistoryKidney
+
+    public void ClickBackHisKidHome(View view) {
+        startActivity(new Intent(History_Kidney.this,MainActivity.class));
+    }//ClickBackHome
+
+    public void ClickAddKid(View view) {
+        startActivity(new Intent(History_Kidney.this,Kidney.class));
+    }//ClickAddDia
 
 
 }//MainClass
