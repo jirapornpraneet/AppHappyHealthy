@@ -35,19 +35,18 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
+        android:layout_height="220dp"
         android:id="@+id/linearLayout"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="150dp"
         android:background="@drawable/my_bgdata">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="24dp"
             android:layout_marginLeft="10dp">
 
             <ImageView
@@ -58,13 +57,13 @@
 
             <EditText
                 android:layout_width="170dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:inputType="textPersonName"
                 android:id="@+id/User_Name"
-                android:textColor="#7d7d7d"
+                android:textColor="#505050"
                 android:editable="true"
-                android:textSize="16dp"
-                android:background="@drawable/my_bg_bordar_datauser"
+                android:textSize="18dp"
+                android:background="@drawable/my_border_box"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -73,7 +72,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="14dp"
             android:layout_marginLeft="10dp">
 
             <ImageView
@@ -91,18 +90,19 @@
                 android:orientation="horizontal"
                 android:id="@+id/User_Sex"
                 android:layout_weight="1"
-                android:layout_marginRight="40dp">
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="2dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ชาย"
                     android:id="@+id/man"
-                    android:textColor="#7d7d7d"
+                    android:textColor="#505050"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:textSize="17dp"
-                    android:background="@drawable/my_bg_bordar_datauser"
+                    android:textSize="18dp"
+                    android:background="@drawable/my_border_box"
                     android:textStyle="bold"
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp" />
@@ -112,11 +112,11 @@
                     android:layout_height="wrap_content"
                     android:text="หญิง"
                     android:id="@+id/woman"
-                    android:textColor="#7d7d7d"
+                    android:textColor="#505050"
                     android:layout_weight="1"
-                    android:textSize="17dp"
+                    android:textSize="18dp"
                     android:layout_marginRight="5dp"
-                    android:background="@drawable/my_bg_bordar_datauser"
+                    android:background="@drawable/my_border_box"
                     android:textStyle="bold" />
             </RadioGroup>
 
@@ -126,7 +126,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="14dp"
             android:layout_marginLeft="10dp">
 
             <ImageView
@@ -138,13 +138,13 @@
 
             <EditText
                 android:layout_width="170dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_Age"
-                android:textColor="#7d7d7d"
-                android:background="@drawable/my_bg_bordar_datauser"
-                android:textSize="16dp"
+                android:textColor="#505050"
+                android:background="@drawable/my_border_box"
+                android:textSize="18dp"
                 android:hint="ปี"
                 android:autoText="false"
                 android:textStyle="bold"
@@ -156,7 +156,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="14dp"
             android:layout_marginLeft="10dp">
 
             <ImageView
@@ -168,14 +168,14 @@
 
             <EditText
                 android:layout_width="170dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/User_Weight"
-                android:textColor="#7d7d7d"
-                android:background="@drawable/my_bg_bordar_datauser"
+                android:textColor="#505050"
+                android:background="@drawable/my_border_box"
                 android:autoText="false"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:hint="กิโลกรัม"
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp" />
@@ -186,7 +186,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="14dp"
             android:layout_marginLeft="10dp">
 
             <ImageView
@@ -198,13 +198,13 @@
 
             <EditText
                 android:layout_width="170dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_Height"
-                android:textColor="#7d7d7d"
-                android:background="@drawable/my_bg_bordar_datauser"
-                android:textSize="16dp"
+                android:textColor="#505050"
+                android:background="@drawable/my_border_box"
+                android:textSize="18dp"
                 android:hint="เซนติเมตร"
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp" />
