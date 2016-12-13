@@ -12,12 +12,14 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class DisplayDisease extends AppCompatActivity {
 
 
     SQLiteDatabase db;
     MyDatabase myDatabase;
+    DiabetesTABLE diabetesTABLE;
     //**Explicit
     private TextView TV_D_Date,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
     private String  str_D_Date,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
@@ -38,6 +40,9 @@ public class DisplayDisease extends AppCompatActivity {
 
         // Show View
         showView();
+
+        diabetesTABLE = new DiabetesTABLE(this);
+
 
 
 

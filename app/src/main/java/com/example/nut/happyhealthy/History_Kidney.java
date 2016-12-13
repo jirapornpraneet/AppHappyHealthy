@@ -19,13 +19,16 @@ public class History_Kidney extends AppCompatActivity {
     ListAdapter adapterKidney;
     KidneyTABLE kid;
     ArrayList<HashMap<String, String>> kidneyList;
+    String[] Choice;
     String DateKidney,LevelCostGFR;
-    int CostGFR;
+    int K_id,CostGFR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_kidney);
+
+        Choice = new String[]{"Open", "Delete"};//ใส่ตัวเลือก
 
         listViewKidney = (ListView) findViewById(R.id.listViewKidney);
 
@@ -34,12 +37,13 @@ public class History_Kidney extends AppCompatActivity {
         listViewKidney.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                DateKidney = kidneyList.get(i).get("dateKidney").toString();
-                CostGFR = Integer.parseInt(kidneyList.get(i).get("cos_gfr"));
-                LevelCostGFR = kidneyList.get(i).get("cos_level").toString();
+                K_id = Integer.parseInt(kidneyList.get(i).get(KidneyTABLE.K_Id));
+                DateKidney = kidneyList.get(i).get(KidneyTABLE.K_DateTime).toString();
+                CostGFR = Integer.parseInt(kidneyList.get(i).get(KidneyTABLE.K_CostGFR));
+                LevelCostGFR = kidneyList.get(i).get(KidneyTABLE.K_LevelCostGFR).toString();
 
 
-                AlertHistoryKidney();
+                //AlertHistoryKidney();
             }
 
         });

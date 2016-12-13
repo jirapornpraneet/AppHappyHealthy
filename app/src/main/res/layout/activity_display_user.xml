@@ -152,7 +152,7 @@
                 android:layout_height="25dp"
                 android:id="@+id/imageView20"
                 android:src="@drawable/da7"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="50dp" />
 
             <EditText
@@ -181,7 +181,7 @@
                 android:layout_height="25dp"
                 android:id="@+id/imageView18"
                 android:src="@drawable/da8"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="35dp" />
 
             <EditText
@@ -208,7 +208,7 @@
                 android:layout_height="25dp"
                 android:id="@+id/imageView19"
                 android:src="@drawable/da9"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="35dp" />
 
             <EditText
@@ -236,7 +236,7 @@
                 android:id="@+id/imageView10"
                 android:src="@drawable/bmr"
                 android:layout_marginLeft="47dp"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="8dp" />
 
             <TextView
                 android:layout_width="180dp"
@@ -263,7 +263,7 @@
                 android:id="@+id/imageView21"
                 android:src="@drawable/bmi"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="8dp" />
 
             <TextView
                 android:layout_width="180dp"

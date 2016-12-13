@@ -49,12 +49,12 @@
         android:onClick="ClickBackHisDiaHome" />
 
     <ImageView
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
         android:id="@+id/imageView40"
         android:src="@drawable/buttonadd"
         android:onClick="ClickAddDia"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp" />
 

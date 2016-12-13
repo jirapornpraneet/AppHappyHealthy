@@ -98,12 +98,12 @@ public class DiabetesTABLE {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> diab = new HashMap<String, String>();
-                diab.put("id", cursor.getString(cursor.getColumnIndex(D_Id)));
-                diab.put("date", cursor.getString(cursor.getColumnIndex(D_DateTime)));
-                diab.put("cos_1", cursor.getString(cursor.getColumnIndex(D_CostSugarBefore)));
-                diab.put("cos_2", cursor.getString(cursor.getColumnIndex(D_CostSugarAfter)));
-                diab.put("cos_L_before", cursor.getString(cursor.getColumnIndex(D_LevelCostBefore)));
-                diab.put("cos_L_after", cursor.getString(cursor.getColumnIndex(D_LevelCostAfter)));
+                diab.put(D_Id, cursor.getString(cursor.getColumnIndex(D_Id)));
+                diab.put(D_DateTime, cursor.getString(cursor.getColumnIndex(D_DateTime)));
+                diab.put(D_CostSugarBefore, cursor.getString(cursor.getColumnIndex(D_CostSugarBefore)));
+                diab.put(D_CostSugarAfter, cursor.getString(cursor.getColumnIndex(D_CostSugarAfter)));
+                diab.put(D_LevelCostBefore, cursor.getString(cursor.getColumnIndex(D_LevelCostBefore)));
+                diab.put(D_LevelCostAfter, cursor.getString(cursor.getColumnIndex(D_LevelCostAfter)));
                 diabList.add(diab);
             } while (cursor.moveToNext());
         }
@@ -112,5 +112,16 @@ public class DiabetesTABLE {
         db.close();
         return diabList;
     }
+
+    public void delete(int D_id) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
+        db.delete(DiabetesTABLE.Diabetes, DiabetesTABLE.D_Id + "=?", new String[]{String.valueOf(D_id)});
+        db.close();
+    }
+
+
+
 
 }//MainClass

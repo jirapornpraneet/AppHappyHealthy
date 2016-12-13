@@ -55,10 +55,10 @@ public class KidneyTABLE {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> kidb = new HashMap<String, String>();
-                kidb.put("id", cursor.getString(cursor.getColumnIndex(K_Id)));
-                kidb.put("dateKidney", cursor.getString(cursor.getColumnIndex(K_DateTime)));
-                kidb.put("cos_gfr", cursor.getString(cursor.getColumnIndex(K_CostGFR)));
-                kidb.put("cos_level", cursor.getString(cursor.getColumnIndex(K_LevelCostGFR)));
+                kidb.put(K_Id, cursor.getString(cursor.getColumnIndex(K_Id)));
+                kidb.put(K_DateTime, cursor.getString(cursor.getColumnIndex(K_DateTime)));
+                kidb.put(K_CostGFR, cursor.getString(cursor.getColumnIndex(K_CostGFR)));
+                kidb.put(K_LevelCostGFR, cursor.getString(cursor.getColumnIndex(K_LevelCostGFR)));
                 kidneyList.add(kidb);
             } while (cursor.moveToNext());
         }
@@ -68,6 +68,13 @@ public class KidneyTABLE {
         return kidneyList;
     }
 
+    public void delete(int K_id) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
+        db.delete(KidneyTABLE.Kidney, KidneyTABLE.K_Id + "=?", new String[]{String.valueOf(K_id)});
+        db.close();
+    }
 
 
 
