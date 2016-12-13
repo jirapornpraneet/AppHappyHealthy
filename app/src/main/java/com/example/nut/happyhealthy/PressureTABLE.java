@@ -63,14 +63,14 @@ public class PressureTABLE {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> pre = new HashMap<String, String>();
-                pre.put("id", cursor.getString(cursor.getColumnIndex(P_ID)));
-                pre.put("datePre", cursor.getString(cursor.getColumnIndex(P_DateTime)));
-                pre.put("cos_down", cursor.getString(cursor.getColumnIndex(P_CostPressureDown)));
-                pre.put("cos_top", cursor.getString(cursor.getColumnIndex(P_CostPressureTop)));
-                pre.put("cos_level_down", cursor.getString(cursor.getColumnIndex(P_Cost_Level_Down)));
-                pre.put("cos_level_top", cursor.getString(cursor.getColumnIndex(P_Cost_Level_Top)));
-                pre.put("heart_rate", cursor.getString(cursor.getColumnIndex(P_HeartRate)));
-                pre.put("level_heart_rate", cursor.getString(cursor.getColumnIndex(P_HeartRate_Level)));
+                pre.put(P_ID, cursor.getString(cursor.getColumnIndex(P_ID)));
+                pre.put(P_DateTime, cursor.getString(cursor.getColumnIndex(P_DateTime)));
+                pre.put(P_CostPressureDown, cursor.getString(cursor.getColumnIndex(P_CostPressureDown)));
+                pre.put(P_CostPressureTop, cursor.getString(cursor.getColumnIndex(P_CostPressureTop)));
+                pre.put(P_Cost_Level_Down, cursor.getString(cursor.getColumnIndex(P_Cost_Level_Down)));
+                pre.put(P_Cost_Level_Top, cursor.getString(cursor.getColumnIndex(P_Cost_Level_Top)));
+                pre.put(P_HeartRate, cursor.getString(cursor.getColumnIndex(P_HeartRate)));
+                pre.put(P_HeartRate_Level, cursor.getString(cursor.getColumnIndex(P_HeartRate_Level)));
                 preList.add(pre);
             } while (cursor.moveToNext());
         }
@@ -78,6 +78,14 @@ public class PressureTABLE {
         cursor.close();
         db.close();
         return preList;
+    }
+
+    public void delete(int P_id) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
+        db.delete(PressureTABLE.Pressure, PressureTABLE.P_ID + "=?", new String[]{String.valueOf(P_id)});
+        db.close();
     }
 
 

@@ -35,42 +35,7 @@ public class DiabetesTABLE {
 
     }//Constructor
 
-    /**
-     * public Cursor readAllData() {
-     * <p>
-     * Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time, Diabetes_CostSugarBefore, Diabetes_CostSugarAfter}, null, null, null, null, null);
-     * <p>
-     * if (objCursor != null) {
-     * objCursor.moveToFirst();
-     * }
-     * <p>
-     * return objCursor;
-     * }   // readAllData
-     * <p>
-     * public boolean checkCursor() {
-     * <p>
-     * Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time, Diabetes_CostSugarBefore, Diabetes_CostSugarAfter}, null, null, null, null, null);
-     * <p>
-     * if (objCursor != null) {
-     * objCursor.moveToLast();
-     * }
-     * <p>
-     * return objCursor.isBeforeFirst();
-     * }   // checkCursor
-     * <p>
-     * <p>
-     * public String lastUpdata() {
-     * <p>
-     * Cursor objCursor = readSQLite.query(Diabetes, new String[]{Diabetes_ID, Diabetes_Date, Diabetes_Time}, null, null, null, null, null);
-     * <p>
-     * if (objCursor != null) {
-     * objCursor.moveToLast();
-     * strLastDate = objCursor.getString(objCursor.getColumnIndex(Diabetes_Date));
-     * }
-     * <p>
-     * return strLastDate;
-     * }   // lastUpdate
-     **/
+
 
 
     //Add New Value

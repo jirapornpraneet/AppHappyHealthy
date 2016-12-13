@@ -30,7 +30,7 @@ public class History_Kidney extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_kidney);
 
-        Choice = new String[]{"Open", "Delete"};//ใส่ตัวเลือก
+        Choice = new String[]{"ดูข้อมูล", "ลบข้อมูล"};//ใส่ตัวเลือก
 
         listViewKidney = (ListView) findViewById(R.id.listViewKidney);
 

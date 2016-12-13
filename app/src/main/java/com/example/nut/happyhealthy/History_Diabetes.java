@@ -30,7 +30,7 @@ public class History_Diabetes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_diabetes);
 
-        Choice = new String[]{"Open", "Delete"};//ใส่ตัวเลือก
+        Choice = new String[]{"ดูข้อมูล", "ลบข้อมูล"};//ใส่ตัวเลือก
 
         listView = (ListView) findViewById(R.id.listView);
 
