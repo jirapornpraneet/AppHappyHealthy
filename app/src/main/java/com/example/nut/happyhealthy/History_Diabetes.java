@@ -59,7 +59,7 @@ public class History_Diabetes extends AppCompatActivity {
                             AlertHistory();
                         } else if (which == 1) {
                             android.support.v7.app.AlertDialog.Builder builder_1 = new android.support.v7.app.AlertDialog.Builder(History_Diabetes.this);
-                            builder_1.setMessage("คุณต้องการลบหรือไม่ " + D_id + " ?");
+                            builder_1.setMessage("คุณต้องการลบหรือไม่  ?");
                             builder_1.setNegativeButton("ตกลง", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dia.delete(D_id);
