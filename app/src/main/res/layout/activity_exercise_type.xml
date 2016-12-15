@@ -24,9 +24,29 @@
         android:layout_alignParentTop="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="false"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="58dp"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ออกกำลังกาย"
+        android:id="@+id/textView25"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#fbf8f8" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/imageView43"
+        android:src="@drawable/arowback"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="3dp"
+        android:onClick="ClickBackExeHome" />
 
 
 </RelativeLayout>

@@ -64,6 +64,10 @@ public class ExerciseType extends AppCompatActivity {
 
     }//OnCreate
 
+    public void ClickBackExeHome(View view) {
+        startActivity(new Intent(ExerciseType.this,MainActivity.class));
+    }//ClickBackHome
+
 
 
 }//MainClass

@@ -65,5 +65,10 @@ public class Food_Type_1 extends AppCompatActivity {
         listViewFood1.setAdapter(adapterFood1); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
 
     }//onCreate
+
+    public void ClickBackFoodHome(View view) {
+        startActivity(new Intent(Food_Type_1.this,MainActivity.class));
+    }//ClickBackHome
+
 }//MainClass
 
