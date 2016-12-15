@@ -30,6 +30,7 @@ public class FoodTABLE {
     public static final String Food_Sugars = "Food_Sugars";
     public static final String Food_Sodium = "Food_Sodium";
 
+
     public FoodTABLE(Context context) {
         myDatabase = new MyDatabase(context);
     }//Constructor
