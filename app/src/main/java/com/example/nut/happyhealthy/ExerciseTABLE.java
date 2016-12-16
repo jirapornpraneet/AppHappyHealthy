@@ -22,6 +22,8 @@ public class ExerciseTABLE {
     public static final String Exercise_Name = "Exercise_Name";
     public static final String Exercise_Calories = "Exercise_Calories";
     public static final String Exercise_Duration = "Exercise_Duration";
+    public static final String Exercise_Disease = "Exercise_Disease";
+    public static final String Exercise_Detail = "Exercise_Detaile";
 
 
     public ExerciseTABLE(Context context) {
@@ -31,13 +33,15 @@ public class ExerciseTABLE {
     }//Constructor
 
     //Add New Value
-    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal,  double dou_duration) {
+    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal,  double dou_duration,String str_exe_disease,String str_exe_detail) {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Exercise_Name, str_exe_name);
         contentValues.put(Exercise_Calories, dou_exe_cal);
         contentValues.put(Exercise_Duration, dou_duration);
+        contentValues.put(Exercise_Disease, str_exe_disease);
+        contentValues.put(Exercise_Detail,str_exe_detail);
 
         long exercise_id = db.insert(Exercise, null, contentValues);
         db.close();
@@ -62,6 +66,8 @@ public class ExerciseTABLE {
                 exe.put("exercise_name", cursor.getString(cursor.getColumnIndex(Exercise_Name)));
                 exe.put("exercise_calories", cursor.getString(cursor.getColumnIndex(Exercise_Calories)));
                 exe.put("exercise_duration", cursor.getString(cursor.getColumnIndex(Exercise_Duration)));
+                exe.put("exercise_disease", cursor.getString(cursor.getColumnIndex(Exercise_Disease)));
+                exe.put("exercise_detail", cursor.getString(cursor.getColumnIndex(Exercise_Detail)));
                 exeList.add(exe);
             } while (cursor.moveToNext());
         }
@@ -84,6 +90,8 @@ public class ExerciseTABLE {
                 exe.put("exercise_name", cursor.getString(cursor.getColumnIndex(Exercise_Name)));
                 exe.put("exercise_calories", cursor.getString(cursor.getColumnIndex(Exercise_Calories)));
                 exe.put("exercise_duration", cursor.getString(cursor.getColumnIndex(Exercise_Duration)));
+                exe.put("exercise_disease", cursor.getString(cursor.getColumnIndex(Exercise_Disease)));
+                exe.put("exercise_detail", cursor.getString(cursor.getColumnIndex(Exercise_Detail)));
 
             } while (cursor.moveToNext());
         }
