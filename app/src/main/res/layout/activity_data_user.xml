@@ -16,7 +16,7 @@
         android:id="@+id/textView18"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="#ffffff" />
 
@@ -28,14 +28,14 @@
         android:id="@+id/textView19"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp"
-        android:textSize="14dp"
+        android:textSize="16dp"
         android:textStyle="bold"
         android:textColor="#ffffff" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="220dp"
+        android:layout_height="270dp"
         android:id="@+id/linearLayout"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -62,7 +62,7 @@
                 android:id="@+id/User_Name"
                 android:textColor="#505050"
                 android:editable="true"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:background="@drawable/my_border_box"
                 android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
                     android:textColor="#505050"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:background="@drawable/my_border_box"
                     android:textStyle="bold"
                     android:layout_marginRight="5dp"
@@ -114,7 +114,7 @@
                     android:id="@+id/woman"
                     android:textColor="#505050"
                     android:layout_weight="1"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/my_border_box"
                     android:textStyle="bold" />
@@ -144,7 +144,7 @@
                 android:id="@+id/User_Age"
                 android:textColor="#505050"
                 android:background="@drawable/my_border_box"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:hint="ปี"
                 android:autoText="false"
                 android:textStyle="bold"
@@ -175,7 +175,7 @@
                 android:textColor="#505050"
                 android:background="@drawable/my_border_box"
                 android:autoText="false"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:hint="กิโลกรัม"
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp" />
@@ -204,7 +204,7 @@
                 android:id="@+id/User_Height"
                 android:textColor="#505050"
                 android:background="@drawable/my_border_box"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:hint="เซนติเมตร"
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp" />
