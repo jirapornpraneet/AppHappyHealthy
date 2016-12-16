@@ -29,6 +29,7 @@ public class FoodTABLE {
     public static final String Food_Carbohydrate = "Food_Carbohydrate";
     public static final String Food_Sugars = "Food_Sugars";
     public static final String Food_Sodium = "Food_Sodium";
+    public static final String Food_Detail = "Food_Detail";
 
 
     public FoodTABLE(Context context) {
@@ -37,7 +38,7 @@ public class FoodTABLE {
 
     //Add New Value
     public long addNewValueToSQLite(String str_food_name, double dou_food_cal, int int_food_amount, String str_food_unit,
-                                    double dou_food_netweight, String str_net_unit, double dou_protein, double dou_fat, double dou_carbohydrate, double dou_sugar, double dou_sodium) {
+                                    double dou_food_netweight, String str_net_unit, double dou_protein, double dou_fat, double dou_carbohydrate, double dou_sugar, double dou_sodium, String str_food_detail) {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
 
@@ -53,6 +54,7 @@ public class FoodTABLE {
         contentValues.put(Food_Carbohydrate, dou_carbohydrate);
         contentValues.put(Food_Sugars, dou_sugar);
         contentValues.put(Food_Sodium, dou_sodium);
+        contentValues.put(Food_Detail, str_food_detail);
 
         long food_id = db.insert(Food, null, contentValues);
         db.close();
@@ -83,6 +85,7 @@ public class FoodTABLE {
                 food.put("food_carbohydrate", cursor.getString(cursor.getColumnIndex(Food_Carbohydrate)));
                 food.put("food_sugars", cursor.getString(cursor.getColumnIndex(Food_Sugars)));
                 food.put("food_sodium", cursor.getString(cursor.getColumnIndex(Food_Sodium)));
+                food.put("food_detail", cursor.getString(cursor.getColumnIndex(Food_Detail)));
                 foodList.add(food);
             } while (cursor.moveToNext());
         }
@@ -115,6 +118,7 @@ public class FoodTABLE {
                 food.put("food_carbohydrate", cursor.getString(cursor.getColumnIndex(Food_Carbohydrate)));
                 food.put("food_sugars", cursor.getString(cursor.getColumnIndex(Food_Sugars)));
                 food.put("food_sodium", cursor.getString(cursor.getColumnIndex(Food_Sodium)));
+                food.put("food_detail", cursor.getString(cursor.getColumnIndex(Food_Detail)));
             } while (cursor.moveToNext());
         }
 

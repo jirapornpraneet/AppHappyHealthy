@@ -119,7 +119,7 @@ public class History_Pressure extends AppCompatActivity {
 
     public void setListView() {
         preList = pre.getPreList();
-        adapterPre = new SimpleAdapter(History_Pressure.this, preList, R.layout.history_pressure, new String[]{"datePre"}, new int[]{R.id.datePre});
+        adapterPre = new SimpleAdapter(History_Pressure.this, preList, R.layout.history_pressure, new String[]{PressureTABLE.P_DateTime}, new int[]{R.id.datePre});
         listViewPre.setAdapter(adapterPre);
     }
 

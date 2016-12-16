@@ -113,7 +113,7 @@ public class History_Kidney extends AppCompatActivity {
 
     public void setListView() {
         kidneyList = kid.getKidneyList();
-        adapterKidney = new SimpleAdapter(History_Kidney.this, kidneyList, R.layout.history_kidney, new String[]{"dateKidney"}, new int[]{R.id.dateKidney});
+        adapterKidney = new SimpleAdapter(History_Kidney.this, kidneyList, R.layout.history_kidney, new String[]{KidneyTABLE.K_DateTime}, new int[]{R.id.dateKidney});
         listViewKidney.setAdapter(adapterKidney); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
     }
 
