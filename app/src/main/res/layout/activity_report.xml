@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nut.happyhealthy.Report">
+    tools:context="com.example.nut.happyhealthy.Report"
+    android:background="#e8e8e8">
 
 
     <LinearLayout

@@ -34,11 +34,12 @@ public class FoodHistoryTABLE {
     public static final String Exercise = "Exercise";
     public static final String Exercise_Id = "Exercise_Id";
     public static final String Exercise_Calories = "Exercise_Calories";
-    public static final String Exercise_Duration = "Exercise_TotalDuration";
+    public static final String Exercise_Duration = "Exercise_Duration";
 
-    public static final String Exercise_History = "Exercise_History";
+    public static final String Exercise_History= "Exercise_History";
     public static final String History_Exercise_Id = "History_Exercise_Id";
-    public static final String History_Exercise_Date = "History_Exercise_Date";
+    public static final String History_Exercise_Date  = "History_Exercise_Date";
+    public static final String Exercise_TotalDuration  = "Exercise_TotalDuration";
 
 
     public static final String SUM_EX_Cal = "exc";
@@ -52,7 +53,6 @@ public class FoodHistoryTABLE {
     String HisDate;
     int FoodId;
     Double FoodAmount;
-
 
     public FoodHistoryTABLE(Context context) {
         myDatabase = new MyDatabase(context);
@@ -73,6 +73,11 @@ public class FoodHistoryTABLE {
         db.close();
         return food_id;
     }//Add New Value
+
+
+
+
+
 
     //ตัวfoodDetail
     public HashMap<String, String> selectDetailByFoodHistory(int foodId) {
@@ -97,9 +102,9 @@ public class FoodHistoryTABLE {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
         HashMap<String, String> foodHistory = new HashMap<>();
         String query = "select * from " +
-                "(select sum(e." + Exercise_Calories + "*eh." + Exercise_Duration + ") 'exc' " +
+                "(select sum(e." + Exercise_Calories + "*eh." + Exercise_TotalDuration + ") 'exc' " +
                 "from " + Exercise_History + " eh," + Exercise + " e " +
-                "where e." + Exercise_Id + " = eh." + Exercise_Id + " and " + History_Exercise_Date + " like '" + datehis + "' ) ex," +
+                "where e." + Exercise_Id + " = eh." + Exercise_Id + " and " + History_Exercise_Date + " like '" + datehis + "' ) eh," +
                 "(select sum(f." + Food_Calories + "*fh." + Food_Amount + ") 'fcal',sum(f." + Food_Protein + ") 'fpro',sum(f." + Food_Fat + ") 'ffat',sum(f." + Food_Carbohydrate + ") 'fcar',sum(f." + Food_Sugars + ") 'fsug',sum(f." + Food_Sodium + ") 'fsod' " +
                 "from " + Food_History + " fh," + Food + " f " +
                 "where fh." + Food_Id + " = f." + Food_Id + " and " + History_Food_Date + " like '" + datehis + "') fd";

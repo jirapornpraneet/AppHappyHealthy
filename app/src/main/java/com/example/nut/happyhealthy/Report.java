@@ -18,6 +18,9 @@ public class Report extends AppCompatActivity {
 
     DatePickerDialog mDatePicker;
     Calendar mCalendar;
+    Calendar c;
+    SimpleDateFormat df_show;
+    String sysDate;
 
     TextView chooseDate, showBmr, totalFood, totalExe, protain, carbo, fat, sugar, sodium;
 
@@ -28,6 +31,11 @@ public class Report extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+        df_show = new SimpleDateFormat("yyyy-MM-dd");
+        c = Calendar.getInstance();
+        sysDate = df_show.format(c.getTime())+"%";
+        setValue(sysDate);
 
         mCalendar = Calendar.getInstance();
 

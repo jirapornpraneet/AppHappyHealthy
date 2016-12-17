@@ -6,24 +6,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class Exercise_Detail extends AppCompatActivity {
 
     ExerciseTABLE exerciseTABLE;
-    HashMap<String,String> detailExe;
-    TextView e_name,e_cal,e_duration ;
+    HashMap<String, String> detailExe;
+    TextView e_name, e_cal, e_duration;
     EditText editExeCal_Total;
     Button ExeCal_Total;
     Double Exetotal;
+    ImageView rec;
+    Calendar c;
+    SimpleDateFormat df_show;
+    ExerciseHistoryTABLE exerciseHistoryTABLE;
+    int exercise_id;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_detail);
+
+        exerciseHistoryTABLE = new ExerciseHistoryTABLE(this);
 
         //จำนวนเริ่มต้นการออกกำลังกาย
         Exetotal = 1.0;
@@ -37,11 +47,13 @@ public class Exercise_Detail extends AppCompatActivity {
         //e_duration = (TextView) findViewById(R.id.exercise_duration);
 
         Intent intent4 = getIntent();
-        int exercise_id = intent4.getIntExtra("exercise_id", 0);
+        exercise_id = intent4.getIntExtra("exercise_id", 0);
 
         detailExe = exerciseTABLE.selectDetailByExeId(exercise_id);
 
         SetDetailExe(Exetotal);
+
+        rec = (ImageView) findViewById(R.id.recExe);
 
         //รับค่าปุม
         ExeCal_Total.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +64,23 @@ public class Exercise_Detail extends AppCompatActivity {
             }
         });
 
+        rec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                df_show = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                c = Calendar.getInstance();
+                exerciseHistoryTABLE.HisExeDate = df_show.format(c.getTime());
+                exerciseHistoryTABLE.ExeId = exercise_id;
+                exerciseHistoryTABLE.ExeDuration = Double.valueOf(editExeCal_Total.getText().toString());
+                exerciseHistoryTABLE.addExeHis(exerciseHistoryTABLE);
+
+                Intent intent = new Intent(Exercise_Detail.this, Report.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
 
     }//OnCreate
 
@@ -59,8 +88,8 @@ public class Exercise_Detail extends AppCompatActivity {
     public void SetDetailExe(Double t) {
 
         e_name.setText(detailExe.get("exercise_name"));
-        e_cal.setText(String.format("%.2f",(Double.parseDouble(detailExe.get("exercise_calories"))* t) ));
-       //e_duration.setText(String.format("%.2f",(Double.parseDouble(detailExe.get("exercise_duration"))* t) ));
+        e_cal.setText(String.format("%.2f", (Double.parseDouble(detailExe.get("exercise_calories")) * t)));
+        //e_duration.setText(String.format("%.2f",(Double.parseDouble(detailExe.get("exercise_duration"))* t) ));
 
 
     }//setdetailfood

@@ -39,9 +39,9 @@ public class ExerciseType extends AppCompatActivity {
            @Override
            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                ExeId = Integer.parseInt(exeList.get(i).get("exercise_id"));
-               Exename = exeList.get(i).get("exercise_name").toString();
-               ExeCalories = Double.parseDouble(exeList.get(i).get("exercise_calories"));
-               ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
+//               Exename = exeList.get(i).get("exercise_name").toString();
+//               ExeCalories = Double.parseDouble(exeList.get(i).get("exercise_calories"));
+//               ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
                //ExeDuration = Double.parseDouble(exeList.get(i).get("exercise_duration"));
 
 
@@ -50,10 +50,6 @@ public class ExerciseType extends AppCompatActivity {
                intent2 = new Intent(ExerciseType.this, Exercise_Detail.class);
                intent2.putExtra("exercise_id", ExeId);
                 startActivity(intent2);
-
-
-
-
 
            }
        });

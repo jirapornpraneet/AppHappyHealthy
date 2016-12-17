@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nut.happyhealthy.FoodDetail">
+    tools:context="com.example.nut.happyhealthy.FoodDetail"
+    android:background="#e8e8e8">
 
 
     <LinearLayout
@@ -16,6 +17,26 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/imageView46"
+        android:src="@drawable/arowback"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="3dp"
+        android:onClick="ClickBackFoodHome" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="บันทึกอาหาร"
+        android:id="@+id/textView27"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#fbf8f8" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -33,7 +54,8 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/my_bg_savefood_name" />
+            android:background="@drawable/my_bg_savefood_name"
+            android:layout_marginTop="20dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -169,7 +191,8 @@
             android:text="food_netunit2"
             android:id="@+id/food_netunit2"
             android:layout_weight="1"
-            android:textSize="12dp" />
+            android:textSize="12dp"
+            android:textColor="#9f9f9f" />
     </LinearLayout>
 
     <LinearLayout
@@ -257,7 +280,7 @@
             android:id="@+id/food_protein2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#fffcfc"
+            android:textColor="#9f9f9f"
             android:textStyle="bold" />
 
         <TextView
@@ -267,7 +290,7 @@
             android:id="@+id/food_fat2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#fffcfc"
+            android:textColor="#9f9f9f"
             android:textStyle="bold" />
 
         <TextView
@@ -278,7 +301,7 @@
             android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#fffcfc"
+            android:textColor="#9f9f9f"
             android:textStyle="bold" />
 
         <TextView
@@ -288,7 +311,7 @@
             android:id="@+id/food_sugar2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#fffcfc"
+            android:textColor="#9f9f9f"
             android:textStyle="bold" />
 
         <TextView
@@ -298,7 +321,7 @@
             android:id="@+id/food_sodium2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#fffcfc"
+            android:textColor="#9f9f9f"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -353,12 +376,31 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="650dp"
-        android:layout_height="200dp"
+        android:layout_width="400dp"
+        android:layout_height="10dp"
         android:id="@+id/imageView30"
         android:layout_alignParentBottom="true"
         android:src="@drawable/buttonsavefood"
         android:layout_below="@+id/linearLayout2"
         android:layout_marginTop="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="false"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_marginBottom="100dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_food_detail"
+            android:layout_gravity="bottom|center_horizontal"
+            android:hint="tv_food_detail"
+            android:textSize="14dp"
+            android:textColor="#656565" />
+    </LinearLayout>
 
 </RelativeLayout>
