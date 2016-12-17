@@ -17,7 +17,7 @@ public class FoodDetail extends AppCompatActivity {
 
     FoodTABLE foodTABLE;
     HashMap<String, String> detailFood;
-    TextView f_name,f_cal,f_unit,f_netweight,f_netunit,f_pro ,f_fat,f_car,f_sugar,f_sodium,f_amount ;
+    TextView f_name,f_cal,f_unit,f_netweight,f_netunit,f_pro ,f_fat,f_car,f_sugar,f_sodium,f_amount,f_detail ;
     EditText editCal_Total;
     Button bCal_Total;
     Double total;
@@ -50,6 +50,7 @@ public class FoodDetail extends AppCompatActivity {
         f_car = (TextView) findViewById(R.id.food_carbohydrate2);
         f_sugar = (TextView) findViewById(R.id.food_sugar2);
         f_sodium = (TextView) findViewById(R.id.food_sodium2);
+        f_detail = (TextView) findViewById(R.id.tv_food_detail);
 
         rec = (ImageView) findViewById(R.id.imageView30);
 
@@ -105,6 +106,7 @@ public class FoodDetail extends AppCompatActivity {
         f_car.setText(String.format("%.2f",(Double.parseDouble(detailFood.get("food_carbohydrate"))*t)));
         f_sugar.setText(String.format("%.2f",(Double.parseDouble(detailFood.get("food_sugars"))*t)));
         f_sodium.setText(String.format("%.2f",(Double.parseDouble(detailFood.get("food_sodium"))*t)));
+        f_detail.setText(detailFood.get("food_detail"));
 
     }//setdetailfood
 
