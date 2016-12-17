@@ -39,18 +39,18 @@ public class Food_Type_1 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 FoodId = Integer.parseInt(foodList.get(i).get("food_id"));
-                Foodname = foodList.get(i).get("food_name").toString();
-                FoodCalories = Double.parseDouble(foodList.get(i).get("food_calories"));
-                FoodAmount = Integer.parseInt(foodList.get(i).get("food_amount"));
-                FoodUnit = foodList.get(i).get("food_unit").toString();
-                FoodNetweight = Double.parseDouble(foodList.get(i).get("food_netweight"));
-                FoodNetUnit = foodList.get(i).get("food_netunit").toString();
-                FoodProtein = Double.parseDouble(foodList.get(i).get("food_protein"));
-                FoodFat = Double.parseDouble(foodList.get(i).get("food_fat"));
-                FoodCarbohydrate = Double.parseDouble(foodList.get(i).get("food_carbohydrate"));
-                FoodSugars = Double.parseDouble(foodList.get(i).get("food_sugars"));
-                FoodSodium = Double.parseDouble(foodList.get(i).get("food_sodium"));
-                FoodDetail = foodList.get(i).get("food_detail").toString();
+//                Foodname = foodList.get(i).get("food_name").toString();
+//                FoodCalories = Double.parseDouble(foodList.get(i).get("food_calories"));
+//                FoodAmount = Integer.parseInt(foodList.get(i).get("food_amount"));
+//                FoodUnit = foodList.get(i).get("food_unit").toString();
+//                FoodNetweight = Double.parseDouble(foodList.get(i).get("food_netweight"));
+//                FoodNetUnit = foodList.get(i).get("food_netunit").toString();
+//                FoodProtein = Double.parseDouble(foodList.get(i).get("food_protein"));
+//                FoodFat = Double.parseDouble(foodList.get(i).get("food_fat"));
+//                FoodCarbohydrate = Double.parseDouble(foodList.get(i).get("food_carbohydrate"));
+//                FoodSugars = Double.parseDouble(foodList.get(i).get("food_sugars"));
+//                FoodSodium = Double.parseDouble(foodList.get(i).get("food_sodium"));
+//                FoodDetail = foodList.get(i).get("food_detail").toString();
 
                 //ส่งค่าไปอีกหน้าหนึ่ง putExtra
                 Intent intent2;

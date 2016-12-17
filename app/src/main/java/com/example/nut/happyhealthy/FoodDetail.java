@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class FoodDetail extends AppCompatActivity {
@@ -18,6 +21,10 @@ public class FoodDetail extends AppCompatActivity {
     EditText editCal_Total;
     Button bCal_Total;
     Double total;
+    ImageView rec;
+    Calendar c;
+    SimpleDateFormat df_show;
+    FoodHistoryTABLE foodHistoryTABLE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,7 @@ public class FoodDetail extends AppCompatActivity {
         //จำนวนเริ่มต้นการบริโภค
         total = 1.0;
         foodTABLE = new FoodTABLE(this);
+        foodHistoryTABLE = new FoodHistoryTABLE(this);
 
         editCal_Total = (EditText) findViewById(R.id.et_exe2);
         bCal_Total = (Button) findViewById(R.id.button);
@@ -43,9 +51,11 @@ public class FoodDetail extends AppCompatActivity {
         f_sugar = (TextView) findViewById(R.id.food_sugar2);
         f_sodium = (TextView) findViewById(R.id.food_sodium2);
 
+        rec = (ImageView) findViewById(R.id.imageView30);
+
         //
         Intent intent3 = getIntent();
-        int food_id = intent3.getIntExtra("food_id", 0);
+        final int food_id = intent3.getIntExtra("food_id", 0);
 
         detailFood = foodTABLE.selectDetailByFoodId(food_id);
 
@@ -57,6 +67,24 @@ public class FoodDetail extends AppCompatActivity {
             public void onClick(View view) {
                 total = Double.parseDouble(editCal_Total.getText().toString());
                 SetDetailFood(total);
+            }
+        });
+
+        rec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                df_show = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                c = Calendar.getInstance();
+                foodHistoryTABLE.HisDate = df_show.format(c.getTime());
+                foodHistoryTABLE.FoodId = food_id;
+                foodHistoryTABLE.FoodAmount = Double.valueOf(editCal_Total.getText().toString());
+                foodHistoryTABLE.addFoodHis(foodHistoryTABLE);
+
+
+                Intent intent = new Intent(FoodDetail.this,Report.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 

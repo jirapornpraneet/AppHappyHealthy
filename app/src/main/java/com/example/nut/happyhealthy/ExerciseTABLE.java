@@ -23,7 +23,7 @@ public class ExerciseTABLE {
     public static final String Exercise_Calories = "Exercise_Calories";
     public static final String Exercise_Duration = "Exercise_Duration";
     public static final String Exercise_Disease = "Exercise_Disease";
-    public static final String Exercise_Detail = "Exercise_Detaile";
+    public static final String Exercise_Detail = "Exercise_Detail";
 
 
     public ExerciseTABLE(Context context) {

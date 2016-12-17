@@ -3,19 +3,93 @@ package com.example.nut.happyhealthy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+import com.fourmob.datetimepicker.date.DatePickerDialog;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 
 
 public class Report extends AppCompatActivity {
 
+    DatePickerDialog mDatePicker;
+    Calendar mCalendar;
 
+    TextView chooseDate, showBmr, totalFood, totalExe, protain, carbo, fat, sugar, sodium;
+
+    FoodHistoryTABLE foodHistoryTABLE;
+    HashMap<String, String> dataSelectSum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+        mCalendar = Calendar.getInstance();
+
+        chooseDate = (TextView) findViewById(R.id.chooseDate);
+        showBmr = (TextView) findViewById(R.id.showBmr);
+        totalFood = (TextView) findViewById(R.id.tv_sum_food_cal);
+        totalExe = (TextView) findViewById(R.id.tv_sum_ex_cal);
+        protain = (TextView) findViewById(R.id.tv_sum_pro);
+        carbo = (TextView) findViewById(R.id.tv_sum_car);
+        fat = (TextView) findViewById(R.id.tv_sum_fat);
+        sugar = (TextView) findViewById(R.id.tv_sum_sugar);
+        sodium = (TextView) findViewById(R.id.tv_sum_sodium);
+
+        foodHistoryTABLE = new FoodHistoryTABLE(this);
+
+        chooseDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDatePicker.setYearRange(1950, 2030);
+                mDatePicker.show(getSupportFragmentManager(), "datePicker");
+            }
+        });
+
+        mDatePicker = DatePickerDialog.newInstance(onDateSetListener,
+                mCalendar.get(Calendar.YEAR),       // ปี
+                mCalendar.get(Calendar.MONTH),      // เดือน
+                mCalendar.get(Calendar.DAY_OF_MONTH),// วัน (1-31)
+                false);
+
+
     }//OnCreate
 
+    private DatePickerDialog.OnDateSetListener onDateSetListener =
+            new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePickerDialog datePickerDialog, int year, int month, int day) {
 
+                    SimpleDateFormat dfm = new SimpleDateFormat("dd-MMMM-yyyy");
+                    SimpleDateFormat dfm_insert = new SimpleDateFormat("yyyy-MM-dd");
 
+                    mCalendar.set(year, month, day);
+                    Date date = mCalendar.getTime();
+
+                    String textDate = dfm.format(date);
+                    String textDate_insert = dfm_insert.format(date)+"%";
+
+                    chooseDate.setText(textDate);
+                    setValue(textDate_insert);
+
+                }
+            };
+
+    public void setValue(String dateChoose) {
+        dataSelectSum = foodHistoryTABLE.selectSUM(dateChoose);
+
+        totalFood.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_Food_Cal));
+        totalExe.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_EX_Cal));
+        protain.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_pro));
+        carbo.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_car));
+        fat.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_fat));
+        sugar.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_sugar));
+        sodium.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_sodium));
+    }
 
 }//MainClass

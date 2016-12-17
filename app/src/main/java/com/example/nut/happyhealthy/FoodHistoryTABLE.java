@@ -1,5 +1,6 @@
 package com.example.nut.happyhealthy;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,10 +18,27 @@ public class FoodHistoryTABLE {
 
     public static final String Food_History = "Food_History";
     public static final String History_Food_Id = "History_Food_Id";
-    public static final String History_Food_Date  = "History_Food_Date";
-    public static final String Food_Amount  = "Food_Amount";
+    public static final String History_Food_Date = "History_Food_Date";
+    public static final String Food_Amount = "Food_Amount";
     public static final String User_Id = "User_Id";
+
+    public static final String Food = "Food";
     public static final String Food_Id = "Food_Id";
+    public static final String Food_Calories = "Food_Calories";
+    public static final String Food_Protein = "Food_Protein";
+    public static final String Food_Fat = "Food_Fat";
+    public static final String Food_Carbohydrate = "Food_Carbohydrate";
+    public static final String Food_Sugars = "Food_Sugars";
+    public static final String Food_Sodium = "Food_Sodium";
+
+    public static final String Exercise = "Exercise";
+    public static final String Exercise_Id = "Exercise_Id";
+    public static final String Exercise_Calories = "Exercise_Calories";
+    public static final String Exercise_Duration = "Exercise_TotalDuration";
+
+    public static final String Exercise_History = "Exercise_History";
+    public static final String History_Exercise_Id = "History_Exercise_Id";
+    public static final String History_Exercise_Date = "History_Exercise_Date";
 
 
     public static final String SUM_EX_Cal = "exc";
@@ -31,14 +49,30 @@ public class FoodHistoryTABLE {
     public static final String SUM_sugar = "fsug";
     public static final String SUM_sodium = "fsod";
 
+    String HisDate;
+    int FoodId;
+    Double FoodAmount;
+
 
     public FoodHistoryTABLE(Context context) {
         myDatabase = new MyDatabase(context);
         writeSQLite = myDatabase.getWritableDatabase();
         readSQLite = myDatabase.getReadableDatabase();
-
-
     }//Constructor
+
+    public long addFoodHis(FoodHistoryTABLE data) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(History_Food_Date, data.HisDate);
+        contentValues.put(Food_Id, data.FoodId);
+        contentValues.put(Food_Amount, data.FoodAmount);
+
+        long food_id = db.insert(Food_History, null, contentValues);
+        db.close();
+        return food_id;
+    }//Add New Value
 
     //ตัวfoodDetail
     public HashMap<String, String> selectDetailByFoodHistory(int foodId) {
@@ -61,14 +95,14 @@ public class FoodHistoryTABLE {
     //ตัวfoodDetail
     public HashMap<String, String> selectSUM(String datehis) {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
-        HashMap<String, String> foodHistory = new HashMap<String, String>();
+        HashMap<String, String> foodHistory = new HashMap<>();
         String query = "select * from " +
-                "(select sum(e.exercise_calories*eh.exercise_duration) 'exc' " +
-                "from Exercise_History eh,Exercise e " +
-                "where e.exercise_id = eh.exercise_id and History_exercise_date like '"+datehis+"' ) ex," +
-                "(select sum(f.food_calories*fh.food_amount) 'fcal',sum(f.Food_protein) 'fpro',sum(f.Food_fat) 'ffat',sum(f.Food_Carbohydrate) 'fcar',sum(f.Food_sugars) 'fsug',sum(f.Food_sodium) 'fsod' " +
-                "from Food_History fh,Food f " +
-                "where fh.food_id = f.food_id and History_food_date like '"+datehis+"') fd";
+                "(select sum(e." + Exercise_Calories + "*eh." + Exercise_Duration + ") 'exc' " +
+                "from " + Exercise_History + " eh," + Exercise + " e " +
+                "where e." + Exercise_Id + " = eh." + Exercise_Id + " and " + History_Exercise_Date + " like '" + datehis + "' ) ex," +
+                "(select sum(f." + Food_Calories + "*fh." + Food_Amount + ") 'fcal',sum(f." + Food_Protein + ") 'fpro',sum(f." + Food_Fat + ") 'ffat',sum(f." + Food_Carbohydrate + ") 'fcar',sum(f." + Food_Sugars + ") 'fsug',sum(f." + Food_Sodium + ") 'fsod' " +
+                "from " + Food_History + " fh," + Food + " f " +
+                "where fh." + Food_Id + " = f." + Food_Id + " and " + History_Food_Date + " like '" + datehis + "') fd";
 
         Cursor cursor = db.rawQuery(query, null);
 
