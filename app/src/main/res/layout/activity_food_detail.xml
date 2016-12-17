@@ -25,7 +25,7 @@
         android:src="@drawable/arowback"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="3dp"
-        android:onClick="ClickBackFoodHome" />
+        android:onClick="ClickBackFoodetailHome" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -173,7 +173,7 @@
             android:id="@+id/food_netweight2"
             android:layout_weight="1"
             android:textSize="12dp"
-            android:textColor="#fffcfc"
+            android:textColor="#9f9f9f"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -385,13 +385,13 @@
         android:layout_marginTop="30dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="vertical"
         android:gravity="bottom"
-        android:layout_marginBottom="100dp">
+        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true">
 
         <TextView
             android:layout_width="wrap_content"

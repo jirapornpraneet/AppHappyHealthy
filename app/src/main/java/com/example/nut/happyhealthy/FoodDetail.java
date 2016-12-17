@@ -110,4 +110,8 @@ public class FoodDetail extends AppCompatActivity {
 
     }//setdetailfood
 
+    public void ClickBackFoodetailHome(View view) {
+        startActivity(new Intent(FoodDetail.this,Food_Type_1.class));
+    }//ClickBackHome
+
 }//MainClass

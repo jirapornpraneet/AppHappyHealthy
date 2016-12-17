@@ -17,7 +17,7 @@ public class Exercise_Detail extends AppCompatActivity {
 
     ExerciseTABLE exerciseTABLE;
     HashMap<String, String> detailExe;
-    TextView e_name, e_cal, e_duration;
+    TextView e_name, e_cal, e_duration,e_detail,e_dis,e_des;
     EditText editExeCal_Total;
     Button ExeCal_Total;
     Double Exetotal;
@@ -42,8 +42,11 @@ public class Exercise_Detail extends AppCompatActivity {
         editExeCal_Total = (EditText) findViewById(R.id.et_exe2);
         ExeCal_Total = (Button) findViewById(R.id.buttonExe2);
 
-        e_name = (TextView) findViewById(R.id.exercise_name);
-        e_cal = (TextView) findViewById(R.id.exercise_calories);
+        e_name = (TextView) findViewById(R.id.tv_exercise_name);
+        e_cal = (TextView) findViewById(R.id.tv_exercise_calories);
+        e_detail = (TextView) findViewById(R.id.tv_exe_detail);
+        e_des = (TextView) findViewById(R.id.tv_exe_des);
+        e_dis = (TextView) findViewById(R.id.tv_exe_dis);
         //e_duration = (TextView) findViewById(R.id.exercise_duration);
 
         Intent intent4 = getIntent();
@@ -90,9 +93,18 @@ public class Exercise_Detail extends AppCompatActivity {
         e_name.setText(detailExe.get("exercise_name"));
         e_cal.setText(String.format("%.2f", (Double.parseDouble(detailExe.get("exercise_calories")) * t)));
         //e_duration.setText(String.format("%.2f",(Double.parseDouble(detailExe.get("exercise_duration"))* t) ));
+        e_detail.setText(detailExe.get("exercise_detail"));
+        e_dis.setText(detailExe.get("exercise_disease"));
+        e_des.setText(detailExe.get("exercise_description"));
 
 
     }//setdetailfood
+
+
+
+    public void ClickBackExeDetailHome(View view) {
+        startActivity(new Intent(Exercise_Detail.this,ExerciseType.class));
+    }//ClickBackHome
 
 
 }//MainClass

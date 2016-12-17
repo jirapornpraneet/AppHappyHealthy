@@ -25,7 +25,7 @@
         android:src="@drawable/arowback"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="3dp"
-        android:onClick="ClickBackFoodHome" />
+        android:onClick="ClickBackExeDetailHome" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,8 +50,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="exercise_name"
-            android:id="@+id/exercise_name"
+            android:text="tv_exercise_name"
+            android:id="@+id/tv_exercise_name"
             android:layout_weight="1"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -63,15 +63,15 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="178dp"
         android:layout_marginRight="50dp"
         android:layout_alignParentRight="true">
 
         <TextView
             android:layout_width="80dp"
             android:layout_height="match_parent"
-            android:text="exercise_calories"
-            android:id="@+id/exercise_calories"
+            android:text="tv_exercise_calories"
+            android:id="@+id/tv_exercise_calories"
             android:textSize="20dp"
             android:background="@drawable/my_bg_saveexe_name" />
     </LinearLayout>
@@ -80,7 +80,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="210dp"
         android:layout_marginRight="35dp"
         android:layout_alignParentRight="true">
 
@@ -96,7 +96,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="185dp"
         android:layout_marginRight="50dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout4">
@@ -104,7 +104,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="นาที"
+            android:text="เซท"
             android:id="@+id/textView16"
             android:layout_marginRight="70dp" />
     </LinearLayout>
@@ -113,7 +113,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="180dp"
         android:layout_marginLeft="45dp"
         android:layout_alignParentLeft="true">
 
@@ -146,16 +146,17 @@
         android:layout_height="100dp"
         android:id="@+id/recExe"
         android:src="@drawable/buttonsaveexe"
-        android:layout_below="@+id/linearLayout4"
-        android:layout_marginTop="200dp" />
+        android:layout_marginTop="200dp"
+        android:layout_alignParentBottom="true" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="false"
         android:orientation="vertical"
-        android:layout_marginTop="270dp">
+        android:layout_below="@+id/linearLayout4"
+        android:layout_marginTop="90dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -168,19 +169,41 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="false"
         android:orientation="vertical"
-        android:layout_marginTop="310dp">
+        android:layout_below="@+id/linearLayout4"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="140dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_exe_detail"
-            android:layout_gravity="bottom|center_horizontal"
+            android:layout_gravity="bottom|center_vertical"
             android:hint="tv_exe_detail"
+            android:textSize="14dp"
+            android:textColor="#656565"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="false"
+        android:orientation="vertical"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_exe_des"
+            android:layout_gravity="bottom|center_horizontal"
+            android:hint="tv_exe_des"
             android:textSize="14dp"
             android:textColor="#656565" />
     </LinearLayout>
