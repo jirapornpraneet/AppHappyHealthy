@@ -65,8 +65,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BMR"
-                android:id="@+id/showBmr"
+                android:text="TotalCal"
+                android:id="@+id/totalCal"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:textSize="25dp" />

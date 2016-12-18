@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +50,7 @@ public class FoodHistoryTABLE {
     public static final String SUM_car = "fcar";
     public static final String SUM_sugar = "fsug";
     public static final String SUM_sodium = "fsod";
+    public static final String Total_Cal = "TotalCal";
 
     String HisDate;
     int FoodId;
@@ -73,11 +75,6 @@ public class FoodHistoryTABLE {
         db.close();
         return food_id;
     }//Add New Value
-
-
-
-
-
 
     //ตัวfoodDetail
     public HashMap<String, String> selectDetailByFoodHistory(int foodId) {
@@ -109,10 +106,15 @@ public class FoodHistoryTABLE {
                 "from " + Food_History + " fh," + Food + " f " +
                 "where fh." + Food_Id + " = f." + Food_Id + " and " + History_Food_Date + " like '" + datehis + "') fd";
 
+        Log.d("selectSum",query);
+
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
             do {
+                foodHistory.put(Total_Cal, String.valueOf((cursor.getDouble(cursor.getColumnIndex(SUM_Food_Cal))
+                        -cursor.getDouble(cursor.getColumnIndex(SUM_EX_Cal)))));
+//                foodHistory.put(UserTABLE.User_BMR,cursor.getString(cursor.getColumnIndex(UserTABLE.User_BMR)));
                 foodHistory.put(SUM_EX_Cal, cursor.getString(cursor.getColumnIndex(SUM_EX_Cal)));
                 foodHistory.put(SUM_Food_Cal, cursor.getString(cursor.getColumnIndex(SUM_Food_Cal)));
                 foodHistory.put(SUM_pro, cursor.getString(cursor.getColumnIndex(SUM_pro)));

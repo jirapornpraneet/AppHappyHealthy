@@ -21,26 +21,31 @@ public class Report extends AppCompatActivity {
     Calendar c;
     SimpleDateFormat df_show;
     String sysDate;
+    String textDate;
 
-    TextView chooseDate, showBmr, totalFood, totalExe, protain, carbo, fat, sugar, sodium;
+    TextView chooseDate, totalCal, totalFood, totalExe, protain, carbo, fat, sugar, sodium;
 
     FoodHistoryTABLE foodHistoryTABLE;
     HashMap<String, String> dataSelectSum;
+
+    SimpleDateFormat dfm,dfm_insert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-        df_show = new SimpleDateFormat("yyyy-MM-dd");
+        dfm = new SimpleDateFormat("dd-MMMM-yyyy");
+        dfm_insert = new SimpleDateFormat("yyyy-MM-dd");
+
         c = Calendar.getInstance();
-        sysDate = df_show.format(c.getTime())+"%";
-        setValue(sysDate);
+        sysDate = dfm_insert.format(c.getTime())+"%";
+        textDate = dfm.format(c.getTime());
 
         mCalendar = Calendar.getInstance();
 
         chooseDate = (TextView) findViewById(R.id.chooseDate);
-        showBmr = (TextView) findViewById(R.id.showBmr);
+        totalCal = (TextView) findViewById(R.id.totalCal);
         totalFood = (TextView) findViewById(R.id.tv_sum_food_cal);
         totalExe = (TextView) findViewById(R.id.tv_sum_ex_cal);
         protain = (TextView) findViewById(R.id.tv_sum_pro);
@@ -50,6 +55,7 @@ public class Report extends AppCompatActivity {
         sodium = (TextView) findViewById(R.id.tv_sum_sodium);
 
         foodHistoryTABLE = new FoodHistoryTABLE(this);
+        setValue(sysDate);
 
         chooseDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,24 +79,20 @@ public class Report extends AppCompatActivity {
                 @Override
                 public void onDateSet(DatePickerDialog datePickerDialog, int year, int month, int day) {
 
-                    SimpleDateFormat dfm = new SimpleDateFormat("dd-MMMM-yyyy");
-                    SimpleDateFormat dfm_insert = new SimpleDateFormat("yyyy-MM-dd");
-
                     mCalendar.set(year, month, day);
                     Date date = mCalendar.getTime();
 
-                    String textDate = dfm.format(date);
+                    textDate = dfm.format(date);
                     String textDate_insert = dfm_insert.format(date)+"%";
 
-                    chooseDate.setText(textDate);
                     setValue(textDate_insert);
-
                 }
             };
 
     public void setValue(String dateChoose) {
         dataSelectSum = foodHistoryTABLE.selectSUM(dateChoose);
 
+        chooseDate.setText(textDate);
         totalFood.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_Food_Cal));
         totalExe.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_EX_Cal));
         protain.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_pro));
@@ -98,6 +100,7 @@ public class Report extends AppCompatActivity {
         fat.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_fat));
         sugar.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_sugar));
         sodium.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_sodium));
+       totalCal.setText(String.format("%.2f",(Double.parseDouble(dataSelectSum.get(FoodHistoryTABLE.Total_Cal)))));
     }
 
 }//MainClass
