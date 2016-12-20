@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="#f3fffdfd">
 
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="4dp">
 
 
         <TextView
             android:id="@+id/food_name"
-            android:layout_width="250dp"
+            android:layout_width="205dp"
             android:layout_height="wrap_content"
             android:text="Food"
             android:textIsSelectable="false"
-            android:textSize="15dp"
-            android:layout_marginLeft="20dp"
-            android:textStyle="bold" />
+            android:textSize="14dp"
+            android:layout_marginLeft="70dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
 
         <TextView
             android:layout_width="50dp"
@@ -27,23 +29,26 @@
             android:id="@+id/food_calories"
             android:gravity="right"
             android:paddingLeft="10dp"
-            android:layout_marginLeft="2dp" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="kcal"
             android:id="@+id/textView"
-            android:textSize="12dp"
+            android:textSize="10dp"
             android:gravity="right"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="26dp"
         android:gravity="right"
         android:layout_marginRight="5dp">
 
@@ -52,16 +57,18 @@
             android:layout_height="wrap_content"
             android:text="ต่อ"
             android:id="@+id/textView2"
-            android:layout_marginLeft="312dp"
-            android:textSize="12dp" />
+            android:layout_marginLeft="280dp"
+            android:textSize="10dp"
+            android:layout_marginTop="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="unit"
             android:id="@+id/food_unit"
-            android:textSize="12dp"
-            android:layout_marginLeft="5dp" />
+            android:textSize="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp" />
 
     </LinearLayout>
 
@@ -69,19 +76,30 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="35dp"
         android:layout_alignParentRight="false"
         android:gravity="right"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="2dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/food_detail"
             android:textSize="10dp"
-            android:hint="food_detail" />
+            android:hint="food_detail"
+            android:layout_marginTop="8dp"
+            android:textColor="#f97e7e" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView47"
+        android:src="@drawable/iconfood"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp" />
 
 
 </RelativeLayout>

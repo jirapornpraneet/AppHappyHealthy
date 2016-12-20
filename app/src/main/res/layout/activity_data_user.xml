@@ -35,10 +35,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="270dp"
+        android:layout_height="248dp"
         android:id="@+id/linearLayout"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginTop="150dp"
         android:background="@drawable/my_bgdata">
 
@@ -56,13 +56,13 @@
                 android:src="@drawable/da5" />
 
             <EditText
-                android:layout_width="170dp"
-                android:layout_height="25dp"
+                android:layout_width="160dp"
+                android:layout_height="23dp"
                 android:inputType="textPersonName"
                 android:id="@+id/User_Name"
                 android:textColor="#505050"
                 android:editable="true"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:background="@drawable/my_border_box"
                 android:textStyle="bold" />
 
@@ -137,14 +137,14 @@
                 android:layout_marginLeft="40dp" />
 
             <EditText
-                android:layout_width="170dp"
-                android:layout_height="25dp"
+                android:layout_width="160dp"
+                android:layout_height="23dp"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_Age"
                 android:textColor="#505050"
                 android:background="@drawable/my_border_box"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:hint="ปี"
                 android:autoText="false"
                 android:textStyle="bold"
@@ -167,15 +167,15 @@
                 android:layout_marginLeft="25dp" />
 
             <EditText
-                android:layout_width="170dp"
-                android:layout_height="25dp"
+                android:layout_width="160dp"
+                android:layout_height="23dp"
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/User_Weight"
                 android:textColor="#505050"
                 android:background="@drawable/my_border_box"
                 android:autoText="false"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:hint="กิโลกรัม"
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp" />
@@ -197,14 +197,14 @@
                 android:layout_marginLeft="25dp" />
 
             <EditText
-                android:layout_width="170dp"
-                android:layout_height="25dp"
+                android:layout_width="160dp"
+                android:layout_height="23dp"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/User_Height"
                 android:textColor="#505050"
                 android:background="@drawable/my_border_box"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:hint="เซนติเมตร"
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp" />
@@ -215,13 +215,13 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView8"
         android:layout_centerHorizontal="true"
         android:onClick="ClickDisPlay"
         android:src="@drawable/savedatauser"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="352dp"
         android:layout_alignParentBottom="false" />
 
 
