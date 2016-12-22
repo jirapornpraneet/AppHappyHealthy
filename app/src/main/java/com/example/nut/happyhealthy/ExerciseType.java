@@ -55,7 +55,7 @@ public class ExerciseType extends AppCompatActivity {
        });
 
         exeList = exerciseTABLE.getExeList();
-        adapterExeType = new SimpleAdapter(ExerciseType.this,exeList,R.layout.exercise_type,new String[]{"exercise_name" ,"exercise_calories" }, new int[]{R.id.exercise_name, R.id.exercise_calories});
+        adapterExeType = new SimpleAdapter(ExerciseType.this,exeList,R.layout.exercise_type,new String[]{"exercise_name" ,"exercise_calories","exercise_disease" }, new int[]{R.id.exercise_name, R.id.exercise_calories,R.id.exercise_disease});
         listViewExeType.setAdapter(adapterExeType);
 
     }//OnCreate

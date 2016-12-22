@@ -37,7 +37,7 @@ public class FoodDetail extends AppCompatActivity {
         foodHistoryTABLE = new FoodHistoryTABLE(this);
 
         editCal_Total = (EditText) findViewById(R.id.et_exe2);
-        bCal_Total = (Button) findViewById(R.id.button);
+        //bCal_Total = (Button) findViewById(R.id.button);
 
         f_name = (TextView) findViewById(R.id.food_name2);
         f_cal = (TextView) findViewById(R.id.food_cal2);
@@ -63,7 +63,7 @@ public class FoodDetail extends AppCompatActivity {
         SetDetailFood(total);
 
         //รับค่าปุ่ม
-        bCal_Total.setOnClickListener(new View.OnClickListener() {
+        editCal_Total.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 total = Double.parseDouble(editCal_Total.getText().toString());
