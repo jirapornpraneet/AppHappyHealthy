@@ -24,7 +24,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cal"
             android:id="@+id/exercise_calories"
@@ -83,7 +83,7 @@
             android:textSize="10dp"
             android:hint="exercise_disease"
             android:layout_marginTop="9dp"
-            android:textColor="#6aa069"
+            android:textColor="#8dd497"
             android:textStyle="bold"
             android:layout_marginBottom="3dp" />
     </LinearLayout>

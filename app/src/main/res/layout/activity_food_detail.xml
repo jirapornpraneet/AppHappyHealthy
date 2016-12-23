@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+            layout="@layout/toolbarfood" />
     </LinearLayout>
 
     <ImageView
@@ -56,7 +56,7 @@
             android:layout_gravity="center_horizontal"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_vertical"
-            android:textColor="#e27070" />
+            android:textColor="#f9a98a" />
     </LinearLayout>
 
     <LinearLayout
@@ -129,7 +129,8 @@
             android:gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:textColor="#ffffff"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="20dp" />
 
     </LinearLayout>
 
@@ -192,18 +193,18 @@
             android:id="@+id/food_netweight2"
             android:layout_weight="1"
             android:textSize="12dp"
-            android:textColor="#e27070"
+            android:textColor="#f9a98a"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="222dp"
         android:layout_alignParentRight="false"
         android:layout_marginRight="30dp"
-        android:layout_marginLeft="180dp">
+        android:layout_marginLeft="180dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -212,7 +213,7 @@
             android:id="@+id/food_netunit2"
             android:layout_weight="1"
             android:textSize="12dp"
-            android:textColor="#e27070"
+            android:textColor="#f9a98a"
             android:layout_marginLeft="50dp" />
     </LinearLayout>
 
@@ -345,7 +346,7 @@
             android:id="@+id/food_protein2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070"
+            android:textColor="#f9a98a"
             android:textStyle="bold" />
 
         <TextView
@@ -355,7 +356,7 @@
             android:id="@+id/food_fat2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070"
+            android:textColor="#f9a98a"
             android:textStyle="bold" />
 
         <TextView
@@ -366,7 +367,7 @@
             android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070"
+            android:textColor="#f9a98a"
             android:textStyle="bold" />
 
         <TextView
@@ -376,7 +377,7 @@
             android:id="@+id/food_sugar2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070"
+            android:textColor="#f9a98a"
             android:textStyle="bold" />
 
         <TextView
@@ -386,18 +387,18 @@
             android:id="@+id/food_sodium2"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070"
+            android:textColor="#f9a98a"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginTop="285dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="60dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -406,7 +407,7 @@
             android:id="@+id/textView11"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070" />
+            android:textColor="#f9a98a" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -415,7 +416,7 @@
             android:id="@+id/textView12"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070" />
+            android:textColor="#f9a98a" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -424,7 +425,7 @@
             android:id="@+id/textView13"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070" />
+            android:textColor="#f9a98a" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -433,7 +434,7 @@
             android:id="@+id/textView14"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070" />
+            android:textColor="#f9a98a" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -442,17 +443,8 @@
             android:id="@+id/textView15"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
-            android:textColor="#e27070" />
+            android:textColor="#f9a98a" />
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="10dp"
-        android:id="@+id/imageView30"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/buttonsavefood"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_marginTop="30dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -470,7 +462,15 @@
             android:layout_gravity="bottom|center_horizontal"
             android:hint="tv_food_detail"
             android:textSize="14dp"
-            android:textColor="#656565" />
+            android:textColor="#f9a98a"
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView30"
+        android:src="@drawable/buttonsavefood"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

@@ -40,7 +40,7 @@ public class Exercise_Detail extends AppCompatActivity {
         exerciseTABLE = new ExerciseTABLE(this);
 
         editExeCal_Total = (EditText) findViewById(R.id.et_exe2);
-        ExeCal_Total = (Button) findViewById(R.id.buttonExe2);
+       // ExeCal_Total = (Button) findViewById(R.id.buttonExe2);
 
         e_name = (TextView) findViewById(R.id.tv_exercise_name);
         e_cal = (TextView) findViewById(R.id.tv_exercise_calories);
@@ -59,7 +59,7 @@ public class Exercise_Detail extends AppCompatActivity {
         rec = (ImageView) findViewById(R.id.recExe);
 
         //รับค่าปุม
-        ExeCal_Total.setOnClickListener(new View.OnClickListener() {
+        editExeCal_Total.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Exetotal = Double.parseDouble(editExeCal_Total.getText().toString());

@@ -89,7 +89,7 @@
             android:textSize="10dp"
             android:hint="food_detail"
             android:layout_marginTop="8dp"
-            android:textColor="#e27070"
+            android:textColor="#ffa27f"
             android:textStyle="bold"
             android:layout_marginBottom="3dp" />
 
