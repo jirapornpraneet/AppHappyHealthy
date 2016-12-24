@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.DisplayUser"
-    android:background="#e8e8e8">
+    android:background="#f7eeee">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -26,7 +26,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#ffffff" />
 
 
     <TextView
@@ -106,7 +107,7 @@
                 android:orientation="horizontal"
                 android:id="@+id/User_Sex"
                 android:layout_weight="1"
-                android:layout_marginRight="25dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="7dp">
 
@@ -286,13 +287,13 @@
             android:layout_marginBottom="15dp">
 
             <TextView
-                android:layout_width="180dp"
+                android:layout_width="240dp"
                 android:layout_height="30dp"
                 android:id="@+id/weightStdTextView"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
-                android:layout_marginLeft="118dp"
+                android:layout_marginLeft="60dp"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_vertical" />

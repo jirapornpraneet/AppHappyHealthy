@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.FoodDetail"
-    android:background="#FFF9F9F9">
+    android:background="#f9f9f9">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbarfood" />
+            layout="@layout/toolbar" />
     </LinearLayout>
 
     <ImageView
@@ -36,7 +36,7 @@
         android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#fbf8f8" />
+        android:textColor="#ffffff" />
 
     <LinearLayout
         android:layout_width="200dp"
@@ -471,6 +471,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView30"
         android:src="@drawable/buttonsavefood"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp" />
 
 </RelativeLayout>

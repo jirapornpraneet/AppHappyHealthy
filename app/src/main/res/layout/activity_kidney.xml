@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#e8e8e8">
+    android:background="#e3e2e2">
 
 
     <LinearLayout
@@ -27,20 +27,20 @@
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#fbf8f8"
         android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff" />
 
 
 
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:id="@+id/imageView26"
         android:src="@drawable/listhistory"
         android:onClick="ClickHistoryKidney"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp" />
 
@@ -107,10 +107,10 @@
             android:orientation="horizontal"
             android:layout_width="200dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:background="@drawable/my_box_dis">
 
             <EditText
                 android:layout_width="match_parent"
@@ -121,10 +121,10 @@
                 android:textColor="#6f6f6f"
                 android:layout_gravity="center_vertical"
                 android:textSize="19dp"
-                android:background="@drawable/my_box_dis"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
-                android:hint="100 มล.นาที/1.73 ตร.ม" />
+                android:hint="100 มล.นาที/1.73 ตร.ม"
+                android:background="@drawable/my_box_dis" />
 
         </LinearLayout>
 

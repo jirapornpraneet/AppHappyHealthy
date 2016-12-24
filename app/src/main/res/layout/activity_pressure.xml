@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#e8e8e8">
+    android:background="#e3e2e2">
 
 
     <LinearLayout
@@ -29,15 +29,15 @@
         android:layout_marginTop="15dp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:textColor="#fbf8f8" />
+        android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:id="@+id/imageView26"
         android:src="@drawable/listhistory"
         android:onClick="ClickHisPre"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp" />
 

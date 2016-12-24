@@ -14,7 +14,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbarexe" />
+            layout="@layout/toolbar" />
     </LinearLayout>
 
     <ListView
@@ -37,7 +37,7 @@
         android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#fbf8f8" />
+        android:textColor="#ffffff" />
 
     <ImageView
         android:layout_width="wrap_content"

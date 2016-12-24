@@ -38,7 +38,8 @@
             android:text="kcal"
             android:id="@+id/textView"
             android:textSize="12dp"
-            android:layout_marginTop="3dp" />
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="8dp" />
     </LinearLayout>
 
     <LinearLayout

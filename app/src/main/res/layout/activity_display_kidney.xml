@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.DisplayKidney"
-    android:background="#e8e8e8">
+    android:background="#e3e2e2">
 
 
     <LinearLayout
@@ -26,9 +26,9 @@
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#fbf8f8"
         android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -40,12 +40,12 @@
         android:onClick="ClickBackHomeDisKidney" />
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:id="@+id/imageView33"
         android:src="@drawable/listhistory"
         android:onClick="ClickHistoryKidney"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp" />
 

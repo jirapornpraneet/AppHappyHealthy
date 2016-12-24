@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nut.happyhealthy.History_Pressure">
+    tools:context="com.example.nut.happyhealthy.History_Pressure"
+    android:background="#e3e2e2">
 
 
 
@@ -27,7 +28,7 @@
         android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#fbf8f8" />
+        android:textColor="#ffffff" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -49,12 +50,12 @@
         android:onClick="ClickBackHisPreHome" />
 
     <ImageView
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:id="@+id/imageView42"
         android:src="@drawable/buttonadd"
         android:onClick="ClickAddPre"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp" />
 

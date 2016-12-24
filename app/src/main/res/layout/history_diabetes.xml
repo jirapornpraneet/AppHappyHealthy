@@ -8,16 +8,17 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#f1fff2f2"
-        android:layout_marginTop="2dp">
+        android:background="#e5ffffff">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:id="@+id/imageView2"
             android:padding="5dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/calender" />
+            android:src="@drawable/calender"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
 
         <TextView
             android:id="@+id/date"
@@ -30,8 +31,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="25dp"
-            android:textColor="#a6a6a6"
-            android:hint="DD-MM-YYYY  HH:MM" />
+            android:hint="DD-MM-YYYY  HH:MM"
+            android:textColor="#8e8e8e" />
     </LinearLayout>
 
 
