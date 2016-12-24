@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.History_Kidney"
-    android:background="#e3e2e2">
+    android:background="#efefef">
 
 
     <LinearLayout
