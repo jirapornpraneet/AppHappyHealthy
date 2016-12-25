@@ -9,56 +9,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
-public class User extends Activity {
+import java.util.ArrayList;
+import java.util.HashMap;
 
-    //ประกาศตัวแปร ตารางใน database
-    private UserTABLE objUserTABLE;
-    private DiabetesTABLE objDiabetesTABLE;
-    private KidneyTABLE objKidneyTABLE;
-    private PressureTABLE objPressureTABLE;
+public class User extends  AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
-        connectedDatabase();
 
-        //Check userTABLE
+
+
+
+
 
 
 
     }//OnCreate
 
-    public void ClickDisplayUser(View view) {
-        startActivity(new Intent(User.this,DisplayUser.class));
-    }//ClickUser
-
-    public void ClickDiabetes(View view) {
-       startActivity(new Intent(User.this,Diabetes.class));
-    }//ClickDiabetes
-
-
-    public void ClickKidney(View view) {
-        startActivity(new Intent(User.this,Kidney.class));
-    }//ClickKidney
-
-    public void ClickPressure(View view) {
-        startActivity(new Intent(User.this,Pressure.class));
-    }//ClickPressure
 
 
 
-    private void connectedDatabase() {
 
-        objUserTABLE = new UserTABLE(this);
-        objDiabetesTABLE = new DiabetesTABLE(this);
-        objKidneyTABLE = new KidneyTABLE(this);
-        objPressureTABLE = new PressureTABLE(this);
-
-
-    }//connectedDatabase
 
 
 
