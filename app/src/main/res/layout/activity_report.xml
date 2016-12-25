@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.Report"
-    android:background="#f4f0f0">
+    android:background="#fdfbfb">
 
 
     <LinearLayout
@@ -45,11 +45,11 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="220dp"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal"
-            android:background="#fdfcfc">
+            android:background="@drawable/my_bgdata">
 
             <ImageView
                 android:layout_width="20dp"
@@ -84,7 +84,7 @@
                 android:id="@+id/imageView55"
                 android:src="@drawable/calrories"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="2dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -155,38 +155,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="360dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:background="@drawable/sumtotal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TotalCal"
-                android:id="@+id/totalCal"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_horizontal"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:textColor="#fdb2b2"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="2dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="39dp"
             android:gravity="center_horizontal|right"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/protin"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -214,10 +191,10 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="39dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/carbohydate"
             android:gravity="right|center_horizontal">
@@ -249,10 +226,10 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="39dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/fat"
             android:gravity="right|center_horizontal">
@@ -285,10 +262,10 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="39dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/sugar"
             android:gravity="right|center_horizontal">
@@ -321,10 +298,10 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="39dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/sodium"
             android:gravity="right|center_horizontal">
@@ -351,6 +328,29 @@
                 android:textSize="9dp"
                 android:textColor="#fefefe"
                 android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@drawable/sumtotal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TotalCal"
+                android:id="@+id/totalCal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#fdb2b2"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp" />
+
         </LinearLayout>
 
     </LinearLayout>
