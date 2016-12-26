@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.DisplayPressure"
-    android:background="#efefef">
+    android:background="#dedede">
 
 
     <LinearLayout
@@ -249,18 +249,19 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/my_box_dis" >
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/tv_P_Heart"
-                android:textColor="#000000"
+                android:textColor="#a6a6a6"
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout

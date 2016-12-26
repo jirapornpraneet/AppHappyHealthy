@@ -43,7 +43,7 @@ public class History_Pressure extends AppCompatActivity {
         listViewPre.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                P_id = Integer.parseInt(preList.get(i).get(PressureTABLE.P_ID));
+                P_id = Integer.parseInt(preList.get(i).get(PressureTABLE.P_Id));
                 DatePre = preList.get(i).get(PressureTABLE.P_DateTime).toString();
                 Cost_Down = Integer.parseInt(preList.get(i).get(PressureTABLE.P_CostPressureDown));
                 Cost_Top = Integer.parseInt(preList.get(i).get(PressureTABLE.P_CostPressureTop));

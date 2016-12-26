@@ -17,7 +17,7 @@ public class PressureTABLE {
     private SQLiteDatabase writeSQLite, readSQLite;
 
     public static final String Pressure = "Pressure";
-    public static final String P_ID = "P_Id";
+    public static final String P_Id = "P_Id";
     public static final String P_DateTime = "P_DateTime";
     public static final String P_CostPressureDown = "P_CostPressureDown";
     public static final String P_CostPressureTop = "P_CostPressureTop";
@@ -63,7 +63,7 @@ public class PressureTABLE {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> pre = new HashMap<String, String>();
-                pre.put(P_ID, cursor.getString(cursor.getColumnIndex(P_ID)));
+                pre.put(P_Id, cursor.getString(cursor.getColumnIndex(P_Id)));
                 pre.put(P_DateTime, cursor.getString(cursor.getColumnIndex(P_DateTime)));
                 pre.put(P_CostPressureDown, cursor.getString(cursor.getColumnIndex(P_CostPressureDown)));
                 pre.put(P_CostPressureTop, cursor.getString(cursor.getColumnIndex(P_CostPressureTop)));
@@ -84,7 +84,7 @@ public class PressureTABLE {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
 
-        db.delete(PressureTABLE.Pressure, PressureTABLE.P_ID + "=?", new String[]{String.valueOf(P_id)});
+        db.delete(PressureTABLE.Pressure, PressureTABLE.P_Id + "=?", new String[]{String.valueOf(P_id)});
         db.close();
     }
 
