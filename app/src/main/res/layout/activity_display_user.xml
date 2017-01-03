@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
         <LinearLayout
@@ -63,14 +63,14 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="22dp"
                 android:id="@+id/imageView15"
                 android:src="@drawable/da5"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp" />
 
             <EditText
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:id="@+id/tv_Name"
                 android:textSize="18dp"
@@ -78,7 +78,8 @@
                 android:background="@drawable/my_border_box"
                 android:layout_marginLeft="10dp"
                 android:textColor="#505050"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
 
         </LinearLayout>
 
@@ -93,17 +94,17 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="22dp"
                 android:id="@+id/imageView17"
                 android:src="@drawable/da6"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="48dp" />
 
 
 
             <RadioGroup
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="25dp"
                 android:orientation="horizontal"
                 android:id="@+id/User_Sex"
                 android:layout_weight="1"
@@ -119,7 +120,7 @@
                     android:textColor="#505050"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
@@ -132,7 +133,7 @@
                     android:id="@+id/woman"
                     android:textColor="#505050"
                     android:layout_weight="1"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:layout_marginRight="5dp"
                     android:textStyle="bold"
                     android:layout_gravity="center_vertical" />
@@ -148,14 +149,14 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="22dp"
                 android:id="@+id/imageView20"
                 android:src="@drawable/da7"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="50dp" />
 
             <EditText
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:id="@+id/tv_Age"
                 android:textSize="18dp"
@@ -165,7 +166,16 @@
                 android:textColor="#505050"
                 android:layout_marginTop="4dp"
                 android:layout_gravity="center_vertical"
-                android:autoText="false" />
+                android:autoText="false"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:id="@+id/imageView60"
+                android:src="@drawable/year"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
 
 
@@ -178,14 +188,14 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="22dp"
                 android:id="@+id/imageView18"
                 android:src="@drawable/da8"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="35dp" />
+                android:layout_marginLeft="36dp" />
 
             <EditText
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:id="@+id/tv_Weight"
                 android:textSize="18dp"
@@ -194,7 +204,17 @@
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
                 android:textColor="#505050"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:id="@+id/imageView59"
+                android:src="@drawable/kk"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -205,14 +225,14 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="22dp"
                 android:id="@+id/imageView19"
                 android:src="@drawable/da9"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="35dp" />
+                android:layout_marginLeft="36dp" />
 
             <EditText
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:id="@+id/tv_Height"
                 android:textSize="18dp"
@@ -221,7 +241,16 @@
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
                 android:textColor="#505050"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:id="@+id/imageView61"
+                android:src="@drawable/cm"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -232,23 +261,24 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="20dp"
                 android:id="@+id/imageView10"
                 android:src="@drawable/bmr"
-                android:layout_marginLeft="47dp"
+                android:layout_marginLeft="53dp"
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:id="@+id/tv_BMR"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/my_border_box"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -259,23 +289,24 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="20dp"
                 android:id="@+id/imageView21"
                 android:src="@drawable/bmi"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="58dp"
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:id="@+id/tv_BMI"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="18dp"
+                android:layout_marginLeft="13dp"
                 android:background="@drawable/my_border_box"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
 
         </LinearLayout>
 
@@ -292,10 +323,11 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="65dp"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
         </LinearLayout>
 
     </LinearLayout>

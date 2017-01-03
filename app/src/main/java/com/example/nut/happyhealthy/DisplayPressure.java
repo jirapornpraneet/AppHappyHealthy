@@ -74,14 +74,18 @@ public class DisplayPressure extends AppCompatActivity {
         String myResult = null;
         Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
 
-        if (IntCostPressureDown < 90) {
+        if (IntCostPressureDown > 110) {
             myResult = resultStrings[0];
-        } else if (IntCostPressureDown < 99) {
+        } else if (IntCostPressureDown > 100) {
             myResult = resultStrings[1];
-        } else if (IntCostPressureDown < 109) {
+        } else if (IntCostPressureDown > 90 ) {
             myResult = resultStrings[2];
-        } else {
+        } else if (IntCostPressureDown > 80 ) {
             myResult = resultStrings[3];
+        } else if (IntCostPressureDown < 60  ) {
+            myResult = resultStrings[4];
+        } else {
+            myResult = resultStrings[5];
         }
 
         return myResult;
@@ -93,14 +97,18 @@ public class DisplayPressure extends AppCompatActivity {
         String myResult = null;
         Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
 
-        if (IntCostPressureTop < 140) {
+        if (IntCostPressureTop > 180) {
             myResult = resultStrings[0];
-        } else if (IntCostPressureTop < 159) {
+        } else if (IntCostPressureTop > 160) {
             myResult = resultStrings[1];
-        } else if (IntCostPressureTop < 179) {
+        } else if (IntCostPressureTop > 140) {
             myResult = resultStrings[2];
-        } else {
+        } else if (IntCostPressureTop > 120 ) {
             myResult = resultStrings[3];
+        } else if (IntCostPressureTop < 90 ) {
+            myResult = resultStrings[4];
+        } else {
+            myResult = resultStrings[5];
         }
 
         return myResult;

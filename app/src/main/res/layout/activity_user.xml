@@ -81,26 +81,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
-            android:layout_marginTop="4dp">
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="3dp" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ค่าระดับน้ำตาลก่อนอาหาร"
-                android:id="@+id/CostSugarBefore"
-                android:layout_marginLeft="30dp"
-                android:textColor="#ffffff" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="บอกระดับการแจ้งเตือน"
-                android:id="@+id/LevelCostBefore"
-                android:textColor="#fb2222"
+                android:text="DD-MM-YY HH:MM"
+                android:id="@+id/D_date"
+                android:textSize="14dp"
                 android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="15dp" />
+                android:textIsSelectable="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,27 +102,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
-            android:layout_marginBottom="10dp">
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ค่าระดับน้ำตาลหลังอาหาร"
-                android:id="@+id/CostSugarAfter"
-                android:layout_marginLeft="30dp"
-                android:textColor="#ffffff" />
+                android:text="costsugar"
+                android:id="@+id/CostSugarBefore"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="บอกระดับการแจ้งเตือน"
-                android:id="@+id/LevelCostAfter"
+                android:text="levelcost"
+                android:id="@+id/LevelCostBefore"
                 android:textColor="#fb2222"
-                android:layout_gravity="center_vertical"
                 android:textStyle="bold"
                 android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="15dp" />
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="right" />
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_toolbar"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="costsugar"
+                android:id="@+id/CostSugarAfter"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="levelcost"
+                android:id="@+id/LevelCostAfter"
+                android:textColor="#fb2222"
+                android:textStyle="bold"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginLeft="20dp" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -163,25 +188,48 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar" >
+            android:layout_below="@+id/container_toolbar"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="3dp" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ค่าการทำงานไต "
+                android:text="DD-MM-YY HH:MM"
+                android:id="@+id/K_date"
+                android:textSize="14dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textIsSelectable="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_toolbar"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="costgfr"
                 android:id="@+id/CostGFR"
-                android:layout_marginLeft="30dp"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="บอกระดับการแจ้งเตือน"
+                android:text="levelcost"
                 android:id="@+id/LevelCostGFR"
                 android:textColor="#fb2222"
                 android:textStyle="bold"
                 android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="75dp" />
+                android:layout_marginLeft="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -195,6 +243,7 @@
             android:layout_marginBottom="10dp">
 
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -229,75 +278,102 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar" >
+            android:layout_below="@+id/container_toolbar"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="3dp" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ค่าความดันโลหิต"
+                android:text="DD-MM-YY HH:MM"
+                android:id="@+id/P_date"
+                android:textSize="14dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textIsSelectable="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_toolbar"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pretop"
                 android:id="@+id/Cost_PreTop"
-                android:layout_marginLeft="30dp"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="บอกระดับการแจ้งเตือน"
+                android:text="levelcost"
                 android:id="@+id/LevelPreTop"
                 android:textColor="#fb2222"
                 android:textStyle="bold"
                 android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="75dp" />
+                android:layout_marginLeft="20dp" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar" >
+            android:layout_below="@+id/container_toolbar"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ค่าความดันโลหิต"
+                android:text="predown"
                 android:id="@+id/Cost_PreDown"
-                android:layout_marginLeft="30dp"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="บอกระดับการแจ้งเตือน"
+                android:text="levelcost"
                 android:id="@+id/LevelPreDown"
                 android:textColor="#fb2222"
                 android:textStyle="bold"
                 android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="75dp" />
+                android:layout_marginLeft="20dp" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar" >
+            android:layout_below="@+id/container_toolbar"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ค่าความดันโลหิต"
+                android:text="costheart"
                 android:id="@+id/Cost_Heart"
-                android:layout_marginLeft="30dp"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="บอกระดับการแจ้งเตือน"
+                android:text="levelcost"
                 android:id="@+id/LevelHaert"
                 android:textColor="#fb2222"
                 android:textStyle="bold"
                 android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="75dp" />
+                android:layout_marginLeft="20dp" />
         </LinearLayout>
 
         <LinearLayout

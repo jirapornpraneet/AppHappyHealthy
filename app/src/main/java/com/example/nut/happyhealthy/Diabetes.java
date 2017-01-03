@@ -109,7 +109,7 @@ public class Diabetes extends AppCompatActivity {
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่ :" + str_D_Date+ "\n"
                 + " ค่าน้ำตาลก่อนอาหาร : " + intCostSugarBefore +"\n"
-                + " อยู่ในเกณฑ์ที่ :" + str_L_before + "\n"
+                + " อยู่ในเกณฑ์ที่ : " + str_L_before + "\n"
                 + " ค่าน้ำตาลหลังอาหาร : " + intCostSugarAfter+"\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_L_after);
         builder.setCancelable(false);
@@ -139,14 +139,12 @@ public class Diabetes extends AppCompatActivity {
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
 
-        if (IntCostSugarAfter < 139) {
+        if (IntCostSugarAfter > 160) {
             myResult = resultStrings[0];
-        } else if (IntCostSugarAfter < 199) {
+        } else if (IntCostSugarAfter < 100) {
             myResult = resultStrings[1];
-        } else if (IntCostSugarAfter < 200) {
-            myResult = resultStrings[2];
         } else {
-            myResult = resultStrings[3];
+            myResult = resultStrings[2];
         }
 
         return myResult;
@@ -157,14 +155,12 @@ public class Diabetes extends AppCompatActivity {
         String myResult = null;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
 
-        if (IntCostSugarBefore < 69) {
+        if (IntCostSugarBefore >120 ) {
             myResult = resultStrings[0];
-        } else if (IntCostSugarBefore < 100) {
+        } else if (IntCostSugarBefore < 80) {
             myResult = resultStrings[1];
-        } else if (IntCostSugarBefore < 126) {
-            myResult = resultStrings[2];
         } else {
-            myResult = resultStrings[3];
+            myResult = resultStrings[2];
         }
 
         return myResult;

@@ -34,7 +34,8 @@ public class User extends AppCompatActivity {
 
     DiabetesTABLE diabetesTABLE;
     HashMap<String, String> dateSelectDiabetes;
-    TextView chooseDate, d_CostSugarBefore, d_CostSugarAfter, d_LevelCostBefore, d_LevelCostAfter;
+    TextView chooseDate,d_date, d_CostSugarBefore, d_CostSugarAfter, d_LevelCostBefore, d_LevelCostAfter,
+            k_date ,k_cost,k_level,p_date,p_costtop,p_costdown,p_heart,p_leveltop,p_leveldown,p_levelheart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +53,22 @@ public class User extends AppCompatActivity {
         diabetesTABLE = new DiabetesTABLE(this);
 
         chooseDate = (TextView) findViewById(R.id.chooseDate);
+
+        d_date = (TextView) findViewById(R.id.D_date);
         d_CostSugarBefore = (TextView) findViewById(R.id.CostSugarBefore);
         d_CostSugarAfter = (TextView) findViewById(R.id.CostSugarAfter);
         d_LevelCostBefore = (TextView) findViewById(R.id.LevelCostBefore);
         d_LevelCostAfter = (TextView) findViewById(R.id.LevelCostAfter);
+        k_date = (TextView) findViewById(R.id.K_date);
+        k_cost = (TextView) findViewById(R.id.CostGFR);
+        k_level = (TextView) findViewById(R.id.LevelCostGFR);
+        p_date = (TextView) findViewById(R.id.P_date);
+        p_costtop = (TextView) findViewById(R.id.Cost_PreTop);
+        p_costdown = (TextView) findViewById(R.id.Cost_PreDown);
+        p_heart = (TextView) findViewById(R.id.Cost_Heart);
+        p_leveltop = (TextView) findViewById(R.id.LevelPreTop);
+        p_leveldown = (TextView) findViewById(R.id.LevelPreDown);
+        p_levelheart = (TextView) findViewById(R.id.LevelHaert);
 
         setValue(sysDate);
 
@@ -94,10 +107,21 @@ public class User extends AppCompatActivity {
         dateSelectDiabetes = diabetesTABLE.selectDetailByDiabetes(dateChoose);
 
         chooseDate.setText(textDate);
+        d_date.setText(dateSelectDiabetes.get(DiabetesTABLE.D_DateTime));
         d_CostSugarBefore.setText(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore));
         d_CostSugarAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter));
         d_LevelCostBefore.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostBefore));
         d_LevelCostAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostAfter));
+        k_date.setText(dateSelectDiabetes.get(DiabetesTABLE.K_DateTime));
+        k_cost.setText(dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR));
+        k_level.setText(dateSelectDiabetes.get(DiabetesTABLE.K_LevelCostGFR));
+        p_date.setText(dateSelectDiabetes.get(DiabetesTABLE.P_DateTime));
+        p_costtop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop));
+        p_costdown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown));
+        p_leveltop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Top));
+        p_leveldown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Down));
+        p_heart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate));
+        p_levelheart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate_Level));
     }
 
 }//Main Class
