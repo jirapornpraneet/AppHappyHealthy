@@ -1,6 +1,7 @@
 package com.example.nut.happyhealthy;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -83,9 +84,9 @@ public class Report extends AppCompatActivity {
                     Date date = mCalendar.getTime();
 
                     textDate = dfm.format(date);
-                    String textDate_insert = dfm_insert.format(date)+"%";
+                    sysDate = dfm_insert.format(date)+"%";
 
-                    setValue(textDate_insert);
+                    setValue(sysDate);
                 }
             };
 
@@ -100,7 +101,11 @@ public class Report extends AppCompatActivity {
         fat.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_fat));
         sugar.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_sugar));
         sodium.setText(dataSelectSum.get(FoodHistoryTABLE.SUM_sodium));
-       totalCal.setText(String.format("%.2f",(Double.parseDouble(dataSelectSum.get(FoodHistoryTABLE.Total_Cal)))));
+        totalCal.setText(String.format("%.2f",(Double.parseDouble(dataSelectSum.get(FoodHistoryTABLE.Total_Cal)))));
     }
-
+    public void ClickFoodHis(View view) {
+        Intent intent = new Intent(Report.this,History_Food.class);
+        intent.putExtra("choose_Date",sysDate);
+        startActivity(intent);
+    }//ClickFood
 }//MainClass

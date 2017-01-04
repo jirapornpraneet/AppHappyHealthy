@@ -12,7 +12,7 @@
 
 
         <TextView
-            android:id="@+id/food_name"
+            android:id="@+id/his_food_name"
             android:layout_width="205dp"
             android:layout_height="wrap_content"
             android:text="Food"
@@ -26,7 +26,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="Cal"
-            android:id="@+id/food_calories"
+            android:id="@+id/his_food_calories"
             android:paddingLeft="10dp"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="10dp"
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="unit"
-            android:id="@+id/food_unit"
+            android:id="@+id/his_food_unit"
             android:textSize="13dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="4dp" />
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/food_detail"
+            android:id="@+id/his_food_detail"
             android:textSize="13dp"
             android:hint="food_detail"
             android:layout_marginTop="8dp"

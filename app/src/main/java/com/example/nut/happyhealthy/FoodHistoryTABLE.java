@@ -25,6 +25,9 @@ public class FoodHistoryTABLE {
 
     public static final String Food = "Food";
     public static final String Food_Id = "Food_Id";
+    public static final String Food_Unit = "Food_Unit";
+    public static final String Food_Name = "Food_Name";
+    public static final String Food_Detail = "Food_Detail";
     public static final String Food_Calories = "Food_Calories";
     public static final String Food_Protein = "Food_Protein";
     public static final String Food_Fat = "Food_Fat";
@@ -32,15 +35,16 @@ public class FoodHistoryTABLE {
     public static final String Food_Sugars = "Food_Sugars";
     public static final String Food_Sodium = "Food_Sodium";
 
+
     public static final String Exercise = "Exercise";
     public static final String Exercise_Id = "Exercise_Id";
     public static final String Exercise_Calories = "Exercise_Calories";
     public static final String Exercise_Duration = "Exercise_Duration";
 
-    public static final String Exercise_History= "Exercise_History";
+    public static final String Exercise_History = "Exercise_History";
     public static final String History_Exercise_Id = "History_Exercise_Id";
-    public static final String History_Exercise_Date  = "History_Exercise_Date";
-    public static final String Exercise_TotalDuration  = "Exercise_TotalDuration";
+    public static final String History_Exercise_Date = "History_Exercise_Date";
+    public static final String Exercise_TotalDuration = "Exercise_TotalDuration";
 
 
     public static final String SUM_EX_Cal = "exc";
@@ -106,14 +110,14 @@ public class FoodHistoryTABLE {
                 "from " + Food_History + " fh," + Food + " f " +
                 "where fh." + Food_Id + " = f." + Food_Id + " and " + History_Food_Date + " like '" + datehis + "') fd";
 
-        Log.d("selectSum",query);
+        Log.d("selectSum", query);
 
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
             do {
                 foodHistory.put(Total_Cal, String.valueOf((cursor.getDouble(cursor.getColumnIndex(SUM_Food_Cal))
-                        -cursor.getDouble(cursor.getColumnIndex(SUM_EX_Cal)))));
+                        - cursor.getDouble(cursor.getColumnIndex(SUM_EX_Cal)))));
 //                foodHistory.put(UserTABLE.User_BMR,cursor.getString(cursor.getColumnIndex(UserTABLE.User_BMR)));
                 foodHistory.put(SUM_EX_Cal, cursor.getString(cursor.getColumnIndex(SUM_EX_Cal)));
                 foodHistory.put(SUM_Food_Cal, cursor.getString(cursor.getColumnIndex(SUM_Food_Cal)));
@@ -128,4 +132,36 @@ public class FoodHistoryTABLE {
         return foodHistory;
     }
 
+    //เอใส่เพิ่มlistview
+    public ArrayList<HashMap<String, String>> getFoodHisList(String chooseDate) {
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
+        String selectQuery = "select * from " +
+                "(select * from " + Food_History + " where " + History_Food_Date + " LIKE '" + chooseDate + "') fh, " +
+                "" + Food + " f " +
+                "where fh." + Food_Id + " = f." + Food_Id + "";
+
+        ArrayList<HashMap<String, String>> foodHisList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                HashMap<String, String> foodHis = new HashMap<String, String>();
+                foodHis.put(History_Food_Id, cursor.getString(cursor.getColumnIndex(History_Food_Id)));
+                foodHis.put(History_Food_Date, cursor.getString(cursor.getColumnIndex(History_Food_Date)));
+                foodHis.put(Food_Amount, cursor.getString(cursor.getColumnIndex(Food_Amount)));
+                foodHis.put(Food_Name, cursor.getString(cursor.getColumnIndex(Food_Name)));
+                foodHis.put(Food_Unit, cursor.getString(cursor.getColumnIndex(Food_Unit)));
+                foodHis.put(Food_Calories, cursor.getString(cursor.getColumnIndex(Food_Calories)));
+                foodHis.put(Food_Detail ,cursor.getString(cursor.getColumnIndex(Food_Detail)));
+                foodHisList.add(foodHis);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return foodHisList;
+
+
+    }
 }//MainClass

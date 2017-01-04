@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="Exercise"
             android:textIsSelectable="false"
-            android:textSize="14dp"
+            android:textSize="16dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="70dp"
             android:textStyle="bold" />
@@ -28,8 +28,8 @@
             android:layout_height="wrap_content"
             android:text="Cal"
             android:id="@+id/exercise_calories"
-            android:layout_marginLeft="70dp"
-            android:textSize="14dp"
+            android:layout_marginLeft="65dp"
+            android:textSize="16dp"
             android:layout_marginTop="3dp" />
 
         <TextView
@@ -37,16 +37,16 @@
             android:layout_height="wrap_content"
             android:text="kcal"
             android:id="@+id/textView"
-            android:textSize="12dp"
+            android:textSize="13.5dp"
             android:layout_marginTop="3dp"
-            android:layout_marginLeft="8dp" />
+            android:layout_marginLeft="5dp" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="31dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="8dp">
 
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="ต่อนาที"
             android:id="@+id/textView2"
-            android:textSize="10dp" />
+            android:textSize="13dp" />
 
     </LinearLayout>
 
@@ -71,7 +71,7 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="37dp"
         android:layout_alignParentRight="false"
         android:gravity="right"
         android:layout_marginRight="5dp"
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/exercise_disease"
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:hint="exercise_disease"
             android:layout_marginTop="9dp"
             android:textColor="#8dd497"

@@ -103,7 +103,8 @@
                 android:id="@+id/tv_sum_food_cal"
                 android:textSize="18dp"
                 android:textColor="#f9a98a"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="ClickFoodHis" />
 
             <ImageView
                 android:layout_width="wrap_content"
