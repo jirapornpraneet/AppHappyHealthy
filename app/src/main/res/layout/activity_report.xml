@@ -145,7 +145,8 @@
                 android:gravity="center_horizontal"
                 android:textSize="18dp"
                 android:textColor="#a4ddac"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="ClickExeHis" />
 
             <ImageView
                 android:layout_width="wrap_content"

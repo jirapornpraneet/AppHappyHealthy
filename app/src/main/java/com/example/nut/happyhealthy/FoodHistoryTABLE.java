@@ -36,15 +36,21 @@ public class FoodHistoryTABLE {
     public static final String Food_Sodium = "Food_Sodium";
 
 
-    public static final String Exercise = "Exercise";
-    public static final String Exercise_Id = "Exercise_Id";
-    public static final String Exercise_Calories = "Exercise_Calories";
-    public static final String Exercise_Duration = "Exercise_Duration";
+
 
     public static final String Exercise_History = "Exercise_History";
     public static final String History_Exercise_Id = "History_Exercise_Id";
     public static final String History_Exercise_Date = "History_Exercise_Date";
     public static final String Exercise_TotalDuration = "Exercise_TotalDuration";
+
+    public static final String Exercise = "Exercise";
+    public static final String Exercise_Id = "Exercise_Id";
+    public static final String Exercise_Name = "Exercise_Name";
+    public static final String Exercise_Calories = "Exercise_Calories";
+    public static final String Exercise_Duration = "Exercise_Duration";
+    public static final String Exercise_Disease = "Exercise_Disease";
+    public static final String Exercise_Detail = "Exercise_Detail";
+    public static final String Exercise_Description = "Exercise_Description";
 
 
     public static final String SUM_EX_Cal = "exc";
@@ -132,7 +138,7 @@ public class FoodHistoryTABLE {
         return foodHistory;
     }
 
-    //เอใส่เพิ่มlistview
+    //แสดงประวัติอาหาร
     public ArrayList<HashMap<String, String>> getFoodHisList(String chooseDate) {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
         String selectQuery = "select * from " +
@@ -161,6 +167,38 @@ public class FoodHistoryTABLE {
         cursor.close();
         db.close();
         return foodHisList;
+
+
+    }
+
+    //แสดงประวัติออกกำลังกาย
+    public ArrayList<HashMap<String, String>> getExeHisList(String chooseDate) {
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
+        String selectQuery = "select * from " +
+                "(select * from " + Exercise_History + " where " + History_Exercise_Date + " LIKE '" + chooseDate + "') eh, " +
+                "" + Exercise + " e " +
+                "where eh." + Exercise_Id + " = e." + Exercise_Id + "";
+
+        ArrayList<HashMap<String, String>> exeHisList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                HashMap<String, String> exeHis = new HashMap<String, String>();
+                exeHis.put(History_Exercise_Id, cursor.getString(cursor.getColumnIndex(History_Exercise_Id)));
+                exeHis.put(History_Exercise_Date, cursor.getString(cursor.getColumnIndex(History_Exercise_Date)));
+                exeHis.put(Exercise_Name, cursor.getString(cursor.getColumnIndex(Exercise_Name)));
+                exeHis.put(Exercise_Calories, cursor.getString(cursor.getColumnIndex(Exercise_Calories)));
+                exeHis.put(Exercise_Duration, cursor.getString(cursor.getColumnIndex(Exercise_Duration)));
+                exeHis.put(Exercise_Disease, cursor.getString(cursor.getColumnIndex(Exercise_Disease)));
+                exeHisList.add(exeHis);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return exeHisList;
 
 
     }

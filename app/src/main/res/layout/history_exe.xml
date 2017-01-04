@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#faffffff">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:id="@+id/his_exercise_name"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Exercise"
+            android:textIsSelectable="false"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="70dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cal"
+            android:id="@+id/his_exercise_calories"
+            android:layout_marginLeft="65dp"
+            android:textSize="16dp"
+            android:layout_marginTop="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kcal"
+            android:id="@+id/textView"
+            android:textSize="13.5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ต่อนาที"
+            android:id="@+id/textView2"
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView48"
+        android:src="@drawable/iconexe"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:layout_alignParentRight="false"
+        android:gravity="right"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="2dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/his_exercise_disease"
+            android:textSize="13dp"
+            android:hint="exercise_disease"
+            android:layout_marginTop="9dp"
+            android:textColor="#8dd497"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+
+
