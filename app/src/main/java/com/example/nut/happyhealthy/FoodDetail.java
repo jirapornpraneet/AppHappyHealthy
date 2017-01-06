@@ -54,7 +54,7 @@ public class FoodDetail extends AppCompatActivity {
 
         rec = (ImageView) findViewById(R.id.imageView30);
 
-        //
+        //รับค่าแต่ละหน้า Show id
         Intent intent3 = getIntent();
         final int food_id = intent3.getIntExtra("food_id", 0);
 

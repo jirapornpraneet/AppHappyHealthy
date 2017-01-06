@@ -23,8 +23,11 @@ public class AndroidImageAdapter extends PagerAdapter {
     }
 
     private int[] sliderImagesId = new int[]{
-            R.drawable.intro1, R.drawable.intro2,
-            R.drawable.intro1, R.drawable.intro2,
+            R.drawable.infopre,
+            R.drawable.infokid,
+            R.drawable.infodia,
+            R.drawable.infodrink,
+            R.drawable.infoeat,
     };
 
     @Override
