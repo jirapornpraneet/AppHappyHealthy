@@ -4,14 +4,18 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -90,29 +94,44 @@ public class DisplayUser extends AppCompatActivity {
         TVBMI.setText(douBmi);
         weightStdTextView.setText(weightStdString);
 
+
+
     } // Show View
 
     private String findMyAlertWeight(String douBmi) {
 
         String[] resultStrings = getResources().getStringArray(R.array.my_alert);
         String myResult = null;
+
         double douBMI = Double.parseDouble(douBmi);
+
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageView64);
+
 
         if (douBMI < 18.5) {
             myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.disgfrtext));
         } else if (douBMI < 22.9) {
             myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.dispredowntxt));
         } else if (douBMI < 24.0) {
             myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.dispretoptxt));
         } else if (douBMI < 29.9) {
             myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.disprehearttxt));
         } else if (douBMI < 39.9) {
             myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.tstsugarafterdis));
         } else {
             myResult = resultStrings[5];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.tstsugarbeforedis));
         }
 
         return myResult;
+
     }
 
     private void bindWidget() {
@@ -163,7 +182,11 @@ public class DisplayUser extends AppCompatActivity {
         } else {//UnCheck
             confirmData();
             showView();
+
         }
+
+
+
 
 
     }//ClickSaveUser
@@ -248,6 +271,8 @@ public class DisplayUser extends AppCompatActivity {
 
         return intResult;
     }
+
+
 
 
 }//MainClass

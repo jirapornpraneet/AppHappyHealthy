@@ -121,7 +121,7 @@ public class DisplayDisease extends AppCompatActivity {
 
 
     public void ClickBackHomeDisDiabetes(View view) {
-        startActivity(new Intent(DisplayDisease.this,MainActivity.class));
+        startActivity(new Intent(DisplayDisease.this,Diabetes.class));
     }//ClickAddDiabetes
 
 
