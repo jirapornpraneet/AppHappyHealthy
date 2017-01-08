@@ -51,7 +51,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="83dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
@@ -71,9 +71,9 @@
 
             <EditText
                 android:layout_width="160dp"
-                android:layout_height="30dp"
+                android:layout_height="27dp"
                 android:id="@+id/tv_Name"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
                 android:layout_marginLeft="10dp"
@@ -90,7 +90,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="7dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -157,9 +157,9 @@
 
             <EditText
                 android:layout_width="160dp"
-                android:layout_height="30dp"
+                android:layout_height="27dp"
                 android:id="@+id/tv_Age"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_marginLeft="16dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
@@ -184,7 +184,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="7dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -196,9 +196,9 @@
 
             <EditText
                 android:layout_width="160dp"
-                android:layout_height="30dp"
+                android:layout_height="27dp"
                 android:id="@+id/tv_Weight"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:textStyle="bold"
@@ -221,7 +221,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="7dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -233,9 +233,9 @@
 
             <EditText
                 android:layout_width="160dp"
-                android:layout_height="30dp"
+                android:layout_height="27dp"
                 android:id="@+id/tv_Height"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="3dp"
                 android:textStyle="bold"
@@ -257,7 +257,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="7dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -269,9 +269,9 @@
 
             <TextView
                 android:layout_width="160dp"
-                android:layout_height="30dp"
+                android:layout_height="27dp"
                 android:id="@+id/tv_BMR"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
                 android:layout_marginLeft="11dp"
@@ -279,13 +279,23 @@
                 android:background="@drawable/my_border_box"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal" />
+
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView65"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/disbmr"
+            android:layout_marginLeft="30dp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="2dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -297,9 +307,9 @@
 
             <TextView
                 android:layout_width="160dp"
-                android:layout_height="30dp"
+                android:layout_height="27dp"
                 android:id="@+id/tv_BMI"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
@@ -313,21 +323,23 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView64" />
+            android:id="@+id/imageView64"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="3dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp">
 
             <TextView
                 android:layout_width="240dp"
-                android:layout_height="30dp"
+                android:layout_height="25dp"
                 android:id="@+id/weightStdTextView"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
-                android:background="@drawable/my_border_box"
                 android:layout_marginLeft="65dp"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"

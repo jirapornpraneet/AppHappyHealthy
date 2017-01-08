@@ -112,22 +112,19 @@ public class DisplayUser extends AppCompatActivity {
 
         if (douBMI < 18.5) {
             myResult = resultStrings[0];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.disgfrtext));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bmi1));
         } else if (douBMI < 22.9) {
             myResult = resultStrings[1];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dispredowntxt));
-        } else if (douBMI < 24.0) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bmi2));
+        } else if (douBMI < 24.9) {
             myResult = resultStrings[2];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dispretoptxt));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bmi3));
         } else if (douBMI < 29.9) {
             myResult = resultStrings[3];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.disprehearttxt));
-        } else if (douBMI < 39.9) {
-            myResult = resultStrings[4];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.tstsugarafterdis));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bmi4));
         } else {
-            myResult = resultStrings[5];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.tstsugarbeforedis));
+            myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bmi5));
         }
 
         return myResult;
@@ -143,7 +140,7 @@ public class DisplayUser extends AppCompatActivity {
         TVHeight = (EditText) findViewById(R.id.tv_Height);
         TVBMR = (TextView) findViewById(R.id.tv_BMR);
         TVBMI = (TextView) findViewById(R.id.tv_BMI);
-        weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
+         weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
         man = (RadioButton) findViewById(R.id.man);
         women = (RadioButton) findViewById(R.id.woman);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
