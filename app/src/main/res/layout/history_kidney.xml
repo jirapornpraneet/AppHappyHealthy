@@ -9,7 +9,7 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#f1ffffff"
+        android:background="#f7fafb"
         android:layout_marginTop="2dp">
 
         <ImageView

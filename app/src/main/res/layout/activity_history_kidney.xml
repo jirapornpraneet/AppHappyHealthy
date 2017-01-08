@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.History_Kidney"
-    android:background="#efefef">
+    android:background="#f0f1f9">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+            layout="@layout/toolbarkidney" />
     </LinearLayout>
 
     <TextView

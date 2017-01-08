@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#dedede">
+    android:background="#f8f9fd">
 
 
     <LinearLayout
@@ -16,7 +16,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+            layout="@layout/toolbarkidney" />
     </LinearLayout>
 
     <TextView
@@ -57,11 +57,11 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="200dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="160dp"
-        android:background="@drawable/my_box_diabetes">
+        android:background="@drawable/my_box_kidney">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -85,7 +85,8 @@
                 android:hint="DD-MM-YYYY  HH:MM"
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:background="@drawable/my_box_kidney" />
         </LinearLayout>
 
         <LinearLayout
@@ -133,7 +134,7 @@
             android:layout_width="fill_parent"
             android:layout_height="45dp"
             android:id="@+id/imageView25"
-            android:src="@drawable/buttonsave"
+            android:src="@drawable/buttonsavekid"
             android:onClick="ClickDisLevelsGFR"
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal" />

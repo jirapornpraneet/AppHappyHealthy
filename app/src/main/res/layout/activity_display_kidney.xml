@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nut.happyhealthy.DisplayKidney"
-    android:background="#dedede">
+    android:background="#f3f4fa">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+            layout="@layout/toolbarkidney" />
     </LinearLayout>
 
     <TextView
@@ -54,7 +54,6 @@
         android:layout_width="match_parent"
         android:layout_height="210dp"
         android:layout_marginTop="165dp"
-        android:background="@drawable/my_box_diabetes"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp">
 
@@ -124,20 +123,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
 
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:id="@+id/imageViewsugatbefroe"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/disgfrtext" />
-
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="250dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_border_waring"
+            android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp">
 
@@ -146,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_K_LevelCostGFR"
                 android:textSize="16dp"
-                android:background="@drawable/my_border_waring"
+                android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="5"
