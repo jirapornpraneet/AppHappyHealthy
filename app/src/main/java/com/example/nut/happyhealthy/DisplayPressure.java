@@ -2,11 +2,13 @@ package com.example.nut.happyhealthy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DisplayPressure extends AppCompatActivity {
@@ -74,18 +76,28 @@ public class DisplayPressure extends AppCompatActivity {
         String myResult = null;
         Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
 
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.propredown);
+
         if (IntCostPressureDown > 110) {
             myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propredown6));
         } else if (IntCostPressureDown > 100) {
             myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propredown5));
         } else if (IntCostPressureDown > 90 ) {
             myResult = resultStrings[2];
-        } else if (IntCostPressureDown > 80 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propredown4));
+        } else if (IntCostPressureDown > 85 ) {
             myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propredown3));
         } else if (IntCostPressureDown < 60  ) {
             myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propredown1));
         } else {
             myResult = resultStrings[5];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propredown2));
         }
 
         return myResult;
@@ -97,18 +109,28 @@ public class DisplayPressure extends AppCompatActivity {
         String myResult = null;
         Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
 
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.propretop);
+
         if (IntCostPressureTop > 180) {
             myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop6));
         } else if (IntCostPressureTop > 160) {
             myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop5));
         } else if (IntCostPressureTop > 140) {
             myResult = resultStrings[2];
-        } else if (IntCostPressureTop > 120 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop4));
+        } else if (IntCostPressureTop > 130 ) {
             myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop3));
         } else if (IntCostPressureTop < 90 ) {
             myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop1));
         } else {
             myResult = resultStrings[5];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop2));
         }
 
         return myResult;

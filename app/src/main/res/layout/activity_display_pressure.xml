@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.nut.happyhealthy.DisplayPressure"
-    android:background="#dedede">
+    android:background="#f7ebeb">
 
 
     <LinearLayout
@@ -51,12 +51,9 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/my_box_diabetes"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="60dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -64,7 +61,7 @@
             android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,7 +104,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_P_CostPressureTop"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:autoText="false"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
@@ -119,45 +116,42 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:id="@+id/imageViewDown"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/dispretoptxt"
-                android:layout_gravity="center_horizontal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="235dp"
+            android:layout_width="280dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_border_waring"
+            android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal">
+            android:gravity="clip_horizontal"
+            android:layout_marginTop="6dp">
 
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_P_LevelDown"
-                android:textSize="16dp"
+                android:id="@+id/tv_P_LevelTop"
+                android:textSize="18dp"
                 android:autoText="false"
-                android:background="@drawable/my_border_waring"
+                android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_horizontal"
                 android:layout_weight="5" />
+
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/propretop"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
+            android:layout_marginTop="6dp">
 
             <ImageView
                 android:layout_width="fill_parent"
@@ -180,7 +174,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_P_CostPressureDown"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:autoText="false"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
@@ -194,33 +188,20 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:id="@+id/imagepreDown2"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/dispredowntxt"
-                android:layout_gravity="center_horizontal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="235dp"
+            android:layout_width="280dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_border_waring"
+            android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal">
+            android:gravity="clip_horizontal"
+            android:layout_marginTop="6dp">
 
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_P_LevelTop"
-                android:textSize="16dp"
+                android:id="@+id/tv_P_LevelDown"
+                android:textSize="18dp"
                 android:autoText="false"
-                android:background="@drawable/my_border_waring"
+                android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
@@ -228,11 +209,18 @@
                 android:layout_weight="5" />
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/propredown"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp" >
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="fill_parent"
@@ -258,7 +246,7 @@
                 android:textColor="#a6a6a6"
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:layout_marginLeft="5dp"
                 android:gravity="center_horizontal"
                 android:textStyle="bold" />
@@ -269,30 +257,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:id="@+id/imageView22"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/disprehearttxt"
-                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="200dp"
+            android:layout_width="280dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_border_waring"
+            android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal" >
+            android:gravity="clip_horizontal"
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_P_level_heart"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:autoText="false"
-                android:background="@drawable/my_border_waring"
+                android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"

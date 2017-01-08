@@ -30,11 +30,20 @@
         android:textColor="#ffffff" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/my_bgdata"
         android:layout_below="@+id/container_toolbar"
-        android:gravity="center_horizontal">
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/imageView22"
+            android:src="@drawable/datereport" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,7 +54,8 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_below="@+id/container_toolbar"
-            android:layout_marginTop="15dp" />
+            android:layout_marginLeft="15dp" />
+
     </LinearLayout>
 
     <LinearLayout

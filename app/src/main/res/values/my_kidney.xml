@@ -4,10 +4,10 @@
 
         //ค่าการทำงานของไต GFR อัตราการกรองของไต
 
-        <item>ไตผิดปกติ และ GFR เพิ่มขึ้น </item>
-        <item>ไตผิดปกติ และ GFR ลดลงเล็กน้อย</item>
-        <item>GFR ลดลงปานกลาง</item>
-        <item>GFR ลดลงมาก</item>
+        <item>ปกติ </item>
+        <item>ลดลงเล็กน้อย</item>
+        <item>ลดลงปานกลาง</item>
+        <item>ลดลงมาก</item>
         <item>ไตวายระยะสุดท้าย</item>
     </string-array>
 

@@ -49,12 +49,10 @@
         android:onClick="ClickBackHomeDisDiabetes" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="85dp"
-        android:orientation="vertical"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="280dp"
@@ -141,7 +139,9 @@
             android:id="@+id/prodia"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -207,7 +207,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/prodiaa"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
 
 
     </LinearLayout>

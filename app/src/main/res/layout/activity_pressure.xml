@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#dedede">
+    android:background="#fdf8f8">
 
 
     <LinearLayout
@@ -51,7 +51,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="120dp"
-        android:background="@drawable/my_box_diabetes">
+        android:background="@drawable/my_box_pre">
 
 
         <LinearLayout

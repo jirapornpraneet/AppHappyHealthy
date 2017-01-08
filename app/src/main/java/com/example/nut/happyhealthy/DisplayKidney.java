@@ -3,11 +3,13 @@ package com.example.nut.happyhealthy;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DisplayKidney extends AppCompatActivity {
@@ -61,16 +63,25 @@ public class DisplayKidney extends AppCompatActivity {
         String myResult = null;
         Integer IntCostGFR = Integer.parseInt(intCostGFR);
 
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.prokid);
+
         if (IntCostGFR > 90) {
             myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prokid1));
         } else if (IntCostGFR > 60 ) {
             myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prokid2));
         } else if (IntCostGFR > 30) {
             myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prokid3));
         } else if (IntCostGFR > 15) {
             myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prokid4));
         } else {
             myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prokid5));
         }
         return myResult;
     }//findMyLevelDiseaseafter
