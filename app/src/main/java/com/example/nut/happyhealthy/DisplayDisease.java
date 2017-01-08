@@ -2,11 +2,13 @@ package com.example.nut.happyhealthy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -82,12 +84,19 @@ public class DisplayDisease extends AppCompatActivity {
         String myResult = null;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
 
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.prodia);
+
         if (IntCostSugarBefore >120 ) {
             myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore1));
         } else if (IntCostSugarBefore < 80) {
             myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore3));
         } else {
             myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore2));
         }
 
         return myResult;
@@ -98,12 +107,20 @@ public class DisplayDisease extends AppCompatActivity {
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
 
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.prodiaa);
+
+
         if (IntCostSugarAfter > 160) {
             myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiaafter1));
         } else if (IntCostSugarAfter < 100) {
             myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiaafter3));
         } else {
             myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiaafter2));
         }
 
         return myResult;

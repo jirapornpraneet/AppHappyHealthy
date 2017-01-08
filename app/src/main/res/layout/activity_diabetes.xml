@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#dedede">
+    android:background="#f9eefb">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+            layout="@layout/toolbardiabetes" />
     </LinearLayout>
 
 
@@ -176,7 +176,7 @@
             android:onClick="ClickDisLevelsSugar"
             android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/buttonsave" />
+            android:src="@drawable/buttonsavediba" />
 
     </LinearLayout>
 
