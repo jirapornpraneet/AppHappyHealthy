@@ -461,7 +461,7 @@
             android:id="@+id/tv_food_detail"
             android:layout_gravity="bottom|center_horizontal"
             android:hint="tv_food_detail"
-            android:textSize="14dp"
+            android:textSize="18dp"
             android:textColor="#f9a98a"
             android:textStyle="bold" />
     </LinearLayout>

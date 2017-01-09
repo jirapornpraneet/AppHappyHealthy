@@ -51,7 +51,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
+        android:layout_marginTop="85dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
@@ -167,7 +167,9 @@
                 android:layout_marginTop="4dp"
                 android:layout_gravity="center_vertical"
                 android:autoText="false"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_vertical|center_horizontal"
+                android:numeric="integer"
+                android:inputType="number" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -205,7 +207,8 @@
                 android:background="@drawable/my_border_box"
                 android:textColor="#505050"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="numberDecimal" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -242,7 +245,8 @@
                 android:background="@drawable/my_border_box"
                 android:textColor="#505050"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="number" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -276,7 +280,6 @@
                 android:textColor="#505050"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/my_border_box"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal" />
 
@@ -314,7 +317,6 @@
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="13dp"
-                android:background="@drawable/my_border_box"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal" />
 
