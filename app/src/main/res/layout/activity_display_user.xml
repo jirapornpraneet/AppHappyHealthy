@@ -340,7 +340,7 @@
                 android:id="@+id/weightStdTextView"
                 android:textSize="16dp"
                 android:textStyle="bold"
-                android:layout_marginLeft="65dp"
+                android:layout_marginLeft="55dp"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_vertical"
