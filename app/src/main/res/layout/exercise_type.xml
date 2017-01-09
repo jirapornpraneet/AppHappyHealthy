@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/exercise_name"
-            android:layout_width="170dp"
+            android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:text="Exercise"
             android:textIsSelectable="false"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Cal"
             android:id="@+id/exercise_calories"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="30dp"
             android:textSize="16dp"
             android:layout_marginTop="3dp" />
 
@@ -39,7 +39,7 @@
             android:id="@+id/textView"
             android:textSize="13.5dp"
             android:layout_marginTop="3dp"
-            android:layout_marginLeft="5dp" />
+            android:layout_marginLeft="10dp" />
     </LinearLayout>
 
     <LinearLayout
