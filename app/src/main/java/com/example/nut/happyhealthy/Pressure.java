@@ -220,10 +220,12 @@ public class Pressure extends AppCompatActivity {
 
     public void ClickHisPre(View view) {
         startActivity(new Intent(Pressure.this,History_Pressure.class));
+
     }//ClickHistoryPre
 
     public void ClickBackRreHome(View view) {
         startActivity(new Intent(Pressure.this,MainActivity.class));
+
     }//ClickBackHome
 
 

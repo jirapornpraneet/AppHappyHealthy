@@ -107,11 +107,13 @@ public class Report extends AppCompatActivity {
         Intent intent = new Intent(Report.this,History_Food.class);
         intent.putExtra("choose_Date",sysDate);
         startActivity(intent);
+        finish();
     }//ClickFood
 
     public void ClickExeHis(View view) {
         Intent intent = new Intent(Report.this,History_Exe.class);
         intent.putExtra("choose_Date",sysDate);
         startActivity(intent);
+        finish();
     }//ClickFood
 }//MainClass

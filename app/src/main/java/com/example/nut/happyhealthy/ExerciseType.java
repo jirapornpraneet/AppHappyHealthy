@@ -51,6 +51,7 @@ public class ExerciseType extends AppCompatActivity {
                intent2.putExtra("exercise_id", ExeId);
                 startActivity(intent2);
 
+
            }
        });
 

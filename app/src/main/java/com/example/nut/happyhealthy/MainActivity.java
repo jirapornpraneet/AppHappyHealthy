@@ -40,15 +40,18 @@ public class MainActivity extends TabActivity {
         tab1.setContent(new Intent(this, Home.class));
 
 
+
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab2 **/
         tab2.setIndicator("Report");
         tab2.setIndicator("", getResources().getDrawable(R.drawable.ic_report));
         tab2.setContent(new Intent(this,Report.class));
 
+
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab3 **/
         tab3.setIndicator("AlertHealthy");
         tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_foodexe));
         tab3.setContent(new Intent(this, User.class));
+
 
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab4 **/
         tab4.setIndicator("Intro");
@@ -56,10 +59,12 @@ public class MainActivity extends TabActivity {
         tab4.setContent(new Intent(this, IntroHealthy.class));
 
 
+
         /** ส่วนใหญ่ของแต่ละเรียกใช้หน้าtab5 **/
         tab5.setIndicator("User");
         tab5.setIndicator("", getResources().getDrawable(R.drawable.ic_user));
         tab5.setContent(new Intent(this, DisplayUser.class));
+
 
 
 
