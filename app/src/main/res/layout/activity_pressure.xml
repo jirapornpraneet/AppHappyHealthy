@@ -47,10 +47,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="305dp"
+        android:layout_height="380dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="105dp"
         android:background="@drawable/my_box_pre">
 
 
@@ -93,14 +93,14 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_box_dis"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal">
 
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/P_costPressureTop"
@@ -110,10 +110,17 @@
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/my_box_dis"
                 android:gravity="center_horizontal"
-                android:hint="120 มม. ปรอท "
                 android:textStyle="bold" />
 
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView69"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/mlpre"
+            android:layout_marginLeft="5dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -131,14 +138,14 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/my_box_dis">
+            android:gravity="center_vertical|center_horizontal">
 
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/P_costPressureDown"
@@ -148,10 +155,18 @@
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
                 android:gravity="center_horizontal"
-                android:hint="120 มม. ปรอท "
                 android:textStyle="bold" />
+
         </LinearLayout>
 
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView70"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/mlpre"
+            android:layout_marginLeft="5dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -192,13 +207,21 @@
 
 
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView71"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/mlh"
+            android:layout_marginLeft="5dp" />
+
+        <ImageView
             android:layout_width="fill_parent"
             android:layout_height="45dp"
             android:id="@+id/imageView29"
             android:src="@drawable/buttonsave"
             android:onClick="ClickDisLevelsPre"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="12dp" />
 
     </LinearLayout>
 

@@ -94,15 +94,14 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal">
+            android:gravity="clip_horizontal|center_vertical|center_horizontal">
 
             <TextView
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/tv_P_CostPressureTop"
                 android:textSize="18dp"
                 android:autoText="false"
@@ -111,12 +110,18 @@
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_horizontal"
-                android:layout_weight="5" />
+                android:layout_marginLeft="40dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView72"
+                android:src="@drawable/mlpre2" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="280dp"
+            android:layout_width="260dp"
             android:layout_height="30dp"
             android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
@@ -127,7 +132,7 @@
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_P_LevelTop"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:autoText="false"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
@@ -164,15 +169,14 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="30dp"
-            android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal">
+            android:gravity="clip_horizontal|center_vertical|center_horizontal">
 
             <TextView
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/tv_P_CostPressureDown"
                 android:textSize="18dp"
                 android:autoText="false"
@@ -181,14 +185,20 @@
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_horizontal"
-                android:layout_weight="5" />
+                android:layout_marginLeft="40dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView73"
+                android:src="@drawable/mlpre2" />
 
         </LinearLayout>
 
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="280dp"
+            android:layout_width="260dp"
             android:layout_height="30dp"
             android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
@@ -199,7 +209,7 @@
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_P_LevelDown"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:autoText="false"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
@@ -232,14 +242,14 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/my_box_dis" >
+            android:gravity="center_vertical|center_horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/tv_P_Heart"
@@ -247,9 +257,15 @@
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
                 android:textSize="18dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="40dp"
                 android:gravity="center_horizontal"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView74"
+                android:src="@drawable/mlh" />
         </LinearLayout>
 
         <LinearLayout
@@ -261,7 +277,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="280dp"
+            android:layout_width="260dp"
             android:layout_height="30dp"
             android:background="@drawable/my_box_dis"
             android:layout_gravity="center_horizontal"
@@ -272,7 +288,7 @@
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_P_level_heart"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:autoText="false"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"

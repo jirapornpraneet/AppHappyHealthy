@@ -51,7 +51,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="65dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -101,7 +101,7 @@
                 android:id="@+id/tv_D_CostSugarBefore"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="55dp"
+                android:layout_marginLeft="5dp"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
                 android:textSize="18dp"
@@ -109,12 +109,14 @@
                 android:textStyle="bold"
                 android:gravity="center_horizontal" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView23"
-                android:src="@drawable/ml2" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView23"
+            android:src="@drawable/ml2"
+            android:layout_gravity="center_horizontal" />
 
         <LinearLayout
             android:layout_width="200dp"
@@ -178,16 +180,18 @@
                 android:textColor="#a6a6a6"
                 android:textSize="18dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="55dp"
+                android:layout_marginLeft="5dp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView67"
-                android:src="@drawable/ml2" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView67"
+            android:src="@drawable/ml2"
+            android:layout_gravity="center_horizontal" />
 
         <LinearLayout
             android:layout_width="200dp"
