@@ -110,7 +110,7 @@ public class DisplayUser extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.imageView64);
 
 
-        if (douBMI < 18.5) {
+        if (douBMI <= 18.5) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.bmi1));
         } else if (douBMI < 22.9) {

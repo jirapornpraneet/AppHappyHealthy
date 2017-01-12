@@ -3,6 +3,7 @@ package com.example.nut.happyhealthy;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -32,10 +34,14 @@ public class User extends AppCompatActivity {
     String sysDate;
     String textDate;
 
+
+    //**Explicit
     DiabetesTABLE diabetesTABLE;
     HashMap<String, String> dateSelectDiabetes;
     TextView chooseDate,d_date, d_CostSugarBefore, d_CostSugarAfter, d_LevelCostBefore, d_LevelCostAfter,
             k_date ,k_cost,k_level,p_date,p_costtop,p_costdown,p_heart,p_leveltop,p_leveldown,p_levelheart;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +76,8 @@ public class User extends AppCompatActivity {
         p_leveldown = (TextView) findViewById(R.id.LevelPreDown);
         p_levelheart = (TextView) findViewById(R.id.LevelHaert);
 
+
+
         setValue(sysDate);
 
         chooseDate.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +94,15 @@ public class User extends AppCompatActivity {
                 mCalendar.get(Calendar.DAY_OF_MONTH),// วัน (1-31)
                 false);
 
+
+
+        diabetesTABLE = new DiabetesTABLE(this);
+
+
     }//OnCreate
+
+
+
 
     private DatePickerDialog.OnDateSetListener onDateSetListener =
             new DatePickerDialog.OnDateSetListener() {
@@ -122,6 +138,10 @@ public class User extends AppCompatActivity {
         p_leveldown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Down));
         p_heart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate));
         p_levelheart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate_Level));
+
+
     }
+
+
 
 }//Main Class

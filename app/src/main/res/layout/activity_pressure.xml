@@ -201,8 +201,7 @@
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
                 android:gravity="center_horizontal"
-                android:textStyle="bold"
-                android:hint="100 ครั้งต่อนาที" />
+                android:textStyle="bold" />
         </LinearLayout>
 
 
