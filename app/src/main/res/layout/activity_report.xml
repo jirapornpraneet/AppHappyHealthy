@@ -102,7 +102,8 @@
                 android:id="@+id/imageView75"
                 android:src="@drawable/listrf"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginRight="8dp" />
+                android:layout_marginRight="5dp"
+                android:onClick="ClickFoodHis" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -111,8 +112,7 @@
                 android:id="@+id/tv_sum_food_cal"
                 android:textSize="18dp"
                 android:textColor="#f9a98a"
-                android:textStyle="bold"
-                android:onClick="ClickFoodHis" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -151,7 +151,8 @@
                 android:id="@+id/imageView76"
                 android:src="@drawable/listrf2"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginRight="8dp" />
+                android:layout_marginRight="5dp"
+                android:onClick="ClickExeHis" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -162,8 +163,7 @@
                 android:gravity="center_horizontal"
                 android:textSize="18dp"
                 android:textColor="#a4ddac"
-                android:textStyle="bold"
-                android:onClick="ClickExeHis" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="wrap_content"
