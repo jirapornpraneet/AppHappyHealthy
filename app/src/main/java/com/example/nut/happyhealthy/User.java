@@ -66,7 +66,7 @@ public class User extends AppCompatActivity {
         //d_LevelCostAfter = (TextView) findViewById(R.id.LevelCostAfter);
         k_date = (TextView) findViewById(R.id.K_date);
         k_cost = (TextView) findViewById(R.id.CostGFR);
-        k_level = (TextView) findViewById(R.id.LevelCostGFR);
+        //k_level = (TextView) findViewById(R.id.LevelCostGFR);
         p_date = (TextView) findViewById(R.id.P_date);
         p_costtop = (TextView) findViewById(R.id.Cost_PreTop);
         p_costdown = (TextView) findViewById(R.id.Cost_PreDown);
@@ -122,7 +122,7 @@ public class User extends AppCompatActivity {
         //d_LevelCostAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostAfter));
         k_date.setText(dateSelectDiabetes.get(DiabetesTABLE.K_DateTime));
         k_cost.setText(dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR));
-        k_level.setText(dateSelectDiabetes.get(DiabetesTABLE.K_LevelCostGFR));
+        //k_level.setText(dateSelectDiabetes.get(DiabetesTABLE.K_LevelCostGFR));
         p_date.setText(dateSelectDiabetes.get(DiabetesTABLE.P_DateTime));
         p_costtop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop));
         p_costdown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown));
@@ -143,10 +143,14 @@ public class User extends AppCompatActivity {
         }
 
 
+        //แสดงรูปภาพตามที่ต้องการ K_Level
+        if (dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR) != null) {
+            findMyLevelCostGFR(dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR));
+        }
+
     }
 
     private String findMyLevelDiseaseBefore(String intCostSugarAfter) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
         int IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
 
@@ -156,13 +160,10 @@ public class User extends AppCompatActivity {
 
 
         if (IntCostSugarAfter > 120) {
-            myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
         } else if (IntCostSugarAfter <  80) {
-            myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
         } else {
-            myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
         }
 
@@ -171,7 +172,6 @@ public class User extends AppCompatActivity {
 
 
     private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
 
@@ -181,18 +181,38 @@ public class User extends AppCompatActivity {
 
 
         if (IntCostSugarAfter > 160) {
-            myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
         } else if (IntCostSugarAfter < 100) {
-            myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
         } else {
-            myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
         }
 
         return myResult;
     }//findMyLevelDiseaseafter
+
+    private String findMyLevelCostGFR(String intCostGFR) {
+        String myResult = null;
+        Integer IntCostGFR = Integer.parseInt(intCostGFR);
+
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.levelkid);
+
+        if (IntCostGFR > 90) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostGFR > 60 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostGFR > 30) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostGFR > 15) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        }
+        return myResult;
+    }//findMyLevelDiseaseafter
+
 
 
 }//Main Class
