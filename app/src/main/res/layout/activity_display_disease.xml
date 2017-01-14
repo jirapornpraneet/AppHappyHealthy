@@ -132,15 +132,14 @@
                 android:layout_height="20dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="#f9eefb"
-                android:textSize="1dp"
+                android:textSize="0dp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/level1"
-                android:layout_marginLeft="5dp" />
+                android:id="@+id/level1" />
         </LinearLayout>
 
         <ImageView
@@ -210,7 +209,7 @@
                 android:layout_height="20dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="#f9eefb"
-                android:textSize="1dp"
+                android:textSize="0dp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:autoText="false" />
@@ -218,8 +217,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/level2"
-                android:layout_marginLeft="5dp" />
+                android:id="@+id/level2" />
         </LinearLayout>
 
         <ImageView
