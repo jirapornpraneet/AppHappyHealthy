@@ -61,10 +61,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:layout_below="@+id/container_toolbar"
         android:background="@drawable/my_re_di"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="55dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp">
 
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
             android:layout_marginTop="4dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal">
 
             <TextView
@@ -124,34 +124,30 @@
                 android:text="costsugar"
                 android:id="@+id/CostSugarBefore"
                 android:textColor="#262626"
-                android:layout_gravity="center_horizontal" />
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="60dp"
+                android:hint="costsugar"
+                android:layout_gravity="center_vertical" />
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="levelcost"
-                android:id="@+id/LevelCostBefore"
-                android:textColor="#fb2222"
-                android:textStyle="bold"
-                android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="right" />
-        </LinearLayout>
+                android:id="@+id/prorediabefore"
+                android:foregroundGravity="center_vertical|center_horizontal"
+                android:layout_weight="2"
+                android:layout_marginLeft="10dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/proredia"
-            android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical|center_horizontal">
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -159,17 +155,19 @@
                 android:text="costsugar"
                 android:id="@+id/CostSugarAfter"
                 android:textColor="#262626"
-                android:layout_gravity="center_horizontal" />
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="60dp"
+                android:hint="costsugar"
+                android:layout_gravity="center_vertical" />
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="levelcost"
-                android:id="@+id/LevelCostAfter"
-                android:textColor="#fb2222"
-                android:textStyle="bold"
-                android:layout_marginTop="0.5dp"
-                android:layout_marginLeft="20dp" />
+                android:id="@+id/prorediaafter"
+                android:foregroundGravity="center_vertical|center_horizontal"
+                android:layout_weight="2"
+                android:layout_marginLeft="10dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -180,7 +178,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_re_kid"
         android:layout_below="@+id/container_toolbar"
-        android:layout_marginTop="195dp"
+        android:layout_marginTop="250dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp">
 
@@ -270,7 +268,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="400dp"
         android:layout_alignLeft="@+id/container_toolbar"
         android:background="@drawable/my_re_pre"
         android:layout_marginLeft="5dp"

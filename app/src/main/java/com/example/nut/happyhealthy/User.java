@@ -38,9 +38,8 @@ public class User extends AppCompatActivity {
     //**Explicit
     DiabetesTABLE diabetesTABLE;
     HashMap<String, String> dateSelectDiabetes;
-    TextView chooseDate,d_date, d_CostSugarBefore, d_CostSugarAfter, d_LevelCostBefore, d_LevelCostAfter,
-            k_date ,k_cost,k_level,p_date,p_costtop,p_costdown,p_heart,p_leveltop,p_leveldown,p_levelheart;
-
+    TextView chooseDate, d_date, d_CostSugarBefore, d_CostSugarAfter, d_LevelCostBefore, d_LevelCostAfter,
+            k_date, k_cost, k_level, p_date, p_costtop, p_costdown, p_heart, p_leveltop, p_leveldown, p_levelheart;
 
 
     @Override
@@ -63,8 +62,8 @@ public class User extends AppCompatActivity {
         d_date = (TextView) findViewById(R.id.D_date);
         d_CostSugarBefore = (TextView) findViewById(R.id.CostSugarBefore);
         d_CostSugarAfter = (TextView) findViewById(R.id.CostSugarAfter);
-        d_LevelCostBefore = (TextView) findViewById(R.id.LevelCostBefore);
-        d_LevelCostAfter = (TextView) findViewById(R.id.LevelCostAfter);
+        //d_LevelCostBefore = (TextView) findViewById(R.id.LevelCostBefore);
+        //d_LevelCostAfter = (TextView) findViewById(R.id.LevelCostAfter);
         k_date = (TextView) findViewById(R.id.K_date);
         k_cost = (TextView) findViewById(R.id.CostGFR);
         k_level = (TextView) findViewById(R.id.LevelCostGFR);
@@ -75,7 +74,6 @@ public class User extends AppCompatActivity {
         p_leveltop = (TextView) findViewById(R.id.LevelPreTop);
         p_leveldown = (TextView) findViewById(R.id.LevelPreDown);
         p_levelheart = (TextView) findViewById(R.id.LevelHaert);
-
 
 
         setValue(sysDate);
@@ -93,15 +91,9 @@ public class User extends AppCompatActivity {
                 mCalendar.get(Calendar.MONTH),      // เดือน
                 mCalendar.get(Calendar.DAY_OF_MONTH),// วัน (1-31)
                 false);
-
-
-
         diabetesTABLE = new DiabetesTABLE(this);
 
-
     }//OnCreate
-
-
 
 
     private DatePickerDialog.OnDateSetListener onDateSetListener =
@@ -126,8 +118,8 @@ public class User extends AppCompatActivity {
         d_date.setText(dateSelectDiabetes.get(DiabetesTABLE.D_DateTime));
         d_CostSugarBefore.setText(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore));
         d_CostSugarAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter));
-        d_LevelCostBefore.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostBefore));
-        d_LevelCostAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostAfter));
+        //d_LevelCostBefore.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostBefore));
+        //d_LevelCostAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostAfter));
         k_date.setText(dateSelectDiabetes.get(DiabetesTABLE.K_DateTime));
         k_cost.setText(dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR));
         k_level.setText(dateSelectDiabetes.get(DiabetesTABLE.K_LevelCostGFR));
@@ -139,9 +131,68 @@ public class User extends AppCompatActivity {
         p_heart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate));
         p_levelheart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate_Level));
 
+        //แสดงรูปภาพตามที่ต้องการ  D_CostSugarBefore
+        if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore) != null) {
+            findMyLevelDiseaseBefore(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore));
+        }
+
+
+        //แสดงรูปภาพตามที่ต้องการ  D_CostSugarAfter
+        if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter) != null) {
+            findMyLevelDiseaseAfter(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter));
+        }
+
 
     }
 
+    private String findMyLevelDiseaseBefore(String intCostSugarAfter) {
+        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
+        String myResult = null;
+        int IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
+
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.prorediabefore);
+
+
+        if (IntCostSugarAfter > 120) {
+            myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostSugarAfter <  80) {
+            myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
+        } else {
+            myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+        }
+
+        return myResult;
+    }//findMyLevelDiseasebefore
+
+
+    private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
+        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
+        String myResult = null;
+        Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
+
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.prorediaafter);
+
+
+        if (IntCostSugarAfter > 160) {
+            myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostSugarAfter < 100) {
+            myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
+        } else {
+            myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+        }
+
+        return myResult;
+    }//findMyLevelDiseaseafter
 
 
 }//Main Class

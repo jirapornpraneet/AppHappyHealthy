@@ -85,18 +85,23 @@ public class DisplayDisease extends AppCompatActivity {
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
 
         Resources res = getResources();
+        Resources res2 = getResources();
 
         ImageView imageView = (ImageView) findViewById(R.id.prodia);
+        ImageView imageView2 = (ImageView) findViewById(R.id.level1);
 
         if (IntCostSugarBefore >120 ) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore1));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
         } else if (IntCostSugarBefore < 80) {
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore3));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
         } else {
             myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
         }
 
         return myResult;
@@ -108,19 +113,23 @@ public class DisplayDisease extends AppCompatActivity {
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
 
         Resources res = getResources();
-
+        Resources res2 = getResources();
         ImageView imageView = (ImageView) findViewById(R.id.prodiaa);
+        ImageView imageView2 = (ImageView) findViewById(R.id.level2);
 
 
         if (IntCostSugarAfter > 160) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prodiaafter1));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
         } else if (IntCostSugarAfter < 100) {
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prodiaafter3));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
         } else {
             myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prodiaafter2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
         }
 
         return myResult;
