@@ -216,15 +216,15 @@ public class User extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.levelkid);
 
         if (IntCostGFR > 90) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
         } else if (IntCostGFR > 60 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid2));
         } else if (IntCostGFR > 30) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid3));
         } else if (IntCostGFR > 15) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid4));
         } else {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid5));
         }
         return myResult;
     }//findMyLevelDiseaseafter
@@ -239,17 +239,17 @@ public class User extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.leveltop);
 
         if (IntCostPressureTop > 180) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
         } else if (IntCostPressureTop > 160) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
         } else if (IntCostPressureTop > 140) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
         } else if (IntCostPressureTop > 130 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
         } else if (IntCostPressureTop < 90 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
         } else {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
         }
 
         return myResult;
@@ -266,17 +266,17 @@ public class User extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.leveldown);
 
         if (IntCostPressureDown > 110) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
         } else if (IntCostPressureDown > 100) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
         } else if (IntCostPressureDown > 90 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
         } else if (IntCostPressureDown > 85 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
         } else if (IntCostPressureDown < 60  ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
         } else {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
         }
 
         return myResult;

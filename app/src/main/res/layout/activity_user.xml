@@ -61,32 +61,12 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="115dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/container_toolbar"
         android:background="@drawable/my_re_di"
         android:layout_marginTop="55dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar"
-            android:layout_centerVertical="true"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="เบาหวาน"
-                android:id="@+id/textView34"
-                android:textSize="16dp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#262626"
-                android:textStyle="bold" />
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -106,7 +86,8 @@
                 android:layout_gravity="center_vertical"
                 android:textColor="#262626"
                 android:textStyle="bold"
-                android:textIsSelectable="false" />
+                android:textIsSelectable="false"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -121,12 +102,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="ค่าน้ำตาลก่อนอาหาร :"
+                android:id="@+id/textView33"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="#464444" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
                 android:text="costsugar"
                 android:id="@+id/CostSugarBefore"
-                android:textColor="#262626"
                 android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="60dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 android:hint="costsugar"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
@@ -155,12 +145,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="ค่าน้ำตาลหลังอาหาร :"
+                android:id="@+id/textView35"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="#464444" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
                 android:text="costsugar"
                 android:id="@+id/CostSugarAfter"
-                android:textColor="#262626"
                 android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="60dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 android:hint="costsugar"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
@@ -180,32 +179,13 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_height="70dp"
         android:background="@drawable/my_re_kid"
         android:layout_below="@+id/container_toolbar"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="180dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar"
-            android:layout_centerVertical="true"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="5dp" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ไต"
-                android:id="@+id/textView37"
-                android:textSize="16dp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#262626"
-                android:textStyle="bold" />
-        </LinearLayout>
+        android:layout_marginRight="5dp"
+        android:layout_alignParentEnd="false">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -225,7 +205,8 @@
                 android:layout_gravity="center_vertical"
                 android:textColor="#262626"
                 android:textStyle="bold"
-                android:textIsSelectable="false" />
+                android:textIsSelectable="false"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -241,12 +222,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/textView36"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:text="ค่าการทำงานไต :"
+                android:textColor="#464444" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
                 android:text="CostGFR"
                 android:id="@+id/CostGFR"
-                android:textColor="#262626"
                 android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="70dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 android:hint="CostGFR"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
@@ -267,31 +257,11 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="330dp"
         android:layout_alignLeft="@+id/container_toolbar"
         android:background="@drawable/my_re_pre"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar"
-            android:layout_centerVertical="true"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="5dp" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ความดัน"
-                android:id="@+id/textView41"
-                android:textSize="16dp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#262626"
-                android:textStyle="bold" />
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -311,7 +281,8 @@
                 android:layout_gravity="center_vertical"
                 android:textColor="#262626"
                 android:textStyle="bold"
-                android:textIsSelectable="false" />
+                android:textIsSelectable="false"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -326,12 +297,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/textView38"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:text="ค่าความดันบน :"
+                android:textColor="#464444" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
                 android:text="Cost_PreTop"
                 android:id="@+id/Cost_PreTop"
-                android:textColor="#262626"
                 android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="70dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 android:hint="Cost_PreTop"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
@@ -351,19 +331,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
-            android:layout_marginTop="4dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/textView39"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:text="ค่าความดันล่าง :"
+                android:textColor="#464444" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
                 android:text="Cost_PreDown"
                 android:id="@+id/Cost_PreDown"
-                android:textColor="#262626"
                 android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="70dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 android:hint="Cost_PreDown"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
@@ -383,7 +371,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
-            android:layout_marginTop="4dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal"
             android:layout_marginBottom="10dp">
@@ -391,12 +378,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/textView40"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:text="ค่าการเต้นหัวใจ :"
+                android:textColor="#464444" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
                 android:text="Cost_Heart"
                 android:id="@+id/Cost_Heart"
-                android:textColor="#262626"
                 android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="70dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 android:hint="Cost_Heart"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
