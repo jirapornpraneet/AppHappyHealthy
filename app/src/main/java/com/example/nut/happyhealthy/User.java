@@ -293,16 +293,18 @@ public class User extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.levelheart);
 
-        if (IntHeart < 60) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        if (IntHeart >= 41) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart1));
+        } else if (IntHeart < 60) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart1));
         } else if (IntHeart < 70) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart2));
         } else if (IntHeart < 85) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart3));
         } else if (IntHeart < 101 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart4));
         } else {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart5));
         }
 
         return myResult;

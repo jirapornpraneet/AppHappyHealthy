@@ -142,16 +142,18 @@ public class DisplayPressure extends AppCompatActivity {
         String myResult = null;
         Integer IntHeart = Integer.parseInt(intCostHeart);
 
-        if (IntHeart < 60) {
+        if (IntHeart >=41) {
             myResult = resultStrings[0];
-        } else if (IntHeart < 70) {
+        } else if (IntHeart < 60) {
             myResult = resultStrings[1];
-        } else if (IntHeart < 85) {
+        } else if (IntHeart < 70) {
             myResult = resultStrings[2];
-        } else if (IntHeart < 101 ) {
+        } else if (IntHeart < 85) {
             myResult = resultStrings[3];
-        } else {
+        } else if (IntHeart < 101 ) {
             myResult = resultStrings[4];
+        } else {
+            myResult = resultStrings[5];
         }
 
         return myResult;
