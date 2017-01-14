@@ -71,9 +71,9 @@ public class User extends AppCompatActivity {
         p_costtop = (TextView) findViewById(R.id.Cost_PreTop);
         p_costdown = (TextView) findViewById(R.id.Cost_PreDown);
         p_heart = (TextView) findViewById(R.id.Cost_Heart);
-        p_leveltop = (TextView) findViewById(R.id.LevelPreTop);
-        p_leveldown = (TextView) findViewById(R.id.LevelPreDown);
-        p_levelheart = (TextView) findViewById(R.id.LevelHaert);
+        //p_leveltop = (TextView) findViewById(R.id.LevelPreTop);
+        //p_leveldown = (TextView) findViewById(R.id.LevelPreDown);
+       // p_levelheart = (TextView) findViewById(R.id.LevelHaert);
 
 
         setValue(sysDate);
@@ -126,10 +126,10 @@ public class User extends AppCompatActivity {
         p_date.setText(dateSelectDiabetes.get(DiabetesTABLE.P_DateTime));
         p_costtop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop));
         p_costdown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown));
-        p_leveltop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Top));
-        p_leveldown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Down));
+        //p_leveltop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Top));
+       // p_leveldown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Down));
         p_heart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate));
-        p_levelheart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate_Level));
+        //p_levelheart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate_Level));
 
         //แสดงรูปภาพตามที่ต้องการ  D_CostSugarBefore
         if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore) != null) {
@@ -142,10 +142,26 @@ public class User extends AppCompatActivity {
             findMyLevelDiseaseAfter(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter));
         }
 
-
         //แสดงรูปภาพตามที่ต้องการ K_Level
         if (dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR) != null) {
             findMyLevelCostGFR(dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR));
+        }
+
+
+        //แสดงรูปภาพตามที่ต้องการ P_LevelTop
+        if (dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop) != null) {
+            findMyLevelPressureTop(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop));
+        }
+
+
+        //แสดงรูปภาพตามที่ต้องการ K_LevelDown
+        if (dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown) != null) {
+            findMyLevelPressureDown(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown));
+        }
+
+        //แสดงรูปภาพตามที่ต้องการ K_LevelHeart
+        if (dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate) != null) {
+            findMyLevelHeart(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate));
         }
 
     }
@@ -212,6 +228,86 @@ public class User extends AppCompatActivity {
         }
         return myResult;
     }//findMyLevelDiseaseafter
+
+
+    private String findMyLevelPressureTop(String intCostPressureTop) {
+        String myResult = null;
+        Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
+
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.leveltop);
+
+        if (IntCostPressureTop > 180) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureTop > 160) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureTop > 140) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureTop > 130 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureTop < 90 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+        }
+
+        return myResult;
+    }//findMyLevelPressureTop
+
+
+    private String findMyLevelPressureDown(String intCostPressureDown) {
+        String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
+        String myResult = null;
+        Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
+
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.leveldown);
+
+        if (IntCostPressureDown > 110) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureDown > 100) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureDown > 90 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureDown > 85 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntCostPressureDown < 60  ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+        }
+
+        return myResult;
+
+    }//findMyLevelPressureDown
+
+
+    private String findMyLevelHeart(String intCostHeart) {
+        String[] resultStrings = getResources().getStringArray(R.array.my_heartrate);
+        String myResult = null;
+        Integer IntHeart = Integer.parseInt(intCostHeart);
+
+        Resources res = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.levelheart);
+
+        if (IntHeart < 60) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntHeart < 70) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntHeart < 85) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else if (IntHeart < 101 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+        } else {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+        }
+
+        return myResult;
+
+    }//findMyLevelHeart
 
 
 
