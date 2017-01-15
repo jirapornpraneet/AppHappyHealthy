@@ -126,23 +126,26 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="250dp"
-            android:layout_height="30dp"
-            android:background="@drawable/my_box_dis"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="13dp">
 
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="10dp"
+                android:layout_height="20dp"
                 android:id="@+id/tv_K_LevelCostGFR"
-                android:textSize="18dp"
-                android:background="@drawable/my_box_dis"
-                android:textColor="#a6a6a6"
+                android:textSize="0dp"
+                android:textColor="#f3f4fa"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="5"
                 android:textStyle="bold"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/levelkid" />
         </LinearLayout>
 
         <ImageView

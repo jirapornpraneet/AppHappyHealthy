@@ -69,6 +69,45 @@ public class DisplayPressure extends AppCompatActivity {
 
     } // Show View
 
+    private String findMyLevelPressureTop(String intCostPressureTop) {
+        String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
+        String myResult = null;
+        Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
+
+        Resources res = getResources();
+        Resources res2 = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.propretop);
+        ImageView imageView2 = (ImageView) findViewById(R.id.leveltop);
+
+        if (IntCostPressureTop > 180) {
+            myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop6));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre1));
+        } else if (IntCostPressureTop > 160) {
+            myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop5));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre2));
+        } else if (IntCostPressureTop > 140) {
+            myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop4));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre3));
+        } else if (IntCostPressureTop > 130 ) {
+            myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop3));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre4));
+        } else if (IntCostPressureTop < 90 ) {
+            myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop1));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre6));
+        } else {
+            myResult = resultStrings[5];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre5));
+        }
+
+        return myResult;
+    }//findMyLevelPressureTop
 
 
     private String findMyLevelPressureDown(String intCostPressureDown) {
@@ -77,64 +116,41 @@ public class DisplayPressure extends AppCompatActivity {
         Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
 
         Resources res = getResources();
+        Resources res2 = getResources();
 
         ImageView imageView = (ImageView) findViewById(R.id.propredown);
+        ImageView imageView2 = (ImageView) findViewById(R.id.leveldown);
 
         if (IntCostPressureDown > 110) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.propredown6));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre1));
         } else if (IntCostPressureDown > 100) {
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.propredown5));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre2));
         } else if (IntCostPressureDown > 90 ) {
             myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.propredown4));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre3));
         } else if (IntCostPressureDown > 85 ) {
             myResult = resultStrings[3];
             imageView.setImageDrawable(res.getDrawable(R.drawable.propredown3));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre4));
         } else if (IntCostPressureDown < 60  ) {
             myResult = resultStrings[4];
             imageView.setImageDrawable(res.getDrawable(R.drawable.propredown1));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre6));
         } else {
             myResult = resultStrings[5];
             imageView.setImageDrawable(res.getDrawable(R.drawable.propredown2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre5));
         }
 
         return myResult;
 
     }//findMyLevelPressureDown
 
-    private String findMyLevelPressureTop(String intCostPressureTop) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
-        String myResult = null;
-        Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
-
-        Resources res = getResources();
-
-        ImageView imageView = (ImageView) findViewById(R.id.propretop);
-
-        if (IntCostPressureTop > 180) {
-            myResult = resultStrings[0];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop6));
-        } else if (IntCostPressureTop > 160) {
-            myResult = resultStrings[1];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop5));
-        } else if (IntCostPressureTop > 140) {
-            myResult = resultStrings[2];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop4));
-        } else if (IntCostPressureTop > 130 ) {
-            myResult = resultStrings[3];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop3));
-        } else if (IntCostPressureTop < 90 ) {
-            myResult = resultStrings[4];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop1));
-        } else {
-            myResult = resultStrings[5];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.propretop2));
-        }
-
-        return myResult;
-    }//findMyLevelPressureTop
 
 
     private String findMyLevelHeart(String intCostHeart) {
@@ -142,18 +158,36 @@ public class DisplayPressure extends AppCompatActivity {
         String myResult = null;
         Integer IntHeart = Integer.parseInt(intCostHeart);
 
+        Resources res = getResources();
+        Resources res2 = getResources();
+
+        ImageView imageView = (ImageView) findViewById(R.id.proheart);
+        ImageView imageView2 = (ImageView) findViewById(R.id.levelheart);
+
         if (IntHeart >=41) {
             myResult = resultStrings[0];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart1));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart1));
         } else if (IntHeart < 60) {
             myResult = resultStrings[1];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart1));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart1));
         } else if (IntHeart < 70) {
             myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart2));
         } else if (IntHeart < 85) {
             myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart3));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart3));
         } else if (IntHeart < 101 ) {
             myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart4));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart4));
         } else {
             myResult = resultStrings[5];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart5));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart5));
         }
 
         return myResult;
