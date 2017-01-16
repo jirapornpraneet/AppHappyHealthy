@@ -92,15 +92,23 @@ public class DisplayDisease extends AppCompatActivity {
 
         if (IntCostSugarBefore >120 ) {
             myResult = resultStrings[0];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore1));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bbb3));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
-        } else if (IntCostSugarBefore < 80) {
+        } else if (IntCostSugarBefore > 115) {
             myResult = resultStrings[1];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore3));
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bbb2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
+        } else if (IntCostSugarBefore < 85) {
+            myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bbb2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
+        } else if (IntCostSugarBefore < 80) {
+            myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bbb3));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
         } else {
-            myResult = resultStrings[2];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.prodiabefore2));
+            myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.bbb1));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
         }
 

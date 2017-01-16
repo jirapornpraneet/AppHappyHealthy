@@ -61,7 +61,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
         android:layout_below="@+id/container_toolbar"
         android:background="@drawable/my_re_di"
         android:layout_marginTop="55dp"
@@ -137,7 +137,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
-            android:layout_marginTop="4dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal"
             android:layout_marginBottom="5dp">
@@ -182,7 +181,7 @@
         android:layout_height="70dp"
         android:background="@drawable/my_re_kid"
         android:layout_below="@+id/container_toolbar"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="190dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_alignParentEnd="false">
@@ -257,7 +256,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="345dp"
         android:layout_alignLeft="@+id/container_toolbar"
         android:background="@drawable/my_re_pre"
         android:layout_marginLeft="5dp"
@@ -305,14 +304,14 @@
                 android:textColor="#464444" />
 
             <TextView
-                android:layout_width="20dp"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
-                android:text="Cost_PreTop"
+                android:text="Cost"
                 android:id="@+id/Cost_PreTop"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:hint="Cost_PreTop"
+                android:hint="Cost"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
                 android:textStyle="bold" />
@@ -332,7 +331,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical|center_horizontal" >
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="2dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -345,14 +345,14 @@
                 android:textColor="#464444" />
 
             <TextView
-                android:layout_width="20dp"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
-                android:text="Cost_PreDown"
+                android:text="Cost"
                 android:id="@+id/Cost_PreDown"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:hint="Cost_PreDown"
+                android:hint="Cost"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
                 android:textStyle="bold" />
@@ -373,7 +373,8 @@
             android:layout_below="@+id/container_toolbar"
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="2dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -386,14 +387,14 @@
                 android:textColor="#464444" />
 
             <TextView
-                android:layout_width="20dp"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
-                android:text="Cost_Heart"
+                android:text="Cost"
                 android:id="@+id/Cost_Heart"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:hint="Cost_Heart"
+                android:hint="Cost"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
                 android:textStyle="bold" />
