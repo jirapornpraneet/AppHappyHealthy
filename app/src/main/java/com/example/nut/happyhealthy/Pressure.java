@@ -1,9 +1,14 @@
 package com.example.nut.happyhealthy;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -79,6 +84,7 @@ public class Pressure extends AppCompatActivity {
 
         }else  {
             confirmPressure();
+            showNotification();
 
         }
     }//Click
@@ -219,6 +225,34 @@ public class Pressure extends AppCompatActivity {
         });
         builder.show();
     }//ShowAlert
+
+
+    public void showNotification() {
+
+        Intent intent = new Intent(this, User.class);
+//        intent.putExtra("str_L_before", str_L_before);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(User.class);
+        stackBuilder.addNextIntent(intent);
+        PendingIntent pendingIntent =
+                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Notification notification =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_alert)
+                        .setContentTitle("วันนี้ค่าความดันโลหิต")
+                        .setContentText( " ค่าความดันตัวบน : " +  str_LP_cost_top+ "\n"
+                                + " ค่าความดันตัวล่าง : "  + str_LP_cost_down+"\n"
+                                + " อัตราการเต้นหัวใจ : " + str_heart )
+                        .setAutoCancel(true)
+                        .setContentIntent(pendingIntent)
+                        .build();
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(1000, notification);
+
+    }
 
     public void ClickHisPre(View view) {
         startActivity(new Intent(Pressure.this,History_Pressure.class));

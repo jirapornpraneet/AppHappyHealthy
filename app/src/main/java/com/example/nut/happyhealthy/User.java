@@ -93,6 +93,10 @@ public class User extends AppCompatActivity {
                 false);
         diabetesTABLE = new DiabetesTABLE(this);
 
+
+
+
+
     }//OnCreate
 
 

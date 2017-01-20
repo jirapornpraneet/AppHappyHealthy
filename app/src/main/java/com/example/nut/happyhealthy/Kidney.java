@@ -1,9 +1,14 @@
 package com.example.nut.happyhealthy;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -79,6 +84,7 @@ public class Kidney extends AppCompatActivity {
         }else  {
 
             confirmKidney();
+            showNotification();
 
 
 
@@ -166,6 +172,32 @@ public class Kidney extends AppCompatActivity {
         builder.show();
 
     }//ShowAlert
+
+
+    public void showNotification() {
+
+        Intent intent = new Intent(this, User.class);
+//        intent.putExtra("str_L_before", str_L_before);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(User.class);
+        stackBuilder.addNextIntent(intent);
+        PendingIntent pendingIntent =
+                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Notification notification =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_alert)
+                        .setContentTitle("วันนี้ค่าการทำงานไต")
+                        .setContentText( " ค่าการทำงานไต : "  + str_L_cost)
+                        .setAutoCancel(true)
+                        .setContentIntent(pendingIntent)
+                        .build();
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(1000, notification);
+
+    }
 
     public void ClickHistoryKidney(View view) {
         startActivity(new Intent(Kidney.this,History_Kidney.class));
