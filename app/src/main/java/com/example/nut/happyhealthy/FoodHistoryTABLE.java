@@ -202,4 +202,13 @@ public class FoodHistoryTABLE {
 
 
     }
+
+    public void delete(int HisFoodId) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
+        db.delete(FoodHistoryTABLE.Food_History, FoodHistoryTABLE.History_Food_Id + "=?", new String[]{String.valueOf(HisFoodId)});
+        db.close();
+    }
+
 }//MainClass

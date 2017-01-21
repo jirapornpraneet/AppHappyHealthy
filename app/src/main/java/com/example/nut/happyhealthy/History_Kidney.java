@@ -61,7 +61,7 @@ public class History_Kidney extends AppCompatActivity {
                             builder_1.setNegativeButton("ตกลง", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     kid.delete(K_id);
-                                    Toast.makeText(getApplicationContext(), "Date . " + K_id + " is Deleted Success", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "ลบข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
                                     setListView();
                                 }
                             });
