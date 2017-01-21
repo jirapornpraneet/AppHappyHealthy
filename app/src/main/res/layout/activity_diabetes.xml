@@ -58,7 +58,7 @@
         android:layout_height="310dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="105dp"
         android:weightSum="1"
         android:id="@+id/linearLayout5"
         android:background="@drawable/my_box_diabetes">

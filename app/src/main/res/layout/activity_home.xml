@@ -36,11 +36,11 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentBottom="false"
         android:layout_alignParentRight="false"
-        android:layout_marginTop="53dp">
+        android:layout_marginTop="52dp">
 
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="105dp"
+            android:layout_height="90dp"
             android:id="@+id/imageView16"
             android:src="@drawable/dii"
             android:onClick="ClickDiabetes"
@@ -53,11 +53,11 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentBottom="false"
         android:layout_alignParentRight="false"
-        android:layout_marginTop="155dp" >
+        android:layout_marginTop="132dp" >
 
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="105dp"
+            android:layout_height="90dp"
             android:id="@+id/imageView"
             android:src="@drawable/diii"
             android:onClick="ClickKidney" />
@@ -69,11 +69,11 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentBottom="false"
         android:layout_alignParentRight="false"
-        android:layout_marginTop="257dp" >
+        android:layout_marginTop="211dp" >
 
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="105dp"
+            android:layout_height="90dp"
             android:id="@+id/imageView5"
             android:src="@drawable/diiii"
             android:onClick="ClickPressure" />
@@ -85,11 +85,11 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentBottom="false"
         android:layout_alignParentRight="false"
-        android:layout_marginTop="358dp" >
+        android:layout_marginTop="290dp" >
 
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="105dp"
+            android:layout_height="90dp"
             android:id="@+id/imageView7"
             android:src="@drawable/diiiii"
             android:onClick="ClickFood" />
@@ -101,11 +101,11 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentBottom="false"
         android:layout_alignParentRight="false"
-        android:layout_marginTop="460dp" >
+        android:layout_marginTop="370dp" >
 
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="105dp"
+            android:layout_height="90dp"
             android:id="@+id/imageView11"
             android:src="@drawable/diiiiii"
             android:onClick="ClickExe" />

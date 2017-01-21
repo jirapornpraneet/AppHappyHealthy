@@ -58,16 +58,15 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="280dp"
-            android:layout_height="45dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="5dp">
+            android:gravity="center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_P_Date"
-                android:textSize="22dp"
+                android:textSize="18dp"
                 android:autoText="false"
                 android:hint="DD-MM-YYYY  HH:MM"
                 android:textStyle="bold"
@@ -83,7 +82,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="26dp"
+                android:layout_height="24dp"
                 android:id="@+id/imageViewsugatafter"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/txtpretop"
@@ -122,10 +121,10 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
-            android:layout_marginTop="3dp">
+            android:layout_marginTop="1dp">
 
             <TextView
                 android:layout_width="10dp"
@@ -161,7 +160,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="26dp"
+                android:layout_height="24dp"
                 android:id="@+id/imageViewpreDown"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/txtpredown"
@@ -200,10 +199,10 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
-            android:layout_marginTop="3dp">
+            android:layout_marginTop="2dp">
 
             <TextView
                 android:layout_width="10dp"
@@ -237,7 +236,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="26dp"
+                android:layout_height="24dp"
                 android:id="@+id/imageView6"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/textheart" />
@@ -274,10 +273,10 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
-            android:layout_marginTop="3dp">
+            android:layout_marginTop="2dp">
 
             <TextView
                 android:layout_width="10dp"

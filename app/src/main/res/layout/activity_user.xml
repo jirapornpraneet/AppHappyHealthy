@@ -31,8 +31,8 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="220dp"
-        android:layout_height="30dp"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
         android:gravity="center_vertical|center_horizontal"
         android:layout_marginTop="10dp"
         android:background="@drawable/my_bgdata"
@@ -40,8 +40,8 @@
         android:layout_centerHorizontal="true">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:id="@+id/imageView22"
             android:src="@drawable/datereport" />
 
@@ -51,7 +51,7 @@
             android:text="DD-MM-YYYY"
             android:id="@+id/chooseDate"
             android:textColor="#797979"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:layout_below="@+id/container_toolbar"
             android:layout_marginLeft="15dp" />
@@ -64,7 +64,7 @@
         android:layout_height="110dp"
         android:layout_below="@+id/container_toolbar"
         android:background="@drawable/my_re_di"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="45dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp">
 
@@ -75,7 +75,7 @@
             android:layout_below="@+id/container_toolbar"
             android:layout_centerVertical="true"
             android:gravity="center_horizontal"
-            android:layout_marginTop="3dp" >
+            android:layout_marginTop="2dp" >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:text="ค่าน้ำตาลก่อนอาหาร :"
                 android:id="@+id/textView33"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:textColor="#464444" />
@@ -119,7 +119,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="costsugar"
                 android:layout_gravity="center_vertical"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -146,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:text="ค่าน้ำตาลหลังอาหาร :"
                 android:id="@+id/textView35"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:textColor="#464444" />
@@ -161,7 +161,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="costsugar"
                 android:layout_gravity="center_vertical"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -181,7 +181,7 @@
         android:layout_height="70dp"
         android:background="@drawable/my_re_kid"
         android:layout_below="@+id/container_toolbar"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="170dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_alignParentEnd="false">
@@ -222,7 +222,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView36"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:text="ค่าการทำงานไต :"
@@ -238,7 +238,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="CostGFR"
                 android:layout_gravity="center_vertical"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -256,7 +256,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="345dp"
+        android:layout_marginTop="310dp"
         android:layout_alignLeft="@+id/container_toolbar"
         android:background="@drawable/my_re_pre"
         android:layout_marginLeft="5dp"
@@ -297,7 +297,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView38"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:text="ค่าความดันบน :"
@@ -313,7 +313,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="Cost"
                 android:layout_gravity="center_vertical"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -338,7 +338,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView39"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:text="ค่าความดันล่าง :"
@@ -354,7 +354,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="Cost"
                 android:layout_gravity="center_vertical"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -380,7 +380,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView40"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:text="ค่าการเต้นหัวใจ :"
@@ -396,7 +396,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="Cost"
                 android:layout_gravity="center_vertical"
-                android:textSize="13dp"
+                android:textSize="11dp"
                 android:textStyle="bold" />
 
             <ImageView

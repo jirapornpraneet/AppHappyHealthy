@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
-        android:layout_marginTop="425dp"
-        android:layout_marginLeft="15dp">
+        android:layout_marginTop="350dp">
 
         <ImageView
             android:layout_width="180dp"

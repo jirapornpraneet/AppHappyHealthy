@@ -51,7 +51,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="70dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
@@ -63,17 +63,17 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="19dp"
                 android:id="@+id/imageView15"
                 android:src="@drawable/da5"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp" />
 
             <EditText
-                android:layout_width="160dp"
-                android:layout_height="27dp"
+                android:layout_width="130dp"
+                android:layout_height="22dp"
                 android:id="@+id/tv_Name"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
                 android:layout_marginLeft="10dp"
@@ -90,11 +90,11 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="3dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="19dp"
                 android:id="@+id/imageView17"
                 android:src="@drawable/da6"
                 android:layout_marginTop="8dp"
@@ -145,21 +145,21 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp">
+            android:layout_marginTop="4dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="19dp"
                 android:id="@+id/imageView20"
                 android:src="@drawable/da7"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="50dp" />
 
             <EditText
-                android:layout_width="160dp"
-                android:layout_height="27dp"
+                android:layout_width="130dp"
+                android:layout_height="22dp"
                 android:id="@+id/tv_Age"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:layout_marginLeft="16dp"
                 android:textStyle="bold"
                 android:background="@drawable/my_border_box"
@@ -186,21 +186,21 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp">
+            android:layout_marginTop="4dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="19dp"
                 android:id="@+id/imageView18"
                 android:src="@drawable/da8"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="36dp" />
 
             <EditText
-                android:layout_width="160dp"
-                android:layout_height="27dp"
+                android:layout_width="130dp"
+                android:layout_height="22dp"
                 android:id="@+id/tv_Weight"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:textStyle="bold"
@@ -224,21 +224,21 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp">
+            android:layout_marginTop="4dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="19dp"
                 android:id="@+id/imageView19"
                 android:src="@drawable/da9"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="36dp" />
 
             <EditText
-                android:layout_width="160dp"
-                android:layout_height="27dp"
+                android:layout_width="130dp"
+                android:layout_height="22dp"
                 android:id="@+id/tv_Height"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="3dp"
                 android:textStyle="bold"
@@ -261,11 +261,11 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp">
+            android:layout_marginTop="4dp">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="18dp"
                 android:id="@+id/imageView10"
                 android:src="@drawable/bmr"
                 android:layout_marginLeft="53dp"
@@ -279,7 +279,7 @@
                 android:textStyle="bold"
                 android:textColor="#505050"
                 android:layout_marginLeft="11dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal" />
 
@@ -290,7 +290,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageView65"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="4dp"
             android:src="@drawable/disbmr"
             android:layout_marginLeft="30dp" />
 
@@ -302,7 +302,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="18dp"
                 android:id="@+id/imageView21"
                 android:src="@drawable/bmi"
                 android:layout_marginLeft="58dp"
@@ -315,7 +315,7 @@
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginLeft="13dp"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal" />
@@ -327,26 +327,26 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageView64"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="3dp" />
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:layout_width="240dp"
                 android:layout_height="25dp"
                 android:id="@+id/weightStdTextView"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:textStyle="bold"
-                android:layout_marginLeft="55dp"
                 android:textColor="#505050"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="35dp" />
         </LinearLayout>
 
     </LinearLayout>
