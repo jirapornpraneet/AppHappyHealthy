@@ -315,6 +315,9 @@ public class User extends AppCompatActivity {
 
     }//findMyLevelHeart
 
+    public void ClickBackuserMain(View view) {
+        startActivity(new Intent(User.this,MainActivity.class));
 
+    }//ClickBackHome
 
 }//Main Class

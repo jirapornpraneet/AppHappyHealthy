@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:hint="DD-MM-YYYY  HH:MM"
                 android:textColor="#a6a6a6"
-                android:textSize="24dp"
+                android:textSize="22dp"
                 android:layout_gravity="center_vertical"
                 android:textStyle="bold"
                 android:gravity="center_horizontal" />

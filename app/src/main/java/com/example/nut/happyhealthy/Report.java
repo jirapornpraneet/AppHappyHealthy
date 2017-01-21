@@ -116,4 +116,11 @@ public class Report extends AppCompatActivity {
         startActivity(intent);
         finish();
     }//ClickFood
+
+
+
+    public void ClickBackReMain(View view) {
+        startActivity(new Intent(Report.this,MainActivity.class));
+
+    }//ClickBackHome
 }//MainClass

@@ -80,7 +80,7 @@
                 android:id="@+id/K_date"
                 android:textColor="#a6a6a6"
                 android:layout_gravity="top|center_vertical"
-                android:textSize="24dp"
+                android:textSize="22dp"
                 android:autoText="false"
                 android:hint="DD-MM-YYYY  HH:MM"
                 android:textStyle="bold"
