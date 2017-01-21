@@ -211,4 +211,12 @@ public class FoodHistoryTABLE {
         db.close();
     }
 
+    public void delete2(int HisExeId) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
+        db.delete(FoodHistoryTABLE.Exercise_History, FoodHistoryTABLE.History_Exercise_Id + "=?", new String[]{String.valueOf(HisExeId)});
+        db.close();
+    }
+
 }//MainClass
