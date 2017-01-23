@@ -20,7 +20,6 @@ public class FoodTABLE {
     public static final String Food_Id = "Food_Id";
     public static final String Food_Name = "Food_Name";
     public static final String Food_Calories = "Food_Calories";
-    public static final String Food_Amount = "Food_Amount";
     public static final String Food_Unit = "Food_Unit";
     public static final String Food_Netweight = "Food_Netweight";
     public static final String Food_NetUnit = "Food_NetUnit";
@@ -45,7 +44,6 @@ public class FoodTABLE {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Food_Name, str_food_name);
         contentValues.put(Food_Calories, dou_food_cal);
-        contentValues.put(Food_Amount, int_food_amount);
         contentValues.put(Food_Unit, str_food_unit);
         contentValues.put(Food_Netweight, dou_food_netweight);
         contentValues.put(Food_NetUnit, str_net_unit);
@@ -76,7 +74,6 @@ public class FoodTABLE {
                 food.put("food_id", cursor.getString(cursor.getColumnIndex(Food_Id)));
                 food.put("food_name", cursor.getString(cursor.getColumnIndex(Food_Name)));
                 food.put("food_calories", cursor.getString(cursor.getColumnIndex(Food_Calories)));
-                food.put("food_amount", cursor.getString(cursor.getColumnIndex(Food_Amount)));
                 food.put("food_unit", cursor.getString(cursor.getColumnIndex(Food_Unit)));
                 food.put("food_netweight", cursor.getString(cursor.getColumnIndex(Food_Netweight)));
                 food.put("food_netunit", cursor.getString(cursor.getColumnIndex(Food_NetUnit)));
@@ -109,7 +106,6 @@ public class FoodTABLE {
                 food.put("food_id", cursor.getString(cursor.getColumnIndex(Food_Id)));
                 food.put("food_name", cursor.getString(cursor.getColumnIndex(Food_Name)));
                 food.put("food_calories", cursor.getString(cursor.getColumnIndex(Food_Calories)));
-                food.put("food_amount", cursor.getString(cursor.getColumnIndex(Food_Amount)));
                 food.put("food_unit", cursor.getString(cursor.getColumnIndex(Food_Unit)));
                 food.put("food_netweight", cursor.getString(cursor.getColumnIndex(Food_Netweight)));
                 food.put("food_netunit", cursor.getString(cursor.getColumnIndex(Food_NetUnit)));

@@ -2,6 +2,7 @@ package com.example.nut.happyhealthy;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -34,8 +35,6 @@ public class FoodHistoryTABLE {
     public static final String Food_Carbohydrate = "Food_Carbohydrate";
     public static final String Food_Sugars = "Food_Sugars";
     public static final String Food_Sodium = "Food_Sodium";
-
-
 
 
     public static final String Exercise_History = "Exercise_History";
@@ -155,11 +154,13 @@ public class FoodHistoryTABLE {
                 HashMap<String, String> foodHis = new HashMap<String, String>();
                 foodHis.put(History_Food_Id, cursor.getString(cursor.getColumnIndex(History_Food_Id)));
                 foodHis.put(History_Food_Date, cursor.getString(cursor.getColumnIndex(History_Food_Date)));
-                foodHis.put(Food_Amount, cursor.getString(cursor.getColumnIndex(Food_Amount)));
+                foodHis.put(Food_Calories, String.valueOf(Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_Amount)))*Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_Calories)))));
+                //foodHis.put(Food_Calories, cursor.getString(cursor.getColumnIndex(Food_Calories)));
                 foodHis.put(Food_Name, cursor.getString(cursor.getColumnIndex(Food_Name)));
                 foodHis.put(Food_Unit, cursor.getString(cursor.getColumnIndex(Food_Unit)));
-                foodHis.put(Food_Calories, cursor.getString(cursor.getColumnIndex(Food_Calories)));
-                foodHis.put(Food_Detail ,cursor.getString(cursor.getColumnIndex(Food_Detail)));
+                foodHis.put(Food_Amount, cursor.getString(cursor.getColumnIndex(Food_Amount)));
+                foodHis.put(Food_Detail, cursor.getString(cursor.getColumnIndex(Food_Detail)));
+//                Log.d("data calories", foodHis.get(Food_Calories).toString() + " เว้น " + foodHis.get(Food_Amount).toString());
                 foodHisList.add(foodHis);
             } while (cursor.moveToNext());
         }

@@ -46,8 +46,6 @@ public class History_Food extends AppCompatActivity {
         listViewFoodHis = (ListView) findViewById(R.id.listViewFoodHis);
         foodHistoryTABLE = new FoodHistoryTABLE(this);
 
-
-
         listViewFoodHis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -85,7 +83,7 @@ public class History_Food extends AppCompatActivity {
             }
         });
         foodHisList = foodHistoryTABLE.getFoodHisList(choose_D);
-        adapterFoodHis = new SimpleAdapter(History_Food.this, foodHisList, R.layout.history_food, new String[]{FoodHistoryTABLE.Food_Name,FoodHistoryTABLE.Food_Calories,FoodHistoryTABLE.Food_Unit,FoodHistoryTABLE.Food_Detail}, new int[]{R.id.his_food_name, R.id.his_food_calories,R.id.his_food_unit,R.id.his_food_detail});
+        adapterFoodHis = new SimpleAdapter(History_Food.this, foodHisList, R.layout.history_food, new String[]{FoodHistoryTABLE.Food_Name,FoodHistoryTABLE.Food_Calories,FoodHistoryTABLE.Food_Unit,FoodHistoryTABLE.Food_Detail,FoodHistoryTABLE.Food_Amount}, new int[]{R.id.his_food_name, R.id.his_food_calories,R.id.his_food_unit,R.id.his_food_detail,R.id.his_amount});
         listViewFoodHis.setAdapter(adapterFoodHis);
     }//OnCreate
 
@@ -95,9 +93,9 @@ public class History_Food extends AppCompatActivity {
 
     public void setListView() {
         foodHisList = foodHistoryTABLE.getFoodHisList(choose_D);
-        adapterFoodHis = new SimpleAdapter(History_Food.this, foodHisList, R.layout.history_food, new String[]{FoodHistoryTABLE.Food_Name,FoodHistoryTABLE.Food_Calories,FoodHistoryTABLE.Food_Unit,FoodHistoryTABLE.Food_Detail}, new int[]{R.id.his_food_name, R.id.his_food_calories,R.id.his_food_unit,R.id.his_food_detail});
+        adapterFoodHis = new SimpleAdapter(History_Food.this, foodHisList, R.layout.history_food, new String[]{FoodHistoryTABLE.Food_Name,FoodHistoryTABLE.Food_Calories,FoodHistoryTABLE.Food_Unit,FoodHistoryTABLE.Food_Detail,FoodHistoryTABLE.Food_Amount}, new int[]{R.id.his_food_name, R.id.his_food_calories,R.id.his_food_unit,R.id.his_food_detail,R.id.his_amount});
         listViewFoodHis.setAdapter(adapterFoodHis);
+        String dun[] = {"asdasd","asdasd"};
     }
-
 
 }//MainClass
