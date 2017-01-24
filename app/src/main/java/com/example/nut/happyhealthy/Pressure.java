@@ -91,7 +91,7 @@ public class Pressure extends AppCompatActivity {
 
     private void confirmPressure() {
 
-        str_LP_cost_down = findMyLevelPressureDown();
+       // str_LP_cost_down = findMyLevelPressureDown();
         str_LP_cost_top = findMyLevelPressureTop();
         str_heart = findMyLevelHeart();
 
@@ -132,8 +132,9 @@ public class Pressure extends AppCompatActivity {
             String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
             String myResult = null;
             Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
+            Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
 
-        if (IntCostPressureTop > 180) {
+        if (IntCostPressureTop > 180 ) {
             myResult = resultStrings[0];
         } else if (IntCostPressureTop > 160) {
             myResult = resultStrings[1];
@@ -147,11 +148,33 @@ public class Pressure extends AppCompatActivity {
             myResult = resultStrings[5];
         }
 
-            return myResult;
+
+        if (IntCostPressureDown > 110) {
+            myResult = resultStrings[0];
+        } else if (IntCostPressureDown > 100) {
+            myResult = resultStrings[1];
+        } else if (IntCostPressureDown > 90 ) {
+            myResult = resultStrings[2];
+        } else if (IntCostPressureDown > 80 ) {
+            myResult = resultStrings[3];
+        } else if (IntCostPressureDown < 60  ) {
+            myResult = resultStrings[4];
+        } else {
+            myResult = resultStrings[5];
+        }
+
+
+        if (IntCostPressureTop > IntCostPressureDown ) {
+            myResult = resultStrings[0];
+        } else {
+            myResult = resultStrings[1];
+        }
+        return myResult;
 
     }//findMyLevelPressureTop
 
-    private String findMyLevelPressureDown() {
+
+   /** private String findMyLevelPressureDown() {
             String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
             String myResult = null;
             Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
@@ -172,7 +195,7 @@ public class Pressure extends AppCompatActivity {
 
             return myResult;
 
-        }//findMyLevelPressureDown
+        }//findMyLevelPressureDown**/
 
     private String findMyLevelHeart() {
         String[] resultStrings = getResources().getStringArray(R.array.my_heartrate);
