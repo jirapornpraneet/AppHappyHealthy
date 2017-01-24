@@ -120,40 +120,6 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="300dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal"
-            android:layout_marginTop="1dp">
-
-            <TextView
-                android:layout_width="10dp"
-                android:layout_height="20dp"
-                android:id="@+id/tv_P_LevelTop"
-                android:textSize="0dp"
-                android:autoText="false"
-                android:textColor="#f7ebeb"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_horizontal" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/leveltop" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/propretop"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
-
-        <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp">
@@ -195,19 +161,18 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
             android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="1dp">
 
             <TextView
                 android:layout_width="10dp"
                 android:layout_height="20dp"
-                android:id="@+id/tv_P_LevelDown"
+                android:id="@+id/tv_P_LevelTop"
                 android:textSize="0dp"
                 android:autoText="false"
                 android:textColor="#f7ebeb"
@@ -218,16 +183,18 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/leveldown" />
+                android:id="@+id/leveltop" />
+
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/propredown"
+            android:id="@+id/propretop"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp" />
+
 
         <LinearLayout
             android:orientation="horizontal"

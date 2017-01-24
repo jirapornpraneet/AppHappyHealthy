@@ -106,11 +106,11 @@ public class Pressure extends AppCompatActivity {
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่  : " + str_P_Date + "\n"
                 + " ค่าความดันตัวบน : " + intCostPressureTop + "\n"
-                + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_top+ "\n"
-                + " ค่าความดันตัวล่าง : " + intCostPressureDown + "\n"
-                + " อยู่ในเกณฑ์ที่ : " + str_LP_cost_down+"\n"
+                + " ค่าความดันล่าง: " + intCostPressureDown + "\n"
+                + " อยู่ในเกณฑ์ที่ : " + findMyLevelPressureTop()+"\n"
                 + " อัตราการเต้นหัวใจ : " + intHeart + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_heart + "\n");
+
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
@@ -133,41 +133,46 @@ public class Pressure extends AppCompatActivity {
             String myResult = null;
             Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
             Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
+            int CostTop,CostDown;
 
-        if (IntCostPressureTop > 180 ) {
-            myResult = resultStrings[0];
-        } else if (IntCostPressureTop > 160) {
-            myResult = resultStrings[1];
-        } else if (IntCostPressureTop > 140) {
-            myResult = resultStrings[2];
-        } else if (IntCostPressureTop > 120 ) {
-            myResult = resultStrings[3];
-        } else if (IntCostPressureTop < 90 ) {
-            myResult = resultStrings[4];
+        if (IntCostPressureTop >= 180 ) {
+            CostTop = 0;
+        } else if (IntCostPressureTop >= 160) {
+            CostTop = 1;
+        } else if (IntCostPressureTop >= 140) {
+            CostTop = 2;
+        } else if (IntCostPressureTop >= 130 ) {
+            CostTop = 3;
+        } else if (IntCostPressureTop >= 120 ) {
+            CostTop = 4;
+        } else if (IntCostPressureTop <= 90 ) {
+            CostTop = 5;
         } else {
-            myResult = resultStrings[5];
+            CostTop = 0;
         }
 
 
-        if (IntCostPressureDown > 110) {
-            myResult = resultStrings[0];
-        } else if (IntCostPressureDown > 100) {
-            myResult = resultStrings[1];
-        } else if (IntCostPressureDown > 90 ) {
-            myResult = resultStrings[2];
-        } else if (IntCostPressureDown > 80 ) {
-            myResult = resultStrings[3];
-        } else if (IntCostPressureDown < 60  ) {
-            myResult = resultStrings[4];
+        if (IntCostPressureDown >= 110) {
+            CostDown = 0;
+        } else if (IntCostPressureDown >= 100) {
+            CostDown = 1;
+        } else if (IntCostPressureDown >= 90 ) {
+            CostDown = 2;
+        } else if (IntCostPressureDown >= 85 ) {
+            CostDown = 3;
+        } else if (IntCostPressureDown >= 80 ) {
+            CostDown = 4;
+        } else if (IntCostPressureDown <= 60  ) {
+            CostDown = 5;
         } else {
-            myResult = resultStrings[5];
+            CostDown = 0;
         }
 
 
-        if (IntCostPressureTop > IntCostPressureDown ) {
-            myResult = resultStrings[0];
+        if (CostTop > CostDown ) {
+            myResult = resultStrings[CostDown];
         } else {
-            myResult = resultStrings[1];
+            myResult = resultStrings[CostTop];
         }
         return myResult;
 
