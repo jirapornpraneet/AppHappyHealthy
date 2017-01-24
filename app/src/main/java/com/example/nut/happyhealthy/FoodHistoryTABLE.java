@@ -190,9 +190,12 @@ public class FoodHistoryTABLE {
                 exeHis.put(History_Exercise_Id, cursor.getString(cursor.getColumnIndex(History_Exercise_Id)));
                 exeHis.put(History_Exercise_Date, cursor.getString(cursor.getColumnIndex(History_Exercise_Date)));
                 exeHis.put(Exercise_Name, cursor.getString(cursor.getColumnIndex(Exercise_Name)));
-                exeHis.put(Exercise_Calories, cursor.getString(cursor.getColumnIndex(Exercise_Calories)));
+                exeHis.put(Exercise_Calories, String.valueOf(Double.parseDouble(cursor.getString(cursor.getColumnIndex(Exercise_TotalDuration)))*Double.parseDouble(cursor.getString(cursor.getColumnIndex(Exercise_Calories)))));
+                //exeHis.put(Exercise_Calories, cursor.getString(cursor.getColumnIndex(Exercise_Calories)));
                 exeHis.put(Exercise_Duration, cursor.getString(cursor.getColumnIndex(Exercise_Duration)));
                 exeHis.put(Exercise_Disease, cursor.getString(cursor.getColumnIndex(Exercise_Disease)));
+                exeHis.put(Exercise_TotalDuration, cursor.getString(cursor.getColumnIndex(Exercise_TotalDuration)));
+
                 exeHisList.add(exeHis);
             } while (cursor.moveToNext());
         }

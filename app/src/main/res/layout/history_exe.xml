@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Cal"
             android:id="@+id/his_exercise_calories"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:textSize="14dp"
             android:layout_marginTop="3dp" />
 
@@ -39,7 +39,7 @@
             android:id="@+id/textView"
             android:textSize="12dp"
             android:layout_marginTop="3dp"
-            android:layout_marginLeft="12dp" />
+            android:layout_marginLeft="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,9 +53,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ต่อนาที"
+            android:text="ต่อ"
             android:id="@+id/textView2"
             android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/his_totalexe"
+            android:textSize="12dp"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="เซท"
+            android:id="@+id/textView34"
+            android:textSize="12dp"
+            android:layout_marginLeft="5dp" />
 
     </LinearLayout>
 

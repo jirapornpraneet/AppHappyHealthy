@@ -80,7 +80,7 @@ public class History_Exe extends AppCompatActivity {
         });
 
         exeHisList = foodHistoryTABLE.getExeHisList(choose_D);
-        adapterExeHis = new SimpleAdapter(History_Exe.this, exeHisList, R.layout.history_exe, new String[]{FoodHistoryTABLE.Exercise_Name,FoodHistoryTABLE.Exercise_Calories,FoodHistoryTABLE.Exercise_Disease}, new int[]{R.id.his_exercise_name, R.id.his_exercise_calories,R.id.his_exercise_disease});
+        adapterExeHis = new SimpleAdapter(History_Exe.this, exeHisList, R.layout.history_exe, new String[]{FoodHistoryTABLE.Exercise_Name,FoodHistoryTABLE.Exercise_Calories,FoodHistoryTABLE.Exercise_Disease,FoodHistoryTABLE.Exercise_TotalDuration}, new int[]{R.id.his_exercise_name, R.id.his_exercise_calories,R.id.his_exercise_disease,R.id.his_totalexe});
         listViewExeHis.setAdapter(adapterExeHis);
     }//OnCreate
 
@@ -90,7 +90,7 @@ public class History_Exe extends AppCompatActivity {
 
     public void setListView() {
         exeHisList = foodHistoryTABLE.getExeHisList(choose_D);
-        adapterExeHis = new SimpleAdapter(History_Exe.this, exeHisList, R.layout.history_exe, new String[]{FoodHistoryTABLE.Exercise_Name,FoodHistoryTABLE.Exercise_Calories,FoodHistoryTABLE.Exercise_Disease}, new int[]{R.id.his_exercise_name, R.id.his_exercise_calories,R.id.his_exercise_disease});
+        adapterExeHis = new SimpleAdapter(History_Exe.this, exeHisList, R.layout.history_exe, new String[]{FoodHistoryTABLE.Exercise_Name,FoodHistoryTABLE.Exercise_Calories,FoodHistoryTABLE.Exercise_Disease,FoodHistoryTABLE.Exercise_TotalDuration}, new int[]{R.id.his_exercise_name, R.id.his_exercise_calories,R.id.his_exercise_disease,R.id.his_totalexe});
         listViewExeHis.setAdapter(adapterExeHis);
     }
 
