@@ -94,7 +94,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="22dp"
+            android:layout_height="28dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal|center_vertical|center_horizontal">
 
@@ -102,13 +102,13 @@
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:id="@+id/tv_P_CostPressureTop"
-                android:textSize="14dp"
+                android:textSize="15dp"
                 android:autoText="false"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="60dp" />
 
             <ImageView
@@ -136,7 +136,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="22dp"
+            android:layout_height="28dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal|center_vertical|center_horizontal">
 
@@ -144,13 +144,13 @@
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:id="@+id/tv_P_CostPressureDown"
-                android:textSize="14dp"
+                android:textSize="15dp"
                 android:autoText="false"
                 android:background="@drawable/my_box_dis"
                 android:textColor="#a6a6a6"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="60dp" />
 
             <ImageView
@@ -164,7 +164,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
             android:layout_marginTop="1dp">
@@ -192,8 +192,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/propretop"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
 
         <LinearLayout
@@ -212,7 +212,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="22dp"
+            android:layout_height="28dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal">
 
@@ -225,9 +225,9 @@
                 android:textColor="#a6a6a6"
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
-                android:textSize="14dp"
+                android:textSize="15dp"
                 android:layout_marginLeft="60dp"
-                android:gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:textStyle="bold" />
 
             <ImageView
@@ -240,7 +240,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
             android:layout_marginTop="2dp">
@@ -267,8 +267,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/proheart"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
 
     </LinearLayout>
