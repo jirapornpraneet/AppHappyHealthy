@@ -73,7 +73,7 @@ public class User extends AppCompatActivity {
         p_heart = (TextView) findViewById(R.id.Cost_Heart);
         //p_leveltop = (TextView) findViewById(R.id.LevelPreTop);
         //p_leveldown = (TextView) findViewById(R.id.LevelPreDown);
-       // p_levelheart = (TextView) findViewById(R.id.LevelHaert);
+        // p_levelheart = (TextView) findViewById(R.id.LevelHaert);
 
 
         setValue(sysDate);
@@ -92,9 +92,6 @@ public class User extends AppCompatActivity {
                 mCalendar.get(Calendar.DAY_OF_MONTH),// วัน (1-31)
                 false);
         diabetesTABLE = new DiabetesTABLE(this);
-
-
-
 
 
     }//OnCreate
@@ -131,7 +128,7 @@ public class User extends AppCompatActivity {
         p_costtop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop));
         p_costdown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown));
         //p_leveltop.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Top));
-       // p_leveldown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Down));
+        // p_leveldown.setText(dateSelectDiabetes.get(DiabetesTABLE.P_Cost_Level_Down));
         p_heart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate));
         //p_levelheart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate_Level));
 
@@ -151,16 +148,14 @@ public class User extends AppCompatActivity {
             findMyLevelCostGFR(dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR));
         }
 
-
         //แสดงรูปภาพตามที่ต้องการ P_LevelTop
         if (dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop) != null) {
-            findMyLevelPressureTop(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop));
+            findMyLevelPressureTop(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureTop), null);
         }
 
-
-        //แสดงรูปภาพตามที่ต้องการ K_LevelDown
+        //แสดงรูปภาพตามที่ต้องการ P_LevelDown
         if (dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown) != null) {
-            findMyLevelPressureDown(dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown));
+            findMyLevelPressureTop(null, dateSelectDiabetes.get(DiabetesTABLE.P_CostPressureDown));
         }
 
         //แสดงรูปภาพตามที่ต้องการ K_LevelHeart
@@ -181,7 +176,7 @@ public class User extends AppCompatActivity {
 
         if (IntCostSugarAfter > 120) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
-        } else if (IntCostSugarAfter <  80) {
+        } else if (IntCostSugarAfter < 80) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
         } else {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
@@ -221,7 +216,7 @@ public class User extends AppCompatActivity {
 
         if (IntCostGFR > 90) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
-        } else if (IntCostGFR > 60 ) {
+        } else if (IntCostGFR > 60) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid2));
         } else if (IntCostGFR > 30) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid3));
@@ -234,58 +229,80 @@ public class User extends AppCompatActivity {
     }//findMyLevelDiseaseafter
 
 
-    private String findMyLevelPressureTop(String intCostPressureTop) {
+    private String findMyLevelPressureTop(String intCostPressureTop, String intCostPressureDown) {
+        String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
         String myResult = null;
-        Integer IntCostPressureTop = Integer.parseInt(intCostPressureTop);
-
+        int IntCostPressureTop = 0;
+        int IntCostPressureDown = 0;
+        if (intCostPressureTop != null) {
+            IntCostPressureTop = Integer.parseInt(intCostPressureTop);
+        }
+        if (intCostPressureDown != null) {
+            IntCostPressureDown = Integer.parseInt(intCostPressureDown);
+        }
+        int CostTop = 0, CostDown = 0;
         Resources res = getResources();
 
         ImageView imageView = (ImageView) findViewById(R.id.leveltop);
 
-        if (IntCostPressureTop > 180) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
-        } else if (IntCostPressureTop > 160) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
-        } else if (IntCostPressureTop > 140) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
-        } else if (IntCostPressureTop > 130 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
-        } else if (IntCostPressureTop < 90 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
-        } else {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
+        if (intCostPressureTop != null) {
+            if (IntCostPressureTop >= 180) {
+                CostTop = 0;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
+            } else if (IntCostPressureTop >= 160) {
+                CostTop = 1;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
+            } else if (IntCostPressureTop >= 140) {
+                CostTop = 2;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
+            } else if (IntCostPressureTop >= 130) {
+                CostTop = 3;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
+            } else if (IntCostPressureTop >= 120) {
+                CostTop = 4;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
+            } else if (IntCostPressureTop >= 90) {
+                CostTop = 5;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
+            } else {
+                CostTop = 0;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
+            }
         }
 
+        if (intCostPressureDown != null) {
+            if (IntCostPressureDown >= 110) {
+                CostDown = 0;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
+            } else if (IntCostPressureDown >= 100) {
+                CostDown = 1;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
+            } else if (IntCostPressureDown >= 90) {
+                CostDown = 2;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
+            } else if (IntCostPressureDown >= 85) {
+                CostDown = 3;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
+            } else if (IntCostPressureDown >= 80) {
+                CostDown = 4;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
+            } else if (IntCostPressureDown >= 60) {
+                CostDown = 5;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
+            } else {
+                CostDown = 0;
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
+            }
+        }
+
+        if (CostTop > CostDown) {
+            myResult = resultStrings[CostDown];
+        } else {
+            myResult = resultStrings[CostTop];
+        }
         return myResult;
+
     }//findMyLevelPressureTop
-
-
-    private String findMyLevelPressureDown(String intCostPressureDown) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
-        String myResult = null;
-        Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
-
-        Resources res = getResources();
-
-        ImageView imageView = (ImageView) findViewById(R.id.leveldown);
-
-        if (IntCostPressureDown > 110) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
-        } else if (IntCostPressureDown > 100) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
-        } else if (IntCostPressureDown > 90 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
-        } else if (IntCostPressureDown > 85 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
-        } else if (IntCostPressureDown < 60  ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
-        } else {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
-        }
-
-        return myResult;
-
-    }//findMyLevelPressureDown
 
 
     private String findMyLevelHeart(String intCostHeart) {
@@ -305,7 +322,7 @@ public class User extends AppCompatActivity {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart2));
         } else if (IntHeart < 85) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart3));
-        } else if (IntHeart < 101 ) {
+        } else if (IntHeart < 101) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart4));
         } else {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart5));
@@ -316,7 +333,7 @@ public class User extends AppCompatActivity {
     }//findMyLevelHeart
 
     public void ClickBackuserMain(View view) {
-        startActivity(new Intent(User.this,MainActivity.class));
+        startActivity(new Intent(User.this, MainActivity.class));
 
     }//ClickBackHome
 

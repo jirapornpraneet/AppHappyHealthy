@@ -79,74 +79,54 @@ public class DisplayPressure extends AppCompatActivity {
         Resources res = getResources();
         Resources res2 = getResources();
 
+        int[] getDraw = {R.drawable.pre6,R.drawable.pre5,R.drawable.pre4,R.drawable.pre3,R.drawable.pre2,R.drawable.pre1};
+        int[] getDraw2 = {R.drawable.textlevelpre1,R.drawable.textlevelpre2,R.drawable.textlevelpre3,R.drawable.textlevelpre4,R.drawable.textlevelpre5,R.drawable.textlevelpre6};
+
+
         ImageView imageView = (ImageView) findViewById(R.id.propretop);
         ImageView imageView2 = (ImageView) findViewById(R.id.leveltop);
 
         if (IntCostPressureTop >= 180 ) {
             CostTop = 0;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre6));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre1));
         } else if (IntCostPressureTop >= 160) {
             CostTop = 1;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre5));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre2));
         } else if (IntCostPressureTop >= 140) {
             CostTop = 2;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre3));
         } else if (IntCostPressureTop >= 130 ) {
             CostTop = 3;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre3));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre4));
         } else if (IntCostPressureTop >= 120 ) {
             CostTop = 4;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre2));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre6));
-        } else if (IntCostPressureTop <= 90 ) {
+        } else if (IntCostPressureTop >= 90 ) {
             CostTop = 5;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre6));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre5));
         } else {
             CostTop = 0;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre6));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre5));
         }
 
 
         if (IntCostPressureDown >= 110) {
             CostDown = 0;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre6));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre1));
         } else if (IntCostPressureDown >= 100) {
             CostDown = 1;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre5));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre2));
         } else if (IntCostPressureDown >= 90 ) {
             CostDown = 2;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre3));
         } else if (IntCostPressureDown >= 85 ) {
             CostDown = 3;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre3));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre4));
         } else if (IntCostPressureDown >= 80 ) {
             CostDown = 4;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre2));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre6));
-        } else if (IntCostPressureDown <= 60  ) {
+        } else if (IntCostPressureDown >= 60  ) {
             CostDown = 5;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre6));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre5));
         } else {
             CostDown = 0;
-            imageView.setImageDrawable(res.getDrawable(R.drawable.pre6));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelpre5));
         }
 
 
         if (CostTop > CostDown ) {
+            imageView.setImageDrawable(res.getDrawable(getDraw[CostDown]));
+            imageView2.setImageDrawable(res.getDrawable(getDraw2[CostDown]));
             myResult = resultStrings[CostDown];
         } else {
+            imageView.setImageDrawable(res.getDrawable(getDraw[CostTop]));
+            imageView2.setImageDrawable(res.getDrawable(getDraw2[CostTop]));
             myResult = resultStrings[CostTop];
         }
         return myResult;

@@ -317,13 +317,6 @@
                 android:textSize="11dp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/leveltop"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -358,14 +351,17 @@
                 android:textSize="11dp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/leveldown"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leveltop"
+            android:foregroundGravity="center_vertical|center_horizontal"
+            android:layout_weight="2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp" />
 
         <LinearLayout
             android:orientation="horizontal"

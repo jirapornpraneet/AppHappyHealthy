@@ -135,17 +135,17 @@ public class Pressure extends AppCompatActivity {
             Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
             int CostTop,CostDown;
 
-        if (IntCostPressureTop >= 180 ) {
+        if (IntCostPressureTop >= 180 ) {//ระดับอันตราย
             CostTop = 0;
-        } else if (IntCostPressureTop >= 160) {
+        } else if (IntCostPressureTop >= 160) {//ระดับสูงมากและอันตราย
             CostTop = 1;
-        } else if (IntCostPressureTop >= 140) {
+        } else if (IntCostPressureTop >= 140) {//ระดับสูงมาก
             CostTop = 2;
-        } else if (IntCostPressureTop >= 130 ) {
+        } else if (IntCostPressureTop >= 130 ) {//ระดับค่อนข้างสูง
             CostTop = 3;
-        } else if (IntCostPressureTop >= 120 ) {
+        } else if (IntCostPressureTop >= 120 ) {//ระดับปกติ
             CostTop = 4;
-        } else if (IntCostPressureTop <= 90 ) {
+        } else if (IntCostPressureTop >= 90 ) {//ระดับเหมาะสม
             CostTop = 5;
         } else {
             CostTop = 0;
@@ -162,7 +162,7 @@ public class Pressure extends AppCompatActivity {
             CostDown = 3;
         } else if (IntCostPressureDown >= 80 ) {
             CostDown = 4;
-        } else if (IntCostPressureDown <= 60  ) {
+        } else if (IntCostPressureDown >= 60  ) {
             CostDown = 5;
         } else {
             CostDown = 0;
@@ -268,10 +268,8 @@ public class Pressure extends AppCompatActivity {
         Notification notification =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_alert)
-                        .setContentTitle("วันนี้ค่าความดันโลหิต")
-                        .setContentText( " ค่าความดันตัวบน : " +  str_LP_cost_top+ "\n"
-                                + " ค่าความดันตัวล่าง : "  + str_LP_cost_down+"\n"
-                                + " อัตราการเต้นหัวใจ : " + str_heart )
+                        .setContentTitle("วันนี้ความดันโลหิต")
+                        .setContentText( " ความดัน : " +  findMyLevelPressureTop()+ "\n")
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();
