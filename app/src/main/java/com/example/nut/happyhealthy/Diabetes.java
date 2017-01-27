@@ -143,13 +143,18 @@ public class Diabetes extends AppCompatActivity {
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
 
-        if (IntCostSugarAfter > 160) {
+        if (IntCostSugarAfter >=300 ) {
             myResult = resultStrings[0];
-        } else if (IntCostSugarAfter < 100) {
+        } else if (IntCostSugarAfter >= 200) {
             myResult = resultStrings[1];
-        } else {
+        } else if (IntCostSugarAfter >=110 ) {
             myResult = resultStrings[2];
+        } else if (IntCostSugarAfter <= 70) {
+            myResult = resultStrings[3];
+        } else {
+            myResult = resultStrings[4];
         }
+
 
         return myResult;
     }//findMyLevelDiseaseAfter
@@ -159,12 +164,16 @@ public class Diabetes extends AppCompatActivity {
         String myResult = null;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
 
-        if (IntCostSugarBefore >120 ) {
+        if (IntCostSugarBefore >=300 ) {
             myResult = resultStrings[0];
-        } else if (IntCostSugarBefore < 80) {
+        } else if (IntCostSugarBefore >= 200) {
             myResult = resultStrings[1];
-        } else {
+        } else if (IntCostSugarBefore >=100 ) {
             myResult = resultStrings[2];
+        } else if (IntCostSugarBefore <= 70) {
+            myResult = resultStrings[3];
+        } else {
+            myResult = resultStrings[4];
         }
 
         return myResult;

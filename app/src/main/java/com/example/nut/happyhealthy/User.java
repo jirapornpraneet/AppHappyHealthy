@@ -165,22 +165,27 @@ public class User extends AppCompatActivity {
 
     }
 
-    private String findMyLevelDiseaseBefore(String intCostSugarAfter) {
+    private String findMyLevelDiseaseBefore(String intCostSugarBefore) {
         String myResult = null;
-        int IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
+        int IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
 
         Resources res = getResources();
 
         ImageView imageView = (ImageView) findViewById(R.id.prorediabefore);
 
 
-        if (IntCostSugarAfter > 120) {
+        if (IntCostSugarBefore >=300 ) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
-        } else if (IntCostSugarAfter < 80) {
+        } else if (IntCostSugarBefore >= 200) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore4));
+        } else if (IntCostSugarBefore >= 100 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore5));
+        } else if (IntCostSugarBefore <= 70) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
         } else {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
         }
+
 
         return myResult;
     }//findMyLevelDiseasebefore
@@ -195,9 +200,13 @@ public class User extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.prorediaafter);
 
 
-        if (IntCostSugarAfter > 160) {
+        if (IntCostSugarAfter >= 300 ) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
-        } else if (IntCostSugarAfter < 100) {
+        } else if (IntCostSugarAfter >= 200) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore4));
+        } else if (IntCostSugarAfter >= 110 ) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore5));
+        } else if (IntCostSugarAfter <= 70) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
         } else {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
@@ -333,7 +342,7 @@ public class User extends AppCompatActivity {
     }//findMyLevelHeart
 
     public void ClickBackuserMain(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(User.this, MainActivity.class));
 
     }//ClickBackHome
 
