@@ -179,7 +179,8 @@ public class Diabetes extends AppCompatActivity {
         D_costSugarBefore.setText("");
         D_costSugarAfter.setText("");
         Toast.makeText(Diabetes.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(Diabetes.this, DisplayDisease.class);
+        Intent objIntent = new Intent(getApplicationContext(), DisplayDisease.class);
+        objIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(objIntent);
         finish();
     }//upDataDiabetestoSQLite

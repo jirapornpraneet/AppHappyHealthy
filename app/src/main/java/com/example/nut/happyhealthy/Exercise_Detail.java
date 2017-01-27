@@ -77,7 +77,8 @@ public class Exercise_Detail extends AppCompatActivity {
                 exerciseHistoryTABLE.ExeDuration = Double.valueOf(editExeCal_Total.getText().toString());
                 exerciseHistoryTABLE.addExeHis(exerciseHistoryTABLE);
 
-                Intent intent = new Intent(Exercise_Detail.this, Report.class);
+                Intent intent = new Intent(getApplicationContext(), Report.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
 
@@ -103,7 +104,7 @@ public class Exercise_Detail extends AppCompatActivity {
 
 
     public void ClickBackExeDetailHome(View view) {
-        startActivity(new Intent(Exercise_Detail.this,ExerciseType.class));
+        startActivity(new Intent(getApplicationContext(),ExerciseType.class));
     }//ClickBackHome
 
 

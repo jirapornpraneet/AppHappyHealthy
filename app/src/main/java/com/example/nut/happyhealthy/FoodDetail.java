@@ -82,7 +82,8 @@ public class FoodDetail extends AppCompatActivity {
                 foodHistoryTABLE.addFoodHis(foodHistoryTABLE);
 
 
-                Intent intent = new Intent(FoodDetail.this,Report.class);
+                Intent intent = new Intent(getApplicationContext(),Report.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
 
@@ -111,7 +112,7 @@ public class FoodDetail extends AppCompatActivity {
     }//setdetailfood
 
     public void ClickBackFoodetailHome(View view) {
-        startActivity(new Intent(FoodDetail.this,Food_Type_1.class));
+        startActivity(new Intent(getApplicationContext(),Food_Type_1.class));
     }//ClickBackHome
 
 }//MainClass

@@ -152,7 +152,8 @@ public class Kidney extends AppCompatActivity {
         K_date.setText("");
         K_costGFR.setText("");
         Toast.makeText(Kidney.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(Kidney.this, DisplayKidney.class);
+        Intent objIntent = new Intent(getApplicationContext(), DisplayKidney.class);
+        objIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(objIntent);
         finish();
     }//UpDateKidneytoSQLite
@@ -200,13 +201,13 @@ public class Kidney extends AppCompatActivity {
     }
 
     public void ClickHistoryKidney(View view) {
-        startActivity(new Intent(Kidney.this,History_Kidney.class));
+        startActivity(new Intent(getApplicationContext(),History_Kidney.class));
 
     }//ClickHistoryKidney
 
 
     public void ClickBackKidHome(View view) {
-        startActivity(new Intent(Kidney.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
     }//ClickBackHome
 

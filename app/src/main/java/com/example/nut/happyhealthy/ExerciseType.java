@@ -47,8 +47,9 @@ public class ExerciseType extends AppCompatActivity {
 
                //ส่งค่าไปอีกหน้าหนึ่ง putExtra
                Intent intent2;
-               intent2 = new Intent(ExerciseType.this, Exercise_Detail.class);
+               intent2 = new Intent(getApplicationContext(), Exercise_Detail.class);
                intent2.putExtra("exercise_id", ExeId);
+               intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
 
 
@@ -62,7 +63,7 @@ public class ExerciseType extends AppCompatActivity {
     }//OnCreate
 
     public void ClickBackExeHome(View view) {
-        startActivity(new Intent(ExerciseType.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
 

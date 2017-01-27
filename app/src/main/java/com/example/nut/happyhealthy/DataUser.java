@@ -160,8 +160,10 @@ public class DataUser extends AppCompatActivity {
         User_Height.setText("");
         User_Weight.setText("");
         Toast.makeText(DataUser.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(DataUser.this, MainActivity.class);
+        Intent objIntent = new Intent(getApplicationContext(),MainActivity.class);
+        objIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(objIntent);
+
         finish();
 
     }//UpdateUsertoSQLite

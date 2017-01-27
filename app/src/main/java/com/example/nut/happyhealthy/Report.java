@@ -104,15 +104,17 @@ public class Report extends AppCompatActivity {
         totalCal.setText(String.format("%.2f",(Double.parseDouble(dataSelectSum.get(FoodHistoryTABLE.Total_Cal)))));
     }
     public void ClickFoodHis(View view) {
-        Intent intent = new Intent(Report.this,History_Food.class);
+        Intent intent = new Intent(getApplicationContext(),History_Food.class);
         intent.putExtra("choose_Date",sysDate);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }//ClickFood
 
     public void ClickExeHis(View view) {
-        Intent intent = new Intent(Report.this,History_Exe.class);
+        Intent intent = new Intent(getApplicationContext(),History_Exe.class);
         intent.putExtra("choose_Date",sysDate);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }//ClickFood
@@ -120,7 +122,7 @@ public class Report extends AppCompatActivity {
 
 
     public void ClickBackReMain(View view) {
-        startActivity(new Intent(Report.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
     }//ClickBackHome
 }//MainClass

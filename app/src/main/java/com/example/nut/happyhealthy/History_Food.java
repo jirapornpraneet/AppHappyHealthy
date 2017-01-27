@@ -88,7 +88,7 @@ public class History_Food extends AppCompatActivity {
     }//OnCreate
 
     public void ClickBackHisFoodHome(View view) {
-        startActivity(new Intent(History_Food.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
     public void setListView() {

@@ -189,11 +189,11 @@ public class DisplayPressure extends AppCompatActivity {
     }//bindWidget
 
     public void ClickBackHomeDisPre(View view) {
-        startActivity(new Intent(DisplayPressure.this,Pressure.class));
+        startActivity(new Intent(getApplicationContext(),Pressure.class));
     }//ClickAddKidney
 
     public void ClickHistoryPre(View view) {
-        startActivity(new Intent(DisplayPressure.this,History_Pressure.class));
+        startActivity(new Intent(getApplicationContext(),History_Pressure.class));
     }//ClickHistoryKidney
 
 

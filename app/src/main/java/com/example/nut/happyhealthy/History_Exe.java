@@ -85,7 +85,7 @@ public class History_Exe extends AppCompatActivity {
     }//OnCreate
 
     public void ClickBackHisExeHome(View view) {
-        startActivity(new Intent(History_Exe.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
     public void setListView() {

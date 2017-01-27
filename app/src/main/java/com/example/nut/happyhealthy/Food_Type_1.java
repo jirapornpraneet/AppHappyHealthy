@@ -54,8 +54,9 @@ public class Food_Type_1 extends AppCompatActivity {
 
                 //ส่งค่าไปอีกหน้าหนึ่ง putExtra
                 Intent intent2;
-                intent2 = new Intent(Food_Type_1.this, FoodDetail.class);
+                intent2 = new Intent(getApplicationContext(), FoodDetail.class);
                 intent2.putExtra("food_id", FoodId);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
 
             }
@@ -68,7 +69,7 @@ public class Food_Type_1 extends AppCompatActivity {
     }//onCreate
 
     public void ClickBackFoodHome(View view) {
-        startActivity(new Intent(Food_Type_1.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
 }//MainClass

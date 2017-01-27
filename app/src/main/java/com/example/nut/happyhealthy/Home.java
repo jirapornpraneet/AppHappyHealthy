@@ -29,22 +29,22 @@ public class Home extends Activity  {
     }//Oncreate
 
     public void ClickFood(View view) {
-        startActivity(new Intent(Home.this,Food_Type_1.class));
+        startActivity(new Intent(getApplicationContext(),Food_Type_1.class));
     }//ClickFood
 
-    public void ClickExe(View view) {startActivity(new Intent(Home.this,ExerciseType.class));}//Clickexe
+    public void ClickExe(View view) {startActivity(new Intent(getApplicationContext(),ExerciseType.class));}//Clickexe
 
     public void ClickDiabetes(View view) {
-        startActivity(new Intent(Home.this,Diabetes.class));
+        startActivity(new Intent(getApplicationContext(),Diabetes.class));
     }//ClickDiabetes
 
 
     public void ClickKidney(View view) {
-        startActivity(new Intent(Home.this,Kidney.class));
+        startActivity(new Intent(getApplicationContext(),Kidney.class));
     }//ClickKidney
 
     public void ClickPressure(View view) {
-        startActivity(new Intent(Home.this,Pressure.class));
+        startActivity(new Intent(getApplicationContext(),Pressure.class));
     }//ClickPressure
 
 

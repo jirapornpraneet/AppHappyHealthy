@@ -91,7 +91,7 @@ public class Pressure extends AppCompatActivity {
 
     private void confirmPressure() {
 
-       // str_LP_cost_down = findMyLevelPressureDown();
+        str_LP_cost_down = findMyLevelPressureTop();
         str_LP_cost_top = findMyLevelPressureTop();
         str_heart = findMyLevelHeart();
 
@@ -234,7 +234,8 @@ public class Pressure extends AppCompatActivity {
         P_costPressureDown.setText("");
         P_HeartRate.setText("");
         Toast.makeText(Pressure.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(Pressure.this, DisplayPressure.class);
+        Intent objIntent = new Intent(getApplicationContext(), DisplayPressure.class);
+        objIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(objIntent);
         finish();
     }// upDataPressuretoSQLit
@@ -281,12 +282,12 @@ public class Pressure extends AppCompatActivity {
     }
 
     public void ClickHisPre(View view) {
-        startActivity(new Intent(Pressure.this,History_Pressure.class));
+        startActivity(new Intent(getApplicationContext(),History_Pressure.class));
 
     }//ClickHistoryPre
 
     public void ClickBackRreHome(View view) {
-        startActivity(new Intent(Pressure.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
     }//ClickBackHome
 

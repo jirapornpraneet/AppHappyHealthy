@@ -103,11 +103,11 @@ public class History_Kidney extends AppCompatActivity {
     }//AlertHistoryKidney
 
     public void ClickBackHisKidHome(View view) {
-        startActivity(new Intent(History_Kidney.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
     public void ClickAddKid(View view) {
-        startActivity(new Intent(History_Kidney.this,Kidney.class));
+        startActivity(new Intent(getApplicationContext(),Kidney.class));
     }//ClickAddDia
 
 

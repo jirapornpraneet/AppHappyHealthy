@@ -103,11 +103,11 @@ public class History_Diabetes extends AppCompatActivity {
     }//AlertHistory
 
     public void ClickBackHisDiaHome(View view) {
-        startActivity(new Intent(History_Diabetes.this, MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }//ClickBackHome
 
     public void ClickAddDia(View view) {
-        startActivity(new Intent(History_Diabetes.this, Diabetes.class));
+        startActivity(new Intent(getApplicationContext(), Diabetes.class));
     }//ClickAddDia
 
     public void setListView() {

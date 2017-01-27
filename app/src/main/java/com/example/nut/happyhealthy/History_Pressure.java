@@ -48,7 +48,7 @@ public class History_Pressure extends AppCompatActivity {
                 Cost_Down = Integer.parseInt(preList.get(i).get(PressureTABLE.P_CostPressureDown));
                 Cost_Top = Integer.parseInt(preList.get(i).get(PressureTABLE.P_CostPressureTop));
                 Cost_Heart = Integer.parseInt(preList.get(i).get(PressureTABLE.P_HeartRate));
-                Level_P_Down = preList.get(i).get(PressureTABLE.P_Cost_Level_Down).toString();
+               // Level_P_Down = preList.get(i).get(PressureTABLE.P_Cost_Level_Down).toString();
                 Level_P_Top = preList.get(i).get(PressureTABLE.P_Cost_Level_Top).toString();
                 Level_Heart = preList.get(i).get(PressureTABLE.P_HeartRate_Level).toString();
 
@@ -92,7 +92,6 @@ public class History_Pressure extends AppCompatActivity {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DatePre );
         objAlert.setMessage(" ค่าความดันล่าง : " + Cost_Down + "\n"+
-                            " อยู่ในเกณฑ์ที่ : " + Level_P_Down + "\n"+
                             " ค่าความดันบน : " + Cost_Top + "\n"+
                             " อยู่ในเกณฑ์ที่ : " + Level_P_Top + "\n"+
                             " ค่าการเต้นหัวใจ : " + Cost_Heart + "\n" +
@@ -109,12 +108,12 @@ public class History_Pressure extends AppCompatActivity {
     }//AlertHistory
 
     public void ClickBackHisPreHome(View view) {
-        startActivity(new Intent(History_Pressure.this,MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
 
     public void ClickAddPre(View view) {
-        startActivity(new Intent(History_Pressure.this,Pressure.class));
+        startActivity(new Intent(getApplicationContext(),Pressure.class));
     }//ClickAddPre
 
     public void setListView() {
