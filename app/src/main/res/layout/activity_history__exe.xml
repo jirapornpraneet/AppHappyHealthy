@@ -32,7 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ประวัติออกกำลังกาย"
+            android:text="ข้อมูลออกกำลังกาย"
             android:id="@+id/textView24"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"

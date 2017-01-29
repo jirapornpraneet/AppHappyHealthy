@@ -258,7 +258,7 @@ public class Pressure extends AppCompatActivity {
 
     public void showNotification() {
 
-        Intent intent = new Intent(this, User.class);
+        Intent intent = new Intent(this,DisplayPressure.class);
 //        intent.putExtra("str_L_before", str_L_before);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(User.class);
