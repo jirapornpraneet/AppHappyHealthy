@@ -55,7 +55,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="280dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="105dp"
@@ -106,18 +106,63 @@
 
         <LinearLayout
             android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:foregroundGravity="center_vertical|center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center_vertical">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/radioGroup"
+                android:layout_gravity="center_horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="ก่อนอาหาร"
+                    android:id="@+id/radio_before"
+                    android:textColor="#505050"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center_vertical" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="หลังอาหาร"
+                    android:id="@+id/radio_after"
+                    android:textColor="#505050"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:layout_marginRight="5dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="250dp"
             android:layout_height="35dp"
             android:weightSum="1"
             android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp">
 
             <EditText
                 android:layout_width="160dp"
                 android:layout_height="match_parent"
                 android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/D_costSugarBefore"
+                android:id="@+id/D_costSugar"
                 android:textColor="#6f6f6f"
                 android:layout_gravity="center_vertical"
                 android:textSize="20dp"
@@ -135,59 +180,13 @@
             android:src="@drawable/ml2"
             android:layout_gravity="center_horizontal" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
-
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:id="@+id/imageViewsugatafter"
-                android:src="@drawable/tstsugarafter"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
-
-            <EditText
-                android:layout_width="160dp"
-                android:layout_height="match_parent"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:id="@+id/D_costSugarAfter"
-                android:textColor="#6f6f6f"
-                android:layout_gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/my_box_dis"
-                android:textStyle="bold"
-                android:gravity="center_vertical|center_horizontal" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView66"
-            android:src="@drawable/ml2"
-            android:layout_gravity="center_horizontal" />
-
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="45dp"
             android:id="@+id/imageView3"
             android:onClick="ClickDisLevelsSugar"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/buttonsavediba" />
+            android:src="@drawable/buttonsavediba"
+            android:layout_marginTop="20dp" />
 
     </LinearLayout>
 

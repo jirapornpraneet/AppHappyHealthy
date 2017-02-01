@@ -112,10 +112,8 @@ public class Diabetes extends AppCompatActivity {
        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่ :" + str_D_Date+ "\n"
-                + " ค่าน้ำตาลก่อนอาหาร : " + intCostSugarBefore +"\n"
-                + " อยู่ในเกณฑ์ที่ : " + str_L_before + "\n"
-                + " ค่าน้ำตาลหลังอาหาร : " + intCostSugarAfter+"\n"
-                + " อยู่ในเกณฑ์ที่ : " + str_L_after);
+                + " ค่าน้ำตาล : " + intCostSugarBefore +"\n"
+                + " อยู่ในเกณฑ์ที่ : " + str_L_before );
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override

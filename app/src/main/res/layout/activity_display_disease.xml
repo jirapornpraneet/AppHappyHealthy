@@ -51,7 +51,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -95,10 +95,11 @@
             android:layout_height="30dp"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/tv_D_CostSugarBefore"
+                android:id="@+id/tv_D_CostSugar"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40dp"
@@ -149,83 +150,6 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/tstsugarafter"
-                android:layout_marginRight="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/tv_D_CostSugarAfter"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/my_box_dis"
-                android:textColor="#a6a6a6"
-                android:textSize="18dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="40dp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView67"
-                android:src="@drawable/ml2"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="3dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/tv_D_LevelAfter"
-                android:layout_width="10dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="#f9eefb"
-                android:textSize="0dp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal"
-                android:autoText="false" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/level2" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/prodiaa"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="3dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp" />
 
