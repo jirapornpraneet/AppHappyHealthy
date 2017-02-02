@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -23,11 +25,8 @@ public class DisplayDisease extends AppCompatActivity {
     MyDatabase myDatabase;
     DiabetesTABLE diabetesTABLE;
     //**Explicit
-    private TextView TV_D_Date,TV_D_CostSugarBefore,TV_D_CostSugarAfter,TV_D_LevelBefore,TV_D_LevelAfter;
-    private String  str_D_Date,intCostSugarBefore,intCostSugarAfter,tv_D_LevelBefore,tv_D_LevelAfter ;
-
-
-
+    private TextView TV_D_Date, TV_D_CostSugar, TV_D_Level;
+    private String str_D_Date, intCostSugar, tv_D_Level, str_status;
 
 
     @Override
@@ -46,11 +45,6 @@ public class DisplayDisease extends AppCompatActivity {
         diabetesTABLE = new DiabetesTABLE(this);
 
 
-
-
-
-
-
     }//OnCreate
 
 
@@ -62,27 +56,28 @@ public class DisplayDisease extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             do {
                 str_D_Date = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_DateTime));
-                intCostSugarBefore = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_CostSugarBefore));
-                intCostSugarAfter = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_CostSugarAfter));
-                tv_D_LevelBefore = findMyLevelDiseaseBefore(intCostSugarBefore);
-                tv_D_LevelAfter = findMyLevelDiseaseAfter(intCostSugarAfter);
+                intCostSugar = String.valueOf(cursor.getInt(cursor.getColumnIndex(DiabetesTABLE.D_CostSugar)));
+                tv_D_Level = findMyLevelDiseaseBefore(intCostSugar);
+                str_status = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_Status));
             } while (cursor.moveToNext());
         }
 
         cursor.close();
+
+
         TV_D_Date.setText(str_D_Date);
-        TV_D_CostSugarBefore.setText(intCostSugarBefore);
-        TV_D_CostSugarAfter.setText(intCostSugarAfter);
-        TV_D_LevelBefore.setText(tv_D_LevelBefore);
-        TV_D_LevelAfter.setText(tv_D_LevelAfter);
+        if (intCostSugar != null) {
+            TV_D_CostSugar.setText(intCostSugar);
+        }
+        TV_D_Level.setText(tv_D_Level);
 
 
     } // Show View
 
-    private String findMyLevelDiseaseBefore(String intCostSugarBefore) {
+    private String findMyLevelDiseaseBefore(String intCostSugar) {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
-        Integer IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
+        Integer IntCostSugar = Integer.parseInt(intCostSugar);
 
         Resources res = getResources();
         Resources res2 = getResources();
@@ -90,19 +85,19 @@ public class DisplayDisease extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.prodia);
         ImageView imageView2 = (ImageView) findViewById(R.id.level1);
 
-        if (IntCostSugarBefore >=300 ) {
+        if (IntCostSugar >= 300) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
-        } else if (IntCostSugarBefore >= 200) {
+        } else if (IntCostSugar >= 200) {
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
-        } else if (IntCostSugarBefore >= 100 ) {
+        } else if (IntCostSugar >= 100) {
             myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
-        } else if (IntCostSugarBefore <= 70) {
+        } else if (IntCostSugar <= 70) {
             myResult = resultStrings[3];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
@@ -123,30 +118,23 @@ public class DisplayDisease extends AppCompatActivity {
 
         Resources res = getResources();
         Resources res2 = getResources();
-        ImageView imageView = (ImageView) findViewById(R.id.prodiaa);
-        ImageView imageView2 = (ImageView) findViewById(R.id.level2);
 
 
-        if (IntCostSugarAfter >= 300 ) {
+        if (IntCostSugarAfter >= 300) {
             myResult = resultStrings[0];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
+
         } else if (IntCostSugarAfter >= 200) {
             myResult = resultStrings[1];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
-        } else if (IntCostSugarAfter >= 110 ) {
+
+        } else if (IntCostSugarAfter >= 110) {
             myResult = resultStrings[2];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
+
         } else if (IntCostSugarAfter <= 70) {
             myResult = resultStrings[3];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
+
         } else {
             myResult = resultStrings[4];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia1));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
+
         }
 
         return myResult;
@@ -157,24 +145,21 @@ public class DisplayDisease extends AppCompatActivity {
     private void bindWidget() {
 
         TV_D_Date = (TextView) findViewById(R.id.tv_D_Date);
-        TV_D_CostSugarBefore = (TextView) findViewById(R.id.tv_D_CostSugarBefore);
-        TV_D_CostSugarAfter = (TextView) findViewById(R.id.tv_D_CostSugarAfter);
-        TV_D_LevelBefore = (TextView) findViewById(R.id.tv_D_LevelBefore);
-        TV_D_LevelAfter = (TextView) findViewById(R.id.tv_D_LevelAfter);
+        TV_D_Level = (TextView) findViewById(R.id.tv_D_Level);
+        TV_D_CostSugar = (TextView) findViewById(R.id.tv_D_CostSugar);
+
 
     }//bindWidget
 
 
     public void ClickBackHomeDisDiabetes(View view) {
-        startActivity(new Intent(getApplicationContext(),Diabetes.class));
+        startActivity(new Intent(getApplicationContext(), Diabetes.class));
     }//ClickAddDiabetes
 
 
     public void ClickHistoryDiabetes(View view) {
-        startActivity(new Intent(getApplicationContext(),History_Diabetes.class));
+        startActivity(new Intent(getApplicationContext(), History_Diabetes.class));
     }//ClickHistoryDiabetes
-
-
 
 
 }//MainClass

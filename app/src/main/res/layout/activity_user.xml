@@ -103,18 +103,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ค่าน้ำตาลก่อนอาหาร :"
-                android:id="@+id/textView33"
+                android:text="status"
+                android:id="@+id/d_status"
                 android:textSize="11dp"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:textColor="#464444" />
+                android:textColor="#464444"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:text="costsugar"
-                android:id="@+id/CostSugarBefore"
+                android:id="@+id/CostSugar"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
@@ -131,47 +130,6 @@
                 android:layout_weight="2"
                 android:layout_marginLeft="10dp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/container_toolbar"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_marginBottom="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ค่าน้ำตาลหลังอาหาร :"
-                android:id="@+id/textView35"
-                android:textSize="11dp"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:textColor="#464444" />
-
-            <TextView
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:text="costsugar"
-                android:id="@+id/CostSugarAfter"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:hint="costsugar"
-                android:layout_gravity="center_vertical"
-                android:textSize="11dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/prorediaafter"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp" />
         </LinearLayout>
 
     </LinearLayout>

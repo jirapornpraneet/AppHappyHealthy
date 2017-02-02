@@ -22,8 +22,8 @@ public class History_Diabetes extends AppCompatActivity {
     DiabetesTABLE dia;
     ArrayList<HashMap<String, String>> diabList;
     String[] Choice;
-    String DateDiabetes, LevelBefore, LevelAfter;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
-    int D_id, Cost1Diabetes, Cost2Diabetes;
+    String DateDiabetes, Level, CostStatus;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
+    int D_id, Cost1Diabetes ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +43,9 @@ public class History_Diabetes extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 D_id = Integer.parseInt(diabList.get(i).get(DiabetesTABLE.D_Id));
                 DateDiabetes = diabList.get(i).get(DiabetesTABLE.D_DateTime).toString();
-                Cost1Diabetes = Integer.parseInt(diabList.get(i).get(DiabetesTABLE.D_CostSugarBefore));
-                Cost2Diabetes = Integer.parseInt(diabList.get(i).get(DiabetesTABLE.D_CostSugarAfter));
-                LevelBefore = diabList.get(i).get(DiabetesTABLE.D_LevelCostBefore).toString();
-                LevelAfter = diabList.get(i).get(DiabetesTABLE.D_LevelCostAfter).toString();
+                Cost1Diabetes = Integer.parseInt(diabList.get(i).get(DiabetesTABLE.D_CostSugar));
+                Level = diabList.get(i).get(DiabetesTABLE.D_Level).toString();
+                CostStatus = diabList.get(i).get(DiabetesTABLE.D_Status).toString();
 
 
                 //AlertHistory();
@@ -88,10 +87,8 @@ public class History_Diabetes extends AppCompatActivity {
     private void AlertHistory() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DateDiabetes);
-        objAlert.setMessage(" ค่าน้ำตาลก่อนอาหาร : " + Cost1Diabetes + "\n" +
-                " อยู่ในเกณฑ์ที่ : " + LevelBefore + "\n" +
-                " ค่าน้ำตาลหลังอาหาร : " + Cost2Diabetes + "\n" +
-                " อยู่ในเกณฑ์ที่ : " + LevelAfter);
+        objAlert.setMessage(" ค่าน้ำตาล "+ CostStatus +" : "+ Cost1Diabetes + "\n" +
+                " อยู่ในเกณฑ์ที่ : " + Level + "\n" );
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

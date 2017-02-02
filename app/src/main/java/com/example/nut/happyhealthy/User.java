@@ -38,7 +38,7 @@ public class User extends AppCompatActivity {
     //**Explicit
     DiabetesTABLE diabetesTABLE;
     HashMap<String, String> dateSelectDiabetes;
-    TextView chooseDate, d_date, d_CostSugarBefore, d_CostSugarAfter, d_LevelCostBefore, d_LevelCostAfter,
+    TextView chooseDate, d_date, d_CostSugar,  d_Level ,d_status,
             k_date, k_cost, k_level, p_date, p_costtop, p_costdown, p_heart, p_leveltop, p_leveldown, p_levelheart;
 
 
@@ -60,8 +60,8 @@ public class User extends AppCompatActivity {
         chooseDate = (TextView) findViewById(R.id.chooseDate);
 
         d_date = (TextView) findViewById(R.id.D_date);
-        d_CostSugarBefore = (TextView) findViewById(R.id.CostSugarBefore);
-        d_CostSugarAfter = (TextView) findViewById(R.id.CostSugarAfter);
+        d_CostSugar = (TextView) findViewById(R.id.CostSugar);
+        d_status = (TextView) findViewById(R.id.d_status);
         //d_LevelCostBefore = (TextView) findViewById(R.id.LevelCostBefore);
         //d_LevelCostAfter = (TextView) findViewById(R.id.LevelCostAfter);
         k_date = (TextView) findViewById(R.id.K_date);
@@ -117,8 +117,8 @@ public class User extends AppCompatActivity {
 
         chooseDate.setText(textDate);
         d_date.setText(dateSelectDiabetes.get(DiabetesTABLE.D_DateTime));
-        d_CostSugarBefore.setText(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore));
-        d_CostSugarAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter));
+        d_CostSugar.setText(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar));
+        d_status.setText(dateSelectDiabetes.get(DiabetesTABLE.D_Status));
         //d_LevelCostBefore.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostBefore));
         //d_LevelCostAfter.setText(dateSelectDiabetes.get(DiabetesTABLE.D_LevelCostAfter));
         k_date.setText(dateSelectDiabetes.get(DiabetesTABLE.K_DateTime));
@@ -133,15 +133,11 @@ public class User extends AppCompatActivity {
         //p_levelheart.setText(dateSelectDiabetes.get(DiabetesTABLE.P_HeartRate_Level));
 
         //แสดงรูปภาพตามที่ต้องการ  D_CostSugarBefore
-        if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore) != null) {
-            findMyLevelDiseaseBefore(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarBefore));
+        if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar) != null) {
+            findMyLevelDiseaseBefore(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar));
         }
 
 
-        //แสดงรูปภาพตามที่ต้องการ  D_CostSugarAfter
-        if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter) != null) {
-            findMyLevelDiseaseAfter(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugarAfter));
-        }
 
         //แสดงรูปภาพตามที่ต้องการ K_Level
         if (dateSelectDiabetes.get(DiabetesTABLE.K_CostGFR) != null) {
@@ -165,9 +161,9 @@ public class User extends AppCompatActivity {
 
     }
 
-    private String findMyLevelDiseaseBefore(String intCostSugarBefore) {
+    private String findMyLevelDiseaseBefore(String intCostSugar) {
         String myResult = null;
-        int IntCostSugarBefore = Integer.parseInt(intCostSugarBefore);
+        int IntCostSugarBefore = Integer.parseInt(intCostSugar);
 
         Resources res = getResources();
 
@@ -197,19 +193,15 @@ public class User extends AppCompatActivity {
 
         Resources res = getResources();
 
-        ImageView imageView = (ImageView) findViewById(R.id.prorediaafter);
 
 
         if (IntCostSugarAfter >= 300 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+
         } else if (IntCostSugarAfter >= 200) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore4));
         } else if (IntCostSugarAfter >= 110 ) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore5));
         } else if (IntCostSugarAfter <= 70) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
         } else {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+
         }
 
         return myResult;

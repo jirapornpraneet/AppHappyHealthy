@@ -22,10 +22,9 @@ public class DiabetesTABLE {
     public static final String Diabetes = "Diabetes";
     public static final String D_Id = "D_Id";
     public static final String D_DateTime = "D_DateTime";
-    public static final String D_CostSugarBefore = "D_CostSugarBefore";
-    public static final String D_CostSugarAfter = "D_CostSugarAfter";
-    public static final String D_LevelCostBefore = "D_LevelCostBefore";
-    public static final String D_LevelCostAfter = "D_LevelCostAfter";
+    public static final String D_CostSugar = "D_CostSugar";
+    public static final String D_Level = "D_Level";
+    public static final String D_Status = "D_Status";
     public static final String User_Id = "User_Id";
 
     public static final String Kidney = "Kidney";
@@ -54,14 +53,13 @@ public class DiabetesTABLE {
 
 
     //Add New Value
-    public long addNewValueToSQLite(String str_D_Date, int intCostSugarBefore, int intCostSugarAfter, String str_L_before, String str_L_after) {
+    public long addNewValueToSQLite(String str_D_Date, int intCostSugar, String str_Level,String str_Status) {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(D_DateTime, str_D_Date);
-        contentValues.put(D_CostSugarBefore, intCostSugarBefore);
-        contentValues.put(D_CostSugarAfter, intCostSugarAfter);
-        contentValues.put(D_LevelCostBefore, str_L_before);
-        contentValues.put(D_LevelCostAfter, str_L_after);
+        contentValues.put(D_CostSugar, intCostSugar);
+        contentValues.put(D_Level, str_Level);
+        contentValues.put(D_Status, str_Status);
         long diabetes_id = writeSQLite.insert(Diabetes, null, contentValues);
         return diabetes_id;
     }//Add New Value
@@ -80,10 +78,9 @@ public class DiabetesTABLE {
                 HashMap<String, String> diab = new HashMap<String, String>();
                 diab.put(D_Id, cursor.getString(cursor.getColumnIndex(D_Id)));
                 diab.put(D_DateTime, cursor.getString(cursor.getColumnIndex(D_DateTime)));
-                diab.put(D_CostSugarBefore, cursor.getString(cursor.getColumnIndex(D_CostSugarBefore)));
-                diab.put(D_CostSugarAfter, cursor.getString(cursor.getColumnIndex(D_CostSugarAfter)));
-                diab.put(D_LevelCostBefore, cursor.getString(cursor.getColumnIndex(D_LevelCostBefore)));
-                diab.put(D_LevelCostAfter, cursor.getString(cursor.getColumnIndex(D_LevelCostAfter)));
+                diab.put(D_CostSugar, cursor.getString(cursor.getColumnIndex(D_CostSugar)));
+                diab.put(D_Level, cursor.getString(cursor.getColumnIndex(D_Level)));
+                diab.put(D_Status, cursor.getString(cursor.getColumnIndex(D_Status)));
                 diabList.add(diab);
             } while (cursor.moveToNext());
         }
@@ -116,10 +113,9 @@ public class DiabetesTABLE {
             do {
                 disease.put(D_Id, cursor.getString(cursor.getColumnIndex(D_Id)));
                 disease.put(D_DateTime, cursor.getString(cursor.getColumnIndex(D_DateTime)));
-                disease.put(D_CostSugarBefore, cursor.getString(cursor.getColumnIndex(D_CostSugarBefore)));
-                disease.put(D_CostSugarAfter, cursor.getString(cursor.getColumnIndex(D_CostSugarAfter)));
-                disease.put(D_LevelCostBefore, cursor.getString(cursor.getColumnIndex(D_LevelCostBefore)));
-                disease.put(D_LevelCostAfter, cursor.getString(cursor.getColumnIndex(D_LevelCostAfter)));
+                disease.put(D_CostSugar, cursor.getString(cursor.getColumnIndex(D_CostSugar)));;
+                disease.put(D_Level, cursor.getString(cursor.getColumnIndex(D_Level)));
+                disease.put(D_Status, cursor.getString(cursor.getColumnIndex(D_Status)));
                 disease.put(K_Id, cursor.getString(cursor.getColumnIndex(K_Id)));
                 disease.put(K_DateTime, cursor.getString(cursor.getColumnIndex(K_DateTime)));
                 disease.put(K_CostGFR, cursor.getString(cursor.getColumnIndex(K_CostGFR)));
@@ -129,7 +125,7 @@ public class DiabetesTABLE {
                 disease.put(P_CostPressureDown, cursor.getString(cursor.getColumnIndex(P_CostPressureDown)));
                 disease.put(P_CostPressureTop, cursor.getString(cursor.getColumnIndex(P_CostPressureTop)));
                 disease.put(P_Cost_Level_Down, cursor.getString(cursor.getColumnIndex(P_Cost_Level_Down)));
-                disease.put(P_Cost_Level_Top, cursor.getString(cursor.getColumnIndex(P_Cost_Level_Top)));
+//                disease.put(P_Cost_Level_Top, cursor.getString(cursor.getColumnIndex(P_Cost_Level_Top)));
                 disease.put(P_HeartRate, cursor.getString(cursor.getColumnIndex(P_HeartRate)));
                 disease.put(P_HeartRate_Level, cursor.getString(cursor.getColumnIndex(P_HeartRate_Level)));
             } while (cursor.moveToNext());
