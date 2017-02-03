@@ -115,7 +115,7 @@
                 android:text="costsugar"
                 android:id="@+id/CostSugar"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="16dp"
                 android:hint="costsugar"
                 android:layout_gravity="center_vertical"
                 android:textSize="13dp"
@@ -191,7 +191,7 @@
                 android:id="@+id/textView36"
                 android:textSize="13dp"
                 android:textStyle="bold"
-                android:text="ค่าการทำงานไต"
+                android:text="ค่าการทำงานไต :"
                 android:textColor="#464444"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_gravity="center_vertical" />
@@ -278,7 +278,7 @@
                 android:textSize="13dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
-                android:text="ค่าความดันบน "
+                android:text="ค่าความดันบน :"
                 android:textColor="#464444"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal" />
@@ -302,7 +302,7 @@
                 android:textSize="13dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
-                android:text="ค่าความดันล่าง"
+                android:text="ค่าความดันล่าง :"
                 android:textColor="#464444"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal" />
@@ -357,7 +357,7 @@
                 android:textSize="13dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
-                android:text="ค่าการเต้นหัวใจ"
+                android:text="ค่าการเต้นหัวใจ :"
                 android:textColor="#464444" />
 
             <TextView

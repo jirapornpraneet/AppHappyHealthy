@@ -69,10 +69,10 @@ public class Diabetes extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.before:
-                        str_status = "ค่าน้ำตาลในเลือดก่อนอาหาร";
+                        str_status = "ค่าน้ำตาลในเลือดก่อนอาหาร :";
                         break;
                     case R.id.after:
-                        str_status = "ค่าน้ำตาลในเลือดหลังอาหาร";
+                        str_status = "ค่าน้ำตาลในเลือดหลังอาหาร :";
                         break;
                 }
                 // TVSex.setText(strSex);
@@ -138,7 +138,7 @@ public class Diabetes extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่ :" + str_D_Date + "\n"
-                + str_status + " : " + intCostSugar + "\n"
+                + str_status  + intCostSugar + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_Level);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
@@ -249,8 +249,7 @@ public class Diabetes extends AppCompatActivity {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_alert)
                         .setContentTitle("วันนี้ค่าน้ำตาลในเลือด")
-                        .setContentText(str_status +" : "+ intCostSugar+ "\n"
-                                 + str_Level)
+                        .setContentText( intCostSugar + ":" + str_Level)
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();

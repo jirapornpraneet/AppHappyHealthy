@@ -248,7 +248,7 @@ public class Pressure extends AppCompatActivity {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_alert)
                         .setContentTitle("วันนี้ความดันโลหิต")
-                        .setContentText( " ความดัน : " +  findMyLevelPressureTop()+ "\n")
+                        .setContentText( " บน: "+ intCostPressureTop + " ล่าง: " +intCostPressureDown +  findMyLevelPressureTop()+ "\n")
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();

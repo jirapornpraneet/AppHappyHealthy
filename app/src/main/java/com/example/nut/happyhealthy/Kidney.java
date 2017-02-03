@@ -189,7 +189,7 @@ public class Kidney extends AppCompatActivity {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_alert)
                         .setContentTitle("วันนี้ค่าการทำงานไต")
-                        .setContentText( " ค่าการทำงานไต : "  + str_L_cost)
+                        .setContentText( intCostGFR + ":"  + str_L_cost)
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();
