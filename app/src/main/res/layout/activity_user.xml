@@ -62,7 +62,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/container_toolbar"
         android:background="@drawable/my_re_di"
         android:layout_marginTop="45dp"
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:text="DD-MM-YY HH:MM"
                 android:id="@+id/D_date"
-                android:textSize="12dp"
+                android:textSize="13dp"
                 android:layout_gravity="center_vertical"
                 android:textColor="#262626"
                 android:textStyle="bold"
@@ -105,31 +105,40 @@
                 android:layout_height="wrap_content"
                 android:text="status"
                 android:id="@+id/d_status"
-                android:textSize="11dp"
+                android:textSize="13dp"
                 android:textColor="#464444"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="costsugar"
                 android:id="@+id/CostSugar"
-                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:hint="costsugar"
                 android:layout_gravity="center_vertical"
-                android:textSize="11dp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_toolbar"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/prorediabefore"
                 android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_weight="2"
                 android:layout_marginLeft="10dp" />
-
         </LinearLayout>
 
     </LinearLayout>
@@ -137,10 +146,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/my_re_kid"
         android:layout_below="@+id/container_toolbar"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="140dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_alignParentEnd="false">
@@ -159,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:text="DD-MM-YY HH:MM"
                 android:id="@+id/K_date"
-                android:textSize="12dp"
+                android:textSize="13dp"
                 android:layout_gravity="center_vertical"
                 android:textColor="#262626"
                 android:textStyle="bold"
@@ -173,7 +182,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_toolbar"
             android:layout_marginTop="4dp"
-            android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal"
             android:layout_marginBottom="5dp">
 
@@ -181,31 +189,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView36"
-                android:textSize="11dp"
-                android:layout_marginLeft="10dp"
+                android:textSize="13dp"
                 android:textStyle="bold"
-                android:text="ค่าการทำงานไต :"
-                android:textColor="#464444" />
+                android:text="ค่าการทำงานไต"
+                android:textColor="#464444"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_gravity="center_vertical" />
 
             <TextView
-                android:layout_width="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CostGFR"
                 android:id="@+id/CostGFR"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:hint="CostGFR"
                 android:layout_gravity="center_vertical"
-                android:textSize="11dp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_toolbar"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="5dp" >
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/levelkid"
                 android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_weight="2"
                 android:layout_marginLeft="10dp" />
         </LinearLayout>
 
@@ -215,7 +234,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="300dp"
         android:layout_alignLeft="@+id/container_toolbar"
         android:background="@drawable/my_re_pre"
         android:layout_marginLeft="5dp"
@@ -235,7 +254,7 @@
                 android:layout_height="wrap_content"
                 android:text="DD-MM-YY HH:MM"
                 android:id="@+id/P_date"
-                android:textSize="12dp"
+                android:textSize="13dp"
                 android:layout_gravity="center_vertical"
                 android:textColor="#262626"
                 android:textStyle="bold"
@@ -256,23 +275,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView38"
-                android:textSize="11dp"
+                android:textSize="13dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
-                android:text="ค่าความดันบน :"
-                android:textColor="#464444" />
+                android:text="ค่าความดันบน "
+                android:textColor="#464444"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
 
             <TextView
-                android:layout_width="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cost"
                 android:id="@+id/Cost_PreTop"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:hint="Cost"
                 android:layout_gravity="center_vertical"
-                android:textSize="11dp"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView39"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:text="ค่าความดันล่าง"
+                android:textColor="#464444"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cost"
+                android:id="@+id/Cost_PreDown"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:hint="Cost"
+                android:layout_gravity="center_vertical"
+                android:textSize="13dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -285,37 +329,14 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical|center_horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView39"
-                android:textSize="11dp"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:text="ค่าความดันล่าง :"
-                android:textColor="#464444" />
-
-            <TextView
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
-                android:text="Cost"
-                android:id="@+id/Cost_PreDown"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:hint="Cost"
-                android:layout_gravity="center_vertical"
-                android:textSize="11dp"
-                android:textStyle="bold" />
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/leveltop"
                 android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_weight="2"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 
@@ -333,32 +354,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView40"
-                android:textSize="11dp"
+                android:textSize="13dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
-                android:text="ค่าการเต้นหัวใจ :"
+                android:text="ค่าการเต้นหัวใจ"
                 android:textColor="#464444" />
 
             <TextView
-                android:layout_width="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cost"
                 android:id="@+id/Cost_Heart"
-                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:hint="Cost"
                 android:layout_gravity="center_vertical"
-                android:textSize="11dp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_toolbar"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="2dp" >
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/levelheart"
                 android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
     </LinearLayout>

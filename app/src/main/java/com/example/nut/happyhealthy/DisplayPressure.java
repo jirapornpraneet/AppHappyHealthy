@@ -15,8 +15,7 @@ public class DisplayPressure extends AppCompatActivity {
 
     SQLiteDatabase db;
     MyDatabase myDatabase;
-
-
+    PressureTABLE pressureTABLE;
 
     //Explicit
     private TextView TV_P_Date,TV_P_CostPressureDown,TV_P_CostPressureTop,TV_P_LevelDown,TV_P_LevelTop,TV_P_Heart,TV_P_level_heart;
@@ -35,10 +34,10 @@ public class DisplayPressure extends AppCompatActivity {
         // Show View
         showView();
 
+        pressureTABLE = new PressureTABLE (this);
+
 
     }//Oncreate
-
-
 
     private void showView() {
         db = myDatabase.getReadableDatabase();
@@ -62,7 +61,7 @@ public class DisplayPressure extends AppCompatActivity {
         TV_P_CostPressureDown.setText(intCostPressureDown);
         TV_P_CostPressureTop.setText(intCostPressureTop);
         TV_P_Heart.setText(intCostHeart);
-//        TV_P_LevelDown.setText(tv_P_LevelDown);
+       // TV_P_LevelDown.setText(tv_P_LevelDown);
         TV_P_LevelTop.setText(tv_P_LevelTop);
         TV_P_level_heart.setText(tv_level_heart);
 

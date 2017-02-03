@@ -40,12 +40,13 @@ public class Diabetes extends AppCompatActivity {
     //การประกาศตัวแปร
     private DiabetesTABLE objdiabetesTABLE;
     private EditText D_costSugar;
-    private String  str_D_Date, intCostSugar,str_Level,str_status ;
-    private TextView  D_date;
+    private String str_D_Date, intCostSugar, str_Level, str_status;
+    private TextView D_date;
     SimpleDateFormat df_show;
     Calendar c;
-    private RadioButton before,after;
+    private RadioButton before, after;
     private RadioGroup D_Status;
+    int eatType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +54,8 @@ public class Diabetes extends AppCompatActivity {
         setContentView(R.layout.activity_diabetes);
 
 
-
         //Bind wiget
-        D_date = (TextView)findViewById(R.id.D_date);
+        D_date = (TextView) findViewById(R.id.D_date);
         D_costSugar = (EditText) findViewById(R.id.D_costSugar);
         D_Status = (RadioGroup) findViewById(R.id.D_Status);
 
@@ -88,7 +88,6 @@ public class Diabetes extends AppCompatActivity {
         D_date.setText(df_show.format(c.getTime()));
 
 
-
     }////main method
 
     private void connectDataBase() {
@@ -104,16 +103,15 @@ public class Diabetes extends AppCompatActivity {
         intCostSugar = D_costSugar.getText().toString().trim();
 
 
-
         //Checkspace
-        if (str_D_Date.equals("") ||  intCostSugar.equals("")) {
+        if (str_D_Date.equals("") || intCostSugar.equals("")) {
 
             showAlert();
 
             /**MyAlert myAlert = new MyAlert();
              myAlert.myDialog(this, "เบาหวาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");**/
 
-        }else  {
+        } else {
             confirmDiabetes();
             showNotification();
 
@@ -122,23 +120,26 @@ public class Diabetes extends AppCompatActivity {
 
     private void confirmDiabetes() {
 
-        str_Level = findMyLevelDiseaseAfter();
-        str_Level = findMyLevelDiseaseBefore();
+        if (before.isChecked()) {
+            str_Level = findMyLevelDiseaseBefore();
+        } else {
+            str_Level = findMyLevelDiseaseAfter();
+        }
 
         // Find BMI
         /**int  intcostsugarbefore = Integer.parseInt(intCostSugarBefore);
-        int  intcostsugarafter = Integer.parseInt(intCostSugarAfter);
+         int  intcostsugarafter = Integer.parseInt(intCostSugarAfter);
 
-        int IntCostSugarBefore = intcostsugarbefore;
-        int IntCostSugarAfter = intcostsugarafter;**/
+         int IntCostSugarBefore = intcostsugarbefore;
+         int IntCostSugarAfter = intcostsugarafter;**/
 
         //ShowConfrimDiabetes();
 
-       AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
-        builder.setMessage(" วันที่ :" + str_D_Date+ "\n"
-                + str_status + " : " +intCostSugar +"\n"
-                + " อยู่ในเกณฑ์ที่ : " + str_Level );
+        builder.setMessage(" วันที่ :" + str_D_Date + "\n"
+                + str_status + " : " + intCostSugar + "\n"
+                + " อยู่ในเกณฑ์ที่ : " + str_Level);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
             @Override
@@ -151,26 +152,28 @@ public class Diabetes extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 upDataDiabetestoSQLite();
 
-           }
+            }
         });
         builder.show();
 
 
     }//ComfirmData
 
-    /**private void ShowConfrimDiabetes() {
-    }//ShowConfrimDiabetes**/
+    /**
+     * private void ShowConfrimDiabetes() {
+     * }//ShowConfrimDiabetes
+     **/
 
     private String findMyLevelDiseaseAfter() {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugar);
 
-        if (IntCostSugarAfter >=300 ) {
+        if (IntCostSugarAfter >= 300) {
             myResult = resultStrings[0];
         } else if (IntCostSugarAfter >= 200) {
             myResult = resultStrings[1];
-        } else if (IntCostSugarAfter >=110 ) {
+        } else if (IntCostSugarAfter >= 110) {
             myResult = resultStrings[2];
         } else if (IntCostSugarAfter <= 70) {
             myResult = resultStrings[3];
@@ -187,11 +190,11 @@ public class Diabetes extends AppCompatActivity {
         String myResult = null;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
 
-        if (IntCostSugarBefore >=300 ) {
+        if (IntCostSugarBefore >= 300) {
             myResult = resultStrings[0];
         } else if (IntCostSugarBefore >= 200) {
             myResult = resultStrings[1];
-        } else if (IntCostSugarBefore >=100 ) {
+        } else if (IntCostSugarBefore >= 100) {
             myResult = resultStrings[2];
         } else if (IntCostSugarBefore <= 70) {
             myResult = resultStrings[3];
@@ -206,10 +209,10 @@ public class Diabetes extends AppCompatActivity {
 
         DiabetesTABLE objdiabetesTABLE = new DiabetesTABLE(this);
         long inSertDataUser = objdiabetesTABLE.addNewValueToSQLite
-                (str_D_Date, Integer.parseInt(intCostSugar),str_Level,str_status);
+                (str_D_Date, Integer.parseInt(intCostSugar), str_Level, str_status);
         D_date.setText("");
         D_costSugar.setText("");
-        Toast.makeText(Diabetes.this,"บันทึกข้อมูลเรียบร้อย",Toast.LENGTH_SHORT).show();
+        Toast.makeText(Diabetes.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
         Intent objIntent = new Intent(getApplicationContext(), DisplayDisease.class);
         objIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(objIntent);
@@ -232,7 +235,6 @@ public class Diabetes extends AppCompatActivity {
     }//ShowAlert
 
 
-
     public void showNotification() {
 
         Intent intent = new Intent(this, DisplayDisease.class);
@@ -247,8 +249,8 @@ public class Diabetes extends AppCompatActivity {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_alert)
                         .setContentTitle("วันนี้ค่าน้ำตาลในเลือด")
-                        .setContentText( " ค่าน้ำตาลก่อนอาหาร : " + str_Level + "\n"
-                                + " ค่าน้ำตาลหลังอาหาร : " + str_Level)
+                        .setContentText(str_status +" : "+ intCostSugar+ "\n"
+                                 + str_Level)
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();
@@ -260,12 +262,12 @@ public class Diabetes extends AppCompatActivity {
     }
 
     public void ClickHistoryDiabetes(View view) {
-        startActivity(new Intent(Diabetes.this,History_Diabetes.class));
+        startActivity(new Intent(Diabetes.this, History_Diabetes.class));
     }//ClickHistoryDiabetes
 
 
     public void ClickBackDiaHome(View view) {
-        startActivity(new Intent(Diabetes.this,MainActivity.class));
+        startActivity(new Intent(Diabetes.this, MainActivity.class));
     }//ClickBackHome
 
 

@@ -87,7 +87,7 @@ public class History_Diabetes extends AppCompatActivity {
     private void AlertHistory() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DateDiabetes);
-        objAlert.setMessage(" ค่าน้ำตาล "+ CostStatus +" : "+ Cost1Diabetes + "\n" +
+        objAlert.setMessage(CostStatus +" : "+ Cost1Diabetes + "\n" +
                 " อยู่ในเกณฑ์ที่ : " + Level + "\n" );
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {

@@ -179,28 +179,6 @@ public class Pressure extends AppCompatActivity {
     }//findMyLevelPressureTop
 
 
-   /** private String findMyLevelPressureDown() {
-            String[] resultStrings = getResources().getStringArray(R.array.my_pressure);
-            String myResult = null;
-            Integer IntCostPressureDown = Integer.parseInt(intCostPressureDown);
-
-        if (IntCostPressureDown > 110) {
-            myResult = resultStrings[0];
-        } else if (IntCostPressureDown > 100) {
-            myResult = resultStrings[1];
-        } else if (IntCostPressureDown > 90 ) {
-            myResult = resultStrings[2];
-        } else if (IntCostPressureDown > 80 ) {
-            myResult = resultStrings[3];
-        } else if (IntCostPressureDown < 60  ) {
-            myResult = resultStrings[4];
-        } else {
-            myResult = resultStrings[5];
-        }
-
-            return myResult;
-
-        }//findMyLevelPressureDown**/
 
     private String findMyLevelHeart() {
         String[] resultStrings = getResources().getStringArray(R.array.my_heartrate);
@@ -228,7 +206,7 @@ public class Pressure extends AppCompatActivity {
     private void upDataPressuretoSQLite() {
         PressureTABLE objpressureTABLE = new PressureTABLE(this);
         long inSertDataUser = objpressureTABLE.addNewValueToSQLite
-                (str_P_Date,  Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top,Integer.parseInt(intHeart),str_heart);
+                (str_P_Date,Integer.parseInt(intCostPressureDown), Integer.parseInt(intCostPressureTop),str_LP_cost_down,str_LP_cost_top,Integer.parseInt(intHeart),str_heart);
         P_date.setText("");
         P_costPressureTop.setText("");
         P_costPressureDown.setText("");
