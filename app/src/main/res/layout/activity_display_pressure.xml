@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ความดัน"
+        android:text="ความดันโลหิต"
         android:id="@+id/textView22"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
@@ -60,7 +60,8 @@
             android:layout_width="280dp"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,9 +83,9 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="24dp"
+                android:layout_height="29dp"
                 android:id="@+id/imageViewsugatafter"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="5dp"
                 android:src="@drawable/txtpretop"
                 android:layout_gravity="center_horizontal" />
 
@@ -126,9 +127,9 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="24dp"
+                android:layout_height="29dp"
                 android:id="@+id/imageViewpreDown"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="5dp"
                 android:src="@drawable/txtpredown"
                 android:layout_gravity="center_horizontal" />
         </LinearLayout>
@@ -203,9 +204,9 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="24dp"
+                android:layout_height="29dp"
                 android:id="@+id/imageView6"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="5dp"
                 android:src="@drawable/textheart" />
         </LinearLayout>
 

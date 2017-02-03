@@ -105,8 +105,8 @@ public class Pressure extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่  : " + str_P_Date + "\n"
-                + " ค่าความดันตัวบน : " + intCostPressureTop + "\n"
-                + " ค่าความดันล่าง: " + intCostPressureDown + "\n"
+                + " ค่าความดันโลหิตตัวบน : " + intCostPressureTop + "\n"
+                + " ค่าความดันโลหิตตัวล่าง: " + intCostPressureDown + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + findMyLevelPressureTop()+"\n"
                 + " อัตราการเต้นหัวใจ : " + intHeart + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_heart + "\n");

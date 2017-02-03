@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ความดัน"
+        android:text="ความดันโลหิต"
         android:id="@+id/textView18"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
@@ -83,11 +83,11 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="28dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageViewsugatafter"
-                android:layout_marginLeft="20dp"
                 android:src="@drawable/txtpretop"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
 
         </LinearLayout>
 
@@ -130,9 +130,9 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="28dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageViewpreDown"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="5dp"
                 android:src="@drawable/txtpredown" />
         </LinearLayout>
 
@@ -176,7 +176,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="28dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageView28"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/textheart" />

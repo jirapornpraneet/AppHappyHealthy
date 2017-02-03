@@ -91,8 +91,8 @@ public class History_Pressure extends AppCompatActivity {
     private void AlertHistoryPre() {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DatePre );
-        objAlert.setMessage(" ค่าความดันบน : " + Cost_Top + "\n"+
-                            " ค่าความดันล่าง : " + Cost_Down + "\n"+
+        objAlert.setMessage(" ค่าความดันโลหิตตัวบน : " + Cost_Top + "\n"+
+                            " ค่าความดันโลหิตตัวล่าง : " + Cost_Down + "\n"+
                             " อยู่ในเกณฑ์ที่ : " + Level_P_Top + "\n"+
                             " ค่าการเต้นหัวใจ : " + Cost_Heart + "\n" +
                             " อยู่ในเกณฑ์ที่ : " + Level_Heart);

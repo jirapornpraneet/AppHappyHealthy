@@ -22,11 +22,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ประวัติบันทึกความดัน"
+        android:text="ประวัติบันทึกความดันโลหิต"
         android:id="@+id/textView18"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textStyle="bold"
         android:textColor="#ffffff" />
 
