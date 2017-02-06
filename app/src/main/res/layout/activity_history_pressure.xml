@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nut.happyhealthy.History_Pressure"
+    tools:context="com.jiraporn.nut.happyhealthy.History_Pressure"
     android:background="#f7ebeb">
 
 

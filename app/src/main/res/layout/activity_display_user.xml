@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.example.nut.happyhealthy.DisplayUser"
+    tools:context="com.jiraporn.nut.happyhealthy.DisplayUser"
     android:background="#f4f0f0">
 
     <LinearLayout
