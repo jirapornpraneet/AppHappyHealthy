@@ -41,6 +41,7 @@ public class DisplayDisease extends AppCompatActivity {
 
 
     private void showView() {
+
         db = myDatabase.getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT * FROM " + DiabetesTABLE.Diabetes, null);
@@ -85,7 +86,7 @@ public class DisplayDisease extends AppCompatActivity {
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
-        } else if ((IntCostSugar >= 110) & (IntCostSugar < 200)) {
+        } else if ((IntCostSugar >= 100) & (IntCostSugar < 200)) {
             myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));

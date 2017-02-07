@@ -68,10 +68,10 @@ public class DisplayKidney extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.prokid);
         ImageView imageView2 = (ImageView) findViewById(R.id.levelkid);
 
-        if (IntCostGFR > 90) {
+        if (IntCostGFR >= 90) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prokid1));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelkid1));
         } else if ((IntCostGFR >=60 ) & (IntCostGFR < 90)) {
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.prokid2));

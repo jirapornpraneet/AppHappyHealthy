@@ -162,14 +162,14 @@ public class User extends AppCompatActivity {
 
         if (IntCostSugarBefore >=300 ) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
-        } else if (IntCostSugarBefore >= 200) {
+        } else if ((IntCostSugarBefore >= 200) & (IntCostSugarBefore < 300  )) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore4));
-        } else if (IntCostSugarBefore >= 100 ) {
+        } else if ((IntCostSugarBefore >= 100) & (IntCostSugarBefore < 200 )) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore5));
-        } else if (IntCostSugarBefore <= 70) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
-        } else {
+        } else if ((IntCostSugarBefore >= 70)  & (IntCostSugarBefore < 100 )) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+        } else {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
         }
 
 
@@ -187,9 +187,9 @@ public class User extends AppCompatActivity {
 
         if (IntCostSugarAfter >= 300 ) {
 
-        } else if (IntCostSugarAfter >= 200) {
-        } else if (IntCostSugarAfter >= 110 ) {
-        } else if (IntCostSugarAfter <= 70) {
+        } else if ((IntCostSugarAfter >= 200) & (IntCostSugarAfter < 300 )) {
+        } else if ((IntCostSugarAfter >= 110) & (IntCostSugarAfter < 200)){
+        } else if ((IntCostSugarAfter >= 70) & (IntCostSugarAfter < 110)) {
         } else {
 
         }
@@ -205,17 +205,19 @@ public class User extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.levelkid);
 
-        if (IntCostGFR > 90) {
+        if (IntCostGFR >= 90) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
-        } else if (IntCostGFR > 60) {
+        } else if ((IntCostGFR >=60 ) & (IntCostGFR < 90)) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid2));
-        } else if (IntCostGFR > 30) {
+        } else if ((IntCostGFR >= 30) & (IntCostGFR <60)){
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid3));
-        } else if (IntCostGFR > 15) {
+        } else if ((IntCostGFR >=15) & (IntCostGFR <30)) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid4));
         } else {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertkid5));
         }
+
+
         return myResult;
     }//findMyLevelDiseaseafter
 
@@ -236,25 +238,26 @@ public class User extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.leveltop);
 
+
         if (intCostPressureTop != null) {
             if (IntCostPressureTop >= 180) {
                 CostTop = 0;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
-            } else if (IntCostPressureTop >= 160) {
+            } else if ((IntCostPressureTop >= 160) & (IntCostPressureTop <180))  {
                 CostTop = 1;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
-            } else if (IntCostPressureTop >= 140) {
+            } else if ((IntCostPressureTop >= 140) & (IntCostPressureTop <160)) {
                 CostTop = 2;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
-            } else if (IntCostPressureTop >= 130) {
+            } else if ((IntCostPressureTop >= 130 ) & (IntCostPressureTop <140)) {
                 CostTop = 3;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
-            } else if (IntCostPressureTop >= 120) {
+            } else if ((IntCostPressureTop >= 120 ) & (IntCostPressureTop <130)) {
                 CostTop = 4;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
-            } else if (IntCostPressureTop >= 90) {
+            } else if ((IntCostPressureTop >= 90 ) & (IntCostPressureTop <120)) {
                 CostTop = 5;
-                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre0));
             } else {
                 CostTop = 0;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
@@ -265,26 +268,27 @@ public class User extends AppCompatActivity {
             if (IntCostPressureDown >= 110) {
                 CostDown = 0;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre1));
-            } else if (IntCostPressureDown >= 100) {
+            } else if ((IntCostPressureDown >= 100) & (IntCostPressureDown <110 )) {
                 CostDown = 1;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre2));
-            } else if (IntCostPressureDown >= 90) {
+            } else if ((IntCostPressureDown >= 90 ) & (IntCostPressureDown <100)) {
                 CostDown = 2;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre3));
-            } else if (IntCostPressureDown >= 85) {
+            } else if ((IntCostPressureDown >= 85 ) & (IntCostPressureDown <90)) {
                 CostDown = 3;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre4));
-            } else if (IntCostPressureDown >= 80) {
+            } else if ((IntCostPressureDown >= 80 ) & (IntCostPressureDown <85)){
                 CostDown = 4;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
-            } else if (IntCostPressureDown >= 60) {
+            } else if ((IntCostPressureDown >= 60  ) & (IntCostPressureDown <80)) {
                 CostDown = 5;
-                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre5));
+                imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre0));
             } else {
                 CostDown = 0;
                 imageView.setImageDrawable(res.getDrawable(R.drawable.alertpre6));
             }
         }
+
 
         if (CostTop > CostDown) {
             myResult = resultStrings[CostDown];
@@ -307,17 +311,18 @@ public class User extends AppCompatActivity {
 
         if (IntHeart >= 41) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart1));
-        } else if (IntHeart < 60) {
+        } else if ((IntHeart >= 41)& (IntHeart < 60)) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart1));
-        } else if (IntHeart < 70) {
+        } else if ((IntHeart >= 60)& (IntHeart < 70)) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart2));
-        } else if (IntHeart < 85) {
+        } else if ((IntHeart >=70)& (IntHeart < 85)) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart3));
-        } else if (IntHeart < 101) {
+        } else if ((IntHeart >=85)&(IntHeart < 101 )) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart4));
         } else {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart5));
         }
+
 
         return myResult;
 

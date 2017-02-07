@@ -53,7 +53,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="55dp">
+        android:layout_marginTop="50dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -83,7 +83,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="29dp"
+                android:layout_height="31dp"
                 android:id="@+id/imageViewsugatafter"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/txtpretop"
@@ -94,13 +94,21 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="300dp"
+            android:layout_width="380dp"
             android:layout_height="28dp"
             android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal|center_vertical|center_horizontal">
+            android:gravity="clip_horizontal|center_vertical|center_horizontal"
+            android:layout_marginLeft="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:id="@+id/imageView14"
+                android:src="@drawable/top2"
+                android:layout_marginLeft="5dp" />
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
                 android:id="@+id/tv_P_CostPressureTop"
                 android:textSize="15dp"
@@ -109,14 +117,14 @@
                 android:textColor="#a6a6a6"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="60dp" />
+                android:gravity="center_vertical|center_horizontal" />
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:id="@+id/imageView72"
                 android:src="@drawable/mlpre2" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -125,24 +133,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp">
 
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="29dp"
-                android:id="@+id/imageViewpreDown"
-                android:layout_marginLeft="5dp"
-                android:src="@drawable/txtpredown"
-                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="300dp"
+            android:layout_width="380dp"
             android:layout_height="28dp"
             android:layout_gravity="center_horizontal"
-            android:gravity="clip_horizontal|center_vertical|center_horizontal">
+            android:gravity="clip_horizontal|center_vertical|center_horizontal"
+            android:layout_marginLeft="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:id="@+id/imageView62"
+                android:src="@drawable/down2"
+                android:layout_marginLeft="5dp" />
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
                 android:id="@+id/tv_P_CostPressureDown"
                 android:textSize="15dp"
@@ -151,12 +160,11 @@
                 android:textColor="#a6a6a6"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="60dp" />
+                android:gravity="center_vertical|center_horizontal" />
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:id="@+id/imageView73"
                 android:src="@drawable/mlpre2" />
 
@@ -168,7 +176,7 @@
             android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
-            android:layout_marginTop="1dp">
+            android:layout_marginTop="7dp">
 
             <TextView
                 android:layout_width="10dp"
@@ -204,7 +212,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="29dp"
+                android:layout_height="31dp"
                 android:id="@+id/imageView6"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/textheart" />
@@ -244,7 +252,7 @@
             android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:layout_width="10dp"

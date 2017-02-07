@@ -108,7 +108,7 @@
                 android:textSize="18dp"
                 android:layout_gravity="center_vertical"
                 android:textStyle="bold"
-                android:gravity="center_horizontal" />
+                android:gravity="center_vertical|center_horizontal" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -131,7 +131,6 @@
                 android:id="@+id/tv_D_Level"
                 android:layout_width="10dp"
                 android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
                 android:textColor="#f9eefb"
                 android:textSize="0dp"
                 android:textStyle="bold"

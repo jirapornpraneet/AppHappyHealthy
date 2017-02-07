@@ -117,7 +117,7 @@ public class Kidney extends AppCompatActivity {
         String myResult = null;
         Integer IntCostGFR = Integer.parseInt(intCostGFR);
 
-        if (IntCostGFR > 90) {
+        if (IntCostGFR >= 90) {
             myResult = resultStrings[0];
         } else if ((IntCostGFR >=60 ) & (IntCostGFR < 90)) {
             myResult = resultStrings[1];
