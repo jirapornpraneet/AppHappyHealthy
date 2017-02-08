@@ -104,7 +104,7 @@ public class DisplayDisease extends AppCompatActivity {
         return myResult;
     }//findMyLevelDiseasebefore
 
-    /**private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
+    private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease);
         String myResult = null;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
@@ -140,7 +140,7 @@ public class DisplayDisease extends AppCompatActivity {
 
         return myResult;
 
-    }//findMyLevelDiseaseafter**/
+    }//findMyLevelDiseaseafter
 
     private void bindWidget() {
 
