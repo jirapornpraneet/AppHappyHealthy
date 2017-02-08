@@ -173,15 +173,15 @@ public class Pressure extends AppCompatActivity {
         Integer IntHeart = Integer.parseInt(intHeart);
 
 
-        if (IntHeart <= 41) {
+        if (IntHeart >= 101) {
             myResult = resultStrings[0];
-        } else if ((IntHeart >= 41)& (IntHeart < 60)) {
+        } else if ((IntHeart >= 85)& (IntHeart < 101)) {
             myResult = resultStrings[1];
-        } else if ((IntHeart >= 60)& (IntHeart < 70)) {
+        } else if ((IntHeart >= 70)& (IntHeart < 85)) {
             myResult = resultStrings[2];
-        } else if ((IntHeart >=70)& (IntHeart < 85)) {
+        } else if ((IntHeart >=60)& (IntHeart < 70)) {
             myResult = resultStrings[3];
-        } else if ((IntHeart >=85)&(IntHeart < 101 )) {
+        } else if ((IntHeart >=41)&(IntHeart < 60 )) {
             myResult = resultStrings[4];
         } else {
             myResult = resultStrings[5];

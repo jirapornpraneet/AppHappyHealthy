@@ -5,10 +5,10 @@
         //ค่าการเต้นหัวใจ
 
         <item>ผิดปกติ</item>
-        <item>ดีมาก</item>
-        <item>ดี</item>
-        <item>พอใช้</item>
         <item>สูงเกินไป</item>
+        <item>พอใช้</item>
+        <item>ดี</item>
+        <item>ดีมาก</item>
         <item>ผิดปกติ</item>
     </string-array>
 

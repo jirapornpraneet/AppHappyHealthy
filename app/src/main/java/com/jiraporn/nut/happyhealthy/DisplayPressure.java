@@ -143,26 +143,26 @@ public class DisplayPressure extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.proheart);
         ImageView imageView2 = (ImageView) findViewById(R.id.levelheart);
 
-        if (IntHeart <= 41) {
+        if (IntHeart >= 101) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.proheart5));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart5));
-        } else if ((IntHeart >= 41)& (IntHeart < 60)) {
+        } else if ((IntHeart >= 85)& (IntHeart < 101)) {
             myResult = resultStrings[1];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart1));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart1));
-        } else if ((IntHeart >= 60)& (IntHeart < 70)) {
-            myResult = resultStrings[2];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart2));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart2));
-        } else if ((IntHeart >=70)& (IntHeart < 85)) {
-            myResult = resultStrings[3];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart3));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart3));
-        } else if ((IntHeart >=85)&(IntHeart < 101 )) {
-            myResult = resultStrings[4];
             imageView.setImageDrawable(res.getDrawable(R.drawable.proheart4));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart4));
+        } else if ((IntHeart >= 70)& (IntHeart < 85)) {
+            myResult = resultStrings[2];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart3));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart3));
+        } else if ((IntHeart >=60)& (IntHeart < 70)) {
+            myResult = resultStrings[3];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart2));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart2));
+        } else if ((IntHeart >=41)&(IntHeart < 60 )) {
+            myResult = resultStrings[4];
+            imageView.setImageDrawable(res.getDrawable(R.drawable.proheart1));
+            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelheart1));
         } else {
             myResult = resultStrings[5];
             imageView.setImageDrawable(res.getDrawable(R.drawable.proheart5));

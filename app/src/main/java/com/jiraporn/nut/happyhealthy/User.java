@@ -309,16 +309,16 @@ public class User extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.levelheart);
 
-        if (IntHeart >= 41) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart1));
-        } else if ((IntHeart >= 41)& (IntHeart < 60)) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart1));
-        } else if ((IntHeart >= 60)& (IntHeart < 70)) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart2));
-        } else if ((IntHeart >=70)& (IntHeart < 85)) {
-            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart3));
-        } else if ((IntHeart >=85)&(IntHeart < 101 )) {
+        if (IntHeart >= 101) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart5));
+        } else if ((IntHeart >= 85)& (IntHeart < 101)) {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart4));
+        } else if ((IntHeart >= 70)& (IntHeart < 85)) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart3));
+        } else if ((IntHeart >=60)& (IntHeart < 70)) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart2));
+        } else if ((IntHeart >=41)&(IntHeart < 60 )) {
+            imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart1));
         } else {
             imageView.setImageDrawable(res.getDrawable(R.drawable.alertheart5));
         }

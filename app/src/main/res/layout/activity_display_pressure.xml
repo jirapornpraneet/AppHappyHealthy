@@ -173,7 +173,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="300dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:gravity="clip_horizontal"
             android:layout_marginTop="7dp">
@@ -235,7 +235,7 @@
                 android:background="@drawable/my_box_dis"
                 android:layout_gravity="center_vertical"
                 android:textSize="15dp"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="50dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:textStyle="bold" />
 
