@@ -156,10 +156,10 @@ public class Pressure extends AppCompatActivity {
         }
 
 
-        if (CostTop > CostDown ) {
-            myResult = resultStrings[CostDown];
-        } else {
+        if (CostTop < CostDown ) {
             myResult = resultStrings[CostTop];
+        } else {
+            myResult = resultStrings[CostDown];
         }
         return myResult;
 
