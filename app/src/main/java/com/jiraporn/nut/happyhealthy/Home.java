@@ -36,7 +36,11 @@ public class Home extends Activity  {
     }//ClickKidney
 
     public void ClickPressure(View view) {
-        startActivity(new Intent(getApplicationContext(),Pressure.class));
+    startActivity(new Intent(getApplicationContext(),Pressure.class));
+}//ClickPressure
+
+    public void ClickDevelop(View view) {
+        startActivity(new Intent(getApplicationContext(),Develop.class));
     }//ClickPressure
 
 
