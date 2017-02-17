@@ -82,7 +82,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/exercise_disease"
             android:textSize="11dp"
-            android:hint="exercise_disease"
             android:layout_marginTop="9dp"
             android:textColor="#8dd497"
             android:textStyle="bold"

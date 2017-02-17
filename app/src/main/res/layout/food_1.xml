@@ -87,7 +87,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/food_detail"
             android:textSize="11dp"
-            android:hint="food_detail"
             android:layout_marginTop="8dp"
             android:textColor="#ffa27f"
             android:textStyle="bold"
