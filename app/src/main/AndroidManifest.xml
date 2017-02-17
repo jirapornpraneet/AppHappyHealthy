@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
         <activity
-            android:name="com.jiraporn.nut.happyhealthy.SplashScreen"
+            android:name=".SplashScreen"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,30 +19,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.jiraporn.nut.happyhealthy.IntroHealthy" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.User" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.DisplayUser" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.Diabetes" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.Kidney" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.Pressure" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.DataUser" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.DisplayDisease" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.DisplayPressure" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.DisplayKidney" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.Report" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.ExerciseType" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.MainActivity" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.History_Diabetes" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.History_Kidney" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.History_Pressure" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.Food_Type_1" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.FoodDetail" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.Exercise_Detail" />
+        <activity android:name=".IntroHealthy" />
+        <activity android:name=".User" />
+        <activity android:name=".DisplayUser" />
+        <activity android:name=".Diabetes" />
+        <activity android:name=".Kidney" />
+        <activity android:name=".Pressure" />
+        <activity android:name=".DataUser" />
+        <activity android:name=".DisplayDisease" />
+        <activity android:name=".DisplayPressure" />
+        <activity android:name=".DisplayKidney" />
+        <activity android:name=".Report" />
+        <activity android:name=".ExerciseType" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".History_Diabetes" />
+        <activity android:name=".History_Kidney" />
+        <activity android:name=".History_Pressure" />
+        <activity android:name=".Food_Type_1" />
+        <activity android:name=".FoodDetail" />
+        <activity android:name=".Exercise_Detail" />
         <activity
-            android:name="com.jiraporn.nut.happyhealthy.Home"
+            android:name=".Home"
             android:label="@string/app_name" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.History_Food" />
-        <activity android:name="com.jiraporn.nut.happyhealthy.History_Exe"></activity>
+        <activity android:name=".History_Food" />
+        <activity android:name=".History_Exe" />
+        <activity android:name=".Develop"></activity>
     </application>
 
 </manifest>

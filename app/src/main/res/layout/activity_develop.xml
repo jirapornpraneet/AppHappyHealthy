@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_develop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jiraporn.nut.happyhealthy.Develop"
+    android:background="@color/bg">
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbardevelop" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ผู้พัฒนาระบบ"
+        android:id="@+id/textView22"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/fontwhite" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/arowback"
+        android:id="@+id/imageView69"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="7dp"
+        android:onClick="ClickDevelop" />
+
+    <TextView
+        android:text="พัฒนาโดย"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView33"
+        android:foregroundGravity="center_vertical|center_horizontal|center"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="75dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_below="@+id/container_toolbar"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/ja">
+
+        <TextView
+            android:text="มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิ "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView35"
+            android:textSize="14sp"
+            android:foregroundGravity="center_vertical|center_horizontal|center"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:text="คณะวิทยาศาสตร์และเทคโนโลยี"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView37"
+            android:layout_marginTop="5dp"
+            android:foregroundGravity="center_vertical|center_horizontal|center"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:text="สาขาวิชาวิทยาการคอมพิวเตอร์"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView41"
+            android:layout_marginTop="5dp"
+            android:foregroundGravity="center_vertical|center_horizontal|center"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:text="นางสาว จิราพร ปราณีต "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView42"
+            android:layout_marginTop="20dp"
+            android:foregroundGravity="center_vertical|center_horizontal|center"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:textSize="13sp" />
+
+        <TextView
+            android:text="นางสาว สุกัญญา สาระมนต์ "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:foregroundGravity="center_vertical|center_horizontal|center"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:textSize="13sp"
+            android:id="@+id/textView43"
+            android:layout_marginBottom="20dp" />
+    </LinearLayout>
+
+</RelativeLayout>
