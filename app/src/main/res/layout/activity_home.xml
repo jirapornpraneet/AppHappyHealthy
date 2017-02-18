@@ -118,12 +118,9 @@
         android:id="@+id/imageView4"
         android:src="@drawable/develop"
         android:onClick="ClickDevelop"
-        android:adjustViewBounds="false"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView18"
-        android:layout_toEndOf="@+id/textView18"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="55dp" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp" />
 
 
 </RelativeLayout>

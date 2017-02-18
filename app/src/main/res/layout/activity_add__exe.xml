@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add__exe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jiraporn.nut.happyhealthy.FoodDetail"
-    android:background="#ffffff">
-
+    tools:context="com.jiraporn.nut.happyhealthy.Add_Exe">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -25,12 +24,12 @@
         android:src="@drawable/arowback"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="3dp"
-        android:onClick="ClickBackExeDetailHome" />
+        android:onClick="ClickAddExeBack" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="บันทึกออกกำลังกาย"
+        android:text="เพิ่มข้อมูลออกกำลังกาย"
         android:id="@+id/textView26"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
@@ -50,7 +49,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="tv_exercise_name"
+            android:text="tv_exercise_name_add"
             android:id="@+id/tv_exercise_name"
             android:layout_weight="1"
             android:textSize="22dp"
@@ -72,7 +71,7 @@
         <TextView
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:text="tv_exercise_calories"
+            android:text="tv_exercise_calories_add"
             android:id="@+id/tv_exercise_calories"
             android:textSize="20dp"
             android:background="@drawable/my_bg_saveexe_name"
@@ -140,8 +139,6 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/et_exe2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:textSize="20dp"
             android:background="@drawable/my_bg_saveexe_name"
             android:text="1"
@@ -177,6 +174,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_exe_dis"
             android:layout_gravity="bottom|center_horizontal"
+            android:hint="tv_exe_dis_add"
             android:textSize="16dp"
             android:textStyle="bold"
             android:gravity="center_vertical|center_horizontal"
@@ -200,6 +198,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_exe_detail"
             android:layout_gravity="bottom|center_horizontal"
+            android:hint="tv_exe_detail_add"
             android:textSize="13dp"
             android:gravity="center_vertical|center_horizontal"
             android:textStyle="bold"
@@ -221,9 +220,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_exe_des"
             android:layout_gravity="bottom|center_horizontal"
+            android:hint="tv_exe_des_add"
             android:textSize="15dp"
             android:textStyle="bold" />
     </LinearLayout>
-
 
 </RelativeLayout>

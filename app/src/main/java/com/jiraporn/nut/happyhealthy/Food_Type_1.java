@@ -72,5 +72,9 @@ public class Food_Type_1 extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
+
+    public void ClickAddFood(View view) {
+        startActivity(new Intent(Food_Type_1.this, Add_Food.class));
+    }//ClickHistoryDiabetes
 }//MainClass
 

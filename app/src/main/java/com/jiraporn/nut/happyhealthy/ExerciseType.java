@@ -66,6 +66,8 @@ public class ExerciseType extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }//ClickBackHome
 
-
+    public void ClickAddExe(View view) {
+        startActivity(new Intent(getApplicationContext(), Add_Exe.class));
+    }//ClickHistoryDiabetes
 
 }//MainClass

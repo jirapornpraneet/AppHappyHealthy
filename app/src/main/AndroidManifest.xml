@@ -43,7 +43,9 @@
             android:label="@string/app_name" />
         <activity android:name=".History_Food" />
         <activity android:name=".History_Exe" />
-        <activity android:name=".Develop"></activity>
+        <activity android:name=".Develop" />
+        <activity android:name=".Add_Food" />
+        <activity android:name=".Add_Exe"></activity>
     </application>
 
 </manifest>

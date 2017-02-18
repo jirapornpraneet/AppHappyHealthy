@@ -39,6 +39,17 @@
         android:textStyle="bold"
         android:textColor="#ffffff" />
 
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/imageexeadd"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/buttonadd"
+        android:onClick="ClickAddExe"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="40dp"

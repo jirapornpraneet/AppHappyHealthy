@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -15,6 +16,8 @@
         <include
             android:id="@+id/toolbar"
             layout="@layout/toolbarfood" />
+
+
     </LinearLayout>
 
     <ListView
@@ -40,14 +43,26 @@
         android:textStyle="bold"
         android:textColor="#ffffff" />
 
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/buttonadd"
+        android:id="@+id/imageViewfoodadd"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:onClick="ClickAddFood"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:id="@+id/imageView44"
         android:src="@drawable/arowback"
-        android:layout_marginTop="7dp"
-        android:layout_marginLeft="3dp"
-        android:onClick="ClickBackFoodHome" />
+        android:onClick="ClickBackFoodHome"
+        android:layout_alignBottom="@+id/imageViewfoodadd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
