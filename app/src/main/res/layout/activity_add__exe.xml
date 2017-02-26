@@ -4,7 +4,8 @@
     android:id="@+id/activity_add__exe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jiraporn.nut.happyhealthy.Add_Exe">
+    tools:context="com.jiraporn.nut.happyhealthy.Add_Exe"
+    android:background="#ffffff">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -46,13 +47,13 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout3">
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="tv_exercise_name_add"
+            android:text="ชื่อออกกำลังกาย"
             android:id="@+id/tv_exercise_name"
             android:layout_weight="1"
-            android:textSize="22dp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
             android:textColor="#a4ddac" />
@@ -68,27 +69,26 @@
         android:background="@drawable/my_bg_saveexe_name"
         android:gravity="center_vertical|center_horizontal">
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:text="tv_exercise_calories_add"
-            android:id="@+id/tv_exercise_calories"
+        <EditText
+            android:id="@+id/e_cal"
             android:textSize="20dp"
             android:background="@drawable/my_bg_saveexe_name"
             android:layout_gravity="center_vertical"
             android:textColor="#ffffff"
             android:textStyle="bold"
-            android:gravity="center_vertical|center_horizontal" />
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_width="125dp"
+            android:layout_height="50dp" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="120dp"
         android:layout_height="20dp"
-        android:layout_marginTop="215dp"
+        android:layout_marginTop="225dp"
         android:layout_marginRight="30dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/my_bg_saveexe_name">
+        android:background="@drawable/my_bg_saveexe_name"
+        android:layout_width="125dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,51 +97,50 @@
             android:id="@+id/textView17"
             android:textSize="13dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="3dp"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:layout_marginTop="3dp" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="120dp"
         android:layout_height="20dp"
-        android:layout_marginTop="214.5dp"
+        android:layout_marginTop="225dp"
         android:id="@+id/linearLayout4"
         android:layout_marginLeft="30dp"
-        android:background="@drawable/my_bg_saveexe_name">
+        android:background="@drawable/my_bg_saveexe_name"
+        android:layout_width="125dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="เซท"
-            android:id="@+id/textView16"
+            android:text="นาที"
+            android:id="@+id/e_unitminute"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/my_bg_saveexe_name"
-            android:layout_marginBottom="3dp"
             android:gravity="center_horizontal"
             android:textColor="#ffffff"
-            android:textSize="13dp" />
+            android:textSize="13sp"
+            android:layout_marginTop="3dp" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
         android:layout_marginTop="180dp"
         android:layout_marginLeft="30dp"
         android:layout_alignParentLeft="true"
         android:background="@drawable/my_bg_saveexe_name"
-        android:gravity="center_vertical|center_horizontal">
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_width="125dp"
+        android:layout_height="50dp">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/et_exe2"
+            android:id="@+id/e_minute"
             android:textSize="20dp"
             android:background="@drawable/my_bg_saveexe_name"
-            android:text="1"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#ffffff"
@@ -153,6 +152,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recExe"
+
+        android:onClick="ClickSaveExe"
         android:src="@drawable/buttonsaveexe"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp" />
@@ -169,16 +170,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_exe_dis"
-            android:layout_gravity="bottom|center_horizontal"
-            android:hint="tv_exe_dis_add"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:gravity="center_vertical|center_horizontal"
-            android:textColor="#a4ddac" />
     </LinearLayout>
 
     <LinearLayout
@@ -193,17 +184,19 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
-        <TextView
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_exe_detail"
+            android:id="@+id/e_detail"
             android:layout_gravity="bottom|center_horizontal"
             android:hint="tv_exe_detail_add"
-            android:textSize="13dp"
             android:gravity="center_vertical|center_horizontal"
             android:textStyle="bold"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="15dp"
+            android:textSize="15sp"
+            android:text="รายละเอียดการออกกำลังกาย"
+            android:textColor="#a4ddac" />
     </LinearLayout>
 
     <LinearLayout
@@ -215,14 +208,6 @@
         android:layout_below="@+id/linearLayout3"
         android:layout_marginTop="7dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_exe_des"
-            android:layout_gravity="bottom|center_horizontal"
-            android:hint="tv_exe_des_add"
-            android:textSize="15dp"
-            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>

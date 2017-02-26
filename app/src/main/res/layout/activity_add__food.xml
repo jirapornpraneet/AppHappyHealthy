@@ -4,7 +4,8 @@
     android:id="@+id/activity_add__food"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jiraporn.nut.happyhealthy.Add_Food">
+    tools:context="com.jiraporn.nut.happyhealthy.Add_Food"
+    android:background="#ffffff">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -39,23 +40,25 @@
 
     <LinearLayout
         android:layout_width="200dp"
-        android:layout_height="40dp"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="70dp"
+        android:layout_height="55dp">
 
-        <TextView
+        <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="food_name2"
-            android:id="@+id/food_name2_add"
+            android:layout_height="wrap_content"
+            android:id="@+id/f_name"
             android:layout_weight="1"
-            android:textSize="22dp"
             android:textStyle="bold"
+
             android:layout_gravity="center_horizontal"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_vertical"
-            android:textColor="#f9a98a" />
+            android:textColor="#f9a98a"
+            android:hint="ชื่ออาหาร"
+            android:textSize="25sp"
+            android:text="ชื่ออาหาร" />
     </LinearLayout>
 
     <LinearLayout
@@ -69,13 +72,11 @@
         android:foregroundGravity="center_vertical"
         android:orientation="horizontal">
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="food_cal2_add"
-            android:id="@+id/food_cal2"
+            android:id="@+id/f_cal"
             android:layout_weight="1"
-            android:textSize="20dp"
             android:background="@drawable/my_bg_savefood_name"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical|center_horizontal"
@@ -97,7 +98,7 @@
             android:layout_height="wrap_content"
             android:text="พลังงาน(กิโลแคลอรี่)"
             android:id="@+id/textView3"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:background="@drawable/my_bg_savefood_name"
             android:layout_marginTop="6dp"
             android:layout_gravity="center_horizontal"
@@ -119,10 +120,9 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/et_exe2"
+            android:id="@+id/f_amount"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:text="1"
             android:background="@drawable/my_bg_savefood_name"
             android:layout_gravity="center_vertical"
             android:gravity="center_horizontal"
@@ -144,19 +144,20 @@
         android:layout_marginLeft="40dp"
         android:background="@drawable/my_bg_savefood_name">
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="food_unit2"
-            android:id="@+id/food_unit2_add"
+            android:id="@+id/f_unit"
             android:layout_weight="1"
             android:layout_gravity="left|center_horizontal"
-            android:textSize="13dp"
             android:foregroundGravity="center_vertical"
             android:background="@drawable/my_bg_savefood_name"
             android:gravity="center_vertical|center_horizontal"
-            android:textColor="#ffffff"
-            android:layout_marginBottom="3dp" />
+            android:textColor="@color/bg"
+            android:layout_marginBottom="3dp"
+            android:hint="หน่วย"
+            android:textSize="14sp"
+            android:text="หน่วยอาหาร" />
     </LinearLayout>
 
     <LinearLayout
@@ -178,42 +179,41 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="200dp"
         android:layout_alignParentRight="false"
         android:layout_marginRight="70dp"
         android:layout_marginLeft="180dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="food_netweight2"
-            android:id="@+id/food_netweight2_add"
+        <EditText
+            android:layout_height="wrap_content"
+            android:id="@+id/f_netweight"
             android:layout_weight="1"
             android:textSize="12dp"
             android:textColor="#f9a98a"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_width="50dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="200dp"
         android:layout_alignParentRight="false"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="180dp"
         android:orientation="vertical">
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="food_netunit2"
-            android:id="@+id/food_netunit2_add"
+            android:id="@+id/f_netunit"
             android:layout_weight="1"
             android:textSize="12dp"
             android:textColor="#f9a98a"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="50dp"
+            android:hint="หน่วย" />
     </LinearLayout>
 
     <LinearLayout
@@ -335,59 +335,60 @@
         android:id="@+id/linearLayout2"
         android:layout_marginTop="270dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="65dp"
+        android:layout_marginRight="105dp"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="94dp"
+        <EditText
             android:layout_height="match_parent"
-            android:text="food_protein2"
-            android:id="@+id/food_protein2_add"
+            android:background="@drawable/my_bg_savefood_name"
+            android:id="@+id/f_protein"
             android:layout_marginTop="4dp"
+
+
             android:textSize="13dp"
             android:textColor="#f9a98a"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_width="50dp" />
 
-        <TextView
-            android:layout_width="94dp"
-            android:layout_height="match_parent"
-            android:text="food_fat2"
-            android:id="@+id/food_fat2_add"
-            android:layout_marginTop="4dp"
-            android:textSize="13dp"
-            android:textColor="#f9a98a"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="94dp"
-            android:layout_height="match_parent"
-            android:text="food_carbohydrate2"
-            android:id="@+id/food_carbohydrate2_add"
-            android:layout_weight="1"
-            android:layout_marginTop="4dp"
-            android:textSize="13dp"
-            android:textColor="#f9a98a"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="94dp"
+        <EditText
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:text="food_sugar2"
-            android:id="@+id/food_sugar2_add"
+            android:id="@+id/f_fat"
             android:layout_marginTop="4dp"
+            android:textSize="13dp"
+            android:textColor="#f9a98a"
+            android:background="@drawable/my_bg_savefood_name"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:id="@+id/f_carbohydrate"
+            android:layout_marginTop="4dp"
+            android:textSize="13dp"
+            android:background="@drawable/my_bg_savefood_name"
+            android:textColor="#f9a98a"
+            android:textStyle="bold"
+            android:layout_width="50dp" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/f_sugar"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/my_bg_savefood_name"
             android:textSize="13dp"
             android:textColor="#f9a98a"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="94dp"
+        <EditText
             android:layout_height="wrap_content"
-            android:text="food_sodium2"
-            android:id="@+id/food_sodium2_add"
+            android:id="@+id/f_sodium"
+            android:background="@drawable/my_bg_savefood_name"
             android:layout_marginTop="4dp"
             android:textSize="13dp"
             android:textColor="#f9a98a"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_width="50dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -454,16 +455,6 @@
         android:layout_marginBottom="90dp"
         android:layout_centerHorizontal="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_food_detail_add"
-            android:layout_gravity="bottom|center_horizontal"
-            android:hint="tv_food_detail"
-            android:textSize="15dp"
-            android:textColor="#f9a98a"
-            android:textStyle="bold"
-            android:gravity="center_vertical|center_horizontal" />
     </LinearLayout>
 
     <ImageView
@@ -471,6 +462,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView30"
         android:src="@drawable/buttonsavefood"
+        android:onClick="ClickSaveFood"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp" />
 

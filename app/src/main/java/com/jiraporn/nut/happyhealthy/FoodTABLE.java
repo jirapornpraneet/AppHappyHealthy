@@ -19,6 +19,7 @@ public class FoodTABLE {
     public static final String Food_Id = "Food_Id";
     public static final String Food_Name = "Food_Name";
     public static final String Food_Calories = "Food_Calories";
+    public static final String Food_Amount = "Food_Amount";
     public static final String Food_Unit = "Food_Unit";
     public static final String Food_Netweight = "Food_Netweight";
     public static final String Food_NetUnit = "Food_NetUnit";
@@ -35,13 +36,15 @@ public class FoodTABLE {
     }//Constructor
 
     //Add New Value
-    public long addNewValueToSQLite(String str_food_name, double dou_food_cal, int int_food_amount, String str_food_unit,
-                                    double dou_food_netweight, String str_net_unit, double dou_protein, double dou_fat, double dou_carbohydrate, double dou_sugar, double dou_sodium, String str_food_detail) {
+    public long addNewValueToSQLite(String str_food_name,int int_food_amount, double dou_food_cal, String str_food_unit,
+                                    double dou_food_netweight, String str_net_unit, double dou_protein, double dou_fat,
+                                    double dou_carbohydrate, double dou_sugar, double dou_sodium) {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(Food_Name, str_food_name);
+        contentValues.put(Food_Amount,int_food_amount);
         contentValues.put(Food_Calories, dou_food_cal);
         contentValues.put(Food_Unit, str_food_unit);
         contentValues.put(Food_Netweight, dou_food_netweight);
@@ -51,10 +54,9 @@ public class FoodTABLE {
         contentValues.put(Food_Carbohydrate, dou_carbohydrate);
         contentValues.put(Food_Sugars, dou_sugar);
         contentValues.put(Food_Sodium, dou_sodium);
-        contentValues.put(Food_Detail, str_food_detail);
+
 
         long food_id = db.insert(Food, null, contentValues);
-        db.close();
         return food_id;
     }//Add New Value
 

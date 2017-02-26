@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 /**
  * Created by Nut on 30/10/2559.
@@ -34,19 +35,17 @@ public class ExerciseTABLE {
     }//Constructor
 
     //Add New Value
-    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal,  double dou_duration,String str_exe_disease,String str_exe_detail,String str_exe_des) {
+    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal, double dou_duration,  String str_exe_detail ) {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Exercise_Name, str_exe_name);
         contentValues.put(Exercise_Calories, dou_exe_cal);
         contentValues.put(Exercise_Duration, dou_duration);
-        contentValues.put(Exercise_Disease, str_exe_disease);
         contentValues.put(Exercise_Detail,str_exe_detail);
-        contentValues.put(Exercise_Description,str_exe_des);
+
 
         long exercise_id = db.insert(Exercise, null, contentValues);
-        db.close();
         return exercise_id;
     }//Add New Value
 

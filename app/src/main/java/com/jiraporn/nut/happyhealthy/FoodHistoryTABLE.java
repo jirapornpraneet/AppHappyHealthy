@@ -20,13 +20,14 @@ public class FoodHistoryTABLE {
     public static final String Food_History = "Food_History";
     public static final String History_Food_Id = "History_Food_Id";
     public static final String History_Food_Date = "History_Food_Date";
-    public static final String Food_Amount = "Food_Amount";
+    public static final String Food_TotalAmount = "Food_TotalAmount";
     public static final String User_Id = "User_Id";
 
     public static final String Food = "Food";
     public static final String Food_Id = "Food_Id";
     public static final String Food_Unit = "Food_Unit";
     public static final String Food_Name = "Food_Name";
+
     public static final String Food_Detail = "Food_Detail";
     public static final String Food_Calories = "Food_Calories";
     public static final String Food_Protein = "Food_Protein";
@@ -77,7 +78,7 @@ public class FoodHistoryTABLE {
         ContentValues contentValues = new ContentValues();
         contentValues.put(History_Food_Date, data.HisDate);
         contentValues.put(Food_Id, data.FoodId);
-        contentValues.put(Food_Amount, data.FoodAmount);
+        contentValues.put(Food_TotalAmount, data.Food_TotalAmount);
 
         long food_id = db.insert(Food_History, null, contentValues);
         db.close();
@@ -95,7 +96,7 @@ public class FoodHistoryTABLE {
             do {
                 foodHistory.put("History_Food_Id", cursor.getString(cursor.getColumnIndex(History_Food_Id)));
                 foodHistory.put("History_Food_Date", cursor.getString(cursor.getColumnIndex(History_Food_Date)));
-                foodHistory.put("Food_Amount", cursor.getString(cursor.getColumnIndex(Food_Amount)));
+                foodHistory.put("Food_TotalAmount", cursor.getString(cursor.getColumnIndex(Food_TotalAmount)));
             } while (cursor.moveToNext());
         }
 
@@ -110,7 +111,7 @@ public class FoodHistoryTABLE {
                 "(select sum(e." + Exercise_Calories + "*eh." + Exercise_TotalDuration + ") 'exc' " +
                 "from " + Exercise_History + " eh," + Exercise + " e " +
                 "where e." + Exercise_Id + " = eh." + Exercise_Id + " and " + History_Exercise_Date + " like '" + datehis + "' ) eh," +
-                "(select sum(f." + Food_Calories + "*fh." + Food_Amount + ") 'fcal',sum(f." + Food_Protein + ") 'fpro',sum(f." + Food_Fat + ") 'ffat',sum(f." + Food_Carbohydrate + ") 'fcar',sum(f." + Food_Sugars + ") 'fsug',sum(f." + Food_Sodium + ") 'fsod' " +
+                "(select sum(f." + Food_Calories + "*fh." + Food_TotalAmount + ") 'fcal',sum(f." + Food_Protein + ") 'fpro',sum(f." + Food_Fat + ") 'ffat',sum(f." + Food_Carbohydrate + ") 'fcar',sum(f." + Food_Sugars + ") 'fsug',sum(f." + Food_Sodium + ") 'fsod' " +
                 "from " + Food_History + " fh," + Food + " f " +
                 "where fh." + Food_Id + " = f." + Food_Id + " and " + History_Food_Date + " like '" + datehis + "') fd";
 
@@ -153,11 +154,11 @@ public class FoodHistoryTABLE {
                 HashMap<String, String> foodHis = new HashMap<String, String>();
                 foodHis.put(History_Food_Id, cursor.getString(cursor.getColumnIndex(History_Food_Id)));
                 foodHis.put(History_Food_Date, cursor.getString(cursor.getColumnIndex(History_Food_Date)));
-                foodHis.put(Food_Calories, String.valueOf(Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_Amount)))*Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_Calories)))));
+                foodHis.put(Food_Calories, String.valueOf(Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_TotalAmount)))*Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_Calories)))));
                 //foodHis.put(Food_Calories, cursor.getString(cursor.getColumnIndex(Food_Calories)));
                 foodHis.put(Food_Name, cursor.getString(cursor.getColumnIndex(Food_Name)));
                 foodHis.put(Food_Unit, cursor.getString(cursor.getColumnIndex(Food_Unit)));
-                foodHis.put(Food_Amount, cursor.getString(cursor.getColumnIndex(Food_Amount)));
+                foodHis.put(Food_TotalAmount, cursor.getString(cursor.getColumnIndex(Food_TotalAmount)));
                 foodHis.put(Food_Detail, cursor.getString(cursor.getColumnIndex(Food_Detail)));
 //                Log.d("data calories", foodHis.get(Food_Calories).toString() + " เว้น " + foodHis.get(Food_Amount).toString());
                 foodHisList.add(foodHis);
