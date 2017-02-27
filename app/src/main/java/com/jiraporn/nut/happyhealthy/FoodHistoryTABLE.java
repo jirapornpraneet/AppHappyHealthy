@@ -78,7 +78,7 @@ public class FoodHistoryTABLE {
         ContentValues contentValues = new ContentValues();
         contentValues.put(History_Food_Date, data.HisDate);
         contentValues.put(Food_Id, data.FoodId);
-        contentValues.put(Food_TotalAmount, data.Food_TotalAmount);
+        contentValues.put(Food_TotalAmount, data.FoodAmount);
 
         long food_id = db.insert(Food_History, null, contentValues);
         db.close();
@@ -154,7 +154,18 @@ public class FoodHistoryTABLE {
                 HashMap<String, String> foodHis = new HashMap<String, String>();
                 foodHis.put(History_Food_Id, cursor.getString(cursor.getColumnIndex(History_Food_Id)));
                 foodHis.put(History_Food_Date, cursor.getString(cursor.getColumnIndex(History_Food_Date)));
-                foodHis.put(Food_Calories, String.valueOf(Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_TotalAmount)))*Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_Calories)))));
+                String food_TotalAm = cursor.getString(cursor.getColumnIndex(Food_TotalAmount));
+                Double foodTotalAmount = 0.0;
+                Double foodCalories = Double.parseDouble(cursor.getString(cursor.getColumnIndex(Food_Calories)));
+
+                if (food_TotalAm != null && !food_TotalAm.equals("")) {
+                    foodTotalAmount = Double.parseDouble(food_TotalAm);
+                    foodHis.put(Food_Calories, String.valueOf(foodTotalAmount * foodCalories));
+                } else {
+                    foodHis.put(Food_Calories, "");
+                }
+
+                foodHis.put(Food_Calories, String.valueOf(foodTotalAmount * foodCalories));
                 //foodHis.put(Food_Calories, cursor.getString(cursor.getColumnIndex(Food_Calories)));
                 foodHis.put(Food_Name, cursor.getString(cursor.getColumnIndex(Food_Name)));
                 foodHis.put(Food_Unit, cursor.getString(cursor.getColumnIndex(Food_Unit)));
@@ -190,7 +201,7 @@ public class FoodHistoryTABLE {
                 exeHis.put(History_Exercise_Id, cursor.getString(cursor.getColumnIndex(History_Exercise_Id)));
                 exeHis.put(History_Exercise_Date, cursor.getString(cursor.getColumnIndex(History_Exercise_Date)));
                 exeHis.put(Exercise_Name, cursor.getString(cursor.getColumnIndex(Exercise_Name)));
-                exeHis.put(Exercise_Calories, String.valueOf(Double.parseDouble(cursor.getString(cursor.getColumnIndex(Exercise_TotalDuration)))*Double.parseDouble(cursor.getString(cursor.getColumnIndex(Exercise_Calories)))));
+                exeHis.put(Exercise_Calories, String.valueOf(Double.parseDouble(cursor.getString(cursor.getColumnIndex(Exercise_TotalDuration))) * Double.parseDouble(cursor.getString(cursor.getColumnIndex(Exercise_Calories)))));
                 //exeHis.put(Exercise_Calories, cursor.getString(cursor.getColumnIndex(Exercise_Calories)));
                 exeHis.put(Exercise_Duration, cursor.getString(cursor.getColumnIndex(Exercise_Duration)));
                 exeHis.put(Exercise_Disease, cursor.getString(cursor.getColumnIndex(Exercise_Disease)));
