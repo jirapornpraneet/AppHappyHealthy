@@ -37,7 +37,7 @@ public class FoodTABLE {
 
     //Add New Value
     public long addNewValueToSQLite(String str_food_name,int int_food_amount, double dou_food_cal, String str_food_unit,
-                                    double dou_food_netweight, String str_net_unit, double dou_protein, double dou_fat,
+                                    double dou_food_netweight, double dou_protein, double dou_fat,
                                     double dou_carbohydrate, double dou_sugar, double dou_sodium) {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
@@ -48,7 +48,6 @@ public class FoodTABLE {
         contentValues.put(Food_Calories, dou_food_cal);
         contentValues.put(Food_Unit, str_food_unit);
         contentValues.put(Food_Netweight, dou_food_netweight);
-        contentValues.put(Food_NetUnit, str_net_unit);
         contentValues.put(Food_Protein, dou_protein);
         contentValues.put(Food_Fat, dou_fat);
         contentValues.put(Food_Carbohydrate, dou_carbohydrate);

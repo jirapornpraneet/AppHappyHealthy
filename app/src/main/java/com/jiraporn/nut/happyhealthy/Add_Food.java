@@ -12,9 +12,9 @@ import android.widget.Toast;
 public class Add_Food extends AppCompatActivity {
 
     private FoodTABLE foodTABLE;
-    private EditText f_name,f_cal,f_amount,f_unit,f_netweight,f_netunit,f_protein,f_fat,f_carbohydrate,f_sugar,f_sodium;
+    private EditText f_name,f_cal,f_amount,f_unit,f_netweight,f_protein,f_fat,f_carbohydrate,f_sugar,f_sodium;
     private String str_food_name,int_food_amount,dou_food_cal,str_food_unit,
-    dou_food_netweight,str_net_unit,dou_protein,dou_fat,dou_carbohydrate,dou_sugar,dou_sodium;
+    dou_food_netweight,dou_protein,dou_fat,dou_carbohydrate,dou_sugar,dou_sodium;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,6 @@ public class Add_Food extends AppCompatActivity {
         f_amount = (EditText) findViewById(R.id.f_amount);
         f_unit = (EditText) findViewById(R.id.f_unit);
         f_netweight = (EditText) findViewById(R.id.f_netweight);
-        f_netunit = (EditText) findViewById(R.id.f_netunit);
         f_protein = (EditText) findViewById(R.id.f_protein);
         f_fat = (EditText) findViewById(R.id.f_fat);
         f_carbohydrate = (EditText) findViewById(R.id.f_carbohydrate);
@@ -49,7 +48,6 @@ public class Add_Food extends AppCompatActivity {
         dou_food_cal = f_cal.getText().toString().trim();
         str_food_unit= f_unit.getText().toString().trim();
         dou_food_netweight= f_netweight.getText().toString().trim();
-        str_net_unit= f_netunit.getText().toString().trim();
         dou_protein= f_protein.getText().toString().trim();
         dou_fat= f_fat.getText().toString().trim();
         dou_carbohydrate= f_carbohydrate.getText().toString().trim();
@@ -75,14 +73,13 @@ public class Add_Food extends AppCompatActivity {
         FoodTABLE foodTABLE = new FoodTABLE(this);
         long inSertDataUser = foodTABLE.addNewValueToSQLite
                 ( str_food_name,Integer.parseInt(int_food_amount),Double.parseDouble(dou_food_cal),str_food_unit,
-        Double.parseDouble(dou_food_netweight) , str_net_unit, Double.parseDouble(dou_protein) ,Double.parseDouble(dou_fat) ,
+        Double.parseDouble(dou_food_netweight), Double.parseDouble(dou_protein) ,Double.parseDouble(dou_fat) ,
         Double.parseDouble(dou_carbohydrate),Double.parseDouble(dou_sugar), Double.parseDouble(dou_sodium));
         f_name.setText("");
         f_cal.setText("");
         f_amount.setText("");
         f_unit.setText("");
         f_netweight.setText("");
-        f_netunit.setText("");
         f_protein.setText("");
         f_fat.setText("");
         f_carbohydrate.setText("");

@@ -62,21 +62,19 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_marginTop="130dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="35dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/my_bg_savefood_name"
-        android:gravity="center_vertical|center_horizontal"
-        android:foregroundGravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout12">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
             android:id="@+id/f_cal"
-            android:layout_weight="1"
             android:background="@drawable/my_bg_savefood_name"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical|center_horizontal"
@@ -86,34 +84,13 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="164.5dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="35dp"
-        android:background="@drawable/my_bg_savefood_name">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="พลังงาน(กิโลแคลอรี่)"
-            android:id="@+id/textView3"
-            android:textSize="13sp"
-            android:background="@drawable/my_bg_savefood_name"
-            android:layout_marginTop="6dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="3dp"
-            android:textColor="#ffffff" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="120dp"
-        android:layout_height="45dp"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="130dp"
-        android:layout_marginLeft="40dp"
-        android:background="@drawable/my_bg_savefood_name">
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/my_bg_savefood_name"
+        android:id="@+id/linearLayout8">
 
         <EditText
             android:layout_width="wrap_content"
@@ -134,38 +111,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_centerHorizontal="true"
-        android:gravity="left"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
-        android:background="@drawable/my_bg_savefood_name">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/f_unit"
-            android:layout_weight="1"
-            android:layout_gravity="left|center_horizontal"
-            android:foregroundGravity="center_vertical"
-            android:background="@drawable/my_bg_savefood_name"
-            android:gravity="center_vertical|center_horizontal"
-            android:textColor="@color/bg"
-            android:layout_marginBottom="3dp"
-            android:hint="หน่วย"
-            android:textSize="14sp"
-            android:text="หน่วยอาหาร" />
-    </LinearLayout>
-
-    <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="false"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="215dp"
         android:layout_marginLeft="45dp">
 
         <TextView
@@ -184,7 +134,7 @@
         android:layout_marginTop="200dp"
         android:layout_alignParentRight="false"
         android:layout_marginRight="70dp"
-        android:layout_marginLeft="180dp">
+        android:layout_marginLeft="170dp">
 
         <EditText
             android:layout_height="wrap_content"
@@ -199,21 +149,20 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="217dp"
         android:layout_alignParentRight="false"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="180dp"
         android:orientation="vertical">
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/f_netunit"
-            android:layout_weight="1"
             android:textSize="12dp"
-            android:textColor="#f9a98a"
+            android:textStyle="bold"
             android:layout_marginLeft="50dp"
-            android:hint="หน่วย" />
+            android:text="กรัม" />
     </LinearLayout>
 
     <LinearLayout
@@ -243,35 +192,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView49"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="12dp"
             android:src="@drawable/dodo" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView50"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="14dp"
             android:src="@drawable/dodo" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView51"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="18dp"
             android:src="@drawable/dodo" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView52"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="14dp"
             android:src="@drawable/dodo" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView53"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="14dp"
             android:src="@drawable/dodo" />
 
     </LinearLayout>
@@ -281,14 +230,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="270dp"
-        android:layout_marginLeft="70dp">
+        android:layout_marginLeft="70dp"
+        android:id="@+id/linearLayout11">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="โปรตีน"
             android:id="@+id/textView6"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:layout_gravity="left"
             android:textSize="13dp" />
 
@@ -297,7 +247,7 @@
             android:layout_height="wrap_content"
             android:text="ไขมัน"
             android:id="@+id/textView7"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:layout_gravity="left"
             android:textSize="13dp" />
 
@@ -306,7 +256,7 @@
             android:layout_height="wrap_content"
             android:text="คาร์โบไฮเดรต"
             android:id="@+id/textView8"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:layout_gravity="left"
             android:textSize="13dp" />
 
@@ -315,7 +265,7 @@
             android:layout_height="wrap_content"
             android:text="น้ำตาล"
             android:id="@+id/textView9"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:layout_gravity="left"
             android:textSize="13dp" />
 
@@ -324,7 +274,7 @@
             android:layout_height="wrap_content"
             android:text="โซเดียม"
             android:id="@+id/textView10"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:layout_gravity="left"
             android:textSize="13dp" />
     </LinearLayout>
@@ -339,14 +289,12 @@
         android:orientation="vertical">
 
         <EditText
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/my_bg_savefood_name"
             android:id="@+id/f_protein"
             android:layout_marginTop="4dp"
-
-
-            android:textSize="13dp"
-            android:textColor="#f9a98a"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_width="50dp" />
 
@@ -355,8 +303,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/f_fat"
             android:layout_marginTop="4dp"
-            android:textSize="13dp"
-            android:textColor="#f9a98a"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
             android:background="@drawable/my_bg_savefood_name"
             android:textStyle="bold" />
 
@@ -364,9 +312,9 @@
             android:layout_height="match_parent"
             android:id="@+id/f_carbohydrate"
             android:layout_marginTop="4dp"
-            android:textSize="13dp"
+            android:textSize="18dp"
             android:background="@drawable/my_bg_savefood_name"
-            android:textColor="#f9a98a"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_width="50dp" />
 
@@ -376,8 +324,8 @@
             android:id="@+id/f_sugar"
             android:layout_marginTop="4dp"
             android:background="@drawable/my_bg_savefood_name"
-            android:textSize="13dp"
-            android:textColor="#f9a98a"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
             android:textStyle="bold" />
 
         <EditText
@@ -385,8 +333,8 @@
             android:id="@+id/f_sodium"
             android:background="@drawable/my_bg_savefood_name"
             android:layout_marginTop="4dp"
-            android:textSize="13dp"
-            android:textColor="#f9a98a"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_width="50dp" />
     </LinearLayout>
@@ -405,7 +353,7 @@
             android:layout_height="wrap_content"
             android:text="กรัม"
             android:id="@+id/textView11"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8.5dp"
             android:textSize="13dp"
             android:textColor="#f9a98a" />
 
@@ -414,7 +362,7 @@
             android:layout_height="wrap_content"
             android:text="กรัม"
             android:id="@+id/textView12"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:textSize="13dp"
             android:textColor="#f9a98a" />
 
@@ -423,7 +371,7 @@
             android:layout_height="wrap_content"
             android:text="กรัม"
             android:id="@+id/textView13"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:textSize="13dp"
             android:textColor="#f9a98a" />
 
@@ -432,7 +380,7 @@
             android:layout_height="wrap_content"
             android:text="กรัม"
             android:id="@+id/textView14"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:textSize="13dp"
             android:textColor="#f9a98a" />
 
@@ -441,7 +389,7 @@
             android:layout_height="wrap_content"
             android:text="มิลลิกรัม"
             android:id="@+id/textView15"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="9dp"
             android:textSize="13dp"
             android:textColor="#f9a98a" />
     </LinearLayout>
@@ -465,5 +413,57 @@
         android:onClick="ClickSaveFood"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp" />
+
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:gravity="left"
+        android:background="@drawable/my_bg_savefood_name"
+        android:layout_alignBottom="@+id/linearLayout7"
+        android:layout_alignLeft="@+id/linearLayout8"
+        android:layout_alignStart="@+id/linearLayout8">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_bg_savefood_name"
+        android:id="@+id/linearLayout7"
+        android:layout_alignBottom="@+id/f_unit"
+        android:layout_alignLeft="@+id/linearLayout12"
+        android:layout_alignStart="@+id/linearLayout12">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="พลังงาน(กิโลแคลอรี่)"
+            android:id="@+id/textView3"
+            android:textSize="14sp"
+            android:background="@drawable/my_bg_savefood_name"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="3dp" />
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/f_unit"
+        android:layout_weight="1"
+        android:layout_gravity="left|center_horizontal"
+        android:foregroundGravity="center_vertical"
+        android:background="@drawable/my_bg_savefood_name"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/bg"
+        android:hint="หน่วย"
+        android:textSize="18dp"
+        android:layout_below="@+id/linearLayout12"
+        android:layout_alignLeft="@+id/linearLayout8"
+        android:layout_alignStart="@+id/linearLayout8"
+        android:layout_alignRight="@+id/linearLayout8"
+        android:layout_alignEnd="@+id/linearLayout8" />
 
 </RelativeLayout>
