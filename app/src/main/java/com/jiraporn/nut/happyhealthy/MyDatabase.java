@@ -11,7 +11,7 @@ import android.content.Context;
  public class MyDatabase extends SQLiteAssetHelper {
 
  private static final String DATABASE_NAME = "HappyHealthy_Sqlite.db";
- private static final int DATABASE_VERSION = 2;  //ระบุตามเวอร์ชั่นนนั่นที่ต้องงการ
+ private static final int DATABASE_VERSION = 1;  //ระบุตามเวอร์ชั่นนนั่นที่ต้องงการ
 
  public MyDatabase(Context context) { super(context, DATABASE_NAME, null, DATABASE_VERSION);
  }

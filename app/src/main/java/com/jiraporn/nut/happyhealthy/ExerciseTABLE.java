@@ -17,7 +17,6 @@ public class ExerciseTABLE {
     private MyDatabase myDatabase;
 
 
-
     public static final String Exercise = "Exercise";
     public static final String Exercise_Id = "Exercise_Id";
     public static final String Exercise_Name = "Exercise_Name";
@@ -35,14 +34,14 @@ public class ExerciseTABLE {
     }//Constructor
 
     //Add New Value
-    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal, double dou_duration,  String str_exe_detail ) {
+    public long addNewValueToSQLite(String str_exe_name, double dou_exe_cal, double dou_duration, String str_exe_detail) {
 
         SQLiteDatabase db = myDatabase.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Exercise_Name, str_exe_name);
         contentValues.put(Exercise_Calories, dou_exe_cal);
         contentValues.put(Exercise_Duration, dou_duration);
-        contentValues.put(Exercise_Detail,str_exe_detail);
+        contentValues.put(Exercise_Detail, str_exe_detail);
 
 
         long exercise_id = db.insert(Exercise, null, contentValues);
@@ -51,10 +50,10 @@ public class ExerciseTABLE {
 
 
     //เอใส่เพิ่มlistview
-    public ArrayList<HashMap<String, String>> getExeList () {
+    public ArrayList<HashMap<String, String>> getExeList(String word) {
 
         SQLiteDatabase db = myDatabase.getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + Exercise ;
+        String selectQuery = "SELECT * FROM " + Exercise + " Where " + Exercise_Name + " LIKE '%" + word + "%'";
 
         ArrayList<HashMap<String, String>> exeList = new ArrayList<HashMap<String, String>>();
 

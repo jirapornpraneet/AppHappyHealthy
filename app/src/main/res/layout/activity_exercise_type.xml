@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.jiraporn.nut.happyhealthy.Food_Type_1">
+    tools:context="com.jiraporn.nut.happyhealthy.Food_Type_1"
+    android:background="#faffffff">
 
 
     <LinearLayout
@@ -18,46 +19,77 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/listViewExeType"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/listViewExeType"
-        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
         android:layout_alignParentLeft="false"
-        android:layout_alignParentStart="false"
-        android:layout_marginTop="58dp"
         android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="false" />
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="110dp" />
 
     <TextView
+        android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ออกกำลังกาย"
-        android:id="@+id/textView25"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+        android:text="ออกกำลังกาย"
+        android:textColor="#ffffff"
         android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="#ffffff" />
+        android:textStyle="bold" />
 
 
     <ImageView
+        android:id="@+id/imageexeadd"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:id="@+id/imageexeadd"
-        android:layout_marginRight="15dp"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/buttonadd"
-        android:onClick="ClickAddExe"/>
+        android:onClick="ClickAddExe"
+        android:src="@drawable/buttonadd" />
 
     <ImageView
+        android:id="@+id/imageView43"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:id="@+id/imageView43"
-        android:src="@drawable/arowback"
-        android:layout_marginTop="7dp"
         android:layout_marginLeft="3dp"
-        android:onClick="ClickBackExeHome" />
+        android:layout_marginTop="7dp"
+        android:onClick="ClickBackExeHome"
+        android:src="@drawable/arowback" />
 
+    <EditText
+        android:id="@+id/tv_Sexe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/container_toolbar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="ค้นหาออกกำลังกาย"
+        android:orientation="vertical"
+        android:layout_alignRight="@+id/textView25"
+        android:layout_alignEnd="@+id/textView25"
+        android:textSize="18sp"
+        android:background="@color/bgSearch"
+        android:layout_marginTop="10dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp" />
 
+    <Button
+        android:id="@+id/bSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ค้นหา"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_alignBaseline="@+id/tv_Sexe"
+        android:layout_alignBottom="@+id/tv_Sexe"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp" />
 </RelativeLayout>

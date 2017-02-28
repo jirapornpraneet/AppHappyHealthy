@@ -29,7 +29,7 @@
         android:layout_alignParentStart="false"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="110dp"
         android:drawSelectorOnTop="false" />
 
     <TextView
@@ -63,6 +63,32 @@
         android:layout_alignBottom="@+id/imageViewfoodadd"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:hint="ค้นหาอาหาร"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/container_toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView44"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button" />
+
+    <Button
+        android:text="ค้นหา"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:id="@+id/button"
+        android:layout_alignBottom="@+id/textView44"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
