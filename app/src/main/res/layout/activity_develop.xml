@@ -52,6 +52,13 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/my_box_pre">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/logormutsb"
+            android:layout_marginTop="5dp"
+            android:id="@+id/imageView77"
+            android:layout_height="wrap_content" />
+
         <TextView
             android:text="มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิ "
             android:layout_width="match_parent"
@@ -61,7 +68,8 @@
             android:foregroundGravity="center_vertical|center_horizontal|center"
             android:gravity="center_vertical|center_horizontal|center"
             android:layout_marginTop="12dp"
-            android:textColor="@color/font" />
+            android:textColor="@color/font"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:text="คณะวิทยาศาสตร์และเทคโนโลยี"
@@ -72,7 +80,8 @@
             android:foregroundGravity="center_vertical|center_horizontal|center"
             android:gravity="center_vertical|center_horizontal|center"
             android:textSize="13sp"
-            android:textColor="@color/font" />
+            android:textColor="@color/font"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:text="สาขาวิชาวิทยาการคอมพิวเตอร์"
@@ -83,14 +92,15 @@
             android:foregroundGravity="center_vertical|center_horizontal|center"
             android:gravity="center_vertical|center_horizontal|center"
             android:textSize="13sp"
-            android:textColor="@color/font" />
+            android:textColor="@color/font"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:text="นางสาว จิราพร ปราณีต "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView42"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:foregroundGravity="center_vertical|center_horizontal|center"
             android:gravity="center_vertical|center_horizontal|center"
             android:textSize="12sp"

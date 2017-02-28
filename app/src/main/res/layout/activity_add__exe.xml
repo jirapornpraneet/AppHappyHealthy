@@ -76,6 +76,7 @@
             android:layout_gravity="center_vertical"
             android:textColor="#ffffff"
             android:textStyle="bold"
+            android:inputType="number"
             android:gravity="center_vertical|center_horizontal"
             android:layout_width="135dp"
             android:layout_height="50dp" />

@@ -73,7 +73,7 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/f_amount"
@@ -81,7 +81,7 @@
             android:layout_alignParentStart="true"
             android:background="@drawable/my_bg_savefood_name"
             android:layout_gravity="center_vertical"
-            android:gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
             android:layout_marginTop="5dp"
             android:textColor="#ffffff"
             android:textStyle="bold"
@@ -121,6 +121,7 @@
             android:id="@+id/f_netweight"
             android:layout_weight="1"
             android:textSize="12dp"
+            android:inputType="number"
             android:textColor="#f9a98a"
             android:textStyle="bold"
             android:layout_width="50dp" />
@@ -274,6 +275,7 @@
             android:id="@+id/f_protein"
             android:layout_marginTop="4dp"
             android:textSize="18dp"
+            android:inputType="number"
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_width="50dp" />
@@ -284,6 +286,7 @@
             android:id="@+id/f_fat"
             android:layout_marginTop="4dp"
             android:textSize="18dp"
+            android:inputType="number"
             android:textColor="#ffffff"
             android:background="@drawable/my_bg_savefood_name"
             android:textStyle="bold" />
@@ -293,6 +296,7 @@
             android:id="@+id/f_carbohydrate"
             android:layout_marginTop="4dp"
             android:textSize="18dp"
+            android:inputType="number"
             android:background="@drawable/my_bg_savefood_name"
             android:textColor="#ffffff"
             android:textStyle="bold"
@@ -302,6 +306,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:id="@+id/f_sugar"
+            android:inputType="number"
             android:layout_marginTop="4dp"
             android:background="@drawable/my_bg_savefood_name"
             android:textSize="18dp"
@@ -314,6 +319,7 @@
             android:background="@drawable/my_bg_savefood_name"
             android:layout_marginTop="4dp"
             android:textSize="18dp"
+            android:inputType="number"
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_width="50dp" />
@@ -412,9 +418,11 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_bg_savefood_name"
         android:id="@+id/linearLayout7"
-        android:layout_alignBottom="@+id/f_unit"
         android:layout_alignLeft="@+id/linearLayout12"
-        android:layout_alignStart="@+id/linearLayout12">
+        android:layout_alignStart="@+id/linearLayout12"
+        android:layout_alignBottom="@+id/f_unit"
+        android:layout_alignRight="@+id/linearLayout12"
+        android:layout_alignEnd="@+id/linearLayout12">
 
         <TextView
             android:layout_width="wrap_content"
@@ -460,6 +468,7 @@
             android:layout_width="130dp"
             android:layout_height="55dp"
             android:id="@+id/f_cal"
+            android:inputType="number"
             android:background="@drawable/my_bg_savefood_name"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical|center_horizontal"

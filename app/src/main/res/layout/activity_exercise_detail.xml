@@ -89,7 +89,8 @@
         android:layout_marginTop="215dp"
         android:layout_marginRight="30dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/my_bg_saveexe_name">
+        android:background="@drawable/my_bg_saveexe_name"
+        android:id="@+id/linearLayout10">
 
         <TextView
             android:layout_width="wrap_content"
@@ -224,6 +225,17 @@
             android:textSize="15dp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <TextView
+        android:text="ขอบคุณ : ข้อมูลจากแอพพลิเคชั่น FoodiEat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#a4ddac"
+        android:id="@+id/textView44"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_above="@+id/recExe"
+        android:layout_alignRight="@+id/linearLayout10"
+        android:layout_alignEnd="@+id/linearLayout10" />
 
 
 </RelativeLayout>

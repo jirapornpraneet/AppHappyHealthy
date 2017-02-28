@@ -203,7 +203,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp">
+        android:layout_marginTop="238dp"
+        android:id="@+id/linearLayout13">
 
         <TextView
             android:layout_width="wrap_content"
@@ -218,7 +219,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="261dp"
         android:layout_marginLeft="50dp" >
 
         <ImageView
@@ -262,7 +263,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="260dp"
         android:layout_marginLeft="70dp">
 
         <TextView
@@ -315,7 +316,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="260dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="65dp"
         android:orientation="vertical">
@@ -376,7 +377,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="260dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="42dp"
         android:layout_weight="1">
@@ -433,7 +434,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
         android:gravity="bottom|center_vertical|center_horizontal"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="100dp"
         android:layout_centerHorizontal="true">
 
         <TextView
@@ -453,7 +454,7 @@
         android:id="@+id/imageView30"
         android:src="@drawable/buttonsavefood"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="1dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -473,5 +474,16 @@
             android:textColor="#f9a98a"
             android:layout_marginLeft="50dp" />
     </LinearLayout>
+
+    <TextView
+        android:text="ขอบคุณ : ข้อมูลจากแอพพลิเคชั่น FoodiEat"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_height="wrap_content"
+        android:textColor="#f9a98a"
+        android:layout_above="@+id/imageView30"
+        android:layout_alignLeft="@+id/linearLayout13"
+        android:layout_alignStart="@+id/linearLayout13"
+        android:id="@+id/textView46" />
 
 </RelativeLayout>
