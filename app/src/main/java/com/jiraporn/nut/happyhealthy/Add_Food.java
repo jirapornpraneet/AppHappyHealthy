@@ -87,7 +87,7 @@ public class Add_Food extends AppCompatActivity {
         f_sodium.setText("");
 
         Toast.makeText(Add_Food.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(getApplicationContext(), ExerciseType.class);
+        Intent objIntent = new Intent(getApplicationContext(), Food_Type_1.class);
         objIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(objIntent);
         finish();
