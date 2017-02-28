@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -21,6 +23,9 @@ public class Food_Type_1 extends AppCompatActivity {
     String Foodname, FoodUnit, FoodNetUnit,FoodDetail;
     double FoodCalories, FoodNetweight, FoodProtein, FoodFat, FoodCarbohydrate, FoodSugars, FoodSodium;
     int FoodAmount, FoodId;
+    Button b_FoodSearch;
+    EditText textFood_Search;
+    String word_FoodSearch;
 
 
     @Override
@@ -29,11 +34,19 @@ public class Food_Type_1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food__type_1);
 
-
-
+        textFood_Search = (EditText) findViewById(R.id.tv_Sfood);
+        b_FoodSearch = (Button) findViewById(R.id.bFoodSearch);
         listViewFood1 = (ListView) findViewById(R.id.listViewFood1);
 
         foodTABLE = new FoodTABLE(this);
+
+        b_FoodSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                word_FoodSearch = textFood_Search.getText().toString();
+                setListFood(word_FoodSearch);
+            }
+        });
 
         listViewFood1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -62,11 +75,18 @@ public class Food_Type_1 extends AppCompatActivity {
             }
         });
 
-        foodList = foodTABLE.getFoodList();
-        adapterFood1 = new SimpleAdapter(Food_Type_1.this, foodList, R.layout.food_1, new String[]{"food_name", "food_calories", "food_unit","food_detail"}, new int[]{R.id.food_name, R.id.food_calories, R.id.food_unit , R.id.food_detail});
-        listViewFood1.setAdapter(adapterFood1); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
+        setListFood("");
+
+
 
     }//onCreate
+
+
+    public void setListFood(String word) {
+        foodList = foodTABLE.getFoodList(word);
+        adapterFood1 = new SimpleAdapter(Food_Type_1.this, foodList, R.layout.food_1, new String[]{"food_name", "food_calories", "food_unit","food_detail"}, new int[]{R.id.food_name, R.id.food_calories, R.id.food_unit , R.id.food_detail});
+        listViewFood1.setAdapter(adapterFood1); //เป็นตัวที่เอาออกมาโชว์หน้าในlist
+    }
 
     public void ClickBackFoodHome(View view) {
         startActivity(new Intent(getApplicationContext(),MainActivity.class));

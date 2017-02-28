@@ -60,9 +60,9 @@ public class FoodTABLE {
     }//Add New Value
 
     //เอใส่เพิ่มlistview
-    public ArrayList<HashMap<String, String>> getFoodList() {
+    public ArrayList<HashMap<String, String>> getFoodList(String word) {
         SQLiteDatabase db = myDatabase.getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + Food ;
+        String selectQuery = "SELECT * FROM " + Food + " Where " + Food_Name + " LIKE '%" + word + "%'";;
 
         ArrayList<HashMap<String, String>> foodList = new ArrayList<HashMap<String, String>>();
 

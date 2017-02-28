@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.jiraporn.nut.happyhealthy.Food_Type_1">
+    tools:context="com.jiraporn.nut.happyhealthy.Food_Type_1"
+    android:background="#faffffff">
 
 
     <LinearLayout
@@ -29,7 +30,7 @@
         android:layout_alignParentStart="false"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="103dp"
         android:drawSelectorOnTop="false" />
 
     <TextView
@@ -64,31 +65,36 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:hint="ค้นหาอาหาร"
-        android:orientation="vertical"
-        android:gravity="center_vertical|center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+
+    <EditText
+        android:id="@+id/tv_Sfood"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/container_toolbar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="ค้นหาอาหาร"
+        android:orientation="vertical"
+        android:textSize="18sp"
+        android:background="@color/bgSearch"
         android:layout_marginTop="10dp"
-        android:id="@+id/textView44"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button" />
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:layout_width="200dp" />
 
     <Button
+        android:id="@+id/bFoodSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="ค้นหา"
         android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:id="@+id/button"
-        android:layout_alignBottom="@+id/textView44"
+        android:textSize="16sp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:background="@color/bgSearch"
+        android:layout_alignBottom="@+id/tv_Sfood"
+        android:layout_alignTop="@+id/tv_Sfood" />
 
 
 </RelativeLayout>
