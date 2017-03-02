@@ -103,6 +103,7 @@ public class MainActivity extends TabActivity {
         super.onRestart();
 
         checkUserTABLE();
+        //checkUserHistoryTABLE();
 
     }
 

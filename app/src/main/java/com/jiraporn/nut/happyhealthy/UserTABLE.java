@@ -46,7 +46,7 @@ public class UserTABLE {
 //        return user_id;
     }//Add New Value
 
-    //Add New Value
+
     //Add New Value
     public void addNewValueToSQLite(String strName, String strSex, String strAge, int intHeight, double douWeight, double douBmr, double douBmi) {
         ContentValues contentValues = new ContentValues();

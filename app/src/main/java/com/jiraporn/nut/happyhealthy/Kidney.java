@@ -124,7 +124,7 @@ public class Kidney extends AppCompatActivity {
         } else if ((IntCostGFR >= 30) & (IntCostGFR <60)){
             myResult = resultStrings[2];
         } else if ((IntCostGFR >=15) & (IntCostGFR <30)) {
-            myResult = resultStrings[3];
+            myResult = resultStrings [3];
         } else {
             myResult = resultStrings[4];
         }
