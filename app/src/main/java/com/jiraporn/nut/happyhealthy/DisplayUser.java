@@ -16,6 +16,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class DisplayUser extends AppCompatActivity {
 
 
@@ -23,12 +26,16 @@ public class DisplayUser extends AppCompatActivity {
     MyDatabase myDatabase;
 
     private UserTABLE objUserTABLE;
+    private User_HistoryTABLE user_historyTABLE;
     //Explicit
     private EditText TVName, TVAge, TVWeight, TVHeight, TVSex;
     private TextView TVBMR, TVBMI, weightStdTextView;
-    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex;
-    private RadioButton man,women;
+    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex;
+    private RadioButton man, women;
     private RadioGroup User_Sex;
+    SimpleDateFormat df_show, df_search;
+    Calendar c;
+    int userId;
 
     RadioGroup choose_sex;
 
@@ -45,7 +52,6 @@ public class DisplayUser extends AppCompatActivity {
         showView();
     }
 
-
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -54,17 +60,21 @@ public class DisplayUser extends AppCompatActivity {
 
     private void showView() {
         db = myDatabase.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + UserTABLE.USER, null);
+        Cursor cursor = db.rawQuery("SELECT *,max(" + User_HistoryTABLE.History_User_Id + ") " +
+                " FROM " + UserTABLE.USER + "," + User_HistoryTABLE.User_History +
+                " WHERE " + UserTABLE.USER + "." + UserTABLE.User_Id + " = " + User_HistoryTABLE.User_History + "." + User_HistoryTABLE.User_Id, null);
 
         if (cursor.moveToFirst()) {
             do {
+                userId = cursor.getInt(cursor.getColumnIndex(UserTABLE.User_Id));
                 strName = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Name));
                 strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Sex));
+                strChooseSex = strSex;
                 strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Age));
-                intHeight = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Height));
-                douWeight = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Weight));
-                douBmr = cursor.getString(cursor.getColumnIndex(UserTABLE.User_BMR));
-                douBmi = cursor.getString(cursor.getColumnIndex(UserTABLE.User_BMI));
+                intHeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Height));
+                douWeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Weight));
+                douBmr = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_BMR));
+                douBmi = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_BMI));
                 weightStdString = findMyAlertWeight(douBmi);
             } while (cursor.moveToNext());
         }
@@ -72,7 +82,7 @@ public class DisplayUser extends AppCompatActivity {
 
         if (strSex.equals("man")) {
             man.setChecked(true);
-        }else{
+        } else {
             women.setChecked(true);
         }
 
@@ -84,7 +94,6 @@ public class DisplayUser extends AppCompatActivity {
         TVBMR.setText(douBmr);
         TVBMI.setText(douBmi);
         weightStdTextView.setText(weightStdString);
-
 
 
     } // Show View
@@ -125,13 +134,13 @@ public class DisplayUser extends AppCompatActivity {
     private void bindWidget() {
 
         TVName = (EditText) findViewById(R.id.tv_Name);
-       // TVSex = (EditText) findViewById(R.id.tv_Sex);
+        // TVSex = (EditText) findViewById(R.id.tv_Sex);
         TVAge = (EditText) findViewById(R.id.tv_Age);
         TVWeight = (EditText) findViewById(R.id.tv_Weight);
         TVHeight = (EditText) findViewById(R.id.tv_Height);
         TVBMR = (TextView) findViewById(R.id.tv_BMR);
         TVBMI = (TextView) findViewById(R.id.tv_BMI);
-         weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
+        weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
         man = (RadioButton) findViewById(R.id.man);
         women = (RadioButton) findViewById(R.id.woman);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
@@ -141,13 +150,13 @@ public class DisplayUser extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.man:
-                        strSex = "man";
+                        strChooseSex = "man";
                         break;
                     case R.id.woman:
-                        strSex = "woman";
+                        strChooseSex = "woman";
                         break;
                 }
-               // TVSex.setText(strSex);
+                // TVSex.setText(strSex);
             }
         });
 
@@ -155,37 +164,49 @@ public class DisplayUser extends AppCompatActivity {
 
 
     public void ClickSaveDataUser(View view) {
-
         //get value edit tezt
-        strName = TVName.getText().toString().trim();
-        strAge = TVAge.getText().toString().trim();
-        douWeight = TVWeight.getText().toString().trim();
-        intHeight = TVHeight.getText().toString().trim();
+//        strName = TVName.getText().toString().trim();
+//        strAge = TVAge.getText().toString().trim();
+//        douWeight = TVWeight.getText().toString().trim();
+//        intHeight = TVHeight.getText().toString().trim();
+
+        TVName.setText(TVName.getText().toString().trim());
+        TVAge.setText(TVAge.getText().toString().trim());
+        TVWeight.setText(TVWeight.getText().toString().trim());
+        TVHeight.setText(TVHeight.getText().toString().trim());
         //strSex = TVSex.getText().toString().trim();
 
         //Checkspace
-        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") || strSex.equals("")) {
+        if (TVName.getText().toString().equals("")
+                || TVAge.getText().toString().equals("")
+                || TVWeight.getText().toString().equals("")
+                || TVHeight.getText().toString().equals("")
+                || strChooseSex.equals("")) {
             showAlert();
-
         } else {//UnCheck
             confirmData();
+
+            if (chkUserData()) {
+                if (chkUserHis()) {
+
+                } else {
+                    insertUserHis(userId);
+                }
+            } else {
+                int userId_2 = insertUserData();
+                insertUserHis(userId_2);
+            }
+
             showView();
-
         }
-
-
-
-
 
     }//ClickSaveUser
 
-
     private void confirmData() {
-
         // Find BMI
-        double douweight = Double.parseDouble(douWeight);
-        double douheight = Double.parseDouble(intHeight);
-        double douAge = Double.parseDouble(strAge);
+        double douweight = Double.parseDouble(TVWeight.getText().toString());
+        double douheight = Double.parseDouble(TVHeight.getText().toString());
+        double douAge = Double.parseDouble(TVAge.getText().toString());
 
         double douBMI = douweight / (Math.pow(douheight / 100, 2));
         //  bmiString = Double.toString(douBMI);
@@ -205,31 +226,70 @@ public class DisplayUser extends AppCompatActivity {
                 break;
         } // switch
 
-
         douBmr = String.format("%.2f", douBMR);
-
-
-        UpdateUsertoSQLite();
-
 
     }//confirmData
 
-    private void UpdateUsertoSQLite() {
+    public boolean chkUserData() {
+        if (TVName.getText().toString().equals(strName)
+                && TVAge.getText().toString().equals(strAge)
+                && strChooseSex.equals(strSex)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    public boolean chkUserHis() {
+        if (TVWeight.getText().toString().equals(douWeight)
+                && TVHeight.getText().toString().equals(intHeight)
+                && TVBMR.getText().toString().equals(douBmr)
+                && TVBMI.getText().toString().equals(douBmi)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public int insertUserData() {
         UserTABLE objUserTABLE = new UserTABLE(this);
-//        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewValueToSQLite(
-                strName, strSex,
-                strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight),
-                Double.parseDouble(douBmr), Double.parseDouble(douBmi));
+        int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
+                , strChooseSex
+                , TVAge.getText().toString());
+        return idUser;
+    }
+
+    private void insertUserHis(int userId_3) {
+        df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        df_search = new SimpleDateFormat("dd/MM/yyyy");
+        c = Calendar.getInstance();
+        User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
+
+        int searchHis = user_historyTABLE.checkUserHistoryTABLE(df_search.format(c.getTime()));
+
+        if (searchHis <= 0) {
+            user_historyTABLE.insertUserHistory(df_show.format(c.getTime())
+                    , Double.parseDouble(TVWeight.getText().toString())
+                    , Double.parseDouble(douBmr)
+                    , Double.parseDouble(douBmi)
+                    , Integer.parseInt(TVHeight.getText().toString())
+                    , userId_3);
+        } else {
+            user_historyTABLE.updateUserHistory(df_show.format(c.getTime())
+                    , Double.parseDouble(TVWeight.getText().toString())
+                    , Double.parseDouble(douBmr)
+                    , Double.parseDouble(douBmi)
+                    , Integer.parseInt(TVHeight.getText().toString())
+                    , df_search.format(c.getTime()));
+        }
+
         TVName.setText("");
         TVAge.setText("");
         TVHeight.setText("");
         TVWeight.setText("");
         Toast.makeText(DisplayUser.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
 
-    }//UpdateUsertoSQLite
-
+    }//insertUserHis
 
     private void showAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -259,8 +319,5 @@ public class DisplayUser extends AppCompatActivity {
 
         return intResult;
     }
-
-
-
 
 }//MainClass

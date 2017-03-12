@@ -13,16 +13,21 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 public class DataUser extends AppCompatActivity {
 
-
     //การประกาศตัวแปรั
     private UserTABLE objUserTABLE;
+    private User_HistoryTABLE user_historyTABLE;
     private EditText User_Name, User_Age, User_Weight, User_Height;
     private RadioGroup User_Sex;
     private RadioButton man, woman;
-    private String strName, strSex , strAge, intHeight, douWeight, douBmr, douBmi;
+    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi;
+    SimpleDateFormat df_show;
+    Calendar c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +45,9 @@ public class DataUser extends AppCompatActivity {
     private void connectDataBase() {
 
         objUserTABLE = new UserTABLE(this);
+        user_historyTABLE = new User_HistoryTABLE(this);
     }//ConnectDataBase
+
 
     private void bindWidget() {
 
@@ -148,17 +155,27 @@ public class DataUser extends AppCompatActivity {
     }//confirmData
 
     private void UpdateUsertoSQLite() {
+        df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        c = Calendar.getInstance();
 
         UserTABLE objUserTABLE = new UserTABLE(this);
+        User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
 //        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewInsertToSQLite
-                (strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
+        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge);
+
+        user_historyTABLE.insertUserHistory(df_show.format(c.getTime())
+                , Double.parseDouble(douWeight)
+                , Double.parseDouble(douBmr)
+                , Double.parseDouble(douBmi)
+                , Integer.parseInt(intHeight)
+                , 1);
+
         User_Name.setText("");
         User_Age.setText("");
         User_Height.setText("");
         User_Weight.setText("");
         Toast.makeText(DataUser.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
-        Intent objIntent = new Intent(getApplicationContext(),MainActivity.class);
+        Intent objIntent = new Intent(getApplicationContext(), MainActivity.class);
         objIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(objIntent);
 

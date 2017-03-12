@@ -26,6 +26,7 @@ public class AndroidImageAdapter extends PagerAdapter {
             R.drawable.infopre,
             R.drawable.infokid,
             R.drawable.infodia,
+            R.drawable.infodia1,
             R.drawable.infodrink,
             R.drawable.infoeat,
     };
