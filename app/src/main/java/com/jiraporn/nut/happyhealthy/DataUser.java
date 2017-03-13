@@ -232,7 +232,7 @@ public class DataUser extends AppCompatActivity {
                 douBMR = douBMR*1.725;
                 break;
             case 4:
-                douBMR = douBMR*1.2;
+                douBMR = douBMR*1.9;
                 break;
         }
 
