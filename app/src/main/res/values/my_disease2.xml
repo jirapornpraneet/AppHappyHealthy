@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="my_disease2">
+
+        //ค่าน้ำตาลในลือด
+
+        <item>วินิจฉัยเป็นเบาหวาน</item>
+        <item>ปกติ</item>
+
+
+    </string-array>
+
+</resources>

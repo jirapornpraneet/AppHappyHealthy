@@ -8,12 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -25,9 +29,12 @@ public class DataUser extends AppCompatActivity {
     private EditText User_Name, User_Age, User_Weight, User_Height;
     private RadioGroup User_Sex;
     private RadioButton man, woman;
-    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi;
+    private Spinner myACTSpinner;
+    private String[] choiceStrings;
+    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi,actString,DouFac;
     SimpleDateFormat df_show;
     Calendar c;
+    private ArrayList<String> StrAct = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,45 @@ public class DataUser extends AppCompatActivity {
         bindWidget();
 
 
+        CreateSpinner();
+
+        ArrayAdapter<String> adapterAct = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, StrAct);
+        myACTSpinner.setAdapter(adapterAct);
+
+
+        myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                StrAct.get(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
+
+
+       /** myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                actString = choiceStrings[i];
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                actString = choiceStrings[0];
+
+
+            }
+        });**/
+
+
+
+
     }//main method
 
     private void connectDataBase() {
@@ -47,6 +93,19 @@ public class DataUser extends AppCompatActivity {
         objUserTABLE = new UserTABLE(this);
         user_historyTABLE = new User_HistoryTABLE(this);
     }//ConnectDataBase
+
+    private void CreateSpinner() {
+
+        StrAct.add("นั่งทำงานอยู่กับที่ และไม่ได้ออกกำลังกายเลย ");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาเล็กน้อย ประมาณอาทิตย์ละ 1-3 วัน");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาปานกลาง ประมาณอาทิตย์ละ 3-5 วัน");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาอย่างหนัก lประมาณอาทิตย์ละ 6-7 วัน");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาอย่างหนักทุกวันเช้าเย็น");
+
+
+    }//CreateSpinner
+
+
 
 
     private void bindWidget() {
@@ -57,6 +116,8 @@ public class DataUser extends AppCompatActivity {
         User_Weight = (EditText) findViewById(R.id.User_Weight);
         User_Height = (EditText) findViewById(R.id.User_Height);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
+        myACTSpinner = (Spinner) findViewById(R.id.spinner2);
+
 
         man = (RadioButton) findViewById(R.id.man);
         woman = (RadioButton) findViewById(R.id.woman);
@@ -78,6 +139,13 @@ public class DataUser extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
+
+
     }//bindwidget
 
     public void ClickDisPlay(View view) {
@@ -88,8 +156,11 @@ public class DataUser extends AppCompatActivity {
         douWeight = User_Weight.getText().toString().trim();
         intHeight = User_Height.getText().toString().trim();
 
+
+      //  actString = myACTSpinner.toString();
+
         //Checkspace
-        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("")) {
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") ) {
             showAlert();
 
 
@@ -126,6 +197,8 @@ public class DataUser extends AppCompatActivity {
         double douweight = Double.parseDouble(douWeight);
         double douheight = Double.parseDouble(intHeight);
         double douAge = Double.parseDouble(strAge);
+       //double douFac = Double.parseDouble(DouFac);
+
 
         double douBMI = douweight / (Math.pow(douheight / 100, 2));
         //  bmiString = Double.toString(douBMI);
@@ -145,6 +218,24 @@ public class DataUser extends AppCompatActivity {
                 break;
         } // switch
 
+        switch (Fac()) {
+            case 0:
+                douBMR = douBMR*1.2;
+                break;
+            case 1:
+                douBMR = douBMR*1.375;
+                break;
+            case 2:
+                douBMR = douBMR*1.55;
+            break;
+            case 3:
+                douBMR = douBMR*1.725;
+                break;
+            case 4:
+                douBMR = douBMR*1.2;
+                break;
+        }
+
 
         douBmr = String.format("%.2f", douBMR);
 
@@ -161,7 +252,7 @@ public class DataUser extends AppCompatActivity {
         UserTABLE objUserTABLE = new UserTABLE(this);
         User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
 //        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge);
+        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge, actString,DouFac);
 
         user_historyTABLE.insertUserHistory(df_show.format(c.getTime())
                 , Double.parseDouble(douWeight)
@@ -212,6 +303,27 @@ public class DataUser extends AppCompatActivity {
         return intResult;
     }
 
+    private int Fac() {
+
+        int intResultFac = 0;
+        if (StrAct.equals("ั่งทำงานอยู่กับที่ และไม่ได้ออกกำลังกายเลย")) {
+            intResultFac = 0;
+        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาเล็กน้อย ประมาณอาทิตย์ละ 1-3 วัน")){
+            intResultFac = 1;
+        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาปานกลาง ประมาณอาทิตย์ละ 3-5 วัน")){
+            intResultFac= 2;
+        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาอย่างหนัก lประมาณอาทิตย์ละ 6-7 วัน")) {
+            intResultFac = 3;
+        } else   {
+            intResultFac = 4;
+        }
+
+        return intResultFac;
+    }
+
+
+
+
 
     private boolean checkChoose() {
         boolean status = true;
@@ -220,6 +332,7 @@ public class DataUser extends AppCompatActivity {
 
         return status;
     }
+
 
 
 }//main

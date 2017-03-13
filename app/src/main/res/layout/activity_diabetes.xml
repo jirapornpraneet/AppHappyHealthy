@@ -55,13 +55,13 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="290dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="105dp"
         android:weightSum="1"
         android:id="@+id/linearLayout5"
-        android:background="@drawable/my_box_diabetes">
+        android:background="@drawable/my_box_diabetes"
+        android:layout_height="330dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -103,6 +103,53 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="15dp" />
 
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center_vertical|center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/D_People"
+                android:layout_gravity="center_horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="ปกติ"
+                    android:id="@+id/normal"
+                    android:textColor="#5d5d5d"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:buttonTint="#5d5d5d" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="ผู้เป็นเบาหวาน"
+                    android:id="@+id/diabetes"
+                    android:textColor="#5d5d5d"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:buttonTint="#5d5d5d" />
+            </RadioGroup>
         </LinearLayout>
 
         <LinearLayout

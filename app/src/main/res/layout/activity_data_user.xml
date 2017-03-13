@@ -35,12 +35,12 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="260dp"
         android:id="@+id/linearLayout"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="140dp"
-        android:background="@drawable/my_bgdata">
+        android:background="@drawable/my_bgdata"
+        android:layout_height="300dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -219,6 +219,29 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:id="@+id/imageView55"
+                android:src="@drawable/da5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp" />
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:id="@+id/spinner2"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -229,7 +252,7 @@
         android:layout_centerHorizontal="true"
         android:onClick="ClickDisPlay"
         android:src="@drawable/buttonsave"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="390dp"
         android:layout_alignParentBottom="false" />
 
 

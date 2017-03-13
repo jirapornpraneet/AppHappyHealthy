@@ -9,14 +9,18 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class DisplayUser extends AppCompatActivity {
@@ -28,14 +32,17 @@ public class DisplayUser extends AppCompatActivity {
     private UserTABLE objUserTABLE;
     private User_HistoryTABLE user_historyTABLE;
     //Explicit
-    private EditText TVName, TVAge, TVWeight, TVHeight, TVSex;
+    private EditText TVName, TVAge, TVWeight, TVHeight;
     private TextView TVBMR, TVBMI, weightStdTextView;
-    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex;
+    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex,actString;
     private RadioButton man, women;
     private RadioGroup User_Sex;
+    private Spinner myACTSpinner;
+    private String[] choiceStrings;
     SimpleDateFormat df_show, df_search;
     Calendar c;
     int userId;
+    private ArrayList<String> StrAct = new ArrayList<String>();
 
     RadioGroup choose_sex;
 
@@ -48,15 +55,50 @@ public class DisplayUser extends AppCompatActivity {
         // Bind Widget
         bindWidget();
 
+        //Create Spinner
+        CreateSpinner();
+
+        ArrayAdapter<String> adapterAct = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, StrAct);
+        myACTSpinner.setAdapter(adapterAct);
+
+
+        myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                StrAct.get(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
         // Show View
         showView();
+
+
     }
+    private void CreateSpinner() {
+
+        StrAct.add("นั่งทำงานอยู่กับที่ และไม่ได้ออกกำลังกายเลย ");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาเล็กน้อย ประมาณอาทิตย์ละ 1-3 วัน");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาปานกลาง ประมาณอาทิตย์ละ 3-5 วัน");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาอย่างหนัก lประมาณอาทิตย์ละ 6-7 วัน");
+        StrAct.add("ออกกำลังกายหรือเล่นกีฬาอย่างหนักทุกวันเช้าเย็น");
+
+
+    }//CreateSpinner
+
 
     @Override
     protected void onRestart() {
         super.onRestart();
         showView();
     }
+
+
 
     private void showView() {
         db = myDatabase.getReadableDatabase();
@@ -70,6 +112,7 @@ public class DisplayUser extends AppCompatActivity {
                 strName = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Name));
                 strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Sex));
                 strChooseSex = strSex;
+                //StrAct = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Act));
                 strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Age));
                 intHeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Height));
                 douWeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Weight));
@@ -94,6 +137,7 @@ public class DisplayUser extends AppCompatActivity {
         TVBMR.setText(douBmr);
         TVBMI.setText(douBmi);
         weightStdTextView.setText(weightStdString);
+
 
 
     } // Show View
@@ -144,6 +188,7 @@ public class DisplayUser extends AppCompatActivity {
         man = (RadioButton) findViewById(R.id.man);
         women = (RadioButton) findViewById(R.id.woman);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
+        myACTSpinner = (Spinner) findViewById(R.id.spinner2);
 
         User_Sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -181,7 +226,8 @@ public class DisplayUser extends AppCompatActivity {
                 || TVAge.getText().toString().equals("")
                 || TVWeight.getText().toString().equals("")
                 || TVHeight.getText().toString().equals("")
-                || strChooseSex.equals("")) {
+                || strChooseSex.equals("")
+                ||actString.equals("")) {
             showAlert();
         } else {//UnCheck
             confirmData();
@@ -224,16 +270,35 @@ public class DisplayUser extends AppCompatActivity {
             case 1: // female
                 douBMR = 665 + (9.6 * douweight) + (1.8 * douheight) - (4.7 * douAge);
                 break;
-        } // switch
 
-        douBmr = String.format("%.2f", douBMR);
+            switch (Fac()) {
+                case 0:
+                    douBMR = douBMR * 1.2;
+                    break;
+                case 1:
+                    douBMR = douBMR * 1.375;
+                    break;
+                case 2:
+                    douBMR = douBMR * 1.55;
+                    break;
+                case 3:
+                    douBMR = douBMR * 1.725;
+                    break;
+                case 4:
+                    douBMR = douBMR * 1.9;
+                    break;
+            }
 
-    }//confirmData
+
+            douBmr = String.format("%.2f", douBMR);
+
+        }//confirmData
 
     public boolean chkUserData() {
         if (TVName.getText().toString().equals(strName)
                 && TVAge.getText().toString().equals(strAge)
-                && strChooseSex.equals(strSex)) {
+                && strChooseSex.equals(strSex)
+                && actString.equals(actString)) {
             return true;
         } else {
             return false;
@@ -255,9 +320,12 @@ public class DisplayUser extends AppCompatActivity {
         UserTABLE objUserTABLE = new UserTABLE(this);
         int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
                 , strChooseSex
-                , TVAge.getText().toString());
+                , TVAge.getText().toString()
+                , choiceStrings.toString()
+                , actString.toString());
         return idUser;
     }
+
 
     private void insertUserHis(int userId_3) {
         df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
@@ -308,6 +376,24 @@ public class DisplayUser extends AppCompatActivity {
     } //ShowAlert
 
 
+    private int Fac() {
+
+        int intResultFac = 0;
+        if (StrAct.equals("ั่งทำงานอยู่กับที่ และไม่ได้ออกกำลังกายเลย")) {
+            intResultFac = 0;
+        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาเล็กน้อย ประมาณอาทิตย์ละ 1-3 วัน")) {
+            intResultFac = 1;
+        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาปานกลาง ประมาณอาทิตย์ละ 3-5 วัน")) {
+            intResultFac = 2;
+        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาอย่างหนัก lประมาณอาทิตย์ละ 6-7 วัน")) {
+            intResultFac = 3;
+        } else {
+            intResultFac = 4;
+        }
+
+        return intResultFac;
+    }
+
     private int MaleOrFemale() {
 
         int intResult = 0;
@@ -319,5 +405,7 @@ public class DisplayUser extends AppCompatActivity {
 
         return intResult;
     }
+
+
 
 }//MainClass

@@ -18,7 +18,7 @@ public class DisplayDisease extends AppCompatActivity {
     DiabetesTABLE diabetesTABLE;
     //**Explicit
     private TextView TV_D_Date, TV_D_CostSugar, TV_D_Level;
-    private String str_D_Date, intCostSugar, tv_D_Level, str_status;
+    private String str_D_Date, intCostSugar, tv_D_Level, str_status,str_people;
 
 
     @Override
@@ -78,19 +78,19 @@ public class DisplayDisease extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.prodia);
         ImageView imageView2 = (ImageView) findViewById(R.id.level1);
 
-        if (IntCostSugar >= 300) {
+        if (IntCostSugar >= 130) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
-        } else if ((IntCostSugar >= 200) & (IntCostSugar < 300) ){
+        } else if ((IntCostSugar >= 100) & (IntCostSugar < 130) ){
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
-        } else if ((IntCostSugar >= 100) & (IntCostSugar < 200)) {
+        } else if ((IntCostSugar >= 90) & (IntCostSugar < 100)) {
             myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
-        } else if ((IntCostSugar >= 70) & (IntCostSugar < 100)){
+        } else if ((IntCostSugar >= 70) & (IntCostSugar < 90)){
             myResult = resultStrings[3];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia1));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
@@ -114,16 +114,16 @@ public class DisplayDisease extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.prodia);
         ImageView imageView2 = (ImageView) findViewById(R.id.level1);
 
-        if (IntCostSugarAfter >= 300) {
+        if (IntCostSugarAfter >= 180) {
             myResult = resultStrings[0];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
 
-        } else if ((IntCostSugarAfter >= 200) & (IntCostSugarAfter < 300 )) {
+        } else if ((IntCostSugarAfter >= 150) & (IntCostSugarAfter < 180 )) {
             myResult = resultStrings[1];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
-        } else if ((IntCostSugarAfter >= 110) & (IntCostSugarAfter < 200)) {
+        } else if ((IntCostSugarAfter >= 110) & (IntCostSugarAfter < 150)) {
             myResult = resultStrings[2];
             imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
             imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
@@ -141,6 +141,38 @@ public class DisplayDisease extends AppCompatActivity {
         return myResult;
 
     }//findMyLevelDiseaseafter
+
+
+
+
+    private String findMyLevelDiseaseNormalBefore() {
+        String[] resultStrings = getResources().getStringArray(R.array.my_disease2);
+        String myResult = null;
+        Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
+
+        if (IntCostSugarBefore >= 126) {
+            myResult = resultStrings[0];
+        } else {
+            myResult = resultStrings[1];
+        }
+
+        return myResult;
+    }//findMyLevelDiseaseNormalBefore
+
+
+    private String findMyLevelDiseaseNormalAfter() {
+        String[] resultStrings = getResources().getStringArray(R.array.my_disease2);
+        String myResult = null;
+        Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
+
+        if (IntCostSugarBefore >= 200) {
+            myResult = resultStrings[0];
+        } else {
+            myResult = resultStrings[1];
+        }
+
+        return myResult;
+    }//findMyLevelDiseaseNormalAfter
 
     private void bindWidget() {
 

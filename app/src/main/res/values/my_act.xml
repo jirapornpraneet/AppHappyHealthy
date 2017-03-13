@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="my_act">
+        <item>เลือกกิจกรรม</item>
+        <item>นั่งทำงาน ไม่ได้ออกกำลังกาย</item>
+        <item>ออกกำลังกายเล็กน้อย 1-3 วัน</item>
+        <item>ออกกำลังกายปานกลาง 3-5 วัน</item>
+        <item>ออกกำลังกายสม่ำเสมอ 6-7 วัน</item>
+        <item>ออกกำลังกายอย่างหนักเช้าเย็น</item>
+
+
+    </string-array>
+
+</resources>
