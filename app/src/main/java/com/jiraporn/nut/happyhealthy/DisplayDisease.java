@@ -18,7 +18,7 @@ public class DisplayDisease extends AppCompatActivity {
     DiabetesTABLE diabetesTABLE;
     //**Explicit
     private TextView TV_D_Date, TV_D_CostSugar, TV_D_Level;
-    private String str_D_Date, intCostSugar, tv_D_Level, str_status,str_people;
+    private String str_D_Date, intCostSugar, tv_D_Level, str_status, str_people;
 
 
     @Override
@@ -50,13 +50,13 @@ public class DisplayDisease extends AppCompatActivity {
             do {
                 str_D_Date = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_DateTime));
                 intCostSugar = String.valueOf(cursor.getInt(cursor.getColumnIndex(DiabetesTABLE.D_CostSugar)));
-                tv_D_Level = findMyLevelDiseaseBefore(intCostSugar);
+                str_people = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_People));
                 str_status = cursor.getString(cursor.getColumnIndex(DiabetesTABLE.D_Status));
+                findMyLevelDiseaseBefore(intCostSugar, str_people, str_status);
             } while (cursor.moveToNext());
         }
 
         cursor.close();
-
 
         TV_D_Date.setText(str_D_Date);
         if (intCostSugar != null) {
@@ -67,9 +67,11 @@ public class DisplayDisease extends AppCompatActivity {
 
     } // Show View
 
-    private String findMyLevelDiseaseBefore(String intCostSugar) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
-        String myResult = null;
+    private void findMyLevelDiseaseBefore(String intCostSugar, String statSugar, String foodTime) {
+//        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
+        String[] sugar = getResources().getStringArray(R.array.my_people);
+        String[] time = getResources().getStringArray(R.array.my_status);
+        String myResult;
         Integer IntCostSugar = Integer.parseInt(intCostSugar);
 
         Resources res = getResources();
@@ -78,101 +80,63 @@ public class DisplayDisease extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.prodia);
         ImageView imageView2 = (ImageView) findViewById(R.id.level1);
 
-        if (IntCostSugar >= 130) {
-            myResult = resultStrings[0];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
-        } else if ((IntCostSugar >= 100) & (IntCostSugar < 130) ){
-            myResult = resultStrings[1];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
-        } else if ((IntCostSugar >= 90) & (IntCostSugar < 100)) {
-            myResult = resultStrings[2];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
-        } else if ((IntCostSugar >= 70) & (IntCostSugar < 90)){
-            myResult = resultStrings[3];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia1));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
+        if (statSugar.equals(sugar[0])) {
+            if (foodTime.equals(time[0])) {
+                if (IntCostSugar >= 130) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
+                } else if ((IntCostSugar >= 100) & (IntCostSugar < 130)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
+                } else if ((IntCostSugar >= 90) & (IntCostSugar < 100)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
+                } else if ((IntCostSugar >= 70) & (IntCostSugar < 90)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia1));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
+                } else {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
+                }
+            } else {
+                if (IntCostSugar >= 180) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
+                } else if ((IntCostSugar >= 150) & (IntCostSugar < 180)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
+                } else if ((IntCostSugar >= 110) & (IntCostSugar < 150)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
+                } else if ((IntCostSugar >= 70) & (IntCostSugar < 110)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia1));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
+                } else {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
+                }
+            }
         } else {
-            myResult = resultStrings[4];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
+            if (foodTime.equals(time[0])) {
+                if (IntCostSugar >= 126) {
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
+                } else {
+                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
+                }
+            } else {
+                if (IntCostSugar >= 200) {
+                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
+                } else {
+                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
+                }
+            }
         }
-
-
-        return myResult;
     }//findMyLevelDiseasebefore
 
-    private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
-        String myResult = null;
-        Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
-
-        Resources res = getResources();
-        Resources res2 = getResources();
-        ImageView imageView = (ImageView) findViewById(R.id.prodia);
-        ImageView imageView2 = (ImageView) findViewById(R.id.level1);
-
-        if (IntCostSugarAfter >= 180) {
-            myResult = resultStrings[0];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
-
-        } else if ((IntCostSugarAfter >= 150) & (IntCostSugarAfter < 180 )) {
-            myResult = resultStrings[1];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia3));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi5));
-        } else if ((IntCostSugarAfter >= 110) & (IntCostSugarAfter < 150)) {
-            myResult = resultStrings[2];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia2));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi4));
-        } else if ((IntCostSugarAfter >= 70) & (IntCostSugarAfter < 110)){
-            myResult = resultStrings[3];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia1));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi3));
-        } else {
-            myResult = resultStrings[4];
-            imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
-            imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
-
-        }
-
-        return myResult;
-
-    }//findMyLevelDiseaseafter
 
 
 
 
-    private String findMyLevelDiseaseNormalBefore() {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease2);
-        String myResult = null;
-        Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
-
-        if (IntCostSugarBefore >= 126) {
-            myResult = resultStrings[0];
-        } else {
-            myResult = resultStrings[1];
-        }
-
-        return myResult;
-    }//findMyLevelDiseaseNormalBefore
-
-
-    private String findMyLevelDiseaseNormalAfter() {
-        String[] resultStrings = getResources().getStringArray(R.array.my_disease2);
-        String myResult = null;
-        Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
-
-        if (IntCostSugarBefore >= 200) {
-            myResult = resultStrings[0];
-        } else {
-            myResult = resultStrings[1];
-        }
-
-        return myResult;
-    }//findMyLevelDiseaseNormalAfter
 
     private void bindWidget() {
 

@@ -25,12 +25,13 @@ public class Diabetes extends AppCompatActivity {
     //การประกาศตัวแปร
     private DiabetesTABLE objdiabetesTABLE;
     private EditText D_costSugar;
-    private String str_D_Date, intCostSugar, str_Level, str_status,str_people;
+    private String str_D_Date, intCostSugar, str_Level, str_status, str_people;
+    String[] s_people,s_status;
     private TextView D_date;
     SimpleDateFormat df_show;
     Calendar c;
-    private RadioButton before, after,normal,diabetes;
-    private RadioGroup D_Status,D_People;
+    private RadioButton before, after, normal, diabetes;
+    private RadioGroup D_Status, D_People;
     int eatType;
 
     @Override
@@ -38,6 +39,8 @@ public class Diabetes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diabetes);
 
+        s_people = getResources().getStringArray(R.array.my_people);
+        s_status = getResources().getStringArray(R.array.my_status);
 
         //Bind wiget
         D_date = (TextView) findViewById(R.id.D_date);
@@ -50,18 +53,16 @@ public class Diabetes extends AppCompatActivity {
         normal = (RadioButton) findViewById(R.id.normal);
         diabetes = (RadioButton) findViewById(R.id.diabetes);
 
-
-
         //Radio Controller
         D_Status.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.before:
-                        str_status = "ค่าน้ำตาลในเลือดก่อนอาหาร :";
+                        str_status = s_status[0];
                         break;
                     case R.id.after:
-                        str_status = "ค่าน้ำตาลในเลือดหลังอาหาร :";
+                        str_status = s_status[1];
                         break;
                 }
                 // TVSex.setText(strSex);
@@ -74,10 +75,10 @@ public class Diabetes extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.normal:
-                        str_people = "คนปกติ";
+                        str_people = s_people[0];
                         break;
                     case R.id.diabetes:
-                        str_people = "ผู้เป็นเบาหวาน";
+                        str_people = s_people[1];
                         break;
                 }
                 // TVSex.setText(strSex);
@@ -125,13 +126,11 @@ public class Diabetes extends AppCompatActivity {
 
     private void confirmDiabetes() {
 
-
-
         /**if (before.isChecked()) {
-            str_Level = findMyLevelDiseaseBefore();
-        } else {
-            str_Level = findMyLevelDiseaseAfter();
-        }**/
+         str_Level = findMyLevelDiseaseBefore();
+         } else {
+         str_Level = findMyLevelDiseaseAfter();
+         }**/
 
         if (normal.isChecked()) {
             if (before.isChecked()) {
@@ -159,7 +158,7 @@ public class Diabetes extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่ :" + str_D_Date + "\n"
-                + str_status  + intCostSugar + "\n"
+                + str_status + intCostSugar + "\n"
                 + " อยู่ในเกณฑ์ที่ : " + str_Level);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
@@ -187,12 +186,12 @@ public class Diabetes extends AppCompatActivity {
 
     private String findMyLevelDiseaseAfter() {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease);
-        String myResult = null;
+        String myResult;
         Integer IntCostSugarAfter = Integer.parseInt(intCostSugar);
 
         if (IntCostSugarAfter >= 180) {
             myResult = resultStrings[0];
-        } else if ((IntCostSugarAfter >= 150) & (IntCostSugarAfter < 180 )) {
+        } else if ((IntCostSugarAfter >= 150) & (IntCostSugarAfter < 180)) {
             myResult = resultStrings[1];
         } else if ((IntCostSugarAfter >= 110) & (IntCostSugarAfter < 150)) {
             myResult = resultStrings[2];
@@ -207,20 +206,18 @@ public class Diabetes extends AppCompatActivity {
     }//findMyLevelDiseaseAfter
 
 
-
-
     private String findMyLevelDiseaseBefore() {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease);
-        String myResult = null;
+        String myResult;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
 
         if (IntCostSugarBefore >= 130) {
             myResult = resultStrings[0];
-        } else if ((IntCostSugarBefore >= 100) & (IntCostSugarBefore < 130  )) {
+        } else if ((IntCostSugarBefore >= 100) & (IntCostSugarBefore < 130)) {
             myResult = resultStrings[1];
-        } else if ((IntCostSugarBefore >= 90) & (IntCostSugarBefore < 100 )) {
+        } else if ((IntCostSugarBefore >= 90) & (IntCostSugarBefore < 100)) {
             myResult = resultStrings[2];
-        } else if ((IntCostSugarBefore >= 70)  & (IntCostSugarBefore < 90 )) {
+        } else if ((IntCostSugarBefore >= 70) & (IntCostSugarBefore < 90)) {
             myResult = resultStrings[3];
         } else {
             myResult = resultStrings[4];
@@ -231,7 +228,7 @@ public class Diabetes extends AppCompatActivity {
 
     private String findMyLevelDiseaseNormalBefore() {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease2);
-        String myResult = null;
+        String myResult;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
 
         if (IntCostSugarBefore >= 126) {
@@ -246,7 +243,7 @@ public class Diabetes extends AppCompatActivity {
 
     private String findMyLevelDiseaseNormalAfter() {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease2);
-        String myResult = null;
+        String myResult;
         Integer IntCostSugarBefore = Integer.parseInt(intCostSugar);
 
         if (IntCostSugarBefore >= 200) {
@@ -259,15 +256,11 @@ public class Diabetes extends AppCompatActivity {
     }//findMyLevelDiseaseNormalAfter
 
 
-
-
-
-
     private void upDataDiabetestoSQLite() {
 
         DiabetesTABLE objdiabetesTABLE = new DiabetesTABLE(this);
         long inSertDataUser = objdiabetesTABLE.addNewValueToSQLite
-                (str_D_Date, Integer.parseInt(intCostSugar), str_Level, str_status,str_people);
+                (str_D_Date, Integer.parseInt(intCostSugar), str_Level, str_status, str_people);
         D_date.setText("");
         D_costSugar.setText("");
         Toast.makeText(Diabetes.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
@@ -307,7 +300,7 @@ public class Diabetes extends AppCompatActivity {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_alert)
                         .setContentTitle("วันนี้ค่าน้ำตาลในเลือด")
-                        .setContentText( intCostSugar + ":" + str_Level)
+                        .setContentText(intCostSugar + ":" + str_Level)
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();

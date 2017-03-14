@@ -66,7 +66,6 @@ public class DisplayUser extends AppCompatActivity {
     }
 
 
-
     private void showView() {
         db = myDatabase.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT *,max(" + User_HistoryTABLE.History_User_Id + ") " +

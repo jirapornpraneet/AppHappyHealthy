@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_status">
+        <item>ค่าน้ำตาลในเลือดก่อนอาหาร :</item>
+        <item>ค่าน้ำตาลในเลือดหลังอาหาร :</item>
+    </string-array>
+</resources>
