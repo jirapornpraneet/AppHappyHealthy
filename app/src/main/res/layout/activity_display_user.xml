@@ -51,7 +51,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="65dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
@@ -89,8 +89,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -144,8 +143,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -185,8 +183,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -223,8 +220,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -267,18 +263,21 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="19dp"
                 android:id="@+id/imageView55"
-                android:src="@drawable/da5"
+                android:src="@drawable/da10"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="10dp"
+                android:layout_height="20dp" />
 
             <Spinner
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:spinnerMode="dropdown"
                 android:id="@+id/spinner2"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_height="22dp"
+                android:layout_marginTop="10dp"
+                android:popupBackground="@drawable/my_border_box"
+                android:background="@drawable/my_border_box" />
 
         </LinearLayout>
 
@@ -286,7 +285,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="2dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -352,8 +351,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageView64"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="2dp" />
+            android:layout_marginBottom="3dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -368,7 +366,6 @@
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="#505050"
-                android:layout_marginTop="5dp"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="35dp" />
