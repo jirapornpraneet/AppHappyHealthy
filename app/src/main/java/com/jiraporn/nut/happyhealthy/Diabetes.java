@@ -233,8 +233,10 @@ public class Diabetes extends AppCompatActivity {
 
         if (IntCostSugarBefore >= 126) {
             myResult = resultStrings[0];
-        } else {
+        } else if ((IntCostSugarBefore >=70) & (IntCostSugarBefore < 126)){
             myResult = resultStrings[1];
+        }else{
+            myResult = resultStrings[2];
         }
 
         return myResult;
@@ -248,8 +250,10 @@ public class Diabetes extends AppCompatActivity {
 
         if (IntCostSugarBefore >= 200) {
             myResult = resultStrings[0];
-        } else {
+        } else if ((IntCostSugarBefore >=70) & (IntCostSugarBefore < 200)){
             myResult = resultStrings[1];
+        } else {
+            myResult = resultStrings[2];
         }
 
         return myResult;

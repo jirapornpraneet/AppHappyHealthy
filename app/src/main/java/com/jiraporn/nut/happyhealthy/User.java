@@ -124,7 +124,9 @@ public class User extends AppCompatActivity {
 
         //แสดงรูปภาพตามที่ต้องการ  D_CostSugarBefore
         if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar) != null) {
-            findMyLevelDiseaseBefore(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar));
+            findMyLevelDiseaseBefore(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar)
+                    ,dateSelectDiabetes.get(DiabetesTABLE.D_Status)
+                    ,dateSelectDiabetes.get(DiabetesTABLE.D_People));
         }
 
 
@@ -151,7 +153,7 @@ public class User extends AppCompatActivity {
 
     }
 
-    private String findMyLevelDiseaseBefore(String intCostSugar) {
+    /**private String findMyLevelDiseaseBefore(String intCostSugar) {
         String myResult = null;
         int IntCostSugarBefore = Integer.parseInt(intCostSugar);
 
@@ -174,28 +176,67 @@ public class User extends AppCompatActivity {
 
 
         return myResult;
-    }//findMyLevelDiseasebefore
+    }//findMyLevelDiseasebefore**/
 
 
-    private String findMyLevelDiseaseAfter(String intCostSugarAfter) {
-        String myResult = null;
-        Integer IntCostSugarAfter = Integer.parseInt(intCostSugarAfter);
+
+
+    private void findMyLevelDiseaseBefore(String intCostSugar, String statSugar, String foodTime) {
+//        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
+        String[] sugar = getResources().getStringArray(R.array.my_people);
+        String[] time = getResources().getStringArray(R.array.my_status);
+        Integer IntCostSugar = Integer.parseInt(intCostSugar);
 
         Resources res = getResources();
 
+        ImageView imageView = (ImageView) findViewById(R.id.prorediabefore);
 
-
-        if (IntCostSugarAfter >= 300 ) {
-
-        } else if ((IntCostSugarAfter >= 200) & (IntCostSugarAfter < 300 )) {
-        } else if ((IntCostSugarAfter >= 110) & (IntCostSugarAfter < 200)){
-        } else if ((IntCostSugarAfter >= 70) & (IntCostSugarAfter < 110)) {
+        if (statSugar.equals(sugar[0])) {
+            if (foodTime.equals(time[0])) {
+                if (IntCostSugar >= 126) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertnormal));
+                } else if ((IntCostSugar >=70) & (IntCostSugar < 126)){
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertnormal2));
+                } else {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertnormal1));
+                }
+            } else {
+                if (IntCostSugar >= 200) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertnormal));
+                } else if ((IntCostSugar >=70) & (IntCostSugar < 200)){
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertnormal2));
+                } else {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertnormal1));
+                }
+            }
         } else {
-
+            if (foodTime.equals(time[0])) {
+                if (IntCostSugar >= 130) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+                } else if ((IntCostSugar >= 100) & (IntCostSugar < 130)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore4));
+                } else if ((IntCostSugar >= 90) & (IntCostSugar < 100)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore5));
+                } else if ((IntCostSugar >= 70) & (IntCostSugar < 90)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+                } else {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
+                }
+            } else {
+                if (IntCostSugar >= 180) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
+                } else if ((IntCostSugar >= 150) & (IntCostSugar < 180)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore4));
+                } else if ((IntCostSugar >= 110) & (IntCostSugar < 150)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore5));
+                } else if ((IntCostSugar >= 70) & (IntCostSugar < 110)) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore2));
+                } else {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
+                }
+            }
         }
-
-        return myResult;
-    }//findMyLevelDiseaseafter
+    }//findMyLevelDiseasebefore
 
     private String findMyLevelCostGFR(String intCostGFR) {
         String myResult = null;
