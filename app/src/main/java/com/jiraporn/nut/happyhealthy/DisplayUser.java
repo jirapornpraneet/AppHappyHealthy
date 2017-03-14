@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class DisplayUser extends AppCompatActivity {
@@ -33,13 +34,16 @@ public class DisplayUser extends AppCompatActivity {
     //Explicit
     private EditText TVName, TVAge, TVWeight, TVHeight;
     private TextView TVBMR, TVBMI, weightStdTextView;
-    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex,actString;
+    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex,actString, DouFac;
     private RadioButton man, women;
     private RadioGroup User_Sex;
-    private String[] choiceStrings;
     SimpleDateFormat df_show, df_search;
     Calendar c;
     int userId;
+    private Spinner myACTSpinner;
+    String[] str_Act;
+    private ArrayList<String> StrAct = new ArrayList<>();
+    int intResultFac = 0;
 
     RadioGroup choose_sex;
 
@@ -52,12 +56,37 @@ public class DisplayUser extends AppCompatActivity {
         // Bind Widget
         bindWidget();
 
-        //Create Spinner
+
 
 
         // Show View
         showView();
+
+        CreateSpinner();
+
+        ArrayAdapter<String> adapterAct = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, StrAct);
+        myACTSpinner.setAdapter(adapterAct);
+
+        myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                intResultFac = i +1;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
+
+    private void CreateSpinner() {
+        str_Act = getResources().getStringArray(R.array.my_act);
+        for (String value : str_Act) {
+            StrAct.add(value);
+        }
+
+    }//CreateSpinner
 
     @Override
     protected void onRestart() {
@@ -94,6 +123,8 @@ public class DisplayUser extends AppCompatActivity {
         } else {
             women.setChecked(true);
         }
+
+
 
         TVName.setText(strName);
         //TVSex.setText(strSex);
@@ -154,6 +185,7 @@ public class DisplayUser extends AppCompatActivity {
         man = (RadioButton) findViewById(R.id.man);
         women = (RadioButton) findViewById(R.id.woman);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
+        myACTSpinner = (Spinner) findViewById(R.id.spinner2);
 
         User_Sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -192,7 +224,7 @@ public class DisplayUser extends AppCompatActivity {
                 || TVWeight.getText().toString().equals("")
                 || TVHeight.getText().toString().equals("")
                 || strChooseSex.equals("")
-                ||checkSpinner()) {
+                || intResultFac <= 0) {
             showAlert();
         } else {//UnCheck
             confirmData();
@@ -237,6 +269,25 @@ public class DisplayUser extends AppCompatActivity {
                 break;
         } // switch
 
+        //        switch (Fac())
+        switch (intResultFac) {
+            case 1:
+                douBMR = douBMR * 1.2;
+                break;
+            case 2:
+                douBMR = douBMR * 1.375;
+                break;
+            case 3:
+                douBMR = douBMR * 1.55;
+                break;
+            case 4:
+                douBMR = douBMR * 1.725;
+                break;
+            case 5:
+                douBMR = douBMR * 1.9;
+                break;
+        }
+
         douBmr = String.format("%.2f", douBMR);
 
     }//confirmData
@@ -245,7 +296,7 @@ public class DisplayUser extends AppCompatActivity {
         if (TVName.getText().toString().equals(strName)
                 && TVAge.getText().toString().equals(strAge)
                 && strChooseSex.equals(strSex)
-                && checkSpinner()) {
+                && str_Act.equals(StrAct )) {
             return true;
         } else {
             return false;
@@ -268,8 +319,8 @@ public class DisplayUser extends AppCompatActivity {
         int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
                 , strChooseSex
                 , TVAge.getText().toString()
-                ,choiceStrings.toString()
-        ,actString.toString());
+                ,StrAct.toString()
+                , str_Act.toString());
         return idUser;
     }
 
@@ -324,22 +375,6 @@ public class DisplayUser extends AppCompatActivity {
     } //ShowAlert
 
 
-    private boolean checkSpinner() {
-
-        boolean bolSpinner = true;
-
-        if (actString.equals(choiceStrings[0])) {
-
-            bolSpinner = true;
-
-        } else {
-
-            bolSpinner = false;
-
-        }
-
-        return bolSpinner;
-    }
 
     private int MaleOrFemale() {
 

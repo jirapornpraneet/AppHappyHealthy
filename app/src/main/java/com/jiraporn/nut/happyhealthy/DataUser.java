@@ -30,7 +30,6 @@ public class DataUser extends AppCompatActivity {
     private RadioGroup User_Sex;
     private RadioButton man, woman;
     private Spinner myACTSpinner;
-    private String[] choiceStrings;
     private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, actString, DouFac;
     SimpleDateFormat df_show;
     Calendar c;
@@ -65,17 +64,6 @@ public class DataUser extends AppCompatActivity {
         });
 
 
-        /** myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-        @Override public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        actString = choiceStrings[i];
-
-        }
-        @Override public void onNothingSelected(AdapterView<?> adapterView) {
-        actString = choiceStrings[0];
-
-
-        }
-        });**/
 
 
     }//main method
@@ -91,11 +79,7 @@ public class DataUser extends AppCompatActivity {
         for (String value : str_Act) {
             StrAct.add(value);
         }
-//        StrAct.add("นั่งทำงานอยู่กับที่ และไม่ได้ออกกำลังกายเลย");
-//        StrAct.add("ออกกำลังกายหรือเล่นกีฬาเล็กน้อย ประมาณอาทิตย์ละ 1-3 วัน");
-//        StrAct.add("ออกกำลังกายหรือเล่นกีฬาปานกลาง ประมาณอาทิตย์ละ 3-5 วัน");
-//        StrAct.add("ออกกำลังกายหรือเล่นกีฬาอย่างหนัก lประมาณอาทิตย์ละ 6-7 วัน");
-//        StrAct.add("ออกกำลังกายหรือเล่นกีฬาอย่างหนักทุกวันเช้าเย็น");
+
     }//CreateSpinner
 
 
@@ -276,21 +260,7 @@ public class DataUser extends AppCompatActivity {
         return intResult;
     }
 
-//    private int Fac() {
-//        if (StrAct.equals("นั่งทำงานอยู่กับที่ และไม่ได้ออกกำลังกายเลย")) {
-//            intResultFac = 0;
-//        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาเล็กน้อย ประมาณอาทิตย์ละ 1-3 วัน")) {
-//            intResultFac = 1;
-//        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาปานกลาง ประมาณอาทิตย์ละ 3-5 วัน")) {
-//            intResultFac = 2;
-//        } else if (StrAct.equals("ออกกำลังกายหรือเล่นกีฬาอย่างหนัก lประมาณอาทิตย์ละ 6-7 วัน")) {
-//            intResultFac = 3;
-//        } else {
-//            intResultFac = 4;
-//        }
-//
-//        return intResultFac;
-//    }
+
 
     private boolean checkChoose() {
         boolean status = true;
