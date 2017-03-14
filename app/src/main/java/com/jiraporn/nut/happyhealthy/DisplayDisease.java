@@ -82,6 +82,23 @@ public class DisplayDisease extends AppCompatActivity {
 
         if (statSugar.equals(sugar[0])) {
             if (foodTime.equals(time[0])) {
+                if (IntCostSugar >= 126) {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
+
+                } else {
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
+                }
+            } else {
+                if (IntCostSugar >= 200) {
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
+                } else {
+                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
+                }
+            }
+        } else {
+            if (foodTime.equals(time[0])) {
                 if (IntCostSugar >= 130) {
                     imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi1));
@@ -114,20 +131,6 @@ public class DisplayDisease extends AppCompatActivity {
                 } else {
                     imageView.setImageDrawable(res.getDrawable(R.drawable.dia4));
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textleveldi2));
-                }
-            }
-        } else {
-            if (foodTime.equals(time[0])) {
-                if (IntCostSugar >= 126) {
-                    imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
-                } else {
-                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
-                }
-            } else {
-                if (IntCostSugar >= 200) {
-                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
-                } else {
-                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
                 }
             }
         }
