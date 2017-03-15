@@ -87,7 +87,7 @@ public class DisplayDisease extends AppCompatActivity {
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
                 } else if ((IntCostSugar >=70) & (IntCostSugar < 126)){
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
-                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol1));
                 } else {
                     imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal2));
@@ -98,7 +98,7 @@ public class DisplayDisease extends AppCompatActivity {
                     imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
                 } else if ((IntCostSugar >=70) & (IntCostSugar < 200)){
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
-                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol1));
                 } else {
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal2));
                     imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
