@@ -30,7 +30,7 @@ public class DataUser extends AppCompatActivity {
     private RadioGroup User_Sex;
     private RadioButton man, woman;
     private Spinner myACTSpinner;
-    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, actString, DouFac;
+    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, strAct;
     SimpleDateFormat df_show;
     Calendar c;
     String[] str_Act;
@@ -54,7 +54,8 @@ public class DataUser extends AppCompatActivity {
         myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                intResultFac = i + 1;
+                str_Act = getResources().getStringArray(R.array.my_act);
+                strAct = str_Act[intResultFac=i];
             }
 
             @Override
@@ -124,7 +125,7 @@ public class DataUser extends AppCompatActivity {
         //  actString = myACTSpinner.toString();
 
         //Checkspace
-        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") || intResultFac <= 0) {
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") ||  checkSpinner()) {
             showAlert();
         } else if (checkChoose()) {
             confirmData();
@@ -209,7 +210,7 @@ public class DataUser extends AppCompatActivity {
         UserTABLE objUserTABLE = new UserTABLE(this);
         User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
 //        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge, actString, DouFac);
+        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge, strAct);
 
         user_historyTABLE.insertUserHistory(df_show.format(c.getTime())
                 , Double.parseDouble(douWeight)
@@ -268,6 +269,23 @@ public class DataUser extends AppCompatActivity {
                 woman.isChecked();
 
         return status;
+    }
+
+    private boolean checkSpinner() {
+
+        boolean bolSpinner = true;
+
+        if (strAct.equals(str_Act[0])) {
+
+            bolSpinner = true;
+
+        } else {
+
+            bolSpinner = false;
+
+        }
+
+        return bolSpinner;
     }
 
 

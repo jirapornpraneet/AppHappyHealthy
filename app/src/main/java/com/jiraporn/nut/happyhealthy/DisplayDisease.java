@@ -95,7 +95,7 @@ public class DisplayDisease extends AppCompatActivity {
             } else {
                 if (IntCostSugar >= 200) {
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal));
-                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol));
+                    imageView.setImageDrawable(res.getDrawable(R.drawable.lol)); 
                 } else if ((IntCostSugar >=70) & (IntCostSugar < 200)){
                     imageView2.setImageDrawable(res2.getDrawable(R.drawable.textlevelnormal1));
                     imageView.setImageDrawable(res.getDrawable(R.drawable.lol1));

@@ -20,7 +20,6 @@ public class UserTABLE {
     public static final String User_Sex = "User_Sex";
     public static final String User_Age = "User_Age";
     public static final String User_Act = "User_Act";
-    public static final String User_Fac = "User_Fac";
     //ถ้าเปลี่ยนมาใช้เป็นก้อนให้เป็นชื่อเหมือนกัน
 
 
@@ -31,13 +30,12 @@ public class UserTABLE {
 
     }//Constructor
 
-    public int addNewInsertToSQLite(String strName, String strSex, String strAge,String strMyACT,String DouFac) {
+    public int addNewInsertToSQLite(String strName, String strSex, String strAge,String strMyACT) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(User_Name, strName);
         contentValues.put(User_Sex, strSex);
         contentValues.put(User_Age, strAge);
         contentValues.put(User_Act, strMyACT);
-        contentValues.put(User_Fac, DouFac);
 
 
         int idUser = (int) writeSQLite.insert(USER, null, contentValues);
@@ -49,13 +47,12 @@ public class UserTABLE {
 
 
     //Add New Value
-    public void addNewValueToSQLite(String strName, String strSex, String strAge,String strMyACT,String DouFac) {
+    public void addNewValueToSQLite(String strName, String strSex, String strAge,String strMyACT) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(User_Name, strName);
         contentValues.put(User_Sex, strSex);
         contentValues.put(User_Age, strAge);
         contentValues.put(User_Act, strMyACT);
-        contentValues.put(User_Fac, DouFac);
 
 //        long user_id = writeSQLite.insert(USER, null, contentValues);
         writeSQLite.update(USER, contentValues, null, null);

@@ -296,7 +296,7 @@ public class DisplayUser extends AppCompatActivity {
         if (TVName.getText().toString().equals(strName)
                 && TVAge.getText().toString().equals(strAge)
                 && strChooseSex.equals(strSex)
-                && str_Act.equals(StrAct )) {
+                && str_Act.equals(StrAct)) {
             return true;
         } else {
             return false;
@@ -319,8 +319,7 @@ public class DisplayUser extends AppCompatActivity {
         int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
                 , strChooseSex
                 , TVAge.getText().toString()
-                ,StrAct.toString()
-                , str_Act.toString());
+                ,StrAct.toString());
         return idUser;
     }
 
