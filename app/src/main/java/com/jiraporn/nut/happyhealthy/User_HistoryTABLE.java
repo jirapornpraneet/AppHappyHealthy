@@ -64,8 +64,9 @@ public class User_HistoryTABLE {
 
     public int checkUserHistoryTABLE(String dateSearch) {
         readSQLite = myDatabase.getReadableDatabase();
-        Cursor objCursor = readSQLite.rawQuery("SELECT * FROM " + User_History + " WHERE INSTR("
+        Cursor objCursor = readSQLite.rawQuery("SELECT * FROM " + User_History + " WHERE LIKE("
                 + History_User_DateTime + ", '" + dateSearch + "');", null);
+
         return objCursor.getCount();
     }
 }//MianClass

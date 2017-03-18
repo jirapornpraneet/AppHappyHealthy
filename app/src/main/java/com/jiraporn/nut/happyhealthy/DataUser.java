@@ -55,7 +55,7 @@ public class DataUser extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 str_Act = getResources().getStringArray(R.array.my_act);
-                strAct = str_Act[intResultFac=i];
+                strAct = str_Act[intResultFac = i+1];
             }
 
             @Override
@@ -125,7 +125,7 @@ public class DataUser extends AppCompatActivity {
         //  actString = myACTSpinner.toString();
 
         //Checkspace
-        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") ||  checkSpinner()) {
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("")||checkSpinner() ) {
             showAlert();
         } else if (checkChoose()) {
             confirmData();

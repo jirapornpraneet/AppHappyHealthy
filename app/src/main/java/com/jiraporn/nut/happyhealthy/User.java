@@ -222,7 +222,7 @@ public class User extends AppCompatActivity {
                 } else {
                     imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore3));
                 }
-            } else {
+            } else {//เข้าloop ตลอด
                 if (IntCostSugar >= 180) {
                     imageView.setImageDrawable(res.getDrawable(R.drawable.alertdibefore1));
                 } else if ((IntCostSugar >= 150) & (IntCostSugar < 180)) {
