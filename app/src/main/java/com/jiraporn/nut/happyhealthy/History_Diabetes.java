@@ -22,7 +22,7 @@ public class History_Diabetes extends AppCompatActivity {
     DiabetesTABLE dia;
     ArrayList<HashMap<String, String>> diabList;
     String[] Choice;
-    String DateDiabetes, Level, CostStatus;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
+    String DateDiabetes, Level, CostStatus,People;  //ประกาศตัวแปรที่จะให้ alertshowเมื่อคลิก
     int D_id, Cost1Diabetes ;
 
     @Override
@@ -46,6 +46,8 @@ public class History_Diabetes extends AppCompatActivity {
                 Cost1Diabetes = Integer.parseInt(diabList.get(i).get(DiabetesTABLE.D_CostSugar));
                 Level = diabList.get(i).get(DiabetesTABLE.D_Level).toString();
                 CostStatus = diabList.get(i).get(DiabetesTABLE.D_Status).toString();
+                People = diabList.get(i).get(DiabetesTABLE.D_People).toString();
+
 
 
                 //AlertHistory();
@@ -88,7 +90,8 @@ public class History_Diabetes extends AppCompatActivity {
         AlertDialog.Builder objAlert = new AlertDialog.Builder(this);
         objAlert.setTitle(" วันที่บันทึก : " + DateDiabetes);
         objAlert.setMessage(CostStatus + Cost1Diabetes + "\n" +
-                " อยู่ในเกณฑ์ที่ : " + Level + "\n" );
+                " อยู่ในเกณฑ์ที่ : " + Level + "\n" +
+                " สถานะที่ : " + People);
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

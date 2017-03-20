@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="my_people">
-        <item>ผู้เป็นเบาหวาน</item>
         <item>คนปกติ</item>
+        <item>ผู้เป็นเบาหวาน</item>
     </string-array>
 </resources>
