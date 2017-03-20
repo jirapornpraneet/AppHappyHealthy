@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.fourmob.datetimepicker.date.DatePickerDialog;
@@ -23,6 +24,7 @@ public class User extends AppCompatActivity {
     SimpleDateFormat dfm, dfm_insert;
     String sysDate;
     String textDate;
+    private String str_D_Date, intCostSugar, tv_D_Level, str_status, str_people;
 
 
     //**Explicit
@@ -84,6 +86,10 @@ public class User extends AppCompatActivity {
         diabetesTABLE = new DiabetesTABLE(this);
 
 
+
+
+
+
     }//OnCreate
 
 
@@ -124,9 +130,13 @@ public class User extends AppCompatActivity {
 
         //แสดงรูปภาพตามที่ต้องการ  D_CostSugarBefore
         if (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar) != null) {
-            findMyLevelDiseaseBefore(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar)
+           str_status = (dateSelectDiabetes.get(DiabetesTABLE.D_Status));
+            str_people = (dateSelectDiabetes.get(DiabetesTABLE.D_People));
+            intCostSugar = (dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar));
+             findMyLevelDiseaseBefore(intCostSugar, str_people, str_status);
+            /**findMyLevelDiseaseBefore(dateSelectDiabetes.get(DiabetesTABLE.D_CostSugar)
                     ,dateSelectDiabetes.get(DiabetesTABLE.D_Status)
-                    ,dateSelectDiabetes.get(DiabetesTABLE.D_People));
+                    ,dateSelectDiabetes.get(DiabetesTABLE.D_People));**/
         }
 
 

@@ -30,23 +30,26 @@ public class UserTABLE {
 
     }//Constructor
 
+
+
+
     public int addNewInsertToSQLite(String strName, String strSex, String strAge,String strMyACT) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(User_Name, strName);
-        contentValues.put(User_Sex, strSex);
-        contentValues.put(User_Age, strAge);
-        contentValues.put(User_Act, strMyACT);
+    ContentValues contentValues = new ContentValues();
+    contentValues.put(User_Name, strName);
+    contentValues.put(User_Sex, strSex);
+    contentValues.put(User_Age, strAge);
+    contentValues.put(User_Act, strMyACT);
 
 
-        int idUser = (int) writeSQLite.insert(USER, null, contentValues);
+    int idUser = (int) writeSQLite.insert(USER, null, contentValues);
 
-        return idUser;
+    return idUser;
 //        writeSQLite.update(USER,contentValues,null,null);
 //        return user_id;
-    }//Add New Value
+}//Add New Value
 
 
-    //Add New Value
+
     public void addNewValueToSQLite(String strName, String strSex, String strAge,String strMyACT) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(User_Name, strName);
@@ -55,6 +58,8 @@ public class UserTABLE {
         contentValues.put(User_Act, strMyACT);
 
 //        long user_id = writeSQLite.insert(USER, null, contentValues);
+
+
         writeSQLite.update(USER, contentValues, null, null);
 //        return user_id;
     }//Add New Value
