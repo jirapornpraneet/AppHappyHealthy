@@ -63,6 +63,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_below="@+id/container_toolbar"
         android:background="@drawable/my_re_di"
         android:layout_marginTop="45dp"
@@ -152,6 +153,7 @@
         android:layout_marginTop="140dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        android:layout_weight="1"
         android:layout_alignParentEnd="false">
 
         <LinearLayout
@@ -236,6 +238,7 @@
         android:layout_alignLeft="@+id/container_toolbar"
         android:background="@drawable/my_re_pre"
         android:layout_marginLeft="5dp"
+        android:layout_weight="1"
         android:layout_marginRight="5dp">
 
         <LinearLayout

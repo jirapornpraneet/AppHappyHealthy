@@ -45,7 +45,8 @@
             android:id="@+id/imageView16"
             android:src="@drawable/dii"
             android:onClick="ClickDiabetes"
-            android:nestedScrollingEnabled="false" />
+            android:nestedScrollingEnabled="false"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +62,8 @@
             android:layout_height="90dp"
             android:id="@+id/imageView"
             android:src="@drawable/diii"
-            android:onClick="ClickKidney" />
+            android:onClick="ClickKidney"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -77,7 +79,8 @@
             android:layout_height="90dp"
             android:id="@+id/imageView5"
             android:src="@drawable/diiii"
-            android:onClick="ClickPressure" />
+            android:onClick="ClickPressure"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -93,7 +96,8 @@
             android:layout_height="90dp"
             android:id="@+id/imageView7"
             android:src="@drawable/diiiii"
-            android:onClick="ClickFood" />
+            android:onClick="ClickFood"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,7 +113,8 @@
             android:layout_height="90dp"
             android:id="@+id/imageView11"
             android:src="@drawable/diiiiii"
-            android:onClick="ClickExe" />
+            android:onClick="ClickExe"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <ImageView
