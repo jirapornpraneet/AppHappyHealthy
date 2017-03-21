@@ -34,17 +34,13 @@ public class DisplayUser extends AppCompatActivity {
     //Explicit
     private EditText TVName, TVAge, TVWeight, TVHeight;
     private TextView TVBMR, TVBMI, weightStdTextView;
-    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex, strAct, strActReciv;
+    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex;
     private RadioButton man, women;
     private RadioGroup User_Sex;
     SimpleDateFormat df_show, df_search;
     Calendar c;
     int userId;
-    private Spinner myACTSpinner;
-    String[] str_Act;
-    private ArrayList<String> StrAct = new ArrayList<>();
-    int intResultFac = 0;
-    ArrayAdapter<String> adapterAct;
+
 
     RadioGroup choose_sex;
 
@@ -61,36 +57,7 @@ public class DisplayUser extends AppCompatActivity {
         // Show View
         showView();
 
-        CreateSpinner();
 
-        adapterAct = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, StrAct);
-        myACTSpinner.setAdapter(adapterAct);
-        myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //str_Act = getResources().getStringArray(R.array.my_act);
-                strActReciv = str_Act[i];
-                intResultFac = i;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        if (!strAct.equals(null)) {
-            int spinnerPosotion = adapterAct.getPosition(strAct);
-            myACTSpinner.setSelection(spinnerPosotion);
-        }
-    }
-
-    private void CreateSpinner() {
-        str_Act = getResources().getStringArray(R.array.my_act);
-        for (String value : str_Act) {
-            StrAct.add(value);
-            //Log.d("data calories", str_Act.toString());
-        }
 
     }//CreateSpinner
 
@@ -115,7 +82,6 @@ public class DisplayUser extends AppCompatActivity {
                 strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Sex));
                 strChooseSex = strSex;
                 strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Age));
-                strAct = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Act));
                 intHeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Height));
                 douWeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Weight));
                 douBmr = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_BMR));
@@ -188,7 +154,6 @@ public class DisplayUser extends AppCompatActivity {
         man = (RadioButton) findViewById(R.id.man);
         women = (RadioButton) findViewById(R.id.woman);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
-        myACTSpinner = (Spinner) findViewById(R.id.spinner2);
 
         User_Sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -220,8 +185,7 @@ public class DisplayUser extends AppCompatActivity {
                 || TVAge.getText().toString().equals("")
                 || TVWeight.getText().toString().equals("")
                 || TVHeight.getText().toString().equals("")
-                || strChooseSex.equals("")
-                || checkSpinner()) {
+                || strChooseSex.equals("")) {
             showAlert();
         } else {//UnCheck
             confirmData();
@@ -271,23 +235,6 @@ public class DisplayUser extends AppCompatActivity {
                 break;
         } // switch
 
-        switch (intResultFac) {
-            case 0:
-                douBMR = douBMR * 1.2;
-                break;
-            case 1:
-                douBMR = douBMR * 1.375;
-                break;
-            case 2:
-                douBMR = douBMR * 1.55;
-                break;
-            case 3:
-                douBMR = douBMR * 1.725;
-                break;
-            case 4:
-                douBMR = douBMR * 1.9;
-                break;
-        }
 
         douBmr = String.format("%.2f", douBMR);
 
@@ -298,12 +245,10 @@ public class DisplayUser extends AppCompatActivity {
     public boolean chkUserData() {
         Log.d("checkdatauser", String.valueOf(TVName.getText().toString().equals(strName))
                 + " ++++ " + TVAge.getText().toString().equals(strAge)
-                + " ++++ " + strChooseSex.equals(strSex)
-                + " ++++ " + strActReciv + " + + " + strAct);
+                + " ++++ " + strChooseSex.equals(strSex));
         if (TVName.getText().toString().equals(strName)
                 && TVAge.getText().toString().equals(strAge)
-                && strChooseSex.equals(strSex)
-                && strActReciv.equals(strAct)) {
+                && strChooseSex.equals(strSex)) {
             return true;
         } else {
             return false;
@@ -325,8 +270,7 @@ public class DisplayUser extends AppCompatActivity {
         UserTABLE objUserTABLE = new UserTABLE(this);
         int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
                 , strChooseSex
-                , TVAge.getText().toString()
-                , strAct);
+                , TVAge.getText().toString());
         return idUser;
     }
 
@@ -393,21 +337,5 @@ public class DisplayUser extends AppCompatActivity {
         return intResult;
     }
 
-    private boolean checkSpinner() {
-
-        boolean bolSpinner = true;
-
-        if (strAct.equals(str_Act[0])) {
-
-            bolSpinner = true;
-
-        } else {
-
-            bolSpinner = false;
-
-        }
-
-        return bolSpinner;
-    }
 
 }//MainClass

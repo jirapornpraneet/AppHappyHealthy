@@ -251,33 +251,6 @@
         </LinearLayout>
 
 
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:id="@+id/imageView55"
-                android:src="@drawable/da10"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_height="20dp" />
-
-            <Spinner
-                android:layout_width="0dp"
-                android:spinnerMode="dropdown"
-                android:id="@+id/spinner2"
-                android:layout_weight="1"
-                android:layout_height="22dp"
-                android:layout_marginTop="10dp"
-                android:popupBackground="@drawable/my_border_box"
-                android:background="@drawable/my_border_box" />
-
-        </LinearLayout>
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

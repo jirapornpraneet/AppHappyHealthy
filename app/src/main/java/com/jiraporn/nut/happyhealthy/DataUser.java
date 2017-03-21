@@ -30,12 +30,10 @@ public class DataUser extends AppCompatActivity {
     private RadioGroup User_Sex;
     private RadioButton man, woman;
     private Spinner myACTSpinner;
-    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi, strAct;
+    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi;
     SimpleDateFormat df_show;
     Calendar c;
-    String[] str_Act;
-    private ArrayList<String> StrAct = new ArrayList<>();
-    int intResultFac = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,23 +44,6 @@ public class DataUser extends AppCompatActivity {
 
         bindWidget();
 
-        CreateSpinner();
-
-        ArrayAdapter<String> adapterAct = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, StrAct);
-        myACTSpinner.setAdapter(adapterAct);
-
-        myACTSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                str_Act = getResources().getStringArray(R.array.my_act);
-                strAct = str_Act[intResultFac = i+1];
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
 
 
@@ -75,13 +56,9 @@ public class DataUser extends AppCompatActivity {
         user_historyTABLE = new User_HistoryTABLE(this);
     }//ConnectDataBase
 
-    private void CreateSpinner() {
-        str_Act = getResources().getStringArray(R.array.my_act);
-        for (String value : str_Act) {
-            StrAct.add(value);
-        }
 
-    }//CreateSpinner
+
+
 
 
     private void bindWidget() {
@@ -92,7 +69,7 @@ public class DataUser extends AppCompatActivity {
         User_Weight = (EditText) findViewById(R.id.User_Weight);
         User_Height = (EditText) findViewById(R.id.User_Height);
         User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
-        myACTSpinner = (Spinner) findViewById(R.id.spinner2);
+
 
         man = (RadioButton) findViewById(R.id.man);
         woman = (RadioButton) findViewById(R.id.woman);
@@ -125,7 +102,7 @@ public class DataUser extends AppCompatActivity {
         //  actString = myACTSpinner.toString();
 
         //Checkspace
-        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("")||checkSpinner() ) {
+        if (strName.equals("") || strAge.equals("") || douWeight.equals("") || intHeight.equals("") ) {
             showAlert();
         } else if (checkChoose()) {
             confirmData();
@@ -178,24 +155,6 @@ public class DataUser extends AppCompatActivity {
                 break;
         } // switch
 
-//        switch (Fac())
-        switch (intResultFac) {
-            case 1:
-                douBMR = douBMR * 1.2;
-                break;
-            case 2:
-                douBMR = douBMR * 1.375;
-                break;
-            case 3:
-                douBMR = douBMR * 1.55;
-                break;
-            case 4:
-                douBMR = douBMR * 1.725;
-                break;
-            case 5:
-                douBMR = douBMR * 1.9;
-                break;
-        }
 
         douBmr = String.format("%.2f", douBMR);
 
@@ -210,7 +169,7 @@ public class DataUser extends AppCompatActivity {
         UserTABLE objUserTABLE = new UserTABLE(this);
         User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
 //        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge, strAct);
+        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge);
 
         user_historyTABLE.insertUserHistory(df_show.format(c.getTime())
                 , Double.parseDouble(douWeight)
@@ -271,22 +230,6 @@ public class DataUser extends AppCompatActivity {
         return status;
     }
 
-    private boolean checkSpinner() {
-
-        boolean bolSpinner = true;
-
-        if (strAct.equals(str_Act[0])) {
-
-            bolSpinner = true;
-
-        } else {
-
-            bolSpinner = false;
-
-        }
-
-        return bolSpinner;
-    }
 
 
 }//main

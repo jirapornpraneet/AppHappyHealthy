@@ -40,7 +40,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/my_bgdata"
-        android:layout_height="300dp">
+        android:layout_height="260dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -219,32 +219,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
 
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="23dp"
-                android:id="@+id/imageView55"
-                android:src="@drawable/da10"
-                android:layout_marginTop="12dp" />
-
-            <Spinner
-                android:layout_height="22dp"
-                android:id="@+id/spinner2"
-                android:layout_marginLeft="2dp"
-                android:elevation="0dp"
-                android:layout_width="123dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/my_border_box"
-                android:popupBackground="@drawable/my_border_box"
-                android:layout_weight="0.60" />
-
-        </LinearLayout>
 
 
     </LinearLayout>
@@ -256,7 +231,7 @@
         android:layout_centerHorizontal="true"
         android:onClick="ClickDisPlay"
         android:src="@drawable/buttonsave"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="350dp"
         android:layout_alignParentBottom="false" />
 
 
