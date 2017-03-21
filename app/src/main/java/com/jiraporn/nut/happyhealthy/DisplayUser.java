@@ -196,12 +196,12 @@ public class DisplayUser extends AppCompatActivity {
                     //ReturnTrue
 
                 } else {
-                    insertUserHis(userId, " ครั้งที่ 1 ");
+                    insertUserHis(userId, "");
                     //ReturnFlase chkUserHis
                 }
             } else {
                 int userId_2 = insertUserData();
-                insertUserHis(userId_2, " ครั้งที่ 2");
+                insertUserHis(userId_2, "");
                 //ReturnFlase ChkUserData and chkUserHis
             }
 
