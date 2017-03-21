@@ -82,12 +82,7 @@ public class Pressure extends AppCompatActivity {
         str_LP_cost_top = findMyLevelPressureTop();
         str_heart = findMyLevelHeart();
 
-        /** Find BMI
-        int  intcostpressuredown = Integer.parseInt(intCostPressureDown);
-        int  intcostpressuretop = Integer.parseInt(intCostPressureTop);
 
-        int IntCostPressureDown = intcostpressuredown;
-        int IntCostPressureTop = intcostpressuretop ;**/
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");

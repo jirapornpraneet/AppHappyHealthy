@@ -68,10 +68,10 @@ public class DisplayDisease extends AppCompatActivity {
     } // Show View
 
     private void findMyLevelDiseaseBefore(String intCostSugar, String statSugar, String foodTime) {
-//        String[] resultStrings = getResources().getStringArray(R.array.my_disease);
+
         String[] sugar = getResources().getStringArray(R.array.my_people);
         String[] time = getResources().getStringArray(R.array.my_status);
-        String myResult;
+
         Integer IntCostSugar = Integer.parseInt(intCostSugar);
 
         Resources res = getResources();

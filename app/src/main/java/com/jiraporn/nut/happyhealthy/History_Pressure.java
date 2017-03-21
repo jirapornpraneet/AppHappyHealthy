@@ -48,7 +48,6 @@ public class History_Pressure extends AppCompatActivity {
                 Cost_Down = Integer.parseInt(preList.get(i).get(PressureTABLE.P_CostPressureDown));
                 Cost_Top = Integer.parseInt(preList.get(i).get(PressureTABLE.P_CostPressureTop));
                 Cost_Heart = Integer.parseInt(preList.get(i).get(PressureTABLE.P_HeartRate));
-               // Level_P_Down = preList.get(i).get(PressureTABLE.P_Cost_Level_Down).toString();
                 Level_P_Top = preList.get(i).get(PressureTABLE.P_Cost_Level_Top).toString();
                 Level_Heart = preList.get(i).get(PressureTABLE.P_HeartRate_Level).toString();
 

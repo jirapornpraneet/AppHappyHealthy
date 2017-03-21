@@ -49,7 +49,7 @@ public class DisplayPressure extends AppCompatActivity {
                 intCostPressureDown = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_CostPressureDown));
                 intCostPressureTop = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_CostPressureTop));
                 intCostHeart = cursor.getString(cursor.getColumnIndex(PressureTABLE.P_HeartRate));
-                //tv_P_LevelDown = findMyLevelPressureTop();
+
                 tv_P_LevelTop = findMyLevelPressureTop();
                 tv_level_heart = findMyLevelHeart(intCostHeart);
             } while (cursor.moveToNext());
@@ -60,7 +60,7 @@ public class DisplayPressure extends AppCompatActivity {
         TV_P_CostPressureDown.setText(intCostPressureDown);
         TV_P_CostPressureTop.setText(intCostPressureTop);
         TV_P_Heart.setText(intCostHeart);
-       // TV_P_LevelDown.setText(tv_P_LevelDown);
+
         TV_P_LevelTop.setText(tv_P_LevelTop);
         TV_P_level_heart.setText(tv_level_heart);
 
@@ -180,7 +180,6 @@ public class DisplayPressure extends AppCompatActivity {
         TV_P_CostPressureDown = (TextView) findViewById(R.id.tv_P_CostPressureDown);
         TV_P_CostPressureTop = (TextView) findViewById(R.id.tv_P_CostPressureTop);
         TV_P_Heart = (TextView) findViewById(R.id.tv_P_Heart);
-        //TV_P_LevelDown = (TextView) findViewById(R.id.tv_P_LevelDown);
         TV_P_LevelTop = (TextView) findViewById(R.id.tv_P_LevelTop);
         TV_P_level_heart = (TextView) findViewById(R.id.tv_P_level_heart);
 

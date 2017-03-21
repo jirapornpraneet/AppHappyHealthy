@@ -360,4 +360,9 @@ public class User extends AppCompatActivity {
 
     }//ClickBackHome
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setValue(sysDate);
+    }
 }//Main Class

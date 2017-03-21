@@ -65,7 +65,7 @@ public class Diabetes extends AppCompatActivity {
                         str_status = s_status[1];
                         break;
                 }
-                // TVSex.setText(strSex);
+
             }
         });
 
@@ -81,7 +81,7 @@ public class Diabetes extends AppCompatActivity {
                         str_people = s_people[1];
                         break;
                 }
-                // TVSex.setText(strSex);
+
             }
         });
 
@@ -114,8 +114,7 @@ public class Diabetes extends AppCompatActivity {
 
             showAlert();
 
-            /**MyAlert myAlert = new MyAlert();
-             myAlert.myDialog(this, "เบาหวาน", "กรุณาใส่ข้อมูลผู้ใช้งานให้ครบค่ะ");**/
+
 
         } else {
             confirmDiabetes();
@@ -126,11 +125,7 @@ public class Diabetes extends AppCompatActivity {
 
     private void confirmDiabetes() {
 
-        /**if (before.isChecked()) {
-         str_Level = findMyLevelDiseaseBefore();
-         } else {
-         str_Level = findMyLevelDiseaseAfter();
-         }**/
+
 
         if (normal.isChecked()) {
             if (before.isChecked()) {
@@ -146,12 +141,7 @@ public class Diabetes extends AppCompatActivity {
             }
         }
 
-        // Find BMI
-        /**int  intcostsugarbefore = Integer.parseInt(intCostSugarBefore);
-         int  intcostsugarafter = Integer.parseInt(intCostSugarAfter);
 
-         int IntCostSugarBefore = intcostsugarbefore;
-         int IntCostSugarAfter = intcostsugarafter;**/
 
         //ShowConfrimDiabetes();
 
@@ -159,7 +149,7 @@ public class Diabetes extends AppCompatActivity {
         builder.setTitle("คุณต้องการบันทึกข้อมูลใช่ไหม?");
         builder.setMessage(" วันที่ :" + str_D_Date + "\n"
                 + str_status + intCostSugar + "\n"
-                + " อยู่ในเกณฑ์ที่ : " + str_Level
+                + " อยู่ในเกณฑ์ที่ : " + str_Level + "\n"
                 + " สถานะที่ : " + str_people);
         builder.setCancelable(false);
         builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
@@ -180,10 +170,7 @@ public class Diabetes extends AppCompatActivity {
 
     }//ComfirmData
 
-    /**
-     * private void ShowConfrimDiabetes() {
-     * }//ShowConfrimDiabetes
-     **/
+
 
     private String findMyLevelDiseaseAfter() {
         String[] resultStrings = getResources().getStringArray(R.array.my_disease);

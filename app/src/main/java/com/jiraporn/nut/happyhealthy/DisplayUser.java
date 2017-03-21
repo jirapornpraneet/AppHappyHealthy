@@ -199,7 +199,7 @@ public class DisplayUser extends AppCompatActivity {
                         strChooseSex = "woman";
                         break;
                 }
-                // TVSex.setText(strSex);
+
             }
         });
 
@@ -207,11 +207,7 @@ public class DisplayUser extends AppCompatActivity {
 
 
     public void ClickSaveDataUser(View view) {
-        //get value edit tezt
-//        strName = TVName.getText().toString().trim();
-//        strAge = TVAge.getText().toString().trim();
-//        douWeight = TVWeight.getText().toString().trim();
-//        intHeight = TVHeight.getText().toString().trim();
+
 
         TVName.setText(TVName.getText().toString().trim());
         TVAge.setText(TVAge.getText().toString().trim());
@@ -231,20 +227,26 @@ public class DisplayUser extends AppCompatActivity {
             confirmData();
 
             if (chkUserData()) {
+                //ReturnTrue
                 if (chkUserHis()) {
+                    //ReturnTrue
 
                 } else {
-                    insertUserHis(userId);
+                   insertUserHis(userId);
+                    //ReturnFlase chkUserHis
                 }
             } else {
                 int userId_2 = insertUserData();
                 insertUserHis(userId_2);
+                //ReturnFlase ChkUserData and chkUserHis
+
             }
 
             showView();
         }
 
     }//ClickSaveUser
+
 
     private void confirmData() {
         // Find BMI
@@ -290,7 +292,9 @@ public class DisplayUser extends AppCompatActivity {
 
         douBmr = String.format("%.2f", douBMR);
 
+
     }//confirmData
+
 
     public boolean chkUserData() {
         if (TVName.getText().toString().equals(strName)
@@ -319,13 +323,13 @@ public class DisplayUser extends AppCompatActivity {
         int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
                 , strChooseSex
                 , TVAge.getText().toString()
-                ,strAct);
+                , strAct);
         return idUser;
     }
 
 
 
-    private void insertUserHis(int userId_3) {
+    private void insertUserHis(int userId) {
         df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         df_search = new SimpleDateFormat("dd/MM/yyyy");
         c = Calendar.getInstance();
@@ -339,7 +343,7 @@ public class DisplayUser extends AppCompatActivity {
                     , Double.parseDouble(douBmr)
                     , Double.parseDouble(douBmi)
                     , Integer.parseInt(TVHeight.getText().toString())
-                    , userId_3);
+                    , userId);
         } else {
             user_historyTABLE.updateUserHistory(df_show.format(c.getTime())
                     , Double.parseDouble(TVWeight.getText().toString())

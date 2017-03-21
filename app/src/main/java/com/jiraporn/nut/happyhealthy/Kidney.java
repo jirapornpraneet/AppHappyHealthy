@@ -83,11 +83,7 @@ public class Kidney extends AppCompatActivity {
         str_L_cost = findMyLevelCostGFR();
 
 
-        /** Find BMI
-        int  intcostgfr = Integer.parseInt(intCostGFR);
 
-
-        int IntCostGFR = intcostgfr;**/
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
