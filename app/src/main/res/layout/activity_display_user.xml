@@ -44,9 +44,6 @@
         android:layout_marginRight="15dp"
         android:onClick="ClickSaveDataUser"/>
 
-
-
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
