@@ -27,10 +27,10 @@ public class DataUser extends AppCompatActivity {
     private UserTABLE objUserTABLE;
     private User_HistoryTABLE user_historyTABLE;
     private EditText User_Name, User_Age, User_Weight, User_Height;
-    private RadioGroup User_Sex;
-    private RadioButton man, woman;
+    private RadioGroup User_Gender;
+    private RadioButton male, female;
     private Spinner myACTSpinner;
-    private String strName, strSex, strAge, intHeight, douWeight, douBmr, douBmi;
+    private String strName, strGender, strAge, intHeight, douWeight, douBmr, douBmi;
     SimpleDateFormat df_show;
     Calendar c;
 
@@ -68,22 +68,22 @@ public class DataUser extends AppCompatActivity {
         User_Age = (EditText) findViewById(R.id.User_Age);
         User_Weight = (EditText) findViewById(R.id.User_Weight);
         User_Height = (EditText) findViewById(R.id.User_Height);
-        User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
+        User_Gender = (RadioGroup) findViewById(R.id.User_Gender);
 
 
-        man = (RadioButton) findViewById(R.id.man);
-        woman = (RadioButton) findViewById(R.id.woman);
+        male = (RadioButton) findViewById(R.id.male);
+        female = (RadioButton) findViewById(R.id.female);
 
         //Radio Controller
-        User_Sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        User_Gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
-                    case R.id.man:
-                        strSex = "man";
+                    case R.id.male:
+                        strGender = "male";
                         break;
-                    case R.id.woman:
-                        strSex = "woman";
+                    case R.id.female:
+                        strGender = "female";
                         break;
                 }
                 // TVSex.setText(strSex);
@@ -169,7 +169,7 @@ public class DataUser extends AppCompatActivity {
         UserTABLE objUserTABLE = new UserTABLE(this);
         User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
 //        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewInsertToSQLite(strName, strSex, strAge);
+        objUserTABLE.addNewInsertToSQLite(strName, strGender, strAge);
 
         user_historyTABLE.insertUserHistory(df_show.format(c.getTime())
                 , Double.parseDouble(douWeight)
@@ -211,7 +211,7 @@ public class DataUser extends AppCompatActivity {
     private int MaleOrFemale() {
 
         int intResult = 0;
-        if (strSex.equals("man")) {
+        if (strGender.equals("Male")) {
             intResult = 0;
         } else {
             intResult = 1;
@@ -224,8 +224,8 @@ public class DataUser extends AppCompatActivity {
 
     private boolean checkChoose() {
         boolean status = true;
-        status = man.isChecked() ||
-                woman.isChecked();
+        status = male.isChecked() ||
+                female.isChecked();
 
         return status;
     }

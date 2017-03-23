@@ -34,9 +34,9 @@ public class DisplayUser extends AppCompatActivity {
     //Explicit
     private EditText TVName, TVAge, TVWeight, TVHeight;
     private TextView TVBMR, TVBMI, weightStdTextView;
-    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strSex, strChooseSex;
-    private RadioButton man, women;
-    private RadioGroup User_Sex;
+    private String strName, strAge, intHeight, douWeight, douBmr, douBmi, weightStdString, strGender, strChooseGender;
+    private RadioButton male, female;
+    private RadioGroup User_Gender;
     SimpleDateFormat df_show, df_search;
     Calendar c;
     int userId;
@@ -79,8 +79,8 @@ public class DisplayUser extends AppCompatActivity {
             do {
                 userId = cursor.getInt(cursor.getColumnIndex(UserTABLE.User_Id));
                 strName = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Name));
-                strSex = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Sex));
-                strChooseSex = strSex;
+                strGender = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Gender));
+                strChooseGender = strGender;
                 strAge = cursor.getString(cursor.getColumnIndex(UserTABLE.User_Age));
                 intHeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Height));
                 douWeight = cursor.getString(cursor.getColumnIndex(User_HistoryTABLE.History_User_Weight));
@@ -91,10 +91,10 @@ public class DisplayUser extends AppCompatActivity {
         }
         cursor.close();
 
-        if (strSex.equals("man")) {
-            man.setChecked(true);
+        if (strGender.equals("male")) {
+            male.setChecked(true);
         } else {
-            women.setChecked(true);
+            female.setChecked(true);
         }
 
         TVName.setText(strName);
@@ -151,19 +151,19 @@ public class DisplayUser extends AppCompatActivity {
         TVBMR = (TextView) findViewById(R.id.tv_BMR);
         TVBMI = (TextView) findViewById(R.id.tv_BMI);
         weightStdTextView = (TextView) findViewById(R.id.weightStdTextView);
-        man = (RadioButton) findViewById(R.id.man);
-        women = (RadioButton) findViewById(R.id.woman);
-        User_Sex = (RadioGroup) findViewById(R.id.User_Sex);
+        male = (RadioButton) findViewById(R.id.male );
+        female = (RadioButton) findViewById(R.id.female);
+        User_Gender = (RadioGroup) findViewById(R.id.User_Gender);
 
-        User_Sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        User_Gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
-                    case R.id.man:
-                        strChooseSex = "man";
+                    case R.id.male:
+                        strChooseGender = "male";
                         break;
-                    case R.id.woman:
-                        strChooseSex = "woman";
+                    case R.id.female:
+                        strChooseGender = "female";
                         break;
                 }
 
@@ -185,7 +185,7 @@ public class DisplayUser extends AppCompatActivity {
                 || TVAge.getText().toString().equals("")
                 || TVWeight.getText().toString().equals("")
                 || TVHeight.getText().toString().equals("")
-                || strChooseSex.equals("")) {
+                || strChooseGender.equals("")) {
             showAlert();
         } else {//UnCheck
             confirmData();
@@ -245,10 +245,10 @@ public class DisplayUser extends AppCompatActivity {
     public boolean chkUserData() {
         Log.d("checkdatauser", String.valueOf(TVName.getText().toString().equals(strName))
                 + " ++++ " + TVAge.getText().toString().equals(strAge)
-                + " ++++ " + strChooseSex.equals(strSex));
+                + " ++++ " + strChooseGender.equals(strGender));
         if (TVName.getText().toString().equals(strName)
                 && TVAge.getText().toString().equals(strAge)
-                && strChooseSex.equals(strSex)) {
+                && strChooseGender.equals(strGender)) {
             return true;
         } else {
             return false;
@@ -269,7 +269,7 @@ public class DisplayUser extends AppCompatActivity {
     public int insertUserData() {
         UserTABLE objUserTABLE = new UserTABLE(this);
         int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
-                , strChooseSex
+                , strChooseGender
                 , TVAge.getText().toString());
         return idUser;
     }
@@ -328,7 +328,7 @@ public class DisplayUser extends AppCompatActivity {
     private int MaleOrFemale() {
 
         int intResult = 0;
-        if (strSex.equals("male")) {
+        if (strGender.equals("male")) {
             intResult = 0;
         } else {
             intResult = 1;

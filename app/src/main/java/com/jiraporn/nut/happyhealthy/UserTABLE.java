@@ -17,7 +17,7 @@ public class UserTABLE {
     public static final String USER = "userTABLE";
     public static final String User_Id = "User_Id";
     public static final String User_Name = "User_Name";
-    public static final String User_Sex = "User_Sex";
+    public static final String User_Gender = "User_Gender";
     public static final String User_Age = "User_Age";
     //ถ้าเปลี่ยนมาใช้เป็นก้อนให้เป็นชื่อเหมือนกัน
 
@@ -32,10 +32,10 @@ public class UserTABLE {
 
 
 
-    public int addNewInsertToSQLite(String strName, String strSex, String strAge) {
+    public int addNewInsertToSQLite(String strName, String strGender, String strAge) {
     ContentValues contentValues = new ContentValues();
     contentValues.put(User_Name, strName);
-    contentValues.put(User_Sex, strSex);
+    contentValues.put(User_Gender, strGender);
     contentValues.put(User_Age, strAge);
 
 
@@ -48,10 +48,10 @@ public class UserTABLE {
 
 
 
-    public void addNewValueToSQLite(String strName, String strSex, String strAge) {
+    public void addNewValueToSQLite(String strName, String strGender, String strAge) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(User_Name, strName);
-        contentValues.put(User_Sex, strSex);
+        contentValues.put(User_Gender, strGender);
         contentValues.put(User_Age, strAge);
 
 //        long user_id = writeSQLite.insert(USER, null, contentValues);
