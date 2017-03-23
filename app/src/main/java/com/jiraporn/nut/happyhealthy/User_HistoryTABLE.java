@@ -48,8 +48,8 @@ public class User_HistoryTABLE {
 
 
     //Add New Value
-    public void updateUserHistory(String strDateTime, double douWeight, double douBmr, double douBmi, int intHeight, String timeSearch, int hisId) {
-        String dateWhere = History_User_Id + "=?";
+    public void updateUserHistory(String strDateTime, double douWeight, double douBmr, double douBmi, int intHeight) {
+
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(History_User_DateTime, strDateTime);
@@ -58,15 +58,18 @@ public class User_HistoryTABLE {
         contentValues.put(History_User_BMR, douBmr);
         contentValues.put(History_User_Height, intHeight);
 //        long user_id = writeSQLite.insert(USER, null, contentValues);
-        writeSQLite.update(User_History, contentValues, dateWhere, new String[]{String.valueOf(hisId)});
+
 //        return user_id;
+        writeSQLite.update(User_History, contentValues, null, null);
     }//Add New Value
 
-    public Cursor checkUserHistoryTABLE(String dateSearch) {
+
+
+    /**public Cursor checkUserHistoryTABLE(String dateSearch) {
         readSQLite = myDatabase.getReadableDatabase();
         Cursor objCursor = readSQLite.rawQuery("SELECT * FROM " + User_History + " WHERE LIKE("
                 + History_User_DateTime + ", '" + dateSearch + "');", null);
 
         return objCursor;
-    }
+    }**/
 }//MianClass

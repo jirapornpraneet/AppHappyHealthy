@@ -189,8 +189,10 @@ public class DisplayUser extends AppCompatActivity {
             showAlert();
         } else {//UnCheck
             confirmData();
+            showView();
 
-            if (chkUserData()) {
+
+           /** if (chkUserData()) {
                 //ReturnTrue
                 if (chkUserHis()) {
                     //ReturnTrue
@@ -206,9 +208,10 @@ public class DisplayUser extends AppCompatActivity {
             }
 
             showView();
-        }
+        }**/
 
     }//ClickSaveUser
+    }
 
 
     private void confirmData() {
@@ -237,12 +240,39 @@ public class DisplayUser extends AppCompatActivity {
 
 
         douBmr = String.format("%.2f", douBMR);
+        UpdateUser();
 
 
     }//confirmData
+    private void UpdateUser(){
+        df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        c = Calendar.getInstance();
+        UserTABLE objUserTABLE = new UserTABLE(this);
+        User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
+
+        objUserTABLE.addNewValueToSQLite(TVName.getText().toString()
+                , strChooseGender
+                , TVAge.getText().toString());
+
+        user_historyTABLE.updateUserHistory(df_show.format(c.getTime())
+                , Double.parseDouble(TVWeight.getText().toString())
+                , Double.parseDouble(douBmr)
+                , Double.parseDouble(douBmi)
+                , Integer.parseInt(TVHeight.getText().toString()));
 
 
-    public boolean chkUserData() {
+        TVName.setText("");
+        TVAge.setText("");
+        TVHeight.setText("");
+        TVWeight.setText("");
+        Toast.makeText(DisplayUser.this, "บันทึกข้อมูลเรียบร้อย" , Toast.LENGTH_SHORT).show();
+
+
+    }
+
+
+
+    /**public boolean chkUserData() {
         Log.d("checkdatauser", String.valueOf(TVName.getText().toString().equals(strName))
                 + " ++++ " + TVAge.getText().toString().equals(strAge)
                 + " ++++ " + strChooseGender.equals(strGender));
@@ -253,9 +283,9 @@ public class DisplayUser extends AppCompatActivity {
         } else {
             return false;
         }
-    }
+    }**/
 
-    public boolean chkUserHis() {
+   /** public boolean chkUserHis() {
         if (TVWeight.getText().toString().equals(douWeight)
                 && TVHeight.getText().toString().equals(intHeight)
                 && TVBMR.getText().toString().equals(douBmr)
@@ -264,18 +294,18 @@ public class DisplayUser extends AppCompatActivity {
         } else {
             return false;
         }
-    }
+    }**/
 
-    public int insertUserData() {
+    /**public int insertUserData() {
         UserTABLE objUserTABLE = new UserTABLE(this);
         int idUser = objUserTABLE.addNewInsertToSQLite(TVName.getText().toString()
                 , strChooseGender
                 , TVAge.getText().toString());
         return idUser;
-    }
+    }**/
 
 
-    private void insertUserHis(int userId, String messInsert) {
+    /**private void insertUserHis(int userId, String messInsert) {
         df_show = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         df_search = new SimpleDateFormat("dd/MM/yyyy");
         c = Calendar.getInstance();
@@ -306,7 +336,7 @@ public class DisplayUser extends AppCompatActivity {
         TVWeight.setText("");
         Toast.makeText(DisplayUser.this, "บันทึกข้อมูลเรียบร้อย" + messInsert, Toast.LENGTH_SHORT).show();
 
-    }//insertUserHis
+    }//insertUserHis**/
 
     private void showAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
