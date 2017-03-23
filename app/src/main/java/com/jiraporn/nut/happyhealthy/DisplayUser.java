@@ -31,6 +31,8 @@ public class DisplayUser extends AppCompatActivity {
 
     private UserTABLE objUserTABLE;
     private User_HistoryTABLE user_historyTABLE;
+    UserTABLE userTABLE;
+    User_HistoryTABLE userHis;
     //Explicit
     private EditText TVName, TVAge, TVWeight, TVHeight;
     private TextView TVBMR, TVBMI, weightStdTextView;
@@ -39,7 +41,7 @@ public class DisplayUser extends AppCompatActivity {
     private RadioGroup User_Gender;
     SimpleDateFormat df_show, df_search;
     Calendar c;
-    int userId;
+    int userId,User_Id,History_User_Id;
 
 
     RadioGroup choose_sex;
@@ -366,6 +368,50 @@ public class DisplayUser extends AppCompatActivity {
 
         return intResult;
     }
+
+    public void ClickDeleteData(View view) {
+
+        userTABLE = new UserTABLE(this);
+        userHis = new User_HistoryTABLE(this);
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("คุณต้องการลบหรือไม่  ?");
+        builder.setMessage("คุณต้องการลบหรือไม่  ?");
+        builder.setNegativeButton("ตกลง", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                userTABLE.deleteUser(User_Id);
+                userHis.deleteUserHistory(History_User_Id);
+                //userTABLE.delete(User_Id);
+                TVName.setText("");
+                TVAge.setText("");
+                TVHeight.setText("");
+                TVWeight.setText("");
+                TVBMR.setText("");
+                TVBMI.setText("");
+                weightStdTextView.setText("");
+
+                Toast.makeText(getApplicationContext(), "ลบข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setCancelable(false);
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.setPositiveButton("ยกเลิก", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+            }
+        });
+
+        builder.show();
+    }
+
+
 
 
 }//MainClass

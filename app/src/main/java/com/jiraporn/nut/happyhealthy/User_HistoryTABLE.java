@@ -72,4 +72,11 @@ public class User_HistoryTABLE {
 
         return objCursor;
     }**/
+
+
+    public void deleteUserHistory(int History_User_Id) {
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+        db.delete(User_HistoryTABLE.User_History, User_HistoryTABLE.History_User_Id + "=?", new String[]{String.valueOf(History_User_Id)});
+        db.close();
+    }
 }//MianClass

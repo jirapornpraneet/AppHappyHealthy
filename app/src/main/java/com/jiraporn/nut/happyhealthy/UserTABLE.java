@@ -68,4 +68,21 @@ public class UserTABLE {
         return objCursor.getCount();
     }
 
+
+    public int DeleteUserTABLE() {
+        readSQLite = myDatabase.getReadableDatabase();
+        Cursor objCursor = readSQLite.rawQuery("Delete FROM userTABLE", null);
+
+        return objCursor.getCount();
+    }
+
+    public void deleteUser(int User_Id) {
+
+        SQLiteDatabase db = myDatabase.getWritableDatabase();
+
+        db.delete(UserTABLE.USER, UserTABLE.User_Id + "=?", new String[]{String.valueOf(User_Id)});
+        db.close();
+    }
+
+
 }//MainClass
