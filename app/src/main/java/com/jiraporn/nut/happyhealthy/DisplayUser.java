@@ -79,6 +79,7 @@ public class DisplayUser extends AppCompatActivity {
         TVBMI.setText("");
         TVBMR.setText("");
         TVAge.setText("");
+        weightStdTextView.setText("");
     }
 
     private void showView() {
@@ -92,7 +93,8 @@ public class DisplayUser extends AppCompatActivity {
             female.setChecked(true);
         }
         strChooseGender = dataUser.get(UserTABLE.User_Gender);
-        findMyAlertWeight(dataHis.get(User_HistoryTABLE.History_User_BMI));
+        //findMyAlertWeight(dataHis.get(User_HistoryTABLE.History_User_BMI));
+        weightStdString = findMyAlertWeight(dataHis.get(User_HistoryTABLE.History_User_BMI));
 
         TVName.setText(dataUser.get(UserTABLE.User_Name));
         //TVSex.setText(strSex);
@@ -102,6 +104,7 @@ public class DisplayUser extends AppCompatActivity {
         TVBMR.setText(dataHis.get(User_HistoryTABLE.History_User_BMR));
         TVBMI.setText(dataHis.get(User_HistoryTABLE.History_User_BMI));
         weightStdTextView.setText(weightStdString);
+
 
     } // Show View
 
@@ -295,6 +298,8 @@ public class DisplayUser extends AppCompatActivity {
                 userTABLE.deleteUser();
                 userHisTABLE.deleteUserHistory();
                 Toast.makeText(getApplicationContext(), "ลบข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
+                clearView();
+                dataUser.clear();
             }
         });
         builder.setCancelable(false);
