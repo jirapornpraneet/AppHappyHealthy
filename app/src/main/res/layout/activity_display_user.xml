@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.jiraporn.nut.happyhealthy.DisplayUser"
-    android:background="#f4f0f0">
+    android:background="#f4f0f0"
+    tools:context="com.jiraporn.nut.happyhealthy.DisplayUser">
 
     <LinearLayout
         android:id="@+id/container_toolbar"
@@ -20,335 +20,333 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ข้อมูลผู้ใช้งาน"
-        android:id="@+id/textView18"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+        android:text="ข้อมูลผู้ใช้งาน"
+        android:textColor="#ffffff"
         android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="#ffffff" />
+        android:textStyle="bold" />
 
 
     <TextView
+        android:id="@+id/savedatauser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="บันทึก"
-        android:id="@+id/savedatauser"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="16dp"
-        android:layout_alignParentRight="true"
         android:layout_alignParentLeft="false"
-        android:textColor="#ffffff"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginRight="15dp"
-        android:onClick="ClickSaveDataUser"/>
+        android:layout_marginTop="20dp"
+        android:onClick="ClickSaveDataUser"
+        android:text="บันทึก"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
 
             <ImageView
+                android:id="@+id/imageView15"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
-                android:id="@+id/imageView15"
-                android:src="@drawable/da5"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="3dp"
+                android:src="@drawable/da5" />
 
             <EditText
+                android:id="@+id/tv_Name"
                 android:layout_width="130dp"
                 android:layout_height="22dp"
-                android:id="@+id/tv_Name"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:background="@drawable/my_border_box"
-                android:layout_marginLeft="10dp"
-                android:textColor="#505050"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal" />
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/my_border_box"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#505050"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
 
-
-
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imageView17"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
-                android:id="@+id/imageView17"
-                android:src="@drawable/da6"
+                android:layout_marginLeft="48dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="48dp" />
-
+                android:src="@drawable/da6" />
 
 
             <RadioGroup
+                android:id="@+id/User_Gender"
                 android:layout_width="0dp"
                 android:layout_height="25dp"
-                android:orientation="horizontal"
-                android:id="@+id/User_Gender"
-                android:layout_weight="1"
-                android:layout_marginRight="30dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="7dp">
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="7dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:text="ชาย"
-                    android:id="@+id/male"
-                    android:textColor="#505050"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:checked="false"
+                    android:text="ชาย"
+                    android:textColor="#505050"
                     android:textSize="16dp"
                     android:textStyle="bold"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_gravity="center_vertical" />
+                    android:onClick="chooseSex" />
 
                 <RadioButton
+                    android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:text="หญิง"
-                    android:id="@+id/female"
-                    android:textColor="#505050"
-                    android:layout_weight="1"
-                    android:textSize="16dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="หญิง"
+                    android:textColor="#505050"
+                    android:textSize="16dp"
                     android:textStyle="bold"
-                    android:layout_gravity="center_vertical" />
+                    android:onClick="chooseSex" />
             </RadioGroup>
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imageView20"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
-                android:id="@+id/imageView20"
-                android:src="@drawable/da7"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="50dp" />
+                android:src="@drawable/da7" />
 
             <EditText
+                android:id="@+id/tv_Age"
                 android:layout_width="130dp"
                 android:layout_height="22dp"
-                android:id="@+id/tv_Age"
-                android:textSize="15dp"
-                android:layout_marginLeft="16dp"
-                android:textStyle="bold"
-                android:background="@drawable/my_border_box"
-                android:textColor="#505050"
-                android:layout_marginTop="4dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
                 android:autoText="false"
+                android:background="@drawable/my_border_box"
                 android:gravity="center_vertical|center_horizontal"
+                android:inputType="number"
                 android:numeric="integer"
-                android:inputType="number" />
+                android:textColor="#505050"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/imageView60"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:id="@+id/imageView60"
-                android:src="@drawable/year"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:src="@drawable/year" />
         </LinearLayout>
 
 
-
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imageView18"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
-                android:id="@+id/imageView18"
-                android:src="@drawable/da8"
+                android:layout_marginLeft="36dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="36dp" />
+                android:src="@drawable/da8" />
 
             <EditText
+                android:id="@+id/tv_Weight"
                 android:layout_width="130dp"
                 android:layout_height="22dp"
-                android:id="@+id/tv_Weight"
-                android:textSize="15dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
-                android:textStyle="bold"
                 android:background="@drawable/my_border_box"
-                android:textColor="#505050"
-                android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textColor="#505050"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/imageView59"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:id="@+id/imageView59"
-                android:src="@drawable/kk"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:src="@drawable/kk" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imageView19"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
-                android:id="@+id/imageView19"
-                android:src="@drawable/da9"
+                android:layout_marginLeft="36dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="36dp" />
+                android:src="@drawable/da9" />
 
             <EditText
+                android:id="@+id/tv_Height"
                 android:layout_width="130dp"
                 android:layout_height="22dp"
-                android:id="@+id/tv_Height"
-                android:textSize="15dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="3dp"
-                android:textStyle="bold"
                 android:background="@drawable/my_border_box"
-                android:textColor="#505050"
-                android:layout_gravity="center_vertical"
                 android:gravity="center_vertical|center_horizontal"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="#505050"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/imageView61"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:id="@+id/imageView61"
-                android:src="@drawable/cm"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:src="@drawable/cm" />
         </LinearLayout>
 
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imageView10"
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
-                android:id="@+id/imageView10"
-                android:src="@drawable/bmr"
                 android:layout_marginLeft="53dp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:src="@drawable/bmr" />
 
             <TextView
+                android:id="@+id/tv_BMR"
                 android:layout_width="160dp"
                 android:layout_height="27dp"
-                android:id="@+id/tv_BMR"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                android:textColor="#505050"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="2dp"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#505050"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/imageView65"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView65"
             android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="4dp"
-            android:src="@drawable/disbmr"
-            android:layout_marginLeft="30dp" />
+            android:src="@drawable/disbmr" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imageView21"
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
-                android:id="@+id/imageView21"
-                android:src="@drawable/bmi"
                 android:layout_marginLeft="58dp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:src="@drawable/bmi" />
 
             <TextView
+                android:id="@+id/tv_BMI"
                 android:layout_width="160dp"
                 android:layout_height="27dp"
-                android:id="@+id/tv_BMI"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                android:textColor="#505050"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="13dp"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|center_horizontal" />
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#505050"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/imageView64"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView64"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="3dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <TextView
+                android:id="@+id/weightStdTextView"
                 android:layout_width="240dp"
                 android:layout_height="25dp"
-                android:id="@+id/weightStdTextView"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:textColor="#505050"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="35dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="35dp" />
+                android:textColor="#505050"
+                android:textSize="15dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/clearData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/clearData"
-            android:src="@drawable/buttondelete"
             android:layout_marginLeft="15dp"
-            android:onClick="ClickDeleteData" />
+            android:onClick="ClickDeleteDataUser"
+            android:src="@drawable/buttondelete" />
 
     </LinearLayout>
 

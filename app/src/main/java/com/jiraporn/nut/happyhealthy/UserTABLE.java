@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 
 /**
  * Created by Nut on 29/10/2559.
@@ -30,25 +33,21 @@ public class UserTABLE {
     }//Constructor
 
 
+    public void insertUserTable(String strName, String strGender, String strAge) {
+        writeSQLite = myDatabase.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(User_Name, strName);
+        contentValues.put(User_Gender, strGender);
+        contentValues.put(User_Age, strAge);
 
+        writeSQLite.insert(USER, null, contentValues);
 
-    public int addNewInsertToSQLite(String strName, String strGender, String strAge) {
-    ContentValues contentValues = new ContentValues();
-    contentValues.put(User_Name, strName);
-    contentValues.put(User_Gender, strGender);
-    contentValues.put(User_Age, strAge);
-
-
-    int idUser = (int) writeSQLite.insert(USER, null, contentValues);
-
-    return idUser;
 //        writeSQLite.update(USER,contentValues,null,null);
 //        return user_id;
-}//Add New Value
+    }//Add New Value
 
 
-
-    public void addNewValueToSQLite(String strName, String strGender, String strAge) {
+    public void updateUserTable(String strName, String strGender, String strAge) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(User_Name, strName);
         contentValues.put(User_Gender, strGender);
@@ -65,22 +64,44 @@ public class UserTABLE {
         readSQLite = myDatabase.getReadableDatabase();
         Cursor objCursor = readSQLite.rawQuery("SELECT * FROM userTABLE", null);
 
-        return objCursor.getCount();
-    }
-
-
-    public int DeleteUserTABLE() {
-        readSQLite = myDatabase.getReadableDatabase();
-        Cursor objCursor = readSQLite.rawQuery("Delete FROM userTABLE", null);
+        objCursor.moveToFirst();
 
         return objCursor.getCount();
     }
 
-    public void deleteUser(int User_Id) {
 
+    public Cursor getUser() {
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
+        String selectQuery = "SELECT *,MAX(" + User_Id + ") FROM " + USER;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        db.close();
+
+        return cursor;
+    }
+
+    public HashMap<String, String> getDataUser() {
+        SQLiteDatabase db = myDatabase.getReadableDatabase();
+        String selectQuery = "SELECT *,MAX(" + User_Id + ") FROM " + USER;
+        HashMap<String, String> dataHis = new HashMap<>();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        dataHis.put(UserTABLE.User_Id, cursor.getString(cursor.getColumnIndex(UserTABLE.User_Id)));
+        dataHis.put(UserTABLE.User_Name, cursor.getString(cursor.getColumnIndex(UserTABLE.User_Name)));
+        dataHis.put(UserTABLE.User_Gender, cursor.getString(cursor.getColumnIndex(UserTABLE.User_Gender)));
+        dataHis.put(UserTABLE.User_Age, cursor.getString(cursor.getColumnIndex(UserTABLE.User_Age)));
+
+        cursor.close();
+
+        return dataHis;
+    }
+
+
+    public void deleteUser() {
         SQLiteDatabase db = myDatabase.getWritableDatabase();
-
-        db.delete(UserTABLE.USER, UserTABLE.User_Id + "=?", new String[]{String.valueOf(User_Id)});
+//        db.delete(User_HistoryTABLE.User_History, User_HistoryTABLE.History_User_Id + "=?", new String[]{String.valueOf(History_User_id)});
+        db.delete(UserTABLE.USER, null, null);
         db.close();
     }
 

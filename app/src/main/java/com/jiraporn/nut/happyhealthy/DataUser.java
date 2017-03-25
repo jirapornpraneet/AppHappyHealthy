@@ -8,8 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,7 +15,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -142,7 +139,7 @@ public class DataUser extends AppCompatActivity {
         douBmi = String.format("%.2f", douBMI);
         Log.d("cal", "Weight = " + douweight);
         Log.d("cal", "Height = " + douheight);
-        Log.d("cal", "BMI = " + douBmi);
+        Log.d("calBmi", "BMI = " + douBmi);
 
         // Find BMR
         double douBMR = 0;
@@ -168,9 +165,10 @@ public class DataUser extends AppCompatActivity {
 
         UserTABLE objUserTABLE = new UserTABLE(this);
         User_HistoryTABLE user_historyTABLE = new User_HistoryTABLE(this);
-//        long inSertDataUser = objUserTABLE.addNewValueToSQLite(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
-        objUserTABLE.addNewInsertToSQLite(strName, strGender, strAge);
+//        long inSertDataUser = objUserTABLE.updateUserTable(strName, strSex, strAge, Integer.parseInt(intHeight), Double.parseDouble(douWeight), Double.parseDouble(douBmr), Double.parseDouble(douBmi));
+        objUserTABLE.insertUserTable(strName, strGender, strAge);
 
+        Log.d("24Mar_BMI_1", douBmi);
         user_historyTABLE.insertUserHistory(df_show.format(c.getTime())
                 , Double.parseDouble(douWeight)
                 , Double.parseDouble(douBmr)
