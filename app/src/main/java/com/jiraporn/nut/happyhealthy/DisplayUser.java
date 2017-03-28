@@ -241,7 +241,7 @@ public class DisplayUser extends AppCompatActivity {
                 , Double.parseDouble(douBmi)
                 , Integer.parseInt(TVHeight.getText().toString()));
 
-        Toast.makeText(DisplayUser.this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
+        Toast.makeText(DisplayUser.this, "อัพเดตข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
     }
 
     private void InsertUser() {
@@ -291,24 +291,48 @@ public class DisplayUser extends AppCompatActivity {
     public void ClickDeleteDataUser(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.drawable.warning);
-        builder.setTitle("มีข้อมูลผู้ใช้งานอยู่แล้ว ?");
+        builder.setTitle("มีข้อมูลผู้ใช้งานอยู่แล้ว");
         builder.setMessage("คุณต้องการลบหรือไม่  ?");
         builder.setNegativeButton("ตกลง", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                userTABLE.deleteUser();
-                userHisTABLE.deleteUserHistory();
-                Toast.makeText(getApplicationContext(), "ลบข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
-                clearView();
-                dataUser.clear();
+                if (dataUser.isEmpty()) {
+                    NodataEmpty();
+                } else {
+                    if (chkUserData()) {
+                        userTABLE.deleteUser();
+                        userHisTABLE.deleteUserHistory();
+                        Toast.makeText(getApplicationContext(), "ลบข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
+                        clearView();
+                        dataUser.clear();
+                    } else {
+                        ShowHaveData();
+                    }
+                }
+
             }
         });
         builder.setCancelable(false);
         builder.setPositiveButton("ยกเลิก", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
+            public void onClick(DialogInterface dialog, int id) {
+
             }
         });
+
+        builder.show();
+
+    }
+
+    public void NodataEmpty() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.warning);
+        builder.setTitle("ไม่มีข้อมูลผู้ใช้");
+        builder.setMessage("บันทึกข้อมูลผู้ใช้งานก่อนลบข้อมูล ?");
+        builder.setNegativeButton("ตกลง", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Toast.makeText(getApplicationContext(), "ไม่มีข้อมูลผู้ใช้งาน", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setCancelable(false);
         builder.setPositiveButton("ยกเลิก", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
 
